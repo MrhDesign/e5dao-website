@@ -1,41 +1,103 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 import Icon from './Icon';
+import useContent from '../../lib/useContent';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [expandedSubmenu, setExpandedSubmenu] = useState<string | null>(null);
   const pathname = usePathname();
+  const { getContent } = useContent();
 
   const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'Solution', href: '/solution' },
-    { name: 'Products', href: '/products' },
-    { name: 'News', href: '/news' },
-    { name: 'About Us', href: '/aboutUs' },
+    { name: getContent('navigation.home'), href: '/' },
+    { 
+      name: getContent('navigation.solution'), 
+      href: '/solution',
+      submenu: [
+        { name: 'AI Solutions', href: '/solution/ai' },
+        { name: 'Cloud Services', href: '/solution/cloud' },
+        { name: 'Data Analytics', href: '/solution/analytics' }
+      ]
+    },
+    { 
+      name: getContent('navigation.products'), 
+      href: '/products',
+      submenu: [
+        { name: 'Enterprise Software', href: '/products/enterprise' },
+        { name: 'Mobile Apps', href: '/products/mobile' },
+        { name: 'Web Platform', href: '/products/web' }
+      ]
+    },
+    { name: getContent('navigation.news'), href: '/news' },
+    { name: getContent('navigation.aboutUs'), href: '/aboutUs' }
+  ];
+
+  const mobileNavigation = [
+    ...navigation,
+    { name: getContent('navigation.contact'), href: '/contact' }
   ];
 
   const isCurrentPage = (href: string) => {
     return pathname === href;
   };
 
+  // 检查当前页面是否在某个子菜单中
+  const isSubMenuActive = (item: any) => {
+    if (!item.submenu) return false;
+    return item.submenu.some((subItem: any) => pathname === subItem.href);
+  };
+
+  // 获取当前活跃的父菜单
+  const getActiveParentMenu = () => {
+    for (const item of navigation) {
+      if (item.submenu && item.submenu.some((subItem: any) => pathname === subItem.href)) {
+        return item.name;
+      }
+    }
+    return null;
+  };
+
+  // 当路径改变时，自动展开包含当前页面的子菜单
+  useEffect(() => {
+    const activeParent = getActiveParentMenu();
+    if (activeParent && isMobileMenuOpen) {
+      setExpandedSubmenu(activeParent);
+    }
+  }, [pathname, isMobileMenuOpen]);
+
+  const toggleSubmenu = (itemName: string) => {
+    setExpandedSubmenu(expandedSubmenu === itemName ? null : itemName);
+  };
+
+  const handleMenuItemClick = (item: any) => {
+    if (item.submenu) {
+      toggleSubmenu(item.name);
+    } else {
+      setIsMobileMenuOpen(false);
+      setExpandedSubmenu(null);
+    }
+  };
+
   return (
-    <nav className="fixed w-full z-50 bg-fill-one/95 backdrop-blur-md lg:px-10 px-5 lg:h-20 h-12 ">
+    <nav className="fixed w-full z-50 bg-fill-one/95 backdrop-blur-md  lg:h-20 h-12 ">
       <div className="h-full">
-        <div className="w-full h-full flex justify-between items-center">
+        <div className="w-full h-full lg:px-10 px-5 flex justify-between items-center">
           
           {/* Logo */}
-          <div className="flex items-center">
-            <a href="/" className="flex items-center">
-          <Icon name="Logo" className="lg:text-[60px] text-[36px]" />
-            </a>
+          <div className="w-20 flex items-center">
+            <Link href="/" className="flex items-center">
+              <Icon name="Logo" className="lg:text-[60px] text-[36px] text-text-black" />
+            </Link>
           </div>
           
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-x-2">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className={`relative navbtn flex justify-center h-20 px-2 pt-8 pb-5 transition-colors duration-200 group ${
@@ -53,108 +115,165 @@ export default function Header() {
                       : 'w-0 group-hover:w-full bg-fill-brand'
                   }`}
                 />
-              </a>
+              </Link>
             ))}
           </div>
           
           {/* Contact Button */}
-          <div className="hidden lg:flex items-center">
-            <a
+          <div className="w-20 hidden lg:flex items-center">
+            <Link
               href="/contact"
               className={`relative navbtn flex justify-center h-20 px-2 pt-8 pb-5 transition-colors duration-200 group ${
                 isCurrentPage('/contact')
                   ? 'text-text-brand'
-                    : 'text-text-title hover:text-text-brand'
+                  : 'text-text-title hover:text-text-brand'
               }`}
             >
-              Contact
+              {getContent('navigation.contact')}
               {/* Bottom line - grows from center to both ends */}
               <span 
                 className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 bg-fill-brand transition-all duration-300 ease-out ${
                   isCurrentPage('/contact') 
                     ? 'w-full' 
-                      : 'w-0 group-hover:w-full bg-fill-brand'
+                    : 'w-0 group-hover:w-full bg-fill-brand'
                 }`}
               />
-            </a>
+            </Link>
           </div>
 
 
           {/* Mobile menu button */}
           <div className="lg:hidden flex items-center">
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-600 hover:text-black focus:outline-none p-2"
+              onClick={() => {
+                const newState = !isMobileMenuOpen;
+                setIsMobileMenuOpen(newState);
+                // 当打开菜单时，自动展开包含当前页面的子菜单
+                if (newState) {
+                  const activeParent = getActiveParentMenu();
+                  if (activeParent) {
+                    setExpandedSubmenu(activeParent);
+                  }
+                }
+              }}
+              className="text-text-black hover:text-black focus:outline-none p-2 transition-colors duration-300"
             >
-              <svg
-                className="h-5 w-5"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {isMobileMenuOpen ? (
-                  <path d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+              <div className="relative flex items-center justify-center">
+                <div
+                  className={`absolute transition-all duration-300 ease-in-out ${
+                    isMobileMenuOpen ? 'opacity-0 rotate-180 scale-75' : 'opacity-100 rotate-0 scale-100'
+                  }`}
+                >
+                  <Icon name="crumbs" className="text-[26px]" />
+                </div>
+                <div
+                  className={`absolute transition-all duration-300 ease-in-out ${
+                    isMobileMenuOpen ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-180 scale-75'
+                  }`}
+                >
+                  <Icon name="close" className="text-[26px]" />
+                </div>
+              </div>
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden border-t border-gray-100">
-            <div className="px-4 py-4 space-y-2 bg-white">
-              {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className={`relative block py-3 px-4 text-base font-medium transition-colors duration-200 group ${
-                    isCurrentPage(item.href)
-                      ? 'text-black'
-                      : 'text-gray-600 hover:text-black'
-                  }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.name}
-                  {/* Left line - grows on hover, always visible when active */}
-                  <span 
-                    className={`absolute left-0 top-0 w-1 bg-black transition-all duration-300 ease-out ${
-                      isCurrentPage(item.href) 
-                        ? 'h-full' 
-                        : 'h-0 group-hover:h-full'
+        <div 
+          className={`lg:hidden w-full bg-fill-one overflow-hidden transition-all duration-600 ease-in-out ${
+            isMobileMenuOpen 
+              ? 'opacity-100' 
+              : 'max-h-0 opacity-0'
+          }`}
+        >
+          <div className="bg-fill-one pt-5">
+            {mobileNavigation.map((item, index) => (
+              <div key={item.name}>
+                {/* Main menu item */}
+                {item.submenu ? (
+                  <button
+                    onClick={() => handleMenuItemClick(item)}
+                    className={`navbtn relative flex justify-between items-center py-3 px-5 h-12 border-b border-border-one w-full transition-all duration-600 group transform ${
+                      isCurrentPage(item.href) || isSubMenuActive(item)
+                        ? 'text-text-brand'
+                        : 'text-text-black hover:text-text-brand'
+                    } ${
+                      isMobileMenuOpen 
+                        ? 'translate-x-0 opacity-100' 
+                        : '-translate-x-4 opacity-0'
                     }`}
-                  />
-                </a>
-              ))}
-              <div className="pt-4 border-t border-gray-100">
-                <a
-                  href="/contact"
-                  className={`relative block w-full px-4 py-3 rounded-lg text-center text-sm font-medium transition-colors duration-200 group ${
-                    isCurrentPage('/contact')
-                      ? 'bg-gray-800 text-white'
-                      : 'bg-black text-white hover:bg-gray-800'
-                  }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Contact
-                  {/* Left line for mobile Contact */}
-                  <span 
-                    className={`absolute left-0 top-0 w-1 bg-white transition-all duration-300 ease-out rounded-r-sm ${
-                      isCurrentPage('/contact') 
-                        ? 'h-full' 
-                        : 'h-0 group-hover:h-full'
+                    style={{
+                      transitionDelay: isMobileMenuOpen ? `${index * 50}ms` : '0ms'
+                    }}
+                  >
+                    <span>{item.name}</span>
+                    <Icon 
+                      name="right" 
+                      className={`text-[26px] transition-transform duration-300 ${
+                        expandedSubmenu === item.name ? 'rotate-90' : ''
+                      }`} 
+                    />
+                  </button>
+                ) : (
+                  <Link
+                    href={item.href}
+                    onClick={() => handleMenuItemClick(item)}
+                    className={`navbtn relative flex items-center py-3 px-5 h-12 border-b border-border-one transition-all duration-600 group transform ${
+                      isCurrentPage(item.href)
+                        ? 'text-text-brand'
+                        : 'text-text-black hover:text-text-brand'
+                    } ${
+                      isMobileMenuOpen 
+                        ? 'translate-x-0 opacity-100' 
+                        : '-translate-x-4 opacity-0'
                     }`}
-                  />
-                </a>
+                    style={{
+                      transitionDelay: isMobileMenuOpen ? `${index * 50}ms` : '0ms'
+                    }}
+                  >
+                    <span>{item.name}</span>
+                  </Link>
+                )}
+
+                {/* Submenu */}
+                {item.submenu && (
+                  <div 
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                      expandedSubmenu === item.name
+                        ? 'max-h-96 opacity-100' 
+                        : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    {item.submenu.map((subItem, subIndex) => (
+                      <Link
+                        key={subItem.name}
+                        href={subItem.href}
+                        onClick={() => {
+                          setIsMobileMenuOpen(false);
+                          setExpandedSubmenu(null);
+                        }}
+                        className={`navbtn relative flex justify-between items-center py-3 px-5 h-12 border-b border-border-one transition-all duration-600 group transform ${
+                          isCurrentPage(subItem.href)
+                            ? 'text-text-brand'
+                            : 'text-text-black hover:text-text-brand'
+                        } ${
+                          expandedSubmenu === item.name
+                            ? 'translate-x-0 opacity-100' 
+                            : '-translate-x-4 opacity-0'
+                        }`}
+                        style={{
+                          transitionDelay: expandedSubmenu === item.name ? `${subIndex * 30}ms` : '0ms'
+                        }}
+                      >
+                        {subItem.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
-            </div>
+            ))}
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );

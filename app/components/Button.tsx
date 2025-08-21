@@ -12,7 +12,6 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
-  size = 'md',
   loading = false,
   children,
   className = '',
@@ -20,22 +19,18 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   ...props
 }) => {
-  const baseClasses = 'inline-flex items-center justify-center font-medium rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50';
+  const baseClasses = 'transition-all duration-600 ease-in-out lg:text-2xl text-sm lg:font-normal font-medium lg:px-6 px-4 lg:py-3 py-2 bg-fill-one/90 text-text-black leading-none rounded-full inline-flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:lg:px-8 hover:px-6';
   
   const variantClasses = {
-    primary: 'bg-blue-600 text-white hover:bg-blue-700 focus-visible:ring-blue-500',
+    primary: '',
     secondary: 'bg-gray-600 text-white hover:bg-gray-700 focus-visible:ring-gray-500',
     outline: 'border border-gray-300 bg-transparent hover:bg-gray-50 text-gray-700 focus-visible:ring-gray-500',
     ghost: 'hover:bg-gray-100 text-gray-700 focus-visible:ring-gray-500'
   };
   
-  const sizeClasses = {
-    sm: 'h-8 px-3 text-sm',
-    md: 'h-10 px-4 text-sm',
-    lg: 'h-12 px-6 text-base'
-  };
+
   
-  const buttonClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`.trim();
+  const buttonClasses = `${baseClasses} ${variantClasses[variant]} ${className}`.trim();
   
   const handleClick = onClick ? (e: React.MouseEvent<HTMLButtonElement>) => {
     if (loading || disabled) return;

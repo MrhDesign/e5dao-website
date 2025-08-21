@@ -9,17 +9,6 @@
   font-display: swap;
 }
 
-/* 阿里图标库字体定义 - 本地字体文件 */
-@font-face {
-  font-family: "iconfont";
-  src: url('/fonts/iconfont.woff2') format('woff2'),
-       url('/fonts/iconfont.woff') format('woff'),
-       url('/fonts/iconfont.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 .iconfont {
   font-family: "iconfont" !important;
   font-style: normal;
@@ -87,7 +76,7 @@
   --color-text-display: var(--color-neutral-600);
 
   /* border颜色 */
-  --color-border-one: #D4D4D4;
+  --color-border-one: var(--color-neutral-300);
 
 
 }
@@ -97,7 +86,11 @@
 }
 
 .navbtn {
-  @apply lg:text-lg text-sm font-medium leading-none;
+  @apply lg:text-lg text-base font-medium leading-none;
+}
+
+.text-display {
+  @apply lg:text-text-display text-xl leading-10;
 }
 
 

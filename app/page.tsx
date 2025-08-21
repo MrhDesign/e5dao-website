@@ -1,12 +1,68 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import Image from 'next/image';
 import Button from './components/Button';
-import Icon from './components/Icon';
+import useContent from '../lib/useContent';
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(true);
+  const [canAutoplay, setCanAutoplay] = useState(true);
+  const { getContent } = useContent();
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // 尝试自动播放，如果失败则显示播放按钮
+    const attemptAutoplay = async () => {
+      try {
+        await video.play();
+        setCanAutoplay(true);
+      } catch (error) {
+        console.log('Autoplay failed:', error);
+        setCanAutoplay(false);
+      }
+    };
+
+    // 移动设备优化：监听视口变化
+    const handleVisibilityChange = () => {
+      if (!document.hidden && video.paused) {
+        attemptAutoplay();
+      }
+    };
+
+    // Intersection Observer 用于检测视频是否在视口中
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && video.paused) {
+            attemptAutoplay();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(video);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    // 确保视频加载后尝试播放
+    if (video.readyState >= 2) {
+      attemptAutoplay();
+    } else {
+      video.addEventListener('canplay', attemptAutoplay);
+      video.addEventListener('loadedmetadata', attemptAutoplay);
+    }
+
+    return () => {
+      observer.disconnect();
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      video.removeEventListener('canplay', attemptAutoplay);
+      video.removeEventListener('loadedmetadata', attemptAutoplay);
+    };
+  }, []);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -15,16 +71,46 @@ export default function Home() {
     }
   };
 
+  const playVideo = async () => {
+    if (videoRef.current) {
+      try {
+        await videoRef.current.play();
+        setCanAutoplay(true);
+      } catch (error) {
+        console.log('Manual play failed:', error);
+      }
+    }
+  };
+
   return (
+    <>
     <section className="relative">
       <video 
         ref={videoRef}
         src="/hero.mp4" 
         autoPlay 
         loop 
-        muted 
-        className="w-full h-screen object-cover"
+        muted
+        playsInline
+        preload="metadata"
+        webkit-playsinline="true"
+        x-webkit-airplay="allow"
+        className="w-full object-cover"
       />
+      
+      {/* 播放按钮 - 当自动播放失败时显示 */}
+      {!canAutoplay && (
+        <button
+          onClick={playVideo}
+          className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm transition-opacity duration-300"
+        >
+          <div className="bg-white/90 hover:bg-white text-black p-4 rounded-full transition-all duration-200 shadow-lg">
+            <svg className="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+        </button>
+      )}
       
       {/* 声音控制按钮 */}
       <button
@@ -44,8 +130,26 @@ export default function Home() {
       </button>
       
       <div className='absolute bottom-10 left-1/2 -translate-x-1/2'>
-        <Button className='relative'>a事实上</Button>
+        <Button className='relative'>{getContent('home.hero.button')}</Button>
       </div>
     </section>
+    <section className="lg:px-30 px-5">
+      <div className="w-full flex justify-between py-10 gap-30">
+          <Image 
+            src="/images/about-title.png" 
+            alt="About Title" 
+            width={526}
+            height={181}
+            className=""
+            priority
+          />
+
+
+        <div>
+          <p className='text-display'>{getContent('home.about.description')}</p>
+        </div>
+      </div>
+    </section>
+    </>
   );
 }
