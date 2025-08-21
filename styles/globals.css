@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+/* 自定义字体定义 */
+@font-face {
+  font-family: 'TikTokSans';
+  src: url('../assets/fonts/TikTokSans[opsz,slnt,wdth,wght].ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+
+
+  --color-lime-50: oklch(98.6% 0.031 120.757);
+  --color-lime-100: oklch(96.7% 0.067 122.328);
+  --color-lime-200: oklch(93.8% 0.127 124.321);
+  --color-lime-300: oklch(89.7% 0.196 126.665);
+  --color-lime-400: oklch(84.1% 0.238 128.85);
+  --color-lime-500: oklch(76.8% 0.233 130.85);
+  --color-lime-600: oklch(64.8% 0.2 131.684);
+  --color-lime-700: oklch(53.2% 0.157 131.589);
+  --color-lime-800: oklch(45.3% 0.124 130.933);
+  --color-lime-900: oklch(40.5% 0.101 131.063);
+  --color-lime-950: oklch(27.4% 0.072 132.109);
+
+  --color-neutral-50: oklch(98.5% 0 0);
+  --color-neutral-100: oklch(97% 0 0);
+  --color-neutral-200: oklch(92.2% 0 0);
+  --color-neutral-300: oklch(87% 0 0);
+  --color-neutral-400: oklch(70.8% 0 0);
+  --color-neutral-500: oklch(55.6% 0 0);
+  --color-neutral-600: oklch(43.9% 0 0);
+  --color-neutral-700: oklch(37.1% 0 0);
+  --color-neutral-800: oklch(26.9% 0 0);
+  --color-neutral-900: oklch(20.5% 0 0);
+  --color-neutral-950: oklch(14.5% 0 0);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@theme inline {
+  --color-background: #212121;
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-primary: #000000;
+
+  
+  /* 背景颜色 */
+  --color-fill-brand: var(--color-lime-900);
+  --color-fill-black: var(--color-neutral-950);
+  --color-fill-white: var(--color-neutral-50);
+  --color-fill-one: var(--color-neutral-50);
+  --color-fill-two: var(--color-neutral-100);
+  --color-fill-three: var(--color-neutral-200);
+  --color-fill-four: var(--color-neutral-300);
+
+  /* 字体颜色 */
+  --color-text-brand: var(--color-lime-900);
+  --color-text-black: var(--color-neutral-950);
+  --color-text-white: var(--color-neutral-50);
+  --color-text-title: var(--color-neutral-950);
+  --color-text-display: var(--color-neutral-600);
+
+  /* border颜色 */
+  --color-border-one: #D4D4D4;
+
+
+}
+
+.headline1 {
+  @apply text-4xl font-bold;
+}
+
+
+
+body {
+  background: var(--color-neutral-900);
+  color: var(--foreground);
+  font-family: 'TikTokSans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+}
+
+/* 为所有文本元素设置默认字体 */
+* {
+  font-family: 'TikTokSans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+}
