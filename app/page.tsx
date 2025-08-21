@@ -1,132 +1,51 @@
+'use client';
+
+import { useRef, useState } from 'react';
+import Button from './components/Button';
+import Icon from './components/Icon';
+
 export default function Home() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMuted, setIsMuted] = useState(true);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(videoRef.current.muted);
+    }
+  };
+
   return (
-    <div className="bg-gray-50">
-
-      {/* Hero Section */}
-      <section id="home" className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="headline1 mb-6">
-            Innovative Solutions for Your Business
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            We provide cutting-edge technology solutions to help your business grow and succeed in the digital age
-          </p>
-          <a href="/contact" className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block">
-            Get Started Today
-          </a>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section id="services" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
-            <p className="text-lg text-gray-600">Comprehensive solutions tailored to your needs</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                <span className="text-blue-600 text-xl">💻</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Web Development</h3>
-              <p className="text-gray-600">Modern, responsive websites built with the latest technologies</p>
-            </div>
-            <div className="text-center p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 bg-green-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                <span className="text-green-600 text-xl">📱</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Mobile Apps</h3>
-              <p className="text-gray-600">Native and cross-platform mobile applications</p>
-            </div>
-            <div className="text-center p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 bg-purple-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                <span className="text-purple-600 text-xl">☁️</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Cloud Solutions</h3>
-              <p className="text-gray-600">Scalable cloud infrastructure and migration services</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About TechCorp Solutions</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                With over 10 years of experience in the technology industry, we have helped hundreds of businesses 
-                transform their operations and achieve their digital goals.
-              </p>
-              <p className="text-lg text-gray-600 mb-8">
-                Our team of expert developers, designers, and consultants work closely with clients to deliver 
-                innovative solutions that drive growth and efficiency.
-              </p>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600">500+</div>
-                  <div className="text-gray-600">Projects Completed</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600">10+</div>
-                  <div className="text-gray-600">Years Experience</div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-4">Why Choose Us?</h3>
-              <ul className="space-y-3">
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-3">✓</span>
-                  <span>Expert team of professionals</span>
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-3">✓</span>
-                  <span>24/7 customer support</span>
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-3">✓</span>
-                  <span>Competitive pricing</span>
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-3">✓</span>
-                  <span>On-time delivery</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-blue-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-xl mb-8">Contact us today for a free consultation</p>
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div>
-              <div className="text-2xl mb-2">📧</div>
-              <div className="font-semibold">Email</div>
-              <div>contact@techcorp.com</div>
-            </div>
-            <div>
-              <div className="text-2xl mb-2">📞</div>
-              <div className="font-semibold">Phone</div>
-              <div>+1 (555) 123-4567</div>
-            </div>
-            <div>
-              <div className="text-2xl mb-2">📍</div>
-              <div className="font-semibold">Address</div>
-              <div>123 Tech Street, Silicon Valley, CA</div>
-            </div>
-          </div>
-          <a href="/contact" className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block">
-            Contact Us Now
-          </a>
-        </div>
-      </section>
-    </div>
+    <section className="relative">
+      <video 
+        ref={videoRef}
+        src="/hero.mp4" 
+        autoPlay 
+        loop 
+        muted 
+        className="w-full h-screen object-cover"
+      />
+      
+      {/* 声音控制按钮 */}
+      <button
+        onClick={toggleMute}
+        className="absolute top-6 right-6 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-all duration-200 backdrop-blur-sm"
+        title={isMuted ? '开启声音' : '关闭声音'}
+      >
+        {isMuted ? (
+          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M3.63 3.63a.996.996 0 000 1.41L7.29 8.7 7 9H4c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1h3l3.29 3.29c.63.63 1.71.18 1.71-.71v-4.17l4.18 4.18c-.49.37-1.02.68-1.6.91-.36.15-.58.53-.58.92 0 .72.73 1.18 1.39.91.8-.33 1.54-.77 2.2-1.31l1.34 1.34a.996.996 0 101.41-1.41L5.05 3.63c-.39-.39-1.02-.39-1.42 0zM19 12c0 .82-.15 1.61-.41 2.34l1.53 1.53c.56-1.17.88-2.48.88-3.87 0-3.83-2.4-7.11-5.78-8.4-.59-.23-1.22.23-1.22.86v.19c0 .38.25.71.61.85C17.18 6.54 19 9.06 19 12zm-8.71-6.29l-.17.17L12 7.76V6.41c0-.89-1.08-1.33-1.71-.7z"/>
+          </svg>
+        ) : (
+          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M3 10v4c0 .55.45 1 1 1h3l3.29 3.29c.63.63 1.71.18 1.71-.71V6.41c0-.89-1.08-1.33-1.71-.7L7 9H4c-.55 0-1-.45-1-1zm13.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77 0-4.28-2.99-7.86-7-8.77z"/>
+          </svg>
+        )}
+      </button>
+      
+      <div className='absolute bottom-10 left-1/2 -translate-x-1/2'>
+        <Button className='relative'>a事实上</Button>
+      </div>
+    </section>
   );
 }

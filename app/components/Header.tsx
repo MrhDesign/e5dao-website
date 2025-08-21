@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
+import Icon from './Icon';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -9,9 +10,10 @@ export default function Header() {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'Services', href: '/services' },
-    { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Solution', href: '/solution' },
+    { name: 'Products', href: '/products' },
+    { name: 'News', href: '/news' },
+    { name: 'About Us', href: '/aboutUs' },
   ];
 
   const isCurrentPage = (href: string) => {
@@ -19,40 +21,73 @@ export default function Header() {
   };
 
   return (
-    <nav className="bg-white shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+    <nav className="fixed w-full z-50 bg-fill-one/95 backdrop-blur-md lg:px-10 px-5 lg:h-20 h-12 ">
+      <div className="h-full">
+        <div className="w-full h-full flex justify-between items-center">
+          
+          {/* Logo */}
           <div className="flex items-center">
-            <a href="/" className="text-xl font-bold text-blue-600">
-              TechCorp Solutions
+            <a href="/" className="flex items-center">
+          <Icon name="Logo" className="lg:text-[60px] text-[36px]" />
             </a>
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center gap-x-2">
             {navigation.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className={`transition-colors ${
+                className={`relative navbtn flex justify-center h-20 px-2 pt-8 pb-5 transition-colors duration-200 group ${
                   isCurrentPage(item.href)
-                    ? 'text-blue-600 font-medium'
-                    : 'text-gray-700 hover:text-blue-600'
+                    ? 'text-text-brand'
+                    : 'text-text-title hover:text-text-brand'
                 }`}
               >
                 {item.name}
+                {/* Bottom line - grows from center to both ends */}
+                <span 
+                  className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 bg-fill-brand transition-all duration-300 ease-out ${
+                    isCurrentPage(item.href) 
+                      ? 'w-full' 
+                      : 'w-0 group-hover:w-full bg-fill-brand'
+                  }`}
+                />
               </a>
             ))}
           </div>
+          
+          {/* Contact Button */}
+          <div className="hidden lg:flex items-center">
+            <a
+              href="/contact"
+              className={`relative navbtn flex justify-center h-20 px-2 pt-8 pb-5 transition-colors duration-200 group ${
+                isCurrentPage('/contact')
+                  ? 'text-text-brand'
+                    : 'text-text-title hover:text-text-brand'
+              }`}
+            >
+              Contact
+              {/* Bottom line - grows from center to both ends */}
+              <span 
+                className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 bg-fill-brand transition-all duration-300 ease-out ${
+                  isCurrentPage('/contact') 
+                    ? 'w-full' 
+                      : 'w-0 group-hover:w-full bg-fill-brand'
+                }`}
+              />
+            </a>
+          </div>
+
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-700 hover:text-blue-600 focus:outline-none"
+              className="text-gray-600 hover:text-black focus:outline-none p-2"
             >
               <svg
-                className="h-6 w-6"
+                className="h-5 w-5"
                 fill="none"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -72,22 +107,51 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-200">
+          <div className="lg:hidden border-t border-gray-100">
+            <div className="px-4 py-4 space-y-2 bg-white">
               {navigation.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                  className={`relative block py-3 px-4 text-base font-medium transition-colors duration-200 group ${
                     isCurrentPage(item.href)
-                      ? 'text-blue-600 bg-blue-50'
-                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                      ? 'text-black'
+                      : 'text-gray-600 hover:text-black'
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
+                  {/* Left line - grows on hover, always visible when active */}
+                  <span 
+                    className={`absolute left-0 top-0 w-1 bg-black transition-all duration-300 ease-out ${
+                      isCurrentPage(item.href) 
+                        ? 'h-full' 
+                        : 'h-0 group-hover:h-full'
+                    }`}
+                  />
                 </a>
               ))}
+              <div className="pt-4 border-t border-gray-100">
+                <a
+                  href="/contact"
+                  className={`relative block w-full px-4 py-3 rounded-lg text-center text-sm font-medium transition-colors duration-200 group ${
+                    isCurrentPage('/contact')
+                      ? 'bg-gray-800 text-white'
+                      : 'bg-black text-white hover:bg-gray-800'
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contact
+                  {/* Left line for mobile Contact */}
+                  <span 
+                    className={`absolute left-0 top-0 w-1 bg-white transition-all duration-300 ease-out rounded-r-sm ${
+                      isCurrentPage('/contact') 
+                        ? 'h-full' 
+                        : 'h-0 group-hover:h-full'
+                    }`}
+                  />
+                </a>
+              </div>
             </div>
           </div>
         )}

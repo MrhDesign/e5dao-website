@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
+import "../styles/iconfont.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -17,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
         <Header />
-        <main>{children}</main>
+        <main className="pt-20">{children}</main>
         <Footer />
       </body>
     </html>

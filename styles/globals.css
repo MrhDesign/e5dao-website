@@ -3,10 +3,28 @@
 /* 自定义字体定义 */
 @font-face {
   font-family: 'TikTokSans';
-  src: url('../assets/fonts/TikTokSans[opsz,slnt,wdth,wght].ttf') format('truetype');
+  src: url('/fonts/TikTokSans[opsz,slnt,wdth,wght].ttf') format('truetype');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
+}
+
+/* 阿里图标库字体定义 - 本地字体文件 */
+@font-face {
+  font-family: "iconfont";
+  src: url('/fonts/iconfont.woff2') format('woff2'),
+       url('/fonts/iconfont.woff') format('woff'),
+       url('/fonts/iconfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 :root {
@@ -78,10 +96,14 @@
   @apply text-4xl font-bold;
 }
 
+.navbtn {
+  @apply lg:text-lg text-sm font-medium leading-none;
+}
+
 
 
 body {
-  background: var(--color-neutral-900);
+  background: var(--color-neutral-50);
   color: var(--foreground);
   font-family: 'TikTokSans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
 }
