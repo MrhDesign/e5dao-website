@@ -82,7 +82,11 @@
 }
 
 .headline1 {
-  @apply text-4xl font-bold;
+  @apply lg:text-5xl text-2xl font-medium;
+}
+
+.headline2 {
+  @apply lg:text-4xl text-base font-medium;
 }
 
 .navbtn {
@@ -90,7 +94,7 @@
 }
 
 .text-display {
-  @apply lg:text-text-display lg:text-xl text-base lg:leading-10 leading-6 font-normal;
+  @apply lg:text-text-display lg:text-xl text-sm lg:leading-10 leading-6 font-normal;
 }
 
 
@@ -101,8 +105,9 @@ body {
   font-family: 'TikTokSans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
 }
 
-/* 为所有文本元素设置默认字体 */
-* {
+/* 全局盒模型设置和默认字体 */
+*{
+  box-sizing: border-box;
   font-family: 'TikTokSans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
 }
 
@@ -119,3 +124,34 @@ body {
 .image-hover-zoom:hover img {
   transform: scale(1.1);
 }
+
+/* 新闻详情页面样式 */
+/* .prose {
+  color: var(--color-text-display);
+  line-height: 1.8;
+}
+
+.prose h2 {
+  @apply text-2xl font-semibold text-text-black mt-8 mb-4;
+}
+
+.prose h3 {
+  @apply text-xl font-semibold text-text-black mt-6 mb-3;
+}
+
+.prose p {
+  @apply mb-6 text-display;
+}
+
+.prose ul {
+  @apply ml-6 mb-6;
+}
+
+.prose li {
+  @apply mb-2 text-display;
+  list-style: disc;
+}
+
+.prose strong {
+  @apply font-semibold text-text-black;
+} */
