@@ -129,24 +129,67 @@ export default function Home() {
         )}
       </button>
       
-      <div className='absolute bottom-10 left-1/2 -translate-x-1/2'>
+      <div className='absolute lg:bottom-10 bottom-5 left-1/2 -translate-x-1/2'>
         <Button className='relative'>{getContent('home.hero.button')}</Button>
       </div>
     </section>
     <section className="lg:px-30 px-5">
-      <div className="w-full flex justify-between py-10 gap-30">
+      <div className="w-full flex lg:flex-row flex-col items-start justify-between lg:py-10 py-5 lg:gap-10 gap-2.5">
+        <div className='w-[660px] h-[200px]'>
           <Image 
             src="/images/about-title.png" 
             alt="About Title" 
-            width={526}
+            width={512}
             height={181}
-            className=""
+            className="w-full h-auto object-cover lg:pr-0 pr-20"
             priority
           />
+        </div>
 
+          <p className='flex-1 text-display  lg:line-clamp-8 line-clamp-6'>{getContent('home.about.description')}</p>
+      </div>
+    </section>
 
-        <div>
-          <p className='text-display'>{getContent('home.about.description')}</p>
+    <section className='bg-fill-three'>
+      <div className='lg:px-30 lg:py-20 p-5 flex lg:flex-row flex-col gap-10 justify-between'>
+        <div className='w-[660px] h-[660px] image-hover-zoom'>
+           <Image 
+            src="/images/solution-1.png" 
+            alt="About Title" 
+            width={512}
+            height={512}
+            className="w-full h-auto object-cover  lg:pr-0 pr-20 rounded-sm"
+            priority
+          />
+        </div>
+        <div className='flex-1 flex flex-col gap-5'>
+          <h1 className='headline1'>{getContent('solution.cardOne.title')}</h1>
+          <p className='text-display lg:line-clamp-10'>{getContent('solution.cardOne.content')}</p>
+          <div className='mt-auto'>
+            <Button className='relative'>{getContent('home.hero.button')}</Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className='bg-fill-one'>
+      <div className='lg:px-30 lg:py-20 p-5 flex lg:flex-row flex-col gap-10 justify-between'>
+        <div className='w-[660px] h-[660px] order-1 image-hover-zoom'>
+           <Image 
+            src="/images/solution-2.png" 
+            alt="About Title" 
+            width={512}
+            height={512}
+            className="w-full h-auto object-cover  lg:pr-0 pr-20 rounded-sm"
+            priority
+          />
+        </div>
+        <div className='flex-1 flex flex-col gap-5'>
+          <h1 className='headline1'>{getContent('solution.cardOne.title')}</h1>
+          <p className='text-display lg:line-clamp-10'>{getContent('solution.cardOne.content')}</p>
+          <div className='mt-auto'>
+            <Button className='relative'>{getContent('home.hero.button')}</Button>
+          </div>
         </div>
       </div>
     </section>

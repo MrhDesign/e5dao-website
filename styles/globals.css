@@ -90,18 +90,32 @@
 }
 
 .text-display {
-  @apply lg:text-text-display text-xl leading-10;
+  @apply lg:text-text-display lg:text-xl text-base lg:leading-10 leading-6 font-normal;
 }
 
 
 
 body {
   background: var(--color-neutral-50);
-  color: var(--foreground);
+  color: var(--color-neutral-950);
   font-family: 'TikTokSans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
 }
 
 /* 为所有文本元素设置默认字体 */
 * {
   font-family: 'TikTokSans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+}
+
+/* 图片悬停放大效果 */
+.image-hover-zoom {
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.image-hover-zoom img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-hover-zoom:hover img {
+  transform: scale(1.1);
 }
