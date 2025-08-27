@@ -5,7 +5,7 @@ type ContentPath = string[];
 
 export const useContent = () => {
   const getContent = useMemo(() => {
-    return (path: string): string => {
+    return (path: string): any => {
       const keys = path.split('.');
       let result: any = contentData.pages;
       
@@ -14,11 +14,11 @@ export const useContent = () => {
           result = result[key];
         } else {
           console.warn(`Content path not found: ${path}`);
-          return path; // 返回路径作为fallback
+          return typeof result === 'string' ? path : null; // 返回null作为fallback
         }
       }
       
-      return typeof result === 'string' ? result : path;
+      return result;
     };
   }, []);
 

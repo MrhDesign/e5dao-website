@@ -2,8 +2,10 @@
 
 import { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import Button from './components/Button';
 import NewCard from './components/NewCard';
+import ProductCard from './components/ProductCard';
 import Footer from './components/Footer';
 import useContent from '../lib/useContent';
 import { useScrollRevealMultiple } from '../lib/useScrollReveal';
@@ -70,6 +72,10 @@ export default function Home() {
 
   // 首页最多显示4个新闻
   const newsData = allNewsData.slice(0, 4);
+
+  // 获取产品数据，首页显示8个
+  const productsData: any[] = getContent('products.items') || [];
+  const homeProductsData = productsData.slice(0, 8);
 
   // 配置ScrollReveal动画
   useScrollRevealMultiple([
@@ -145,6 +151,16 @@ export default function Home() {
         distance: '40px',
         duration: 600,
         delay: 300
+      }
+    },
+    {
+      selector: '.product-card',
+      config: {
+        origin: 'bottom',
+        distance: '40px',
+        duration: 700,
+        delay: 200,
+        interval: 100
       }
     }
   ]);
@@ -372,7 +388,7 @@ export default function Home() {
       </section>
 
 
-      <section className="lg:px-30 lg:pb-10 lg:pt-0 lg:bg-fill-one bg-fill-three py-5 ">
+      <section className="lg:px-30 lg:pb-10 lg:pt-0 bg-fill-one  py-5 ">
         <div className="flex flex-col">
           <h1 className="block lg:hidden lg:px-0 px-5 headline1 leading-10">Industry Application</h1>
           <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-x-5">
@@ -393,10 +409,28 @@ export default function Home() {
         </div>
       </section>
 
-       <section className='lg:px-30 lg:py-20 px-5'>
-        <h1 className="headline1 leading-10">Products</h1>
-        <div>
-          
+       <section className='lg:px-30 lg:py-20 px-5 py-10 bg-fill-three'>
+        <div className="flex flex-col">
+          <h1 className="headline1 leading-10 lg:mb-8 mb-2.5 lg:text-left">Products</h1>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 lg:gap-10">
+            {homeProductsData.map((product, index) => (
+              <ProductCard
+                key={product.id || index}
+                image={product.image}
+                alt={product.alt}
+                model={product.model}
+                title={product.title}
+                description={product.description}
+                className="product-card w-full"
+              />
+            ))}
+          </div>
+          {/* 查看更多按钮 */}
+          <div className="flex justify-center lg:mt-10 mt-5">
+            <Link href="/products">
+              <Button className="relative">View All Products</Button>
+            </Link>
+          </div>
         </div>
       </section>
 

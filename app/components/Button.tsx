@@ -19,19 +19,19 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   ...props
 }) => {
-  const baseClasses = 'transition-all duration-600 ease-in-out lg:text-2xl text-sm lg:font-normal font-medium lg:px-6 px-4 lg:py-3 py-2 bg-fill-one/90 text-text-black leading-none border border-border-one rounded-full inline-flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:lg:px-8 hover:px-6';
-  
+  const baseClasses = 'cursor-pointer transition-all duration-600 ease-in-out lg:text-2xl text-sm lg:font-normal font-medium lg:px-6 px-4 lg:py-3 py-2 bg-fill-one/90 text-text-black leading-none border border-border-one rounded-full inline-flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:lg:px-8 hover:px-6 hover:bg-fill-black hover:text-text-white';
+
   const variantClasses = {
     primary: '',
     secondary: 'bg-gray-600 text-white hover:bg-gray-700 focus-visible:ring-gray-500',
     outline: 'border border-gray-300 bg-transparent hover:bg-gray-50 text-gray-700 focus-visible:ring-gray-500',
     ghost: 'hover:bg-gray-100 text-gray-700 focus-visible:ring-gray-500'
   };
-  
 
-  
+
+
   const buttonClasses = `${baseClasses} ${variantClasses[variant]} ${className}`.trim();
-  
+
   const handleClick = onClick ? (e: React.MouseEvent<HTMLButtonElement>) => {
     if (loading || disabled) return;
     onClick(e);

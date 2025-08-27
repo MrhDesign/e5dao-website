@@ -30,6 +30,78 @@
         "title":"Carbon Fiber Overall Solution Plan",
         "content":"Carbon fiber box-type mobile command site system (In modern warfare, with the widespread use of high-altitude reconnaissance equipment and long-range firepower weapons, the survival ability of fixed command posts in frontline positions and rear areas in war is getting lower and lower. In the absence of command, it is difficult for the army to complete effective attack, defense and coordinated operations of various arms. In the Russian-Ukrainian war, due to the lack of modern command posts on the front line, the Russian side had to go to the front line to understand the front-line combat situation in real time. As a result, a large number of senior commanders were killed. Therefore, front-line commanders urgently need a lightweight, highly integrated, highly informationized, quickly deployable and quickly withdrawn mobile command post to convey combat assignments to individual soldiers and pass on the front-line combat situation to the upper-level command agency. Carry the \"command post\" on your shoulders and hold the \"information power\" in your hands"
       }
+    },
+    "products": {
+      "page": {
+        "title": "Products",
+        "description": "Discover our comprehensive range of medical equipment storage solutions designed for durability, functionality, and reliability."
+      },
+      "items": [
+        {
+          "id": 1,
+          "image": "/images/products.png",
+          "alt": "RM-1780TYX-01 Cabinet box",
+          "model": "RM-1780TYX-01",
+          "title": "Cabinet box",
+          "description": "Multi-functional medical box can store various medical equipment."
+        },
+        {
+          "id": 2,
+          "image": "/images/products.png",
+          "alt": "Medical Equipment Case",
+          "model": "RM-2580TYX-02",
+          "title": "Equipment case",
+          "description": "Durable and lightweight case designed for transporting sensitive medical instruments."
+        },
+        {
+          "id": 3,
+          "image": "/images/products.png",
+          "alt": "Portable Medical Kit",
+          "model": "RM-3680TYX-03",
+          "title": "Portable kit",
+          "description": "Compact and portable medical kit suitable for emergency response and field operations."
+        },
+        {
+          "id": 4,
+          "image": "/images/products.png",
+          "alt": "Heavy Duty Storage",
+          "model": "RM-4780TYX-04",
+          "title": "Heavy duty storage",
+          "description": "Heavy-duty storage solution with enhanced protection for valuable medical equipment."
+        },
+        {
+          "id": 5,
+          "image": "/images/products.png",
+          "alt": "Emergency Response Kit",
+          "model": "RM-5880TYX-05",
+          "title": "Emergency response kit",
+          "description": "Comprehensive emergency medical kit designed for rapid deployment in critical situations."
+        },
+        {
+          "id": 6,
+          "image": "/images/products.png",
+          "alt": "Mobile Medical Unit",
+          "model": "RM-6980TYX-06",
+          "title": "Mobile medical unit",
+          "description": "Portable medical unit with integrated storage and workspace for field operations."
+        },
+        {
+          "id": 7,
+          "image": "/images/products.png",
+          "alt": "Tactical Medical Case",
+          "model": "RM-7080TYX-07",
+          "title": "Tactical medical case",
+          "description": "Ruggedized medical case built for extreme environments and military applications."
+        },
+        {
+          "id": 8,
+          "image": "/images/products.png",
+          "alt": "Specialized Equipment Container",
+          "model": "RM-8180TYX-08",
+          "title": "Specialized container",
+          "description": "Custom-designed container for specialized medical equipment with climate control features."
+        }
+      ]
     }
   }
 }
