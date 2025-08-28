@@ -69,6 +69,20 @@ export default function Header() {
     }
   }, [pathname, isMobileMenuOpen]);
 
+  // 控制移动菜单打开时禁用背景滚动
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // 清理函数，组件卸载时恢复滚动
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   const toggleSubmenu = (itemName: string) => {
     setExpandedSubmenu(expandedSubmenu === itemName ? null : itemName);
   };
@@ -180,13 +194,13 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         <div 
-          className={`lg:hidden w-full bg-fill-one overflow-hidden transition-all duration-600 ease-in-out ${
+          className={`lg:hidden w-full  overflow-hidden transition-all duration-600 ease-in-out ${
             isMobileMenuOpen 
               ? 'opacity-100' 
               : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="bg-fill-one pt-5">
+          <div className="bg-fill-one/95 backdrop-blur-md pt-5 h-[calc(100vh-48px)]">
             {mobileNavigation.map((item, index) => (
               <div key={item.name}>
                 {/* Main menu item */}
