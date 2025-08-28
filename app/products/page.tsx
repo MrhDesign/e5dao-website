@@ -34,6 +34,7 @@ export default function Products() {
           {productsData.map((product: ProductData) => (
             <ProductCard
               key={product.id}
+              id={product.id}
               image={product.image}
               alt={product.alt}
               model={product.model}

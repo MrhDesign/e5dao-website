@@ -83,7 +83,7 @@ export default function Header() {
   };
 
   return (
-    <nav className="fixed w-full z-50 bg-fill-one/95 backdrop-blur-md  lg:h-20 h-12 ">
+    <nav className="fixed w-screen z-50 bg-fill-one/95 backdrop-blur-md  lg:h-20 h-12 ">
       <div className="h-full">
         <div className="w-full h-full lg:px-10 px-5 flex justify-between items-center">
           

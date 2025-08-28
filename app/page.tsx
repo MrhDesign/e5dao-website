@@ -6,9 +6,10 @@ import Link from 'next/link';
 import Button from './components/Button';
 import NewCard from './components/NewCard';
 import ProductCard from './components/ProductCard';
-import Footer from './components/Footer';
+import ProcessFlow from './components/ProcessFlow';
 import useContent from '../lib/useContent';
 import { useScrollRevealMultiple } from '../lib/useScrollReveal';
+import ContactForm from './components/ContactForm';
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -161,6 +162,24 @@ export default function Home() {
         duration: 700,
         delay: 200,
         interval: 100
+      }
+    },
+    {
+      selector: '.process-section',
+      config: {
+        origin: 'bottom',
+        distance: '50px',
+        duration: 800,
+        delay: 300
+      }
+    },
+    {
+      selector: '.contact-form',
+      config: {
+        origin: 'right',
+        distance: '60px',
+        duration: 800,
+        delay: 400
       }
     }
   ]);
@@ -347,7 +366,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='bg-fill-one'>
+      <section className='bg-fill-two'>
         <div className='px-30 py-20 lg:flex hidden gap-10 justify-between'>
           <div className='lg:order-1 w-[660px] h-[660px] image-hover-zoom solution-image'>
             <Image
@@ -388,7 +407,7 @@ export default function Home() {
       </section>
 
 
-      <section className="lg:px-30 lg:pb-10 lg:pt-0 bg-fill-one  py-5 ">
+      <section className="lg:px-30 lg:pb-10 lg:pt-0 bg-fill-two  py-5 ">
         <div className="flex flex-col">
           <h1 className="block lg:hidden lg:px-0 px-5 headline1 leading-10">Industry Application</h1>
           <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-x-5">
@@ -409,27 +428,41 @@ export default function Home() {
         </div>
       </section>
 
-       <section className='lg:px-30 lg:py-20 px-5 py-10 bg-fill-three'>
-        <div className="flex flex-col">
-          <h1 className="headline1 leading-10 lg:mb-8 mb-2.5 lg:text-left">Products</h1>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 lg:gap-10">
-            {homeProductsData.map((product, index) => (
-              <ProductCard
-                key={product.id || index}
-                image={product.image}
-                alt={product.alt}
-                model={product.model}
-                title={product.title}
-                description={product.description}
-                className="product-card w-full"
-              />
-            ))}
+      <section className='lg:px-30 lg:py-20 px-5 py-10 bg-fill-three'>
+        <h1 className="headline1 leading-10 lg:mb-8 mb-2.5 lg:text-left">Products</h1>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 lg:gap-10">
+          {homeProductsData.map((product, index) => (
+            <ProductCard
+              key={product.id || index}
+              id={product.id}
+              image={product.image}
+              alt={product.alt}
+              model={product.model}
+              title={product.title}
+              description={product.description}
+              className="product-card w-full"
+            />
+          ))}
+        </div>
+        {/* 查看更多按钮 */}
+        <div className="flex justify-center lg:mt-10 mt-5 product-card">
+          <Link href="/products">
+            <Button className="relative">View All Products</Button>
+          </Link>
+        </div>
+      </section>
+
+      <section className='lg:pl-30 lg:pr-0 px-5 lg:py-20 py-10 bg-fill-two lg:process-section'>
+        <h1 className="headline1 leading-10 lg:mb-20 mb-10 lg:text-left">Contact</h1>
+        <div className='flex lg:flex-row flex-col lg:gap-[100px] gap-10'>
+          <div className="lg:w-[640px] lg:headline2 text-2xl">
+            <p className='lg:mb-10 mb-5'>- Standard Products</p>
+            <p className='mb-5'>- Customization Process</p>
+            <ProcessFlow />
           </div>
-          {/* 查看更多按钮 */}
-          <div className="flex justify-center lg:mt-10 mt-5">
-            <Link href="/products">
-              <Button className="relative">View All Products</Button>
-            </Link>
+          <div className="flex-1 lg:bg-fill-white lg:p-10 rounded-l-sm">
+            <h1 className='headline1 mb-8'>Any Query? Please contact us</h1>
+            <ContactForm className="contact-form" />
           </div>
         </div>
       </section>

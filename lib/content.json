@@ -102,6 +102,54 @@
           "description": "Custom-designed container for specialized medical equipment with climate control features."
         }
       ]
+    },
+    "customization": {
+      "process": {
+        "steps": [
+          {
+            "id": 1,
+            "icon": "customer-service-2-line",
+            "title": "Customer Inquiry",
+            "description": "Contact our team to discuss requirements.",
+            "stepNumber": "1"
+          },
+          {
+            "id": 2,
+            "icon": "pencil-ruler-2-line",
+            "title": "Design Submission",
+            "description": "Provide samples or technical drawings.",
+            "stepNumber": "2"
+          },
+          {
+            "id": 3,
+            "icon": "quill-pen-ai-line",
+            "title": "Design&Production",
+            "description": "We initiate production based on specifications.",
+            "stepNumber": "3"
+          },
+          {
+            "id": 4,
+            "icon": "pantone-line",
+            "title": "Prototype Delivery",
+            "description": "A sample is manufactured for client review.",
+            "stepNumber": "4"
+          },
+          {
+            "id": 5,
+            "icon": "safe-2-fill",
+            "title": "Sample Approval",
+            "description": "Client confirms the sample before mass production.",
+            "stepNumber": "5"
+          },
+          {
+            "id": 6,
+            "icon": "mail-send-line",
+            "title": "Product Shipment",
+            "description": "Rigorous quality checks followed by delivery.",
+            "stepNumber": "6"
+          }
+        ]
+      }
     }
   }
 }

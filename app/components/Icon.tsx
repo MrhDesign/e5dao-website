@@ -17,7 +17,7 @@ export type IconName =
   | 'pantone-line';
 
 export interface IconProps extends React.HTMLAttributes<HTMLElement> {
-  name: IconName;
+  name: string;
   className?: string;
 }
 
