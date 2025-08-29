@@ -17,61 +17,8 @@ export default function Home() {
   const [canAutoplay, setCanAutoplay] = useState(true);
   const { getContent } = useContent();
 
-  // 新闻卡片数据
-  const allNewsData = [
-    {
-      id: 1,
-      slug: "carbon-fiber-advantages",
-      image: "/images/House.png",
-      alt: "Carbon Fiber Building",
-      year: "2025",
-      date: "June 11",
-      title: "What are the advantages of using carbon fiber?",
-      description: "Carbon fiber offers numerous advantages, including remarkable strength-to-weight ratio, resistance to corrosion, and excellent fatigue properties. These attributes make it an ideal choice in aerospace, automotive, and sports equipment. Additionally, its low thermal expansion and high stiffness ensure durability in various applications."
-    },
-    {
-      id: 2,
-      slug: "modern-construction-materials",
-      image: "/images/House.png",
-      alt: "Advanced Materials",
-      year: "2025",
-      date: "June 10",
-      title: "Revolutionary Materials in Modern Construction",
-      description: "Modern construction industry is witnessing a revolution with advanced materials offering superior performance, sustainability, and cost-effectiveness. These innovative solutions are transforming how we build and design structures for the future."
-    },
-    {
-      id: 3,
-      slug: "sustainable-technology-solutions",
-      image: "/images/House.png",
-      alt: "Sustainable Technology",
-      year: "2025",
-      date: "June 09",
-      title: "Sustainable Technology Solutions for Tomorrow",
-      description: "Sustainability is at the forefront of technological advancement. From renewable energy integration to eco-friendly manufacturing processes, these solutions are paving the way for a greener and more sustainable future."
-    },
-    {
-      id: 4,
-      slug: "innovation-hub-technologies",
-      image: "/images/House.png",
-      alt: "Innovation Hub",
-      year: "2025",
-      date: "June 08",
-      title: "Innovation Hub: Driving Future Technologies",
-      description: "Our innovation hub serves as the catalyst for breakthrough technologies, bringing together researchers, engineers, and visionaries to develop solutions that will shape the future of various industries."
-    },
-    {
-      id: 5,
-      slug: "future-aerospace-materials",
-      image: "/images/House.png",
-      alt: "Aerospace Innovation",
-      year: "2025",
-      date: "June 07",
-      title: "Future of Aerospace Materials",
-      description: "The aerospace industry continues to push boundaries with next-generation materials that offer unprecedented performance characteristics, enabling safer and more efficient aircraft designs."
-    }
-  ];
-
-  // 首页最多显示4个新闻
+  // 获取新闻数据，首页显示4个
+  const allNewsData: any[] = getContent('news.items') || [];
   const newsData = allNewsData.slice(0, 4);
 
   // 获取产品数据，首页显示8个

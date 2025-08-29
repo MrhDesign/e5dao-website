@@ -236,6 +236,110 @@
           "backgroundImage": "/images/production-line-6.png"
         }
       ]
+    },
+    "news": {
+      "items": [
+        {
+          "id": 1,
+          "slug": "carbon-fiber-advantages",
+          "image": "/images/House.png",
+          "alt": "Carbon Fiber Building",
+          "year": "2025",
+          "date": "June 11",
+          "title": "What are the advantages of using carbon fiber?",
+          "description": "Carbon fiber offers numerous advantages, including remarkable strength-to-weight ratio, resistance to corrosion, and excellent fatigue properties. These attributes make it an ideal choice in aerospace, automotive, and sports equipment. Additionally, its low thermal expansion and high stiffness ensure durability in various applications."
+        },
+        {
+          "id": 2,
+          "slug": "modern-construction-materials",
+          "image": "/images/House.png",
+          "alt": "Advanced Materials",
+          "year": "2025",
+          "date": "June 10",
+          "title": "Revolutionary Materials in Modern Construction",
+          "description": "Modern construction industry is witnessing a revolution with advanced materials offering superior performance, sustainability, and cost-effectiveness. These innovative solutions are transforming how we build and design structures for the future."
+        },
+        {
+          "id": 3,
+          "slug": "sustainable-technology-solutions",
+          "image": "/images/House.png",
+          "alt": "Sustainable Technology",
+          "year": "2025",
+          "date": "June 09",
+          "title": "Sustainable Technology Solutions for Tomorrow",
+          "description": "Sustainability is at the forefront of technological advancement. From renewable energy integration to eco-friendly manufacturing processes, these solutions are paving the way for a greener and more sustainable future."
+        },
+        {
+          "id": 4,
+          "slug": "innovation-hub-technologies",
+          "image": "/images/House.png",
+          "alt": "Innovation Hub",
+          "year": "2025",
+          "date": "June 08",
+          "title": "Innovation Hub: Driving Future Technologies",
+          "description": "Our innovation hub serves as the catalyst for breakthrough technologies, bringing together researchers, engineers, and visionaries to develop solutions that will shape the future of various industries."
+        },
+        {
+          "id": 5,
+          "slug": "future-aerospace-materials",
+          "image": "/images/House.png",
+          "alt": "Aerospace Innovation",
+          "year": "2025",
+          "date": "June 07",
+          "title": "Future of Aerospace Materials",
+          "description": "The aerospace industry continues to push boundaries with next-generation materials that offer unprecedented performance characteristics, enabling safer and more efficient aircraft designs."
+        },
+        {
+          "id": 6,
+          "slug": "advanced-composites-research",
+          "image": "/images/House.png",
+          "alt": "Advanced Composites",
+          "year": "2025",
+          "date": "June 06",
+          "title": "Breakthrough in Advanced Composites Research",
+          "description": "Recent breakthroughs in composite materials research are opening new possibilities for lightweight, high-strength applications across multiple industries, from automotive to marine engineering."
+        },
+        {
+          "id": 7,
+          "slug": "smart-manufacturing-processes",
+          "image": "/images/House.png",
+          "alt": "Smart Manufacturing",
+          "year": "2025",
+          "date": "June 05",
+          "title": "Smart Manufacturing: The Future is Now",
+          "description": "Smart manufacturing technologies are revolutionizing production processes, enabling greater efficiency, quality control, and customization while reducing waste and environmental impact."
+        },
+        {
+          "id": 8,
+          "slug": "next-gen-material-science",
+          "image": "/images/House.png",
+          "alt": "Material Science",
+          "year": "2025",
+          "date": "June 04",
+          "title": "Next-Generation Material Science Innovations",
+          "description": "Cutting-edge research in material science is unlocking new possibilities for stronger, lighter, and more versatile materials that will define the next era of technological advancement."
+        },
+        {
+          "id": 9,
+          "slug": "sustainable-production-methods",
+          "image": "/images/House.png",
+          "alt": "Sustainable Production",
+          "year": "2025",
+          "date": "June 03",
+          "title": "Sustainable Production Methods for Industry 4.0",
+          "description": "Industry 4.0 is driving the adoption of sustainable production methods that minimize environmental impact while maximizing efficiency and product quality through advanced automation and AI."
+        },
+        {
+          "id": 10,
+          "slug": "global-market-expansion",
+          "image": "/images/House.png",
+          "alt": "Global Market",
+          "year": "2025",
+          "date": "June 02",
+          "title": "Global Market Expansion Strategies",
+          "description": "Strategic approaches to global market expansion are essential for companies looking to scale their operations and bring innovative solutions to international markets."
+        }
+      ]
     }
   }
 }
