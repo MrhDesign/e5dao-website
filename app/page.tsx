@@ -17,13 +17,14 @@ export default function Home() {
   const [canAutoplay, setCanAutoplay] = useState(true);
   const { getContent } = useContent();
 
-  // 获取新闻数据，首页显示4个
-  const allNewsData: any[] = getContent('news.items') || [];
-  const newsData = allNewsData.slice(0, 4);
 
   // 获取产品数据，首页显示8个
   const productsData: any[] = getContent('products.items') || [];
   const homeProductsData = productsData.slice(0, 8);
+
+  // 获取行业应用数据，首页显示4个
+  const allIndustryData: any[] = getContent('industryApplications.items') || [];
+  const paginatedData = allIndustryData.slice(0, 4);
 
   // 配置ScrollReveal动画
   useScrollRevealMultiple([
@@ -353,21 +354,22 @@ export default function Home() {
         </div>
       </section>
 
-
-      <section className="lg:px-30 lg:pb-10 lg:pt-0 bg-fill-two  py-5 ">
+      {/* 行业案例展示 */}
+      <section className="lg:px-30 lg:pb-10 lg:pt-0 bg-fill-two p-5">
         <div className="flex flex-col">
-          <h1 className="block lg:hidden lg:px-0 px-5 headline1 leading-10">Industry Application</h1>
-          <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-x-5">
-            {newsData.map((news) => (
+          <h1 className="block lg:hidden headline1 leading-10 pb-2.5">Industry Application</h1>
+          <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-x-5 lg:gap-y-0 gap-y-5">
+            {paginatedData.map((application) => (
               <NewCard
-                key={news.id}
-                image={news.image}
-                alt={news.alt}
-                year={news.year}
-                date={news.date}
-                title={news.title}
-                description={news.description}
-                slug={news.slug}
+                key={application.id}
+                image={application.image}
+                alt={application.alt}
+                year={application.year}
+                date={application.date}
+                title={application.title}
+                description={application.description}
+                slug={application.slug}
+                linkType="application"
                 className="news-card"
               />
             ))}

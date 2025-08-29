@@ -340,6 +340,70 @@
           "description": "Strategic approaches to global market expansion are essential for companies looking to scale their operations and bring innovative solutions to international markets."
         }
       ]
+    },
+    "industryApplications": {
+      "items": [
+        {
+          "id": 1,
+          "slug": "military-command-systems",
+          "image": "/images/House.png",
+          "alt": "Military Command Systems",
+          "year": "2025",
+          "date": "Application",
+          "title": "Mobile Command Posts for Defense Forces",
+          "description": "Lightweight carbon fiber command posts providing tactical advantages in military operations. These systems offer enhanced mobility, durability, and protection while maintaining full communication capabilities in challenging environments."
+        },
+        {
+          "id": 2,
+          "slug": "aerospace-components",
+          "image": "/images/House.png",
+          "alt": "Aerospace Applications",
+          "year": "2025",
+          "date": "Application",
+          "title": "Aircraft Structural Components",
+          "description": "High-performance carbon fiber components for commercial and military aircraft. Our solutions provide significant weight reduction while maintaining structural integrity and meeting stringent aerospace safety standards."
+        },
+        {
+          "id": 3,
+          "slug": "medical-equipment-cases",
+          "image": "/images/House.png",
+          "alt": "Medical Equipment",
+          "year": "2025",
+          "date": "Application",
+          "title": "Emergency Medical Response Systems",
+          "description": "Specialized medical equipment storage and transport solutions for emergency responders. Features include climate control, shock resistance, and rapid deployment capabilities for critical medical situations."
+        },
+        {
+          "id": 4,
+          "slug": "rescue-equipment",
+          "image": "/images/House.png",
+          "alt": "Rescue Operations",
+          "year": "2025",
+          "date": "Application",
+          "title": "Search and Rescue Equipment",
+          "description": "Durable and lightweight rescue equipment designed for extreme conditions. Our carbon fiber solutions enable faster response times and improved safety for rescue personnel in challenging environments."
+        },
+        {
+          "id": 5,
+          "slug": "transportation-containers",
+          "image": "/images/House.png",
+          "alt": "Transportation Solutions",
+          "year": "2025",
+          "date": "Application",
+          "title": "High-End Transportation Containers",
+          "description": "Premium carbon fiber containers for luxury transportation applications. Combining elegance with functionality, these solutions offer superior protection and style for high-value cargo transport."
+        },
+        {
+          "id": 6,
+          "slug": "communication-systems",
+          "image": "/images/House.png",
+          "alt": "Communication Equipment",
+          "year": "2025",
+          "date": "Application",
+          "title": "Portable Communication Cases",
+          "description": "Advanced communication equipment housing designed for field operations. Features electromagnetic shielding, weather resistance, and rapid deployment for critical communication infrastructure."
+        }
+      ]
     }
   }
 }

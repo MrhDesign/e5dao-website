@@ -32,9 +32,8 @@ export default function ProductDetail() {
 
   // 面包屑数据
   const breadcrumbItems = [
-    { label: 'Home', href: '/' },
-    { label: 'Products', href: '/products' },
-    { label: product?.title || 'Product Detail' }
+    { label: 'Products', href: '/products', position: 1 },
+    { label: product?.title || 'Product Detail', position: 2, isCurrentPage: true }
   ];
 
   // 产品图片数组（现在使用同一张图片，可以后续扩展）
@@ -97,7 +96,11 @@ export default function ProductDetail() {
     <div className="min-h-screen bg-fill-one">
       {/* 面包屑导航 */}
       <section className="lg:px-30 px-5 pt-5">
-        <Breadcrumb items={breadcrumbItems} />
+        <Breadcrumb 
+          items={breadcrumbItems} 
+          separator="slash"
+          enableStructuredData={true}
+        />
       </section>
 
       {/* 产品主要信息区域 */}

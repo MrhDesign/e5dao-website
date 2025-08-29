@@ -8,18 +8,21 @@ export interface BreadcrumbItem {
   label: string;
   href?: string;
   isCurrentPage?: boolean;
+  position?: number;
 }
 
 interface BreadcrumbProps {
   items: BreadcrumbItem[];
   separator?: 'chevron' | 'slash' | 'arrow';
   className?: string;
+  enableStructuredData?: boolean;
 }
 
 const Breadcrumb: React.FC<BreadcrumbProps> = ({
   items,
   separator = 'chevron',
-  className = ''
+  className = '',
+  enableStructuredData = false
 }) => {
   const getSeparatorIcon = () => {
     switch (separator) {
@@ -38,22 +41,40 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({
     <nav 
       aria-label="Breadcrumb" 
       className={`flex items-center text-sm ${className}`}
+      {...(enableStructuredData && {
+        itemScope: true,
+        itemType: "https://schema.org/BreadcrumbList"
+      })}
     >
       <ol className="flex items-center">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
           const isCurrentPage = item.isCurrentPage || isLast;
+          const position = item.position || index + 1;
 
           return (
-            <li key={index} className="flex items-center">
+            <li 
+              key={index} 
+              className="flex items-center"
+              {...(enableStructuredData && {
+                itemProp: "itemListElement",
+                itemScope: true,
+                itemType: "https://schema.org/ListItem"
+              })}
+            >
               {/* Breadcrumb Item */}
               {item.href && !isCurrentPage ? (
                 <Link 
                   href={item.href}
                   className="text-text-display hover:text-text-black transition-colors duration-200 truncate max-w-xs"
                   title={item.label}
+                  {...(enableStructuredData && {
+                    itemProp: "item"
+                  })}
                 >
-                  {item.label}
+                  <span {...(enableStructuredData && { itemProp: "name" })}>
+                    {item.label}
+                  </span>
                 </Link>
               ) : (
                 <span 
@@ -64,15 +85,21 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({
                   }`}
                   title={item.label}
                   aria-current={isCurrentPage ? 'page' : undefined}
+                  {...(enableStructuredData && { itemProp: "name" })}
                 >
                   {item.label}
                 </span>
               )}
 
+              {/* Schema.org position meta data */}
+              {enableStructuredData && (
+                <meta itemProp="position" content={position.toString()} />
+              )}
+
               {/* Separator */}
               {!isLast && (
-                <span className="flex-shrink-0" aria-hidden="true">
-                  {getSeparatorIcon()}
+                <span className="flex-shrink-0 text-gray-400" aria-hidden="true">
+                  {separator === 'slash' ? ' / ' : getSeparatorIcon()}
                 </span>
               )}
             </li>

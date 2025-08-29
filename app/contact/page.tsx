@@ -17,16 +17,16 @@ export default function Contact() {
   };
 
   return (
-    <section className='px-30 pb-20 bg-fill-two lg:process-section'>
-      <h1 className="text-[100px] italic font-black py-20 lg:text-left">Contact</h1>
+    <section className='lg:px-30 lg:pb-20 p-5 bg-fill-two lg:process-section'>
+      <h1 className="text-[32px] lg:text-[100px] italic font-black lg:py-20 py-5">Contact</h1>
 
       <div className='flex lg:flex-row flex-col lg:gap-[100px] gap-10'>
-        <div className="lg:w-[640px] lg:headline2 text-2xl">
+        <div className="lg:w-[640px] lg:headline2 text-2xl lg:order-1 order-3">
           <p className='lg:mb-10 mb-5'>- Standard Products</p>
           <p className='mb-5'>- Customization Process</p>
           <ProcessFlow />
         </div>
-        <div className="flex-1 lg:bg-fill-white lg:p-10 rounded-l-sm">
+        <div className="flex-1 lg:bg-fill-white lg:p-10 rounded-l-sm lg:order-2">
           <h1 className='headline1 mb-8'>Any Query? Please contact us</h1>
           <ContactForm className="contact-form" />
         </div>

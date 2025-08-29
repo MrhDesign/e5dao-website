@@ -13,6 +13,7 @@ interface NewCardProps {
   description: string;
   className?: string;
   slug?: string;
+  linkType?: 'news' | 'application'; // 新增：指定链接类型
 }
 
 const NewCard: React.FC<NewCardProps> = ({
@@ -23,7 +24,8 @@ const NewCard: React.FC<NewCardProps> = ({
   title,
   description,
   className = '',
-  slug
+  slug,
+  linkType = 'news' // 默认为新闻类型
 }) => {
   const cardContent = (
     <>
@@ -68,7 +70,7 @@ const NewCard: React.FC<NewCardProps> = ({
 
 
       {/* mobile */}
-      <div className='lg:hidden flex px-5 py-2.5'>
+      <div className='lg:hidden flex'>
         <div className='w-[140px]'>
           <Image
             src={image}
@@ -102,7 +104,8 @@ const NewCard: React.FC<NewCardProps> = ({
   );
 
   if (slug) {
-    return <Link href={`/news/${slug}`}>{cardContent}</Link>;
+    const linkPath = linkType === 'application' ? `/news/applications/${slug}` : `/news/articles/${slug}`;
+    return <Link href={linkPath}>{cardContent}</Link>;
   }
 
   return cardContent;
