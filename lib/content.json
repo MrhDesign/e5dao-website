@@ -150,6 +150,92 @@
           }
         ]
       }
+    },
+    "aboutUs": {
+      "features": [
+        {
+          "id": 1,
+          "iconName": "a-AboutUS-icon-1",
+          "title": "Technical Proficiency",
+          "description": "Years of expertise in developing and manufacturing high-performance composite materials."
+        },
+        {
+          "id": 2,
+          "iconName": "a-AboutUS-icon-2",
+          "title": "Integrated Production",
+          "description": "Smart Manufacturing - Design - Testing - Full Process."
+        },
+        {
+          "id": 3,
+          "iconName": "a-AboutUS-icon-3",
+          "title": "High Customization Capability",
+          "description": "Support rapid response personalized customization and small-batch testing.."
+        }
+      ],
+      "industries": [
+        {
+          "id": 1,
+          "title": "Military Equipment",
+          "subtitle": "Mobile box-type command posts,Tactical backpacks,Armor modules,Weapon accessories,Vehicle shelters",
+          "backgroundImage": "/images/fields-1.png"
+        },
+        {
+          "id": 2,
+          "title": "Aerospace",
+          "subtitle": "Lightweight structural components,Seat frames",
+          "backgroundImage": "/images/fields-2.png"
+        },
+        {
+          "id": 3,
+          "title": "Medical & Rescue",
+          "subtitle": "Emergency medical systems,Foldable stretchers,Rescue frames",
+          "backgroundImage": "/images/fields-3.png"
+        },
+        {
+          "id": 4,
+          "title": "High-end Transportation",
+          "subtitle": "Carbon fiber containers,Vehicle-mounted components",
+          "backgroundImage": "/images/fields-4.png"
+        },
+        {
+          "id": 5,
+          "title": "Emergency Systems",
+          "subtitle": "Portable command cases,Emergency communication cases",
+          "backgroundImage": "/images/fields-5.png"
+        }
+      ],
+      "productionLines": [
+        {
+          "id": 1,
+          "title": "CNC mold processing workshop",
+          "backgroundImage": "/images/production-line-1.png"
+        },
+        {
+          "id": 2,
+          "title": "Carbon fiber prepreg cold storage",
+          "backgroundImage": "/images/production-line-2.png"
+        },
+        {
+          "id": 3,
+          "title": "Carbon fiber prepreg layup site",
+          "backgroundImage": "/images/production-line-3.png"
+        },
+        {
+          "id": 4,
+          "title": "Carbon fiber container molding line",
+          "backgroundImage": "/images/production-line-4.png"
+        },
+        {
+          "id": 5,
+          "title": "Grinding & painting site",
+          "backgroundImage": "/images/production-line-5.png"
+        },
+        {
+          "id": 6,
+          "title": "Carbon fiber container packaging &shipment",
+          "backgroundImage": "/images/production-line-6.png"
+        }
+      ]
     }
   }
 }
