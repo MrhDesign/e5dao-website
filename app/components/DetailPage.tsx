@@ -289,7 +289,7 @@ export default function DetailPage({ slug, type }: DetailPageProps) {
         </header>
 
         {/* 面包屑导航 */}
-        <div className="lg:px-30 px-5 py-4">
+        <div className="hidden lg:block px-30  py-4">
           <Breadcrumb
             items={breadcrumbs}
             separator="slash"

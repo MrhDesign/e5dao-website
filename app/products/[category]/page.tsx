@@ -125,6 +125,7 @@ export default function ProductsPage() {
                           <ProductCard
                             key={`${category.slug}-${product.id || index}`}
                             id={product.id}
+                            categoryId={product.categoryId}
                             image={product.image}
                             alt={product.alt}
                             model={product.model}
@@ -155,6 +156,7 @@ export default function ProductsPage() {
                         <ProductCard
                           key={`${currentCategory.slug}-${product.id || index}`}
                           id={product.id}
+                          categoryId={product.categoryId}
                           image={product.image}
                           alt={product.alt}
                           model={product.model}

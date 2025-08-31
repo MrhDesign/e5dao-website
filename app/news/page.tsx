@@ -17,14 +17,15 @@ export default function News() {
   const industryData = allIndustryData.slice(0, 6);
 
   return (
-    <section className='lg:px-30 px-5 lg:pb-10 pb-5 bg-fill-two lg:process-section'>
-      <div className='flex justify-between items-center'>
+    <section className='lg:px-30  lg:pb-10 p-5 bg-fill-two lg:process-section'>
 
+      <div className='flex justify-between items-center'>
         <h1 className="text-[32px] lg:text-[100px] italic font-black lg:py-10 py-5">Media Releases</h1>
         <Link href="/news/articles" className=' hidden lg:block'>
           <Button>View All News</Button>
         </Link>
       </div>
+
       <div className="grid grid-cols-1 lg:gap-y-0 gap-y-2.5">
         {newsData.map((news) => (
           <NewCard
@@ -40,6 +41,7 @@ export default function News() {
           />
         ))}
       </div>
+
       <div className='py-5 lg:hidden flex'>
         <Link href="/news/articles" className='flex-1'>
           <Button className='w-full'>View All News</Button>

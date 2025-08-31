@@ -25,7 +25,7 @@ export default function NewsListPage({ config }: NewsListPageProps) {
   const { getContent } = useContent();
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
-  
+
   // 获取数据
   const allData: any[] = getContent(config.contentKey) || [];
 
@@ -35,7 +35,7 @@ export default function NewsListPage({ config }: NewsListPageProps) {
     const endIndex = startIndex + itemsPerPage;
     const paginatedData = allData.slice(startIndex, endIndex);
     const totalPages = Math.ceil(allData.length / itemsPerPage);
-    
+
     return { paginatedData, totalPages };
   }, [allData, currentPage, itemsPerPage]);
 
@@ -52,10 +52,10 @@ export default function NewsListPage({ config }: NewsListPageProps) {
   ];
 
   return (
-    <section className='lg:px-30 lg:pb-20 p-2.5 bg-fill-two lg:process-section'>
+    <section className='lg:px-30 lg:pb-20 p-5 bg-fill-two lg:process-section'>
       {/* 导航面包屑 */}
-      <div className="py-5">
-        <Breadcrumb 
+      <div className="hidden lg:block py-5">
+        <Breadcrumb
           items={breadcrumbItems}
           separator="slash"
           enableStructuredData={true}
@@ -64,12 +64,13 @@ export default function NewsListPage({ config }: NewsListPageProps) {
       </div>
 
       {/* 页面标题和统计 */}
-        <div className="flex justify-between items-end mb-6">
-          <h1 className="text-[32px] lg:text-[100px]  italic font-black lg:py-10 lg:text-left">{config.title}</h1>
-        </div>
+
+      <div className='flex justify-between items-end'>
+        <h1 className="text-[32px] lg:text-[100px] italic font-black lg:py-10 py-5">{config.title}</h1>
+      </div>
 
       {/* 内容网格 */}
-      <div className={`grid ${config.gridCols || 'lg:grid-cols-2 grid-cols-1'} lg:gap-x-5 gap-y-8 min-h-[600px]`}>
+      <div className={`grid ${config.gridCols || 'lg:grid-cols-2 grid-cols-1'} lg:gap-x-5 gap-y-2.5 min-h-[600px]`}>
         {paginatedData.map((item) => (
           <NewCard
             key={item.id}
@@ -99,7 +100,7 @@ export default function NewsListPage({ config }: NewsListPageProps) {
 
       {/* 返回链接 */}
       <div className="text-center mt-16">
-        <Link 
+        <Link
           href="/news"
           className="inline-flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full transition-colors"
         >
