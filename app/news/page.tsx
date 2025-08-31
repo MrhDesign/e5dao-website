@@ -48,7 +48,7 @@ export default function News() {
 
       <div className='flex justify-between items-center'>
         <h1 className="text-[32px] lg:text-[100px] italic font-black lg:py-20 py-5">Industry Applications</h1>
-        <Link href="/news/articles" className=' hidden lg:block'>
+        <Link href="/news/applications" className=' hidden lg:block'>
           <Button>View All News</Button>
         </Link>
       </div>
@@ -69,7 +69,7 @@ export default function News() {
         ))}
       </div>
         <div className='py-5 lg:hidden flex'>
-        <Link href="/news/articles" className='flex-1'>
+        <Link href="/news/applications" className='flex-1'>
           <Button className='w-full'>View All News</Button>
         </Link>
       </div>

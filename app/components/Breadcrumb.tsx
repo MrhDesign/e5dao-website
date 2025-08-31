@@ -8,12 +8,11 @@ export interface BreadcrumbItem {
   label: string;
   href?: string;
   isCurrentPage?: boolean;
-  position?: number;
 }
 
 interface BreadcrumbProps {
   items: BreadcrumbItem[];
-  separator?: 'chevron' | 'slash' | 'arrow';
+  separator?: 'chevron' | 'slash';
   className?: string;
   enableStructuredData?: boolean;
 }
@@ -24,19 +23,6 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({
   className = '',
   enableStructuredData = false
 }) => {
-  const getSeparatorIcon = () => {
-    switch (separator) {
-      case 'chevron':
-        return <Icon name="right" className="text-text-display text-sm mx-2" />;
-      case 'slash':
-        return <span className="text-text-display mx-2">/</span>;
-      case 'arrow':
-        return <span className="text-text-display mx-2">→</span>;
-      default:
-        return <Icon name="right" className="text-text-display text-sm mx-2" />;
-    }
-  };
-
   return (
     <nav 
       aria-label="Breadcrumb" 
@@ -50,7 +36,6 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
           const isCurrentPage = item.isCurrentPage || isLast;
-          const position = item.position || index + 1;
 
           return (
             <li 
@@ -66,8 +51,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({
               {item.href && !isCurrentPage ? (
                 <Link 
                   href={item.href}
-                  className="text-text-display hover:text-text-black transition-colors duration-200 truncate max-w-xs"
-                  title={item.label}
+                  className="text-text-display hover:text-text-black transition-colors duration-200"
                   {...(enableStructuredData && {
                     itemProp: "item"
                   })}
@@ -78,12 +62,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({
                 </Link>
               ) : (
                 <span 
-                  className={`truncate max-w-xs ${
-                    isCurrentPage 
-                      ? 'text-text-black font-medium' 
-                      : 'text-text-display'
-                  }`}
-                  title={item.label}
+                  className={isCurrentPage ? 'text-text-black font-medium' : 'text-text-display'}
                   aria-current={isCurrentPage ? 'page' : undefined}
                   {...(enableStructuredData && { itemProp: "name" })}
                 >
@@ -93,13 +72,13 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({
 
               {/* Schema.org position meta data */}
               {enableStructuredData && (
-                <meta itemProp="position" content={position.toString()} />
+                <meta itemProp="position" content={(index + 1).toString()} />
               )}
 
               {/* Separator */}
               {!isLast && (
-                <span className="flex-shrink-0 text-gray-400" aria-hidden="true">
-                  {separator === 'slash' ? ' / ' : getSeparatorIcon()}
+                <span className="text-text-display mx-2" aria-hidden="true">
+                  {separator === 'slash' ? '/' : <Icon name="right" className="text-sm" />}
                 </span>
               )}
             </li>

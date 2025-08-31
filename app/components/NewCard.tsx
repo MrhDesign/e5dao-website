@@ -33,7 +33,7 @@ const NewCard: React.FC<NewCardProps> = ({
       <div className={`hidden p-5 lg:flex hover:bg-fill-three rounded-sm ${className}`}>
         {/* 左侧图片区域 */}
         <div className="flex border-r border-border-one">
-          <div className='w-[280px]'>
+          <div className='w-[180px]'>
             <Image
               src={image}
               alt={alt}
@@ -62,7 +62,7 @@ const NewCard: React.FC<NewCardProps> = ({
             {title}
           </h2>
           {/* 描述文本 */}
-          <p className="text-display line-clamp-3">
+          <p className="text-display line-clamp-2">
             {description}
           </p>
         </div>
