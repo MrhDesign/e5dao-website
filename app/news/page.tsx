@@ -20,7 +20,7 @@ export default function News() {
     <section className='lg:px-30 px-5 lg:pb-10 pb-5 bg-fill-two lg:process-section'>
       <div className='flex justify-between items-center'>
 
-        <h1 className="text-[32px] lg:text-[100px] italic font-black lg:py-20 py-5">Media Releases</h1>
+        <h1 className="text-[32px] lg:text-[100px] italic font-black lg:py-10 py-5">Media Releases</h1>
         <Link href="/news/articles" className=' hidden lg:block'>
           <Button>View All News</Button>
         </Link>

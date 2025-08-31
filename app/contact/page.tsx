@@ -18,7 +18,7 @@ export default function Contact() {
 
   return (
     <section className='lg:px-30 lg:pb-20 p-5 bg-fill-two lg:process-section'>
-      <h1 className="text-[32px] lg:text-[100px] italic font-black lg:py-20 py-5">Contact</h1>
+      <h1 className="text-[32px] lg:text-[100px] italic font-black lg:py-10 py-5">Contact</h1>
 
       <div className='flex lg:flex-row flex-col lg:gap-[100px] gap-10'>
         <div className="lg:w-[640px] lg:headline2 text-2xl lg:order-1 order-3">

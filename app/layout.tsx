@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="">
         <Header />
-        <main className="lg:pt-20 pt-12 w-screen overflow-x-hidden">{children}</main>
+        <main className="lg:pt-20 pt-12 w-screen">{children}</main>
         <Footer />
       </body>
     </html>

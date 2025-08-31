@@ -65,7 +65,7 @@ export default function NewsListPage({ config }: NewsListPageProps) {
 
       {/* 页面标题和统计 */}
         <div className="flex justify-between items-end mb-6">
-          <h1 className="text-[32px] lg:text-[100px]  italic font-black lg:py-20 lg:text-left">{config.title}</h1>
+          <h1 className="text-[32px] lg:text-[100px]  italic font-black lg:py-10 lg:text-left">{config.title}</h1>
         </div>
 
       {/* 内容网格 */}
