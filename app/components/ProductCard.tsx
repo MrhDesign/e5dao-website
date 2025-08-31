@@ -27,14 +27,14 @@ export default function ProductCard({
   const cardContent = (
     <div className={`group flex flex-col cursor-pointer rounded-sm overflow-hidden bg-fill-four transition-all duration-300 hover:shadow-xl ${className}`}>
       {/* 产品图片区域 */}
-      <div className="w-full h-full overflow-hidden">
-        <div className='w-full relative aspect-[4/4]'>
+      <div className="w-full h-full overflow-hidden relative z-0">
+        <div className='w-full relative aspect-[4/4] overflow-hidden'>
           <Image
             src={image}
             alt={alt}
             fill
             sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-            className="object-cover transition-transform duration-600 group-hover:scale-125"
+            className="object-cover transition-transform duration-600 group-hover:scale-110"
           />
         </div>
       </div>

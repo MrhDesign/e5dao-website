@@ -25,82 +25,139 @@
       "cardOne":{
         "title":"Carbon Fiber Overall Solution Plan",
         "content":"Carbon fiber box-type mobile command site system (In modern warfare, with the widespread use of high-altitude reconnaissance equipment and long-range firepower weapons, the survival ability of fixed command posts in frontline positions and rear areas in war is getting lower and lower. In the absence of command, it is difficult for the army to complete effective attack, defense and coordinated operations of various arms. In the Russian-Ukrainian war, due to the lack of modern command posts on the front line, the Russian side had to go to the front line to understand the front-line combat situation in real time. As a result, a large number of senior commanders were killed. Therefore, front-line commanders urgently need a lightweight, highly integrated, highly informationized, quickly deployable and quickly withdrawn mobile command post to convey combat assignments to individual soldiers and pass on the front-line combat situation to the upper-level command agency. Carry the \"command post\" on your shoulders and hold the \"information power\" in your hands"
-      },
-      "cardTwo":{
-        "title":"Carbon Fiber Overall Solution Plan",
-        "content":"Carbon fiber box-type mobile command site system (In modern warfare, with the widespread use of high-altitude reconnaissance equipment and long-range firepower weapons, the survival ability of fixed command posts in frontline positions and rear areas in war is getting lower and lower. In the absence of command, it is difficult for the army to complete effective attack, defense and coordinated operations of various arms. In the Russian-Ukrainian war, due to the lack of modern command posts on the front line, the Russian side had to go to the front line to understand the front-line combat situation in real time. As a result, a large number of senior commanders were killed. Therefore, front-line commanders urgently need a lightweight, highly integrated, highly informationized, quickly deployable and quickly withdrawn mobile command post to convey combat assignments to individual soldiers and pass on the front-line combat situation to the upper-level command agency. Carry the \"command post\" on your shoulders and hold the \"information power\" in your hands"
       }
     },
     "products": {
-      "page": {
-        "title": "Products",
-        "description": "Discover our comprehensive range of medical equipment storage solutions designed for durability, functionality, and reliability."
-      },
-      "items": [
+      "categories": [
         {
           "id": 1,
-          "image": "/images/products.png",
-          "alt": "RM-1780TYX-01 Cabinet box",
-          "model": "RM-1780TYX-01",
-          "title": "Cabinet box",
-          "description": "Multi-functional medical box can store various medical equipment."
+          "title": "Integrated Carbon Fiber Solution"
         },
         {
           "id": 2,
-          "image": "/images/products.png",
-          "alt": "Medical Equipment Case",
-          "model": "RM-2580TYX-02",
-          "title": "Equipment case",
-          "description": "Durable and lightweight case designed for transporting sensitive medical instruments."
+          "title": "Medical Treatment System"
         },
         {
           "id": 3,
+          "title": "Carbon Fiber Universal Gear Series"
+        }
+      ],
+      "items": [
+        {
+          "id": 1,
+          "categoryId": 1,
+          "category": "mobile-command",
           "image": "/images/products.png",
-          "alt": "Portable Medical Kit",
-          "model": "RM-3680TYX-03",
-          "title": "Portable kit",
-          "description": "Compact and portable medical kit suitable for emergency response and field operations."
+          "alt": "MC-1780CMD-01 Mobile Command Station",
+          "model": "MC-1780CMD-01",
+          "title": "Mobile Command Station",
+          "description": "Lightweight carbon fiber mobile command post with integrated communication systems for rapid deployment in field operations.",
+          "features": ["Lightweight design", "Weather resistant", "Integrated communications", "Quick deployment"],
+          "specifications": {
+            "weight": "15kg",
+            "dimensions": "800x600x400mm",
+            "material": "Carbon Fiber Composite",
+            "capacity": "50L"
+          },
+          "price": "$2,999",
+          "inStock": true
+        },
+        {
+          "id": 2,
+          "categoryId": 1,
+          "category": "mobile-command",
+          "image": "/images/products.png",
+          "alt": "MC-2580CMD-02 Tactical Command Unit",
+          "model": "MC-2580CMD-02",
+          "title": "Tactical Command Unit",
+          "description": "Advanced tactical command unit with enhanced protection and modular design for military and emergency response operations.",
+          "features": ["Modular design", "Enhanced protection", "Multi-device support", "Secure storage"],
+          "specifications": {
+            "weight": "22kg",
+            "dimensions": "900x700x500mm",
+            "material": "Carbon Fiber with Kevlar reinforcement",
+            "capacity": "75L"
+          },
+          "price": "$4,299",
+          "inStock": true
+        },
+        {
+          "id": 3,
+          "categoryId": 2,
+          "category": "medical-treatment",
+          "image": "/images/products.png",
+          "alt": "MD-3680MED-01 Medical Equipment Case",
+          "model": "MD-3680MED-01",
+          "title": "Medical Equipment Case",
+          "description": "Professional medical equipment case with climate control and secure storage for sensitive medical instruments.",
+          "features": ["Climate control", "Impact resistant", "Sterile interior", "Custom foam inserts"],
+          "specifications": {
+            "weight": "8kg",
+            "dimensions": "600x400x300mm",
+            "material": "Medical Grade Carbon Fiber",
+            "capacity": "35L"
+          },
+          "price": "$1,899",
+          "inStock": true
         },
         {
           "id": 4,
+          "categoryId": 2,
+          "category": "medical-treatment",
           "image": "/images/products.png",
-          "alt": "Heavy Duty Storage",
-          "model": "RM-4780TYX-04",
-          "title": "Heavy duty storage",
-          "description": "Heavy-duty storage solution with enhanced protection for valuable medical equipment."
+          "alt": "MD-4780MED-02 Emergency Medical Kit",
+          "model": "MD-4780MED-02",
+          "title": "Emergency Medical Kit",
+          "description": "Comprehensive emergency medical kit designed for rapid deployment in critical situations with organized storage compartments.",
+          "features": ["Organized compartments", "Quick access design", "Lightweight", "Waterproof sealing"],
+          "specifications": {
+            "weight": "12kg",
+            "dimensions": "700x500x350mm",
+            "material": "Carbon Fiber Composite",
+            "capacity": "45L"
+          },
+          "price": "$2,499",
+          "inStock": true
         },
         {
           "id": 5,
+          "categoryId": 3,
+          "category": "universal-gear",
           "image": "/images/products.png",
-          "alt": "Emergency Response Kit",
-          "model": "RM-5880TYX-05",
-          "title": "Emergency response kit",
-          "description": "Comprehensive emergency medical kit designed for rapid deployment in critical situations."
+          "alt": "UG-5880UNI-01 Universal Storage Box",
+          "model": "UG-5880UNI-01",
+          "title": "Universal Storage Box",
+          "description": "Versatile carbon fiber storage solution with customizable interior and multiple mounting options for various applications.",
+          "features": ["Customizable interior", "Multiple mounting options", "Corrosion resistant", "Stackable design"],
+          "specifications": {
+            "weight": "6kg",
+            "dimensions": "500x400x250mm",
+            "material": "Carbon Fiber",
+            "capacity": "25L"
+          },
+          "price": "$899",
+          "inStock": true
         },
         {
           "id": 6,
+          "categoryId": 3,
+          "category": "universal-gear",
           "image": "/images/products.png",
-          "alt": "Mobile Medical Unit",
-          "model": "RM-6980TYX-06",
-          "title": "Mobile medical unit",
-          "description": "Portable medical unit with integrated storage and workspace for field operations."
-        },
-        {
-          "id": 7,
-          "image": "/images/products.png",
-          "alt": "Tactical Medical Case",
-          "model": "RM-7080TYX-07",
-          "title": "Tactical medical case",
-          "description": "Ruggedized medical case built for extreme environments and military applications."
-        },
-        {
-          "id": 8,
-          "image": "/images/products.png",
-          "alt": "Specialized Equipment Container",
-          "model": "RM-8180TYX-08",
-          "title": "Specialized container",
-          "description": "Custom-designed container for specialized medical equipment with climate control features."
+          "alt": "UG-6980UNI-02 Multi-Purpose Container",
+          "model": "UG-6980UNI-02",
+          "title": "Multi-Purpose Container",
+          "description": "High-capacity multi-purpose container with advanced locking system and environmental sealing for harsh conditions.",
+          "features": ["Advanced locking", "Environmental sealing", "High capacity", "Ergonomic handles"],
+          "specifications": {
+            "weight": "18kg",
+            "dimensions": "800x600x450mm",
+            "material": "Carbon Fiber Composite",
+            "capacity": "80L"
+          },
+          "price": "$1,699",
+          "inStock": true
         }
+      
       ]
     },
     "customization": {
