@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="">
         <Header />
-        <main className="lg:pt-20 pt-12 w-screen">{children}</main>
+        <main className="lg:pt-20 pt-12 w-screen min-h-[calc(100vh-520px)]">{children}</main>
         <Footer />
       </body>
     </html>

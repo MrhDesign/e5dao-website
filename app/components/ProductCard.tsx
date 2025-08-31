@@ -48,7 +48,7 @@ export default function ProductCard({
 
         {/* 产品标题 */}
         <div>
-          <span className="lg:text-lg text-sm rounded-sm">
+          <span className="lg:text-lg text-sm rounded-sm line-clamp-1">
             {title}
           </span>
         </div>

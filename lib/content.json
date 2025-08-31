@@ -31,15 +31,18 @@
       "categories": [
         {
           "id": 1,
-          "title": "Integrated Carbon Fiber Solution"
+          "title": "Integrated Carbon Fiber Solution",
+          "slug": "integrated-solution"
         },
         {
           "id": 2,
-          "title": "Medical Treatment System"
+          "title": "Medical Treatment System",
+          "slug": "medical-system"
         },
         {
           "id": 3,
-          "title": "Carbon Fiber Universal Gear Series"
+          "title": "Carbon Fiber Universal Gear Series",
+          "slug": "universal-gear"
         }
       ],
       "items": [
