@@ -10,6 +10,7 @@ interface ProductCardProps {
   className?: string;
   href?: string;
   id?: number;
+  categoryId?: number;
 }
 
 export default function ProductCard({
@@ -20,15 +21,27 @@ export default function ProductCard({
   description,
   className = "",
   href,
-  id
+  id,
+  categoryId
 }: ProductCardProps) {
-  const productUrl = href || (id ? `/products/${id}` : '#');
+  
+  // 动态生成产品URL，需要分类slug
+  const getCategorySlug = (catId: number) => {
+    const categoryMap: { [key: number]: string } = {
+      1: 'integrated-solution',
+      2: 'medical-system', 
+      3: 'universal-gear'
+    };
+    return categoryMap[catId] || 'integrated-solution';
+  };
+  
+  const productUrl = href || (id && categoryId ? `/products/${getCategorySlug(categoryId)}/${id}` : '#');
   
   const cardContent = (
     <div className={`group flex flex-col cursor-pointer rounded-sm overflow-hidden bg-fill-four transition-all duration-300 hover:shadow-xl ${className}`}>
       {/* 产品图片区域 */}
       <div className="w-full h-full overflow-hidden relative z-0">
-        <div className='w-full relative aspect-[4/4] overflow-hidden'>
+        <div className='w-full relative aspect-square overflow-hidden'>
           <Image
             src={image}
             alt={alt}

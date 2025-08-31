@@ -60,7 +60,7 @@ export default function Header() {
     if (!item.submenu) return false;
     
     // 检查是否在子页面中
-    if (item.href === '/products' && pathname.startsWith('/products')) return true;
+    if (item.href === '/products/all' && pathname.startsWith('/products')) return true;
     if (item.href === '/news' && pathname.startsWith('/news')) return true;
     if (item.href === '/solution' && pathname.startsWith('/solution')) return true;
     
@@ -79,8 +79,8 @@ export default function Header() {
         return item.name;
       }
       
-      // 特殊处理产品页面的URL参数
-      if (item.href === '/products' && pathname.startsWith('/products')) {
+      // 特殊处理产品页面的所有路径
+      if (item.href === '/products/all' && pathname.startsWith('/products')) {
         return item.name;
       }
       
