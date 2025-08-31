@@ -88,7 +88,7 @@
 }
 
 .headline2 {
-  @apply lg:text-4xl text-base font-medium;
+  @apply lg:text-2xl text-base font-medium;
 }
 
 .navbtn {
