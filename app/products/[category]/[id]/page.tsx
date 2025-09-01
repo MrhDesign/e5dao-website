@@ -65,7 +65,7 @@ export default function ProductDetailPage() {
       </div>
 
       {/* 产品主体内容 */}
-      <div className="lg:px-30 px-5 py-10">
+      <div className="lg:px-30 lg:py-10">
         <div className="lg:grid lg:grid-cols-[600px_1fr] flex flex-col gap-10">
           
           {/* 左侧：产品图片 */}
