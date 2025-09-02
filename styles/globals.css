@@ -28,7 +28,7 @@
   --color-lime-600: oklch(64.8% 0.2 131.684);
   --color-lime-700: oklch(53.2% 0.157 131.589);
   --color-lime-800: oklch(45.3% 0.124 130.933);
-  --color-lime-900: oklch(40.5% 0.101 131.063);
+  --color-lime-900: #35530e;
   --color-lime-950: oklch(27.4% 0.072 132.109);
 
   --color-neutral-50: oklch(98.5% 0 0);

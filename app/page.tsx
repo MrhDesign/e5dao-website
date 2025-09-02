@@ -386,11 +386,14 @@ export default function Home() {
               <ProductCard
                 key={product.id || index}
                 id={product.id}
+                categoryId={product.categoryId}
                 image={product.image}
                 alt={product.alt}
                 model={product.model}
                 title={product.title}
                 description={product.description}
+                productType={product.productType}
+                standardCategory={product.standardCategory}
                 className="product-card w-full"
               />
             ))}

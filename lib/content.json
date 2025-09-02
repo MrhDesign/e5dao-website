@@ -10,7 +10,7 @@
     },
     "navigation": {
       "home": "Home",
-      "solution": "Solution", 
+      "solution": "Solution",
       "products": "Products",
       "news": "News",
       "aboutUs": "About Us",
@@ -21,10 +21,10 @@
       "learnMore": "Learn More",
       "contactUs": "Contact Us"
     },
-    "solution":{
-      "cardOne":{
-        "title":"Carbon Fiber Overall Solution Plan",
-        "content":"Carbon fiber box-type mobile command site system (In modern warfare, with the widespread use of high-altitude reconnaissance equipment and long-range firepower weapons, the survival ability of fixed command posts in frontline positions and rear areas in war is getting lower and lower. In the absence of command, it is difficult for the army to complete effective attack, defense and coordinated operations of various arms. In the Russian-Ukrainian war, due to the lack of modern command posts on the front line, the Russian side had to go to the front line to understand the front-line combat situation in real time. As a result, a large number of senior commanders were killed. Therefore, front-line commanders urgently need a lightweight, highly integrated, highly informationized, quickly deployable and quickly withdrawn mobile command post to convey combat assignments to individual soldiers and pass on the front-line combat situation to the upper-level command agency. Carry the \"command post\" on your shoulders and hold the \"information power\" in your hands"
+    "solution": {
+      "cardOne": {
+        "title": "Carbon Fiber Overall Solution Plan",
+        "content": "Carbon fiber box-type mobile command site system (In modern warfare, with the widespread use of high-altitude reconnaissance equipment and long-range firepower weapons, the survival ability of fixed command posts in frontline positions and rear areas in war is getting lower and lower. In the absence of command, it is difficult for the army to complete effective attack, defense and coordinated operations of various arms. In the Russian-Ukrainian war, due to the lack of modern command posts on the front line, the Russian side had to go to the front line to understand the front-line combat situation in real time. As a result, a large number of senior commanders were killed. Therefore, front-line commanders urgently need a lightweight, highly integrated, highly informationized, quickly deployable and quickly withdrawn mobile command post to convey combat assignments to individual soldiers and pass on the front-line combat situation to the upper-level command agency. Carry the \"command post\" on your shoulders and hold the \"information power\" in your hands"
       }
     },
     "products": {
@@ -49,140 +49,214 @@
         {
           "id": 1,
           "categoryId": 1,
-          "category": "mobile-command",
+          "productType": "independent-rd",
           "image": "/images/products.png",
           "alt": "Carbon Fiber Mobile COB Display Screen",
-          "model": "CF-COB-2024",
           "title": "Carbon Fiber Mobile COB Display Screen",
           "description": "Features an advanced COB display screen with an ultra-compact sized form and a submersible cage. The tracker is rated for submersion to 100 meters depth.",
-          "gallery": ["/images/fields-1.png", "/images/fields-2.png", "/images/fields-3.png", "/images/fields-4.png", "/images/products.png"],
+          "gallery": [
+            "/images/fields-1.png",
+            "/images/fields-2.png",
+            "/images/fields-3.png",
+            "/images/fields-4.png",
+            "/images/products.png"
+          ],
           "specifications": {
-            "Product Name": "Case Mounted Rugged LCD Command Display Terminal",
-            "Brightness": "Brightness Screen max can withstand for LED Screens",
-            "Display": "High Definition to meet Military Grade Standard Specification with",
-            "Rated IP": "Case - High strength carbon dioxide black IP67 waterproof Aluminum alloy",
-            "Materials": "Case - High strength carbon dioxide black IP67 waterproof Aluminum alloy",
-            "Operating Rating": "IP67 (when fitted)",
-            "Storage Temperature": "-40°C to +80°C",
-            "Operating Temperature": "-20°C to +70°C",
-            "Humidity": "5% to 95% (non-condensing)",
-            "Vibration Resistance": "According to standards like IEC approval",
-            "Power": "About 8W to 18W input with USB power adapters",
-            "Shock Resistance": "Shock to IP waterproof IEC standards",
-            "Compliance/Approvals": "CE and CSA certifications",
-            "Size": "17cm x 12cm including important cases",
-            "Using Environment": "Electric in paramark (in optional)",
-            "Power input": "12 V/24V FLEXIBLE",
-            "Power supply": "50-60 FLEXIBLE",
-            "Using Voltage": "24-30 VAC 50/60HZ",
-            "Dielectrics": "OZONE, CO2, NH, N2H4, FLEXIBLE",
-            "Audio System": "Built-in stereo speakers (3W x 2 embodied sound systems",
-            "Connectivity Sockets": "Supports Bluetooth, ethernet, wireless including laptop/mobile systems",
-            "Support Elements": "Support multi-client alarming, detailed server routing, encrypted RS485/RS232 sound systems",
-            "Equipment Capabilities": "Supports multi-input alarming, detailed server systems"
+            "External Dimensions": "Case Mounted Rugged LCD Command Display Terminal",
+            "Internal Dimensions": "Brightness Screen max can withstand for LED Screens",
+            "Lid Internal Dimensions": "High Definition to meet Military Grade Standard Specification with",
+            "Rollers": "Case - High strength carbon dioxide black IP67 waterproof Aluminum alloy",
+            "Net Weight": "Case - High strength carbon dioxide black IP67 waterproof Aluminum alloy",
+            "Material": "Case - High strength carbon dioxide black IP67 waterproof Aluminum alloy",
+            "Customizable": "Case - High strength carbon dioxide black IP67 waterproof Aluminum alloy"
           },
-          "systemConfiguration": {
-            "title": "System Configuration Plan",
-            "description": "A complete system configuration allows operators to have access to all system functions, and is a cost-effective solution for organizations looking to upgrade their surveillance and security systems.",
-            "images": ["/images/products.png", "/images/fields-1.png", "/images/fields-2.png", "/images/fields-3.png", "/images/fields-4.png", "/images/fields-5.png"]
-          }
+          "details": [
+            {
+              "type": "heading",
+              "content": "Product Overview",
+              "level": 3
+            },
+            {
+              "type": "paragraph",
+              "content": "Our Carbon Fiber Mobile COB Display Screen represents the pinnacle of military-grade display technology. Engineered for extreme conditions, this rugged display terminal delivers crystal-clear visual performance in the most demanding operational environments.\n\nDesigned specifically for tactical command and control applications, it combines cutting-edge COB technology with aerospace-grade carbon fiber construction to provide unmatched durability and performance."
+            },
+            {
+              "type": "image",
+              "image": "/images/production-line-1.png",
+              "alt": "COB Display Technology",
+              "content": "Advanced COB display technology ensures perfect visibility in all conditions"
+            },
+            {
+              "type": "heading",
+              "content": "Key Features",
+              "level": 3
+            },
+            {
+              "type": "paragraph",
+              "content": "This display system incorporates multiple advanced technologies to deliver superior performance in mission-critical applications."
+            },
+            {
+              "type": "list",
+              "content": "Core capabilities include:",
+              "items": [
+                "Ultra-high brightness COB display (up to 2000 nits)",
+                "IP67 waterproof and shock-resistant construction",
+                "Carbon fiber housing for maximum durability",
+                "Multi-device connectivity (Bluetooth, Ethernet, WiFi)",
+                "Operating temperature range: -20°C to +70°C",
+                "Built-in stereo audio system",
+                "Encrypted communication protocols"
+              ]
+            },
+            {
+              "type": "heading",
+              "content": "Manufacturing Quality",
+              "level": 3
+            },
+            {
+              "type": "paragraph",
+              "content": "Every unit undergoes rigorous quality control testing in our state-of-the-art facility. Our advanced manufacturing processes ensure consistent quality and reliability.\n\nEach display is individually tested for temperature resistance, vibration tolerance, and electrical performance before shipment."
+            },
+            {
+              "type": "image",
+              "image": "/images/production-line-4.png",
+              "alt": "Manufacturing process",
+              "content": "Precision engineering and quality control ensure reliable performance"
+            }
+          ]
         },
         {
           "id": 2,
           "categoryId": 1,
-          "category": "mobile-command",
+          "productType": "standard",
           "image": "/images/fields-1.png",
           "alt": "MC-2580CMD-02 Tactical Command Unit",
           "model": "MC-2580CMD-02",
-          "title": "Tactical Command Unit",
-          "description": "Advanced tactical command unit with enhanced protection and modular design for military and emergency response operations.",
-          "features": ["Modular design", "Enhanced protection", "Multi-device support", "Secure storage"],
+          "standardCategory": "Command & Control Systems",
+          "gallery": [
+            "/images/fields-1.png",
+            "/images/fields-2.png",
+            "/images/fields-3.png"
+          ],
           "specifications": {
-            "weight": "22kg",
-            "dimensions": "900x700x500mm",
-            "material": "Carbon Fiber with Kevlar reinforcement",
-            "capacity": "75L"
+            "External Dimensions": "Case Mounted Rugged LCD Command Display Terminal",
+            "Internal Dimensions": "Brightness Screen max can withstand for LED Screens",
+            "Lid Internal Dimensions": "High Definition to meet Military Grade Standard Specification with",
+            "Rollers": "Case - High strength carbon dioxide black IP67 waterproof Aluminum alloy",
+            "Net Weight": "Case - High strength carbon dioxide black IP67 waterproof Aluminum alloy",
+            "Material": "Case - High strength carbon dioxide black IP67 waterproof Aluminum alloy",
+            "Customizable": "Case - High strength carbon dioxide black IP67 waterproof Aluminum alloy"
           },
-          "price": "$4,299",
-          "inStock": true
+          "details": [
+            {
+              "type": "heading",
+              "content": "Standard Solution Overview",
+              "level": 3
+            },
+            {
+              "type": "paragraph",
+              "content": "The Tactical Command Unit represents our proven standard solution for military and emergency response operations. This reliable system has been tested and deployed in various field conditions."
+            },
+            {
+              "type": "heading",
+              "content": "Standard Features",
+              "level": 3
+            },
+            {
+              "type": "list",
+              "content": "Standard configuration includes:",
+              "items": [
+                "Modular design for easy deployment",
+                "Enhanced protection against environmental factors",
+                "Multi-device support for various equipment",
+                "Secure storage compartments",
+                "Quick-release mounting system"
+              ]
+            }
+          ]
         },
         {
           "id": 3,
-          "categoryId": 2,
-          "category": "medical-treatment",
+          "categoryId": 1,
+          "productType": "standard",
           "image": "/images/fields-2.png",
-          "alt": "MD-3680MED-01 Medical Equipment Case",
-          "model": "MD-3680MED-01",
-          "title": "Medical Equipment Case",
-          "description": "Professional medical equipment case with climate control and secure storage for sensitive medical instruments.",
-          "features": ["Climate control", "Impact resistant", "Sterile interior", "Custom foam inserts"],
+          "alt": "MC-2580DEF-03 Defense System",
+          "model": "MC-2580DEF-03",
+          "title": "Defense System Unit",
+          "standardCategory": "Defense Systems",
           "specifications": {
-            "weight": "8kg",
-            "dimensions": "600x400x300mm",
-            "material": "Medical Grade Carbon Fiber",
-            "capacity": "35L"
-          },
-          "price": "$1,899",
-          "inStock": true
+            "External Dimensions": "800x600x400mm",
+            "Net Weight": "18kg",
+            "Material": "Carbon Fiber reinforced",
+            "Operating Temperature": "-10°C to +60°C"
+          }
         },
         {
           "id": 4,
-          "categoryId": 2,
-          "category": "medical-treatment",
+          "categoryId": 1,
+          "productType": "independent-rd",
           "image": "/images/fields-3.png",
-          "alt": "MD-4780MED-02 Emergency Medical Kit",
-          "model": "MD-4780MED-02",
-          "title": "Emergency Medical Kit",
-          "description": "Comprehensive emergency medical kit designed for rapid deployment in critical situations with organized storage compartments.",
-          "features": ["Organized compartments", "Quick access design", "Lightweight", "Waterproof sealing"],
+          "alt": "Advanced Communication Hub",
+          "title": "Advanced Communication Hub",
+          "description": "Revolutionary communication system with AI-powered signal processing.",
           "specifications": {
-            "weight": "12kg",
-            "dimensions": "700x500x350mm",
-            "material": "Carbon Fiber Composite",
-            "capacity": "45L"
-          },
-          "price": "$2,499",
-          "inStock": true
+            "External Dimensions": "700x500x300mm",
+            "Net Weight": "15kg",
+            "Material": "Ultra-lightweight Carbon Fiber",
+            "Operating Temperature": "-25°C to +75°C"
+          }
         },
         {
           "id": 5,
-          "categoryId": 3,
-          "category": "universal-gear",
+          "categoryId": 1,
+          "productType": "standard",
           "image": "/images/fields-4.png",
-          "alt": "UG-5880UNI-01 Universal Storage Box",
-          "model": "UG-5880UNI-01",
-          "title": "Universal Storage Box",
-          "description": "Versatile carbon fiber storage solution with customizable interior and multiple mounting options for various applications.",
-          "features": ["Customizable interior", "Multiple mounting options", "Corrosion resistant", "Stackable design"],
+          "alt": "MC-2580SUR-05 Surveillance Unit",
+          "model": "MC-2580SUR-05",
+          "title": "Surveillance Unit",
+          "standardCategory": "Surveillance Systems",
           "specifications": {
-            "weight": "6kg",
-            "dimensions": "500x400x250mm",
-            "material": "Carbon Fiber",
-            "capacity": "25L"
-          },
-          "price": "$899",
-          "inStock": true
+            "External Dimensions": "900x800x500mm",
+            "Net Weight": "25kg",
+            "Material": "Kevlar reinforced Carbon Fiber",
+            "Operating Temperature": "-20°C to +70°C"
+          }
+        }
+      ],
+      "standardProductOverview": [
+        {
+          "title": "Impact Resistance Test",
+          "image": "/images/PDetailsOverview/PDO-1.png",
+          "alt": "Advanced composite materials showcase"
         },
         {
-          "id": 6,
-          "categoryId": 3,
-          "category": "universal-gear",
-          "image": "/images/fields-5.png",
-          "alt": "UG-6980UNI-02 Multi-Purpose Container",
-          "model": "UG-6980UNI-02",
-          "title": "Multi-Purpose Container",
-          "description": "High-capacity multi-purpose container with advanced locking system and environmental sealing for harsh conditions.",
-          "features": ["Advanced locking", "Environmental sealing", "High capacity", "Ergonomic handles"],
-          "specifications": {
-            "weight": "18kg",
-            "dimensions": "800x600x450mm",
-            "material": "Carbon Fiber Composite",
-            "capacity": "80L"
-          },
-          "price": "$1,699",
-          "inStock": true
+          "title": "Scratch & Abrasion Resistance Test",
+          "image": "/images/PDetailsOverview/PDO-2.png", 
+          "alt": "Quality control and testing procedures"
+        },
+        {
+          "title": "Immersion Test",
+          "image": "/images/PDetailsOverview/PDO-3.png",
+          "alt": "State-of-the-art manufacturing facility"
         }
-      
+        ,
+        {
+          "title": "High-Altitude Adaptability Test",
+          "image": "/images/PDetailsOverview/PDO-4.png",
+          "alt": "State-of-the-art manufacturing facility"
+        }
+        ,
+        {
+          "title": "Shock & Vibration Test",
+          "image": "/images/PDetailsOverview/PDO-5.png",
+          "alt": "State-of-the-art manufacturing facility"
+        }
+        ,
+        {
+          "title": "Fire Retardant Test",
+          "image": "/images/PDetailsOverview/PDO-6.png",
+          "alt": "State-of-the-art manufacturing facility"
+        }
       ]
     },
     "customization": {

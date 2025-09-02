@@ -83,7 +83,7 @@ export default function ProductImageGallery({
       }} />
       
       {/* 主图 Swiper */}
-      <div className="relative aspect-[4/3] bg-fill-white overflow-hidden max-w-[600px] group border border-border-one border-b-0">
+      <div className="relative aspect-[4/3] bg-fill-white overflow-hidden lg:max-w-[600px] group ">
         <Swiper
           onSwiper={(swiper) => {
             mainSwiperRef.current = swiper;
@@ -159,7 +159,7 @@ export default function ProductImageGallery({
             {images.map((img, index) => (
               <SwiperSlide key={index}>
                 <div 
-                  className="thumbnail-border relative aspect-[4/3] overflow-hidden transition-all duration-300 bg-fill-white cursor-pointer border border-transparent"
+                  className="thumbnail-border relative aspect-[4/3] overflow-hidden transition-all duration-300 bg-fill-four cursor-pointer border border-transparent"
                   onClick={() => {
                     // 首先切换主图
                     if (mainSwiperRef.current) {

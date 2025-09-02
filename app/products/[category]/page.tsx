@@ -14,6 +14,8 @@ interface ProductData {
   title: string;
   description: string;
   categoryId: number;
+  productType: 'independent-rd' | 'standard';
+  standardCategory?: string; // 标准产品类别（仅标准产品使用）
 }
 
 interface ProductCategory {
@@ -131,6 +133,8 @@ export default function ProductsPage() {
                             model={product.model}
                             title={product.title}
                             description={product.description}
+                            productType={product.productType}
+                            standardCategory={product.standardCategory}
                             className="w-full"
                           />
                         ))}
@@ -162,6 +166,8 @@ export default function ProductsPage() {
                           model={product.model}
                           title={product.title}
                           description={product.description}
+                          productType={product.productType}
+                          standardCategory={product.standardCategory}
                           className="w-full"
                         />
                       ))}

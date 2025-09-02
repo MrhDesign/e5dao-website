@@ -1,51 +1,102 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-import Image from 'next/image';
 import useContent from '../../../../lib/useContent';
-import ProductCard from '../../../components/ProductCard';
 import Breadcrumb from '../../../components/Breadcrumb';
 import ProductImageGallery from '../../../components/ProductImageGallery';
+import ContentRenderer from '../../../components/ContentRenderer';
+import { getCategoryByProduct, getCategoryBySlug, getProductsByCategory } from '../../../../lib/productUtils';
+import Image from 'next/image';
+import Link from 'next/link';
+
 
 interface ProductData {
   id: number;
   image: string;
   alt: string;
-  model: string;
-  title: string;
-  description: string;
-  categoryId: number;
+  model?: string; // 标准产品使用
+  title?: string; // 自研产品使用
+  description?: string; // 自研产品使用
+  categoryId: number; // 只保留关联ID
+  productType: 'independent-rd' | 'standard'; // 内部分类标识
+  standardCategory?: string; // 标准产品类别（仅标准产品使用）
   gallery?: string[];
   specifications?: {
     [key: string]: string;
   };
-  systemConfiguration?: {
-    title: string;
-    description: string;
-    images: string[];
-  };
+  details?: Array<{
+    type: 'heading' | 'paragraph' | 'image' | 'list';
+    content: string;
+    level?: 1 | 2 | 3 | 4;
+    image?: string;
+    alt?: string;
+    items?: string[];
+  }>;
+  [key: string]: unknown; // 允许额外的字段，提供灵活性
+}
+
+interface StandardProductOverviewItem {
+  title: string;
+  image: string;
+  alt: string;
 }
 
 export default function ProductDetailPage() {
   const params = useParams();
   const { getContent } = useContent();
-  
+
   const productId = parseInt(params.id as string);
   const categorySlug = params.category as string;
-  
+
   const productsData: ProductData[] = getContent('products.items') || [];
   const categoriesData = getContent('products.categories') || [];
-  
+
   const product = productsData.find(p => p.id === productId);
-  const category = categoriesData.find((cat: any) => cat.slug === categorySlug);
-  
-  if (!product || !category) {
+
+  if (!product) {
     return <div>Product not found</div>;
   }
 
-  // 获取同分类其他产品
-  const relatedProducts = productsData.filter(p => p.categoryId === product.categoryId && p.id !== product.id).slice(0, 4);
-  
+  // 使用工具函数获取分类信息
+  const category = getCategoryByProduct(product, categoriesData);
+  const currentCategory = getCategoryBySlug(categorySlug, categoriesData);
+
+  // 验证URL中的分类是否正确
+  if (!category || !currentCategory || category.id !== currentCategory.id) {
+    return <div>Product not found</div>;
+  }
+
+  // 获取当前分类下的所有产品
+  const categoryProducts = getProductsByCategory(productsData as any[], product.categoryId) as ProductData[];
+
+  // 获取当前产品在数组中的索引
+  const currentIndex = categoryProducts.findIndex(p => p.id === product.id);
+
+  // 构建展示产品数组：前一个产品 + 后面的产品（排除当前产品）
+  const displayProducts: ProductData[] = [];
+  const maxProducts = 6; // 设置最大推荐产品数量
+
+  // 添加前一个产品（如果存在）
+  if (currentIndex > 0) {
+    displayProducts.push(categoryProducts[currentIndex - 1]);
+  }
+
+  // 添加后面的产品，但不超过最大数量
+  for (let i = currentIndex + 1; i < categoryProducts.length && displayProducts.length < maxProducts; i++) {
+    displayProducts.push(categoryProducts[i]);
+  }
+
+  // 如果还有剩余空间，从前面补充更多产品
+  if (displayProducts.length < maxProducts) {
+    for (let i = currentIndex - 2; i >= 0 && displayProducts.length < maxProducts; i--) {
+      displayProducts.unshift(categoryProducts[i]); // 添加到数组开头，保持顺序
+    }
+  }
+
+  // 从 content.json 获取标准产品通用详情数据
+  const standardProductOverview: StandardProductOverviewItem[] = getContent('products.standardProductOverview') || [];
+
+
   // 产品图片（主图 + 图库）
   const productImages = [product.image, ...(product.gallery || [])];
 
@@ -53,8 +104,9 @@ export default function ProductDetailPage() {
   const breadcrumbItems = [
     { label: 'Products', href: '/products/all' },
     { label: category.title, href: `/products/${categorySlug}` },
-    { label: product.title, href: `/products/${categorySlug}/${productId}` }
+    { label: product.title || product.model || 'Product', href: `/products/${categorySlug}/${productId}` }
   ];
+
 
 
   return (
@@ -65,128 +117,173 @@ export default function ProductDetailPage() {
       </div>
 
       {/* 产品主体内容 */}
-      <div className="lg:px-30 lg:py-10">
-        <div className="lg:grid lg:grid-cols-[600px_1fr] flex flex-col gap-10">
-          
+      <div className="lg:px-30 lg:py-20">
+        <div className="lg:grid lg:grid-cols-[600px_1fr] flex flex-col lg:gap-10">
+
           {/* 左侧：产品图片 */}
-          <ProductImageGallery 
+          <ProductImageGallery
             images={productImages}
-            productName={product.title}
+            productName={product.title || product.model || 'Product'}
           />
 
           {/* 右侧：产品信息 */}
-          <div className="space-y-6">
-            <div>
-              <h1 className="text-3xl lg:text-4xl font-bold text-text-title mb-2">
-                {product.title}
-              </h1>
-              <p className="text-lg text-text-secondary mb-4">
-                Model: {product.model}
-              </p>
-              <div className="prose text-text-black">
-                <p>{product.description}</p>
-              </div>
-            </div>
+          <div className='lg:p-0 px-5 pt-5 flex flex-col'>
+            {/* 根据产品类型显示不同内容 */}
+            {product.productType === 'independent-rd' ? (
+              <>
+                {/* 自研产品：显示标题和描述 */}
+                <div>
+                  <h1 className="headline1 text-text-brand mb-2">
+                    {product.title || 'Product Title'}
+                  </h1>
+                  <div className="text-display">
+                    <p>{product.description || 'Product description not available'}</p>
+                  </div>
+                </div>
+              </>
+            ) : (
+              <>
+                {/* 标准产品：显示规格与类别 */}
+                <h1 className="headline1 text-text-brand mb-2">
+                  {product.model || 'Product Model'}
+                </h1>
+                <div className="text-display">
+                  <p>{product.standardCategory}</p>
+                </div>
 
-            {/* 快速规格信息 */}
-            {product.specifications && (
-              <div className="bg-fill-white rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-4">Key Specifications</h3>
-                <div className="grid grid-cols-1 gap-3">
-                  {Object.entries(product.specifications).slice(0, 6).map(([key, value]) => (
-                    <div key={key} className="flex justify-between py-2 border-b border-border-one last:border-0">
-                      <span className="text-text-secondary">{key}:</span>
-                      <span className="text-text-title font-medium">{value}</span>
-                    </div>
-                  ))}
+                {/* 标准产品显示快速规格信息 */}
+                {product.specifications && (
+                  <div className="">
+                    {Object.entries(product.specifications).map(([key, value]) => (
+                      <div key={key} className="grid grid-cols-[30%_1fr] items-center py-2 border-b border-border-one lg:text-base text-sm font-medium">
+                        <span className="text-text-display">{key}:</span>
+                        <span className="text-text-title">{value}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </>
+            )}
+
+            {displayProducts.length > 0 && (
+              <div className='mt-auto w-full'>
+                <h2 className='py-5 lg:pt-0 text-lg font-medium'>Product Showcase</h2>
+                {/* 产品推荐区域 */}
+                <div className='w-full lg:h-[150px] grid lg:grid-cols-[repeat(auto-fit,200px)] lg:gap-y-0 grid-cols-[repeat(3,1fr)] gap-x-2.5 gap-y-2.5 grid-rows-1 overflow-hidden'>
+                  {/* 动态产品图片 */}
+                  {displayProducts.map((relatedProduct) => {
+                    const productUrl = `/products/${categorySlug}/${relatedProduct.id}`;
+                    return (
+                      <Link key={relatedProduct.id} href={productUrl}>
+                        <div className='aspect-[4/3] bg-fill-white border border-border-one overflow-hidden hover:shadow-md transition-all duration-300 group cursor-pointer'>
+                          <Image
+                            src={relatedProduct.image}
+                            alt={relatedProduct.alt}
+                            width={200}
+                            height={150}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             )}
+
           </div>
+
+
         </div>
       </div>
 
-      {/* 系统配置部分 */}
-      {product.systemConfiguration && (
-        <div className="lg:px-30 px-5 py-10 border-t border-border-one">
-          <h2 className="text-2xl font-bold mb-6">System Configuration Plan</h2>
-          <div className="grid lg:grid-cols-2 gap-10">
-            <div>
-              <h3 className="text-xl font-semibold mb-4">{product.systemConfiguration.title}</h3>
-              <p className="text-text-black mb-6">{product.systemConfiguration.description}</p>
+      {/* 下方区域 */}
+      <section className='lg:px-30 lg:py-0 p-5  '>
+
+        <div className='lg:pt-10 pt-5 border-t border-border-one lg:grid lg:grid-cols-[1fr_200px]'>
+          <div className='lg:p-10 lg:space-y-10 space-y-5'>
+
+            {/* 产品详情 */}
+            <div id="product-details" className=' lg:space-y-5 space-y-2.5'>
+              <h2 className='lg:text-3xl text-xl font-medium'>Product Details</h2>
+              <div>
+                {product.productType === 'independent-rd' ? (
+                  // 自研产品展示
+                  product.details ? (
+                    <ContentRenderer sections={product.details} />
+                  ) : (
+                    <div className="space-y-4">
+                      <p className="text-text-black leading-relaxed">
+                        This product delivers exceptional performance through advanced composite materials technology.
+                        Our engineering team has carefully designed every aspect to meet the highest industry standards.
+                      </p>
+                      <p className="text-text-black leading-relaxed">
+                        Key benefits include superior strength-to-weight ratio, excellent durability,
+                        and resistance to environmental factors. Perfect for demanding applications
+                        where performance and reliability are critical.
+                      </p>
+                    </div>
+                  )
+                ) : (
+                  // 标准产品展示
+                  <>
+                    {/* 标准产品有详情模版数据就展示详情模版数据和通用详情信息，没有详情模版数据就只展示通用详情信息 */}
+                    {product.details && <ContentRenderer sections={product.details} />}
+
+                    {/* 标准产品通用详情 */}
+                    <div className="space-y-5">
+                      <p className="text-text-black leading-relaxed">
+                        To guarantee outstanding reliability in extreme environments, each carbon fiber case undergoes rigorous quality and performance testing. All evaluations are conducted in accordance with international standards, covering impact resistance, scratch and abrasion resistance, immersion, high-altitude adaptability, vibration resistance, and flammability. These tests ensure superior protection and durability during transportation, storage, and field operations.
+                      </p>
+
+                      <div className='grid lg:grid-cols-3 grid-cols-2 lg:gap-5 gap-2.5 lg:px-30'>
+                        {standardProductOverview.map((item, index) => (
+                          <div key={index} className='space-y-2.5 rounded-sm bg-fill-three border border-border-one overflow-hidden lg:p-5 p-2.5'>
+                            <div className='aspect-[4/3] overflow-hidden rounded-sm border border-border-one'>
+                              <Image
+                                src={item.image}
+                                alt={item.alt}
+                                width={300}
+                                height={225}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                            <h3 className='lg:text-lg text-base font-medium text-text-title'>{item.title}</h3>
+                          </div>
+                        ))}
+                      </div>
+                      <p className='text-center font-medium lg:text-2xl text-base lg:py-10 py-2.5'>Tested and Certified to U.S. Military Standards (MIL-STD)</p>
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
-            <div className="grid grid-cols-3 gap-4">
-              {product.systemConfiguration.images.map((img, index) => (
-                <div key={index} className="aspect-square bg-fill-white rounded-lg overflow-hidden">
-                  <Image
-                    src={img}
-                    alt={`System component ${index + 1}`}
-                    width={200}
-                    height={200}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              ))}
+
+            {/* 产品参数 */}
+            <div id="technical-data" className='space-y-5'>
+              <h2 className='lg:text-3xl text-xl font-medium'>Technical data</h2>
+              <div className='w-full lg:pr-[20%]'>
+                {/* 添加产品详细参数表格 */}
+                {product.specifications ? (
+                  <table className="w-full border-collapse bg-fill-four  overflow-hidden border border-border-one">
+                    <tbody className='w-full text-sm'>
+                      {Object.entries(product.specifications).map(([key, value], index) => (
+                        <tr key={key} className={index % 2 === 0 ? 'bg-fill-two' : 'bg-fill-white'}>
+                          <td className="lg:px-4 lg:py-2 p-2  font-medium w-1/3 border-b border-r border-border-one">{key}</td>
+                          <td className="lg:px-4 lg:py-2 p-2 text-text-black border-b border-border-one">{value}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                ) : (
+                  <p className="text-text-secondary">No technical specifications available.</p>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      )}
 
-      {/* 产品详情部分 */}
-      <div className="lg:px-30 px-5 py-10 border-t border-border-one">
-        <h2 className="text-2xl font-bold mb-6">Product Details</h2>
-        <div className="prose max-w-none text-text-black">
-          <p>
-            Features an advanced COD display screen with an ultra-compact sized form and a submersible cage. The tracker is 
-            rated for submersion to 100 meters depth.
-          </p>
-          <p>
-            The cage is small and quick to assemble, simply depends on what, allowing the wearer to quickly deploy and 
-            manipulate the tracker in its submersed environment.
-          </p>
         </div>
-      </div>
-
-      {/* 技术参数表格 */}
-      {product.specifications && (
-        <div className="lg:px-30 px-5 py-10 border-t border-border-one">
-          <h2 className="text-2xl font-bold mb-6">Technical data</h2>
-          <div className="bg-fill-white rounded-lg overflow-hidden">
-            <table className="w-full">
-              <tbody>
-                {Object.entries(product.specifications).map(([key, value], index) => (
-                  <tr key={key} className={index % 2 === 0 ? 'bg-fill-two' : 'bg-fill-white'}>
-                    <td className="px-6 py-4 text-text-secondary font-medium w-1/3">{key}</td>
-                    <td className="px-6 py-4 text-text-title">{value}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      )}
-
-      {/* 相关产品推荐 */}
-      {relatedProducts.length > 0 && (
-        <div className="lg:px-30 px-5 py-10 border-t border-border-one">
-          <h2 className="text-2xl font-bold mb-6">Related Products</h2>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {relatedProducts.map((relatedProduct) => (
-              <ProductCard
-                key={relatedProduct.id}
-                id={relatedProduct.id}
-                categoryId={relatedProduct.categoryId}
-                image={relatedProduct.image}
-                alt={relatedProduct.alt}
-                model={relatedProduct.model}
-                title={relatedProduct.title}
-                description={relatedProduct.description}
-                className="w-full"
-              />
-            ))}
-          </div>
-        </div>
-      )}
+      </section>
     </div>
   );
 }
