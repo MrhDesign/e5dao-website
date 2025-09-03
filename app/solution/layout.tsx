@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useContent } from '@/lib/useContent';
 import NewCard from '../components/NewCard';
+import type { ApplicationItem } from '@/lib/types';
 
 export default function SolutionLayout({
     children,
@@ -14,9 +15,9 @@ export default function SolutionLayout({
     const pathname = usePathname();
     const { getContent } = useContent();
 
-    const solutionCategories = getContent('solution.categories') || [];
+    const solutionCategories = getContent<{id: number, title: string, slug: string}[]>('solution.categories') || [];
 
-    const navigationItems = solutionCategories.map((category: any) => ({
+    const navigationItems = solutionCategories.map((category) => ({
         id: category.slug,
         title: category.title,
         href: `/solution/${category.slug}`
@@ -33,7 +34,7 @@ export default function SolutionLayout({
                         <div className="pr-5 pb-10 border-r border-border-one">
                             <nav>
                                 <ul className="space-y-2">
-                                    {navigationItems.map((item: any) => {
+                                    {navigationItems.map((item) => {
                                         const isActive = pathname === item.href;
                                         return (
                                             <li key={item.id}>
@@ -70,8 +71,8 @@ export default function SolutionLayout({
                     <h1 className="headline1 leading-10 lg:pb-10 pb-2.5">Industry Application</h1>
                     <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-x-5 lg:gap-y-0 gap-y-5">
                         {(() => {
-                            const applications = getContent('industryApplications.items') || [];
-                            return applications.slice(0, 4).map((application: any) => (
+                            const applications = getContent<ApplicationItem[]>('industryApplications.items') || [];
+                            return applications.slice(0, 4).map((application: ApplicationItem) => (
                                 <NewCard
                                     key={application.id}
                                     image={application.image}
