@@ -24,7 +24,6 @@ function ProductImageGallery({
 }: ProductImageGalleryProps) {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
   const mainSwiperRef = useRef<SwiperType | null>(null);
-  const [, setCurrentSlideIndex] = useState(0);
 
   // 处理缩略图点击时的智能滑动
   const handleThumbnailClick = (clickedIndex: number) => {
@@ -83,13 +82,10 @@ function ProductImageGallery({
       }} />
       
       {/* 主图 Swiper */}
-      <div className="relative aspect-[4/3]  overflow-hidden lg:max-w-[600px] group ">
+      <div className="relative lg:aspect-[4/3] aspect-square  overflow-hidden lg:max-w-[600px] group ">
         <Swiper
           onSwiper={(swiper) => {
             mainSwiperRef.current = swiper;
-          }}
-          onSlideChange={(swiper) => {
-            setCurrentSlideIndex(swiper.activeIndex);
           }}
           modules={[Navigation, Thumbs, A11y]}
           thumbs={{

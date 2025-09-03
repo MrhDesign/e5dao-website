@@ -164,7 +164,7 @@ interface ContentSection {
 ### 核心工具函数
 
 ```typescript
-import { getCategoryByProduct, getCategoryBySlug, getProductUrl, getRelatedProducts } from '../lib/productUtils';
+import { getCategoryByProduct, getCategoryBySlug, getProductsByCategory } from '../lib/productUtils';
 
 // 1. 根据产品获取分类信息
 const category = getCategoryByProduct(product, categories);
@@ -172,12 +172,8 @@ const category = getCategoryByProduct(product, categories);
 // 2. 根据slug获取分类信息  
 const category = getCategoryBySlug('integrated-solution', categories);
 
-// 3. 生成产品详情页URL
-const productUrl = getProductUrl(product, categories);
-// 输出: /products/integrated-solution/1
-
-// 4. 获取相关产品（同分类，排除当前产品）
-const relatedProducts = getRelatedProducts(products, currentProduct, 4);
+// 3. 根据分类ID筛选产品
+const categoryProducts = getProductsByCategory(products, categoryId);
 ```
 
 ## 前端组件使用映射
@@ -185,7 +181,7 @@ const relatedProducts = getRelatedProducts(products, currentProduct, 4);
 ### 产品详情页面 (`/app/products/[category]/[id]/page.tsx`)
 
 ```tsx
-import { getCategoryByProduct, getCategoryBySlug, getRelatedProducts } from '../lib/productUtils';
+import { getCategoryByProduct, getCategoryBySlug, getProductsByCategory } from '../lib/productUtils';
 
 // 1. 路由参数获取
 const productId = parseInt(params.id as string);
@@ -215,24 +211,56 @@ const breadcrumbItems = [
   { label: product.title, href: `/products/${categorySlug}/${productId}` }
 ];
 
-// 7. 使用工具函数获取相关产品
-const relatedProducts = getRelatedProducts(productsData, product, 4);
+// 7. 获取当前分类下的所有产品用于相关产品推荐
+const categoryProducts = getProductsByCategory(productsData, product.categoryId);
+const currentIndex = categoryProducts.findIndex(p => p.id === product.id);
+
+// 构建推荐产品数组（排除当前产品）
+const displayProducts = [];
+const maxProducts = 6;
+
+if (currentIndex > 0) {
+  displayProducts.push(categoryProducts[currentIndex - 1]);
+}
+
+for (let i = currentIndex + 1; i < categoryProducts.length && displayProducts.length < maxProducts; i++) {
+  displayProducts.push(categoryProducts[i]);
+}
+
+if (displayProducts.length < maxProducts) {
+  for (let i = currentIndex - 2; i >= 0 && displayProducts.length < maxProducts; i--) {
+    displayProducts.unshift(categoryProducts[i]);
+  }
+}
 ```
 
 ### 产品卡片组件 (`ProductCard.tsx`)
 
 ```tsx
-// 组件内部自动处理URL生成
-const getProductUrl = () => {
+// 组件内部使用 useMemo 优化URL生成
+const productUrl = useMemo(() => {
+  if (href) return href;
   if (!id || !categoryId) return '#';
   
-  const categoriesData = getContent('products.categories') || [];
-  const category = categoriesData.find(cat => cat.id === categoryId);
+  const categoriesData = getContent<ProductCategory[]>('products.categories') || [];
+  const category = categoriesData.find((cat: ProductCategory) => cat.id === categoryId);
   
-  return category ? `/products/${category.slug}/${id}` : '#';
-};
+  if (!category) {
+    console.warn(`Category not found for categoryId ${categoryId}`);
+    return '#';
+  }
+  
+  return `/products/${category.slug}/${id}`;
+}, [href, id, categoryId, getContent]);
 
-// 使用方式
+// 支持两种使用方式：
+// 1. 传递完整产品对象
+<ProductCard 
+  product={product} 
+  className="w-full"
+/>
+
+// 2. 传递单独字段（向后兼容）
 <ProductCard
   id={product.id}
   categoryId={product.categoryId}
@@ -241,7 +269,14 @@ const getProductUrl = () => {
   model={product.model}
   title={product.title}
   description={product.description}
-  productType={product.productType} // 新增：产品类型参数
+  productType={product.productType}
+/>
+
+// 3. 解决方案专用变体
+<ProductCard 
+  product={product} 
+  variant="solution"
+  className="custom-class"
 />
 ```
 
@@ -381,7 +416,7 @@ const standardProducts = products.filter(p => p.productType === 'standard');
 
 ### 🛠️ 关键改进
 
-- **工具函数库**：提供 `getCategoryByProduct`、`getProductUrl`、`getRelatedProducts` 等工具
+- **工具函数库**：提供 `getCategoryByProduct`、`getCategoryBySlug`、`getProductsByCategory` 等工具
 - **类型安全**：完整的 TypeScript 接口定义确保类型检查
 - **组件优化**：ProductCard 和产品详情页均使用新的数据结构
 - **错误处理**：增加了分类不存在时的友好错误处理
@@ -398,6 +433,41 @@ const standardProducts = products.filter(p => p.productType === 'standard');
 7. **产品类型规范**：新增产品时必须指定 `productType` 字段，确保展示逻辑正确
 8. **错误监控**：关注控制台中关于分类不存在的警告信息
 
+## 最近更新记录
+
+### v1.1 - 2025-01-09 - 代码清理优化
+
+#### 🧹 productUtils.ts 清理
+- **移除未使用函数**：删除了 `getProductUrl` 和 `getRelatedProducts` 函数
+- **保留核心函数**：
+  - `getCategoryByProduct` - 根据产品获取分类信息
+  - `getCategoryBySlug` - 根据slug获取分类信息
+  - `getProductsByCategory` - 根据分类ID筛选产品
+
+#### 🎯 ProductImageGallery.tsx 优化
+- **移除未使用状态**：删除了 `setCurrentSlideIndex` 状态变量
+- **简化事件处理**：移除了不必要的 `onSlideChange` 回调
+- **性能提升**：减少了组件的状态管理开销
+
+#### ✨ ProductCard.tsx 增强
+- **支持多种使用方式**：
+  - 完整产品对象传递 (`product` prop)
+  - 单独字段传递（向后兼容）
+  - 解决方案专用变体 (`variant="solution"`)
+- **性能优化**：使用 `useMemo` 优化URL生成
+- **类型安全**：完整的TypeScript接口支持
+
+#### 📄 产品页面优化
+- **产品分类页面**：完全通过ESLint和TypeScript检查
+- **产品详情页面**：优化相关产品推荐逻辑
+- **错误边界**：增加ErrorBoundary包装确保稳定性
+
+#### 🔍 代码质量验证
+- **Lint检查**：所有产品模块文件通过ESLint验证
+- **TypeScript检查**：无类型错误或警告
+- **依赖清理**：移除所有未使用的导入和变量
+- **性能优化**：使用React.memo包装组件防止不必要重渲染
+
 ---
 
-*本文档版本：v1.0 | 更新日期：2025-01-09*
+*本文档版本：v1.1 | 更新日期：2025-01-09*

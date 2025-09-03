@@ -187,6 +187,81 @@
 3. **类型一致**：相同用途的字段保持相同的数据类型
 4. **验证完整**：创建后检查显示效果是否符合预期
 
+## 🔧 **组件使用最佳实践**
+
+### **ProductCard组件更新**
+
+#### **推荐的使用方式（v1.1）：**
+```tsx
+// ✅ 最佳实践：传递完整产品对象
+<ProductCard 
+  product={product} 
+  className="w-full"
+/>
+
+// ✅ 解决方案页面专用变体
+<ProductCard 
+  product={product} 
+  variant="solution"
+  className="solution-card"
+/>
+```
+
+#### **向后兼容方式：**
+```tsx
+// ✅ 仍然支持：单独字段传递
+<ProductCard
+  id={product.id}
+  categoryId={product.categoryId}
+  image={product.image}
+  alt={product.alt}
+  model={product.model}
+  title={product.title}
+  description={product.description}
+  productType={product.productType}
+/>
+```
+
+### **ProductImageGallery组件简化**
+
+#### **使用方式：**
+```tsx
+// ✅ 简洁的API，自动处理所有图片切换逻辑
+<ProductImageGallery 
+  images={productImages}
+  productName={product.title}
+  className="custom-gallery-class"
+/>
+```
+
+#### **图片数组准备：**
+```tsx
+// 主图 + 图库数组
+const productImages = [product.image, ...(product.gallery || [])];
+```
+
+## 📋 **代码质量检查清单**
+
+### **创建/修改产品组件时的验证步骤：**
+- [ ] 运行 `npm run lint` 确保无ESLint错误
+- [ ] 检查TypeScript编译无错误
+- [ ] 确认无未使用的导入和变量
+- [ ] 验证组件支持必要的props
+- [ ] 测试错误边界处理
+- [ ] 确认组件使用React.memo优化（如需要）
+
+### **工具函数使用规范：**
+```tsx
+import { getCategoryByProduct, getCategoryBySlug, getProductsByCategory } from '../lib/productUtils';
+
+// ✅ 正确：使用工具函数处理分类数据
+const category = getCategoryByProduct(product, categories);
+const categoryProducts = getProductsByCategory(products, categoryId);
+
+// ❌ 避免：手动查找分类数据
+// const category = categories.find(cat => cat.id === product.categoryId);
+```
+
 ---
 
-*更新日期：2025-01-09*
+*更新日期：2025-01-09 | 版本：v1.1*
