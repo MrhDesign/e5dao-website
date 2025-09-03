@@ -10,6 +10,7 @@ import ProcessFlow from './components/ProcessFlow';
 import useContent from '../lib/useContent';
 import { useScrollRevealMultiple } from '../lib/useScrollReveal';
 import ContactForm from './components/ContactForm';
+import type { Product, ApplicationItem } from '../lib/types';
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -19,11 +20,11 @@ export default function Home() {
 
 
   // 获取产品数据，首页显示8个
-  const productsData: any[] = getContent('products.items') || [];
+  const productsData = getContent<Product[]>('products.items') || [];
   const homeProductsData = productsData.slice(0, 8);
 
   // 获取行业应用数据，首页显示4个
-  const allIndustryData: any[] = getContent('industryApplications.items') || [];
+  const allIndustryData = getContent<ApplicationItem[]>('industryApplications.items') || [];
   const paginatedData = allIndustryData.slice(0, 4);
 
   // 配置ScrollReveal动画
@@ -253,7 +254,7 @@ export default function Home() {
           </button>
 
           <div className='absolute lg:bottom-10 bottom-5 left-1/2 -translate-x-1/2'>
-            <Button className='relative'>{getContent('home.hero.button')}</Button>
+            <Button className='relative'>{getContent('common.readMore')}</Button>
           </div>
         </section>
 
@@ -272,9 +273,11 @@ export default function Home() {
             </div>
 
             <div className='flex-1'>
-              <p className='text-display  lg:line-clamp-8 line-clamp-6 about-description'>{getContent('home.about.description')}</p>
+              <p className='text-display  lg:line-clamp-8 line-clamp-6 about-description'>{getContent('aboutUs.about.description')}</p>
               <div className='mt-10'>
-                <Button className='relative'>{getContent('home.hero.button')}</Button>
+                <Link href="/aboutUs">
+                  <Button className='relative'>{getContent('common.readMore')}</Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -294,10 +297,12 @@ export default function Home() {
               />
             </div>
             <div className='flex-1 flex flex-col gap-5 solution-content'>
-              <h1 className='headline1'>{getContent('solution.mobileCommand.overview.title')}</h1>
-              <p className='text-display line-clamp-10'>{getContent('solution.mobileCommand.overview.content')}</p>
+              <h1 className='headline1'>{getContent('solution.commandSystem.overview.title')}</h1>
+              <p className='text-display line-clamp-10'>{getContent('solution.commandSystem.overview.content')}</p>
               <div className='mt-auto'>
-                <Button className='relative'>{getContent('home.hero.button')}</Button>
+                <Link href="/solution/command-system">
+                  <Button className='relative'>{getContent('common.readMore')}</Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -313,10 +318,12 @@ export default function Home() {
                 priority
               />
             </div>
-            <h1 className='headline1'>{getContent('solution.mobileCommand.overview.title')}</h1>
-            <p className='text-display line-clamp-10'>{getContent('solution.mobileCommand.overview.content')}</p>
+            <h1 className='headline1'>{getContent('solution.commandSystem.overview.title')}</h1>
+            <p className='text-display line-clamp-10'>{getContent('solution.commandSystem.overview.content')}</p>
             <div>
-              <Button className='relative'>{getContent('home.hero.button')}</Button>
+              <Link href="/solution/command-system">
+                <Button className='relative'>{getContent('common.readMore')}</Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -334,10 +341,12 @@ export default function Home() {
               />
             </div>
             <div className='flex-1 flex flex-col gap-5 solution-content'>
-              <h1 className='headline1'>{getContent('solution.mobileCommand.overview.title')}</h1>
-              <p className='text-display line-clamp-10'>{getContent('solution.mobileCommand.overview.content')}</p>
+              <h1 className='headline1'>{getContent('solution.commandSystem.overview.title')}</h1>
+              <p className='text-display line-clamp-10'>{getContent('solution.commandSystem.overview.content')}</p>
               <div className='mt-auto'>
-                <Button className='relative'>{getContent('home.hero.button')}</Button>
+                <Link href="/solution/treatment-system">
+                  <Button className='relative'>{getContent('common.readMore')}</Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -353,10 +362,12 @@ export default function Home() {
                 priority
               />
             </div>
-            <h1 className='headline1'>{getContent('solution.mobileCommand.mobileCommand.overview.title')}</h1>
-            <p className='text-display line-clamp-10'>{getContent('solution.mobileCommand.overview.content')}</p>
+            <h1 className='headline1'>{getContent('solution.mobileCommand.commandSystem.overview.title')}</h1>
+            <p className='text-display line-clamp-10'>{getContent('solution.commandSystem.overview.content')}</p>
             <div>
-              <Button className='relative'>{getContent('home.hero.button')}</Button>
+              <Link href="/solution/treatment-system">
+                <Button className='relative'>{getContent('common.readMore')}</Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -371,8 +382,8 @@ export default function Home() {
                   key={application.id}
                   image={application.image}
                   alt={application.alt}
-                  year={application.year}
-                  date={application.date}
+                  year={application.publishedDate.year}
+                  date={`${application.publishedDate.month}/${application.publishedDate.day}`}
                   title={application.title}
                   description={application.description}
                   slug={application.slug}
@@ -390,22 +401,14 @@ export default function Home() {
             {homeProductsData.map((product, index) => (
               <ProductCard
                 key={product.id || index}
-                id={product.id}
-                categoryId={product.categoryId}
-                image={product.image}
-                alt={product.alt}
-                model={product.model}
-                title={product.title}
-                description={product.description}
-                productType={product.productType}
-                standardCategory={product.standardCategory}
+                product={product}
                 className="product-card w-full"
               />
             ))}
           </div>
           {/* 查看更多按钮 */}
           <div className="flex justify-center lg:mt-10 mt-5 product-card">
-            <Link href="/products">
+            <Link href="/products/all">
               <Button className="relative">View All Products</Button>
             </Link>
           </div>

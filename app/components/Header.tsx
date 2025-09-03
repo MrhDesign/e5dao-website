@@ -1,10 +1,22 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Icon from './Icon';
 import useContent from '../../lib/useContent';
+import { ProductCategory } from '../../lib/types';
+
+interface SubmenuItem {
+  name: string;
+  href: string;
+}
+
+interface NavigationItem {
+  name: string;
+  href: string;
+  submenu?: SubmenuItem[];
+}
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -13,50 +25,50 @@ export default function Header() {
   const { getContent } = useContent();
   
   // 动态获取产品分类数据
-  const productCategories = getContent('products.categories') || [];
+  const productCategories = useMemo(() => getContent<ProductCategory[]>('products.categories') || [], [getContent]);
   // 动态获取解决方案分类数据
-  const solutionCategories = getContent('solution.categories') || [];
+  const solutionCategories = useMemo(() => getContent<ProductCategory[]>('solution.categories') || [], [getContent]);
 
-  const navigation = [
-    { name: getContent('navigation.home'), href: '/' },
+  const navigation: NavigationItem[] = useMemo(() => [
+    { name: getContent<string>('navigation.home'), href: '/' },
     { 
-      name: getContent('navigation.solution'), 
+      name: getContent<string>('navigation.solution'), 
       href: '/solution/command-system',
-      submenu: solutionCategories.map((category: any) => ({
+      submenu: solutionCategories.map((category: ProductCategory) => ({
         name: category.title,
         href: `/solution/${category.slug}`
       }))
     },
     { 
-      name: getContent('navigation.products'), 
+      name: getContent<string>('navigation.products'), 
       href: '/products/all',
-      submenu: productCategories.map((category: any) => ({
+      submenu: productCategories.map((category: ProductCategory) => ({
         name: category.title,
         href: `/products/${category.slug}`
       }))
     },
     { 
-      name: getContent('navigation.news'), 
+      name: getContent<string>('navigation.news'), 
       href: '/news',
       submenu: [
         { name: 'Articles', href: '/news/articles' },
         { name: 'Industry Applications', href: '/news/applications' }
       ]
     },
-    { name: getContent('navigation.aboutUs'), href: '/aboutUs' }
-  ];
+    { name: getContent<string>('navigation.aboutUs'), href: '/aboutUs' }
+  ], [getContent, solutionCategories, productCategories]);
 
-  const mobileNavigation = [
+  const mobileNavigation: NavigationItem[] = useMemo(() => [
     ...navigation,
-    { name: getContent('navigation.contact'), href: '/contact' }
-  ];
+    { name: getContent<string>('navigation.contact'), href: '/contact' }
+  ], [navigation, getContent]);
 
   const isCurrentPage = (href: string) => {
     return pathname === href;
   };
 
   // 检查是否是主导航的激活状态（包括子页面）
-  const isMainNavActive = (item: any) => {
+  const isMainNavActive = (item: NavigationItem) => {
     if (pathname === item.href) return true;
     if (!item.submenu) return false;
     
@@ -65,17 +77,17 @@ export default function Header() {
     if (item.href === '/news' && pathname.startsWith('/news')) return true;
     if (item.href === '/solution/command-system' && pathname.startsWith('/solution')) return true;
     
-    return item.submenu.some((subItem: any) => pathname === subItem.href);
+    return item.submenu.some((subItem: SubmenuItem) => pathname === subItem.href);
   };
 
 
   // 获取当前活跃的父菜单
-  const getActiveParentMenu = () => {
+  const getActiveParentMenu = useCallback((): string | null => {
     for (const item of navigation) {
       if (!item.submenu) continue;
       
       // 检查是否在子菜单项中
-      const hasActiveSubmenu = item.submenu.some((subItem: any) => pathname === subItem.href);
+      const hasActiveSubmenu = item.submenu.some((subItem: SubmenuItem) => pathname === subItem.href);
       if (hasActiveSubmenu) {
         return item.name;
       }
@@ -96,7 +108,7 @@ export default function Header() {
       }
     }
     return null;
-  };
+  }, [navigation, pathname]);
 
   // 当路径改变时，自动展开包含当前页面的子菜单
   useEffect(() => {
@@ -104,7 +116,7 @@ export default function Header() {
     if (activeParent) {
       setExpandedSubmenu(activeParent);
     }
-  }, [pathname]);
+  }, [pathname, getActiveParentMenu]);
 
   // 当移动菜单打开时，确保当前页面的父菜单展开
   useEffect(() => {
@@ -114,7 +126,7 @@ export default function Header() {
         setExpandedSubmenu(activeParent);
       }
     }
-  }, [isMobileMenuOpen]);
+  }, [isMobileMenuOpen, getActiveParentMenu]);
 
   // 控制移动菜单打开时禁用背景滚动
   useEffect(() => {
@@ -134,7 +146,7 @@ export default function Header() {
     setExpandedSubmenu(expandedSubmenu === itemName ? null : itemName);
   };
 
-  const handleMenuItemClick = (item: any) => {
+  const handleMenuItemClick = (item: NavigationItem) => {
     if (item.submenu) {
       toggleSubmenu(item.name);
     } else {
@@ -183,7 +195,7 @@ export default function Header() {
                 {item.submenu && (
                   <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-64 bg-fill-white shadow-lg rounded-sm border border-border-one opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out z-50">
                     <div className="py-2">
-                      {item.submenu.map((subItem: any) => (
+                      {item.submenu.map((subItem: SubmenuItem) => (
                         <Link
                           key={subItem.name}
                           href={subItem.href}
@@ -213,7 +225,7 @@ export default function Header() {
                   : 'text-text-title hover:text-text-brand'
               }`}
             >
-              {getContent('navigation.contact')}
+              {getContent<string>('navigation.contact')}
               {/* Bottom line - grows from center to both ends */}
               <span 
                 className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 bg-fill-brand transition-all duration-300 ease-out ${
@@ -345,7 +357,7 @@ export default function Header() {
                         : 'max-h-0 opacity-0'
                     }`}
                   >
-                    {item.submenu.map((subItem: any, subIndex: number) => (
+                    {item.submenu.map((subItem: SubmenuItem, subIndex: number) => (
                       <Link
                         key={subItem.name}
                         href={subItem.href}
