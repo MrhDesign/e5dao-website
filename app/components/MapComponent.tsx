@@ -15,14 +15,22 @@ declare global {
     google?: {
       maps: {
         Map: new (element: HTMLElement, options: unknown) => unknown;
-        Marker: new (options: unknown) => unknown;
-        InfoWindow: new (options: unknown) => unknown;
+        Marker: new (options: unknown) => { addListener: (event: string, callback: () => void) => void };
+        InfoWindow: new (options: unknown) => { open: (map: unknown, marker: unknown) => void };
+        Size: new (width: number, height: number) => unknown;
+        Point: new (x: number, y: number) => unknown;
       };
     };
     AMap?: {
-      Map: new (element: HTMLElement, options: unknown) => unknown;
-      Marker: new (options: unknown) => unknown;
-      InfoWindow: new (options: unknown) => unknown;
+      Map: new (element: HTMLElement, options: unknown) => { add: (marker: unknown) => void };
+      Marker: new (options: unknown) => { 
+        on: (event: string, callback: () => void) => void;
+        getPosition: () => unknown;
+      };
+      InfoWindow: new (options: unknown) => { open: (map: unknown, position: unknown) => void };
+      Icon: new (options: unknown) => unknown;
+      Size: new (width: number, height: number) => unknown;
+      Pixel: new (x: number, y: number) => unknown;
     };
     initGoogleMap: () => void;
     initAMap: () => void;

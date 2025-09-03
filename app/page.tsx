@@ -36,7 +36,7 @@ export default function Home() {
     {
       selector: '.hero-section',
       config: {
-        origin: 'top',
+        origin: 'top' as const,
         distance: '50px',
         duration: 800,
         delay: 100
@@ -45,7 +45,7 @@ export default function Home() {
     {
       selector: '.about-section',
       config: {
-        origin: 'bottom',
+        origin: 'bottom' as const,
         distance: '30px',
         duration: 600,
         delay: 200
@@ -54,7 +54,7 @@ export default function Home() {
     {
       selector: '.about-title',
       config: {
-        origin: 'left',
+        origin: 'left' as const,
         distance: '50px',
         duration: 800,
         delay: 300
@@ -63,7 +63,7 @@ export default function Home() {
     {
       selector: '.about-description',
       config: {
-        origin: 'right',
+        origin: 'right' as const,
         distance: '50px',
         duration: 800,
         delay: 400
@@ -72,7 +72,7 @@ export default function Home() {
     {
       selector: '.solution-card',
       config: {
-        origin: 'bottom',
+        origin: 'bottom' as const,
         distance: '40px',
         duration: 700,
         delay: 200,
@@ -82,7 +82,7 @@ export default function Home() {
     {
       selector: '.solution-image',
       config: {
-        origin: 'left',
+        origin: 'left' as const,
         distance: '60px',
         duration: 800,
         delay: 300,
@@ -92,7 +92,7 @@ export default function Home() {
     {
       selector: '.solution-content',
       config: {
-        origin: 'right',
+        origin: 'right' as const,
         distance: '60px',
         duration: 800,
         delay: 400
@@ -101,7 +101,7 @@ export default function Home() {
     {
       selector: '.news-card',
       config: {
-        origin: 'bottom',
+        origin: 'bottom' as const,
         distance: '40px',
         duration: 600,
         delay: 300
@@ -110,7 +110,7 @@ export default function Home() {
     {
       selector: '.product-card',
       config: {
-        origin: 'bottom',
+        origin: 'bottom' as const,
         distance: '40px',
         duration: 700,
         delay: 200,
@@ -120,7 +120,7 @@ export default function Home() {
     {
       selector: '.process-section',
       config: {
-        origin: 'bottom',
+        origin: 'bottom' as const,
         distance: '50px',
         duration: 800,
         delay: 300
@@ -129,7 +129,7 @@ export default function Home() {
     {
       selector: '.contact-form',
       config: {
-        origin: 'right',
+        origin: 'right' as const,
         distance: '60px',
         duration: 800,
         delay: 400
@@ -140,11 +140,11 @@ export default function Home() {
   useScrollRevealMultiple(scrollRevealConfig);
 
   // 缓存常用的内容获取
-  const readMoreText = useMemo(() => getContent('common.readMore'), [getContent]);
-  const aboutDescription = useMemo(() => getContent('aboutUs.about.description'), [getContent]);
-  const solutionTitle = useMemo(() => getContent('solution.commandSystem.overview.title'), [getContent]);
-  const solutionContent = useMemo(() => getContent('solution.commandSystem.overview.content'), [getContent]);
-  const mobileSolutionTitle = useMemo(() => getContent('solution.mobileCommand.commandSystem.overview.title'), [getContent]);
+  const readMoreText = useMemo(() => getContent('common.readMore') as string, [getContent]);
+  const aboutDescription = useMemo(() => getContent('aboutUs.about.description') as string, [getContent]);
+  const solutionTitle = useMemo(() => getContent('solution.commandSystem.overview.title') as string, [getContent]);
+  const solutionContent = useMemo(() => getContent('solution.commandSystem.overview.content') as string, [getContent]);
+  const mobileSolutionTitle = useMemo(() => getContent('solution.mobileCommand.commandSystem.overview.title') as string, [getContent]);
 
   useEffect(() => {
     const video = videoRef.current;

@@ -9,7 +9,7 @@ import type { Product } from '@/lib/types';
 export default function TreatmentSystemPage() {
   const { getContent } = useContent();
   const treatmentData = useMemo(() => 
-    getContent('solution.treatmentSystem'), 
+    getContent('solution.treatmentSystem') as { hero?: { image?: string; title?: string } } | undefined, 
     [getContent]
   );
 

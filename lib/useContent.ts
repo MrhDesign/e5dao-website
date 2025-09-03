@@ -1,12 +1,12 @@
 import { useMemo } from 'react';
 import contentData from './content.json';
-import type { ContentData, UseContentReturn } from './types';
+import type { UseContentReturn } from './types';
 
 export const useContent = (): UseContentReturn => {
   const getContent = useMemo(() => {
     return <T = unknown>(path: string): T => {
       const keys = path.split('.');
-      let result: unknown = (contentData as ContentData).pages;
+      let result: unknown = (contentData as { pages: unknown }).pages;
       
       for (const key of keys) {
         if (result && typeof result === 'object' && key in result) {

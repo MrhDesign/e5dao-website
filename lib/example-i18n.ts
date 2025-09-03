@@ -61,10 +61,10 @@ export const I18nProvider = ({ children }: { children: React.ReactNode }) => {
 
   const t = (key: string): string => {
     const keys = key.split('.');
-    let result = translations[locale];
+    let result: unknown = translations[locale];
     
     for (const k of keys) {
-      result = result?.[k];
+      result = (result as Record<string, unknown>)?.[k];
     }
     
     return typeof result === 'string' ? result : key;

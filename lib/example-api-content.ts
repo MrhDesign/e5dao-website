@@ -27,10 +27,10 @@ export const useApiContent = () => {
 
   const getContent = (path: string): string => {
     const keys = path.split('.');
-    let result = content;
+    let result: unknown = content;
     
     for (const key of keys) {
-      result = result?.[key];
+      result = (result as Record<string, unknown>)?.[key];
     }
     
     return typeof result === 'string' ? result : path;

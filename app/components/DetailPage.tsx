@@ -341,10 +341,10 @@ export default function DetailPage({ slug, type }: DetailPageProps) {
             </h2>
             <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
               {relatedContent.map((related: { 
-                id: string; 
+                id: number; 
                 image: string; 
                 alt: string; 
-                publishedDate?: { year?: string; month?: string; day?: string }; 
+                publishedDate: { year: string; month: string; day: string }; 
                 title: string; 
                 description: string; 
                 slug: string;

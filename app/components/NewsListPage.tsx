@@ -29,7 +29,15 @@ export default function NewsListPage({ config }: NewsListPageProps) {
   // 计算分页数据
   const { paginatedData, totalPages } = useMemo(() => {
     // 获取数据
-    const allData: unknown[] = getContent(config.contentKey) || [];
+    const allData: Array<{
+      id: number;
+      image: string;
+      alt: string;
+      publishedDate: { year: string; month: string; day: string };
+      title: string;
+      description: string;
+      slug: string;
+    }> = getContent(config.contentKey) || [];
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     const paginatedData = allData.slice(startIndex, endIndex);
@@ -75,8 +83,8 @@ export default function NewsListPage({ config }: NewsListPageProps) {
             key={item.id}
             image={item.image}
             alt={item.alt}
-            year={item.year}
-            date={item.date}
+            year={item.publishedDate.year}
+            date={`${item.publishedDate.month}/${item.publishedDate.day}`}
             title={item.title}
             description={item.description}
             slug={item.slug}
