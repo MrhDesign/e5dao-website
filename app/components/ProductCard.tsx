@@ -1,38 +1,14 @@
+import React, { memo, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import useContent from '../../lib/useContent';
 import Button from './Button';
-
-// 产品核心数据类型 - 使用条件类型
-interface BaseProduct {
-  id: number;
-  categoryId: number;
-  image: string;
-  alt: string;
-  productType: 'independent-rd' | 'standard';
-}
-
-interface IndependentRDProduct extends BaseProduct {
-  productType: 'independent-rd';
-  title: string;        // 自研产品必需
-  description: string;  // 自研产品必需
-  model?: string;       // 自研产品可选（技术标识）
-}
-
-interface StandardProduct extends BaseProduct {
-  productType: 'standard';
-  model: string;               // 标准产品必需
-  standardCategory: string;    // 标准产品必需
-  title?: string;             // 标准产品可选（向后兼容）
-  description?: string;       // 标准产品可选（向后兼容）
-}
-
-type ProductCore = IndependentRDProduct | StandardProduct;
+import type { Product, ProductCategory } from '../../lib/types';
 
 // 组件Props支持两种方式
 interface ProductCardProps {
   // 方式1：传递完整产品对象
-  product?: ProductCore;
+  product?: Product;
   
   // 方式2：逐字段传递（向后兼容）
   image?: string;
@@ -51,7 +27,7 @@ interface ProductCardProps {
   variant?: 'default' | 'solution';
 }
 
-export default function ProductCard(props: ProductCardProps) {
+function ProductCard(props: ProductCardProps) {
   // 智能解析数据来源，处理可选字段
   const productData = props.product ? {
     id: props.product.id,
@@ -84,13 +60,13 @@ export default function ProductCard(props: ProductCardProps) {
   
   const { getContent } = useContent();
   
-  // 使用工具函数生成产品URL
-  const getProductUrl = () => {
+  // 使用 useMemo 优化产品URL生成
+  const productUrl = useMemo(() => {
     if (href) return href;
     if (!id || !categoryId) return '#';
     
-    const categoriesData = getContent('products.categories') || [];
-    const category = categoriesData.find((cat: any) => cat.id === categoryId);
+    const categoriesData = getContent<ProductCategory[]>('products.categories') || [];
+    const category = categoriesData.find((cat: ProductCategory) => cat.id === categoryId);
     
     if (!category) {
       console.warn(`Category not found for categoryId ${categoryId}`);
@@ -98,9 +74,7 @@ export default function ProductCard(props: ProductCardProps) {
     }
     
     return `/products/${category.slug}/${id}`;
-  };
-  
-  const productUrl = getProductUrl();
+  }, [href, id, categoryId, getContent]);
   
   // Solution variant - 解决方案专用变体
   if (variant === 'solution') {
@@ -241,3 +215,6 @@ export default function ProductCard(props: ProductCardProps) {
     </>
   );
 }
+
+// 使用 memo 优化性能，避免不必要的重新渲染
+export default memo(ProductCard);

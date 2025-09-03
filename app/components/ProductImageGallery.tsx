@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import React, { useState, useRef, memo } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Thumbs, A11y } from 'swiper/modules';
@@ -17,14 +17,14 @@ interface ProductImageGalleryProps {
   className?: string;
 }
 
-export default function ProductImageGallery({ 
+function ProductImageGallery({ 
   images, 
   productName, 
   className = "" 
 }: ProductImageGalleryProps) {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
   const mainSwiperRef = useRef<SwiperType | null>(null);
-  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const [, setCurrentSlideIndex] = useState(0);
 
   // 处理缩略图点击时的智能滑动
   const handleThumbnailClick = (clickedIndex: number) => {
@@ -187,3 +187,6 @@ export default function ProductImageGallery({
     </div>
   );
 }
+
+// 使用 memo 优化性能
+export default memo(ProductImageGallery);

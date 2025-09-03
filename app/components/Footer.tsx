@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
       <div className="lg:px-30 px-5 flex flex-col gap-5">
         {/* Logo Section */}
         <div className="px-2.5 lg:pt-10 pt-5 pb-5 border-b border-border-one">
-            <Icon name="Logo" className="text-[60px] text-text-black" />
+          <Icon name="Logo" className="text-[60px] text-text-black" />
         </div>
 
         {/* Main Footer Content */}
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
 
           {/* Products Column */}
           <div>
-              <h3 className="text-lg font-semibold text-text-black lg:mb-5 mb-2.5">Products</h3>
+            <h3 className="text-lg font-semibold text-text-black lg:mb-5 mb-2.5">Products</h3>
             <div className="space-y-3">
               <Link
                 href="/products/command-system"
@@ -61,21 +61,20 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* About US & Contact Column */}
           <div>
-             <h3 className="text-lg font-semibold text-text-black lg:mb-5 mb-2.5">About US</h3>
+            <Link
+              href="/news"
+              className="block text-text-display hover:text-text-black transition-colors"
+            >
+              <h3 className="text-lg font-semibold text-text-black lg:mb-5 mb-2.5">News</h3>
+            </Link>
+
             <div className="space-y-3">
               <Link
-                href="/aboutUs"
+                href="/news/articles"
                 className="block text-text-display hover:text-text-black transition-colors"
               >
-                About Us
-              </Link>
-              <Link
-                href="/news"
-                className="block text-text-display hover:text-text-black transition-colors"
-              >
-                News & Media
+                articles
               </Link>
               <Link
                 href="/news/applications"
@@ -87,14 +86,14 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-             <h3 className="text-lg font-semibold text-text-black lg:mb-5 mb-2.5">Contact</h3>
+            <Link
+              href="/contact"
+              className="block text-text-display hover:text-text-black transition-colors mb-3"
+            >
+              <h3 className="text-lg font-semibold text-text-black lg:mb-5 mb-2.5">Contact</h3>
+            </Link>
             <div className="space-y-3">
-              <Link
-                href="/contact"
-                className="block text-text-display hover:text-text-black transition-colors mb-3"
-              >
-                Contact Us
-              </Link>
+
               <div className="flex items-center gap-3">
                 <Icon name="phone-line" className="text-text-display flex-shrink-0" />
                 <span className="text-text-display">Tel: +65-6xxx-xxxx</span>
@@ -118,9 +117,9 @@ const Footer: React.FC = () => {
 
         {/* Bottom Section */}
         <div className="lg:py-10 py-5 border-t border-border-one text-center">
-            <span className="text-text-display  lg:text-left">
-              Copyright © {currentYear} E5DAO Singapore. All Rights Reserved
-            </span>
+          <span className="text-text-display  lg:text-left">
+            Copyright © {currentYear} E5DAO Singapore. All Rights Reserved
+          </span>
         </div>
       </div>
     </footer>
