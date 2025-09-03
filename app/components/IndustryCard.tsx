@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 
 interface IndustryCardProps {
   id: number;
@@ -21,12 +21,12 @@ export default function IndustryCard({
 }: IndustryCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     onClick?.(id);
-  };
+  }, [onClick, id]);
 
   // 判断是否应该显示选中效果（选中状态或悬停状态）
-  const showSelectedEffect = isSelected || isHovered;
+  const showSelectedEffect = useMemo(() => isSelected || isHovered, [isSelected, isHovered]);
 
   return (
     <div

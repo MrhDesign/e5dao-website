@@ -21,7 +21,7 @@ export function getContentData(slug: string, type: 'news' | 'application') {
     : contentData.pages.industryApplications?.items || [];
 
   // 查找当前内容
-  const content = dataSource.find((item: any) => item.slug === slug);
+  const content = dataSource.find((item: { slug: string }) => item.slug === slug);
 
   if (content) {
     // 为content.json中的内容生成详细内容
@@ -29,7 +29,7 @@ export function getContentData(slug: string, type: 'news' | 'application') {
       ...content,
       content: generateDetailedContent(content),
       author: isNews ? "E5DAO Research Team" : "E5DAO Application Engineering Team",
-      category: (content as any).category || (isNews ? "Technology" : "Industrial Applications")
+      category: (content as { category?: string }).category || (isNews ? "Technology" : "Industrial Applications")
     };
   }
 
@@ -38,8 +38,8 @@ export function getContentData(slug: string, type: 'news' | 'application') {
 }
 
 // 生成详细内容
-function generateDetailedContent(content: any) {
-  return `<div>${content.description}</div>`;
+function generateDetailedContent(content: { description?: string }) {
+  return `<div>${content.description || ''}</div>`;
 }
 
 // 生成面包屑导航
@@ -151,7 +151,7 @@ export default function DetailPage({ slug, type }: DetailPageProps) {
     : contentData.pages.industryApplications?.items || [];
 
   const relatedContent = allData
-    .filter((item: any) => item.slug !== slug)
+    .filter((item: { slug: string }) => item.slug !== slug)
     .slice(0, 4);
 
   if (!content) {
@@ -204,7 +204,7 @@ export default function DetailPage({ slug, type }: DetailPageProps) {
     "inLanguage": "en-US",
     "isAccessibleForFree": true,
     ...(relatedContent.length > 0 && {
-      "relatedLink": relatedContent.map((related: any) =>
+      "relatedLink": relatedContent.map((related: { slug: string }) =>
         `${process.env.NEXT_PUBLIC_SITE_URL || 'https://e5dao.com'}${isNews ? `/news/articles/${related.slug}` : `/news/applications/${related.slug}`}`
       )
     })
@@ -340,7 +340,15 @@ export default function DetailPage({ slug, type }: DetailPageProps) {
               {isNews ? 'Related Articles' : 'Related Applications'}
             </h2>
             <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
-              {relatedContent.map((related: any) => (
+              {relatedContent.map((related: { 
+                id: string; 
+                image: string; 
+                alt: string; 
+                publishedDate?: { year?: string; month?: string; day?: string }; 
+                title: string; 
+                description: string; 
+                slug: string;
+              }) => (
                 <NewCard
                   key={related.id}
                   image={related.image}

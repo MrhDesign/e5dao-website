@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 
 interface ContentResponse {
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 export const useApiContent = () => {

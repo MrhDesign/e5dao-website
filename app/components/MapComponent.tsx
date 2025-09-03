@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 
 interface MapComponentProps {
   latitude: number;
@@ -12,8 +12,18 @@ interface MapComponentProps {
 
 declare global {
   interface Window {
-    google?: any;
-    AMap?: any;
+    google?: {
+      maps: {
+        Map: new (element: HTMLElement, options: unknown) => unknown;
+        Marker: new (options: unknown) => unknown;
+        InfoWindow: new (options: unknown) => unknown;
+      };
+    };
+    AMap?: {
+      Map: new (element: HTMLElement, options: unknown) => unknown;
+      Marker: new (options: unknown) => unknown;
+      InfoWindow: new (options: unknown) => unknown;
+    };
     initGoogleMap: () => void;
     initAMap: () => void;
   }
@@ -32,7 +42,7 @@ export default function MapComponent({
   const [isAmapLoaded, setIsAmapLoaded] = useState(false);
 
   // 初始化Google地图
-  const initGoogleMap = () => {
+  const initGoogleMap = useCallback(() => {
     if (!mapRef.current || !window.google) return;
 
     const map = new window.google.maps.Map(mapRef.current, {
@@ -83,10 +93,10 @@ export default function MapComponent({
     }
 
     setMapType('google');
-  };
+  }, [latitude, longitude, companyName, address]);
 
   // 初始化高德地图
-  const initAMap = () => {
+  const initAMap = useCallback(() => {
     if (!mapRef.current || !window.AMap) return;
 
     const map = new window.AMap.Map(mapRef.current, {
@@ -130,10 +140,10 @@ export default function MapComponent({
     }
 
     setMapType('amap');
-  };
+  }, [latitude, longitude, companyName, address]);
 
   // 加载Google Maps
-  const loadGoogleMaps = () => {
+  const loadGoogleMaps = useCallback(() => {
     return new Promise<void>((resolve, reject) => {
       if (window.google && window.google.maps) {
         setIsGoogleLoaded(true);
@@ -161,10 +171,10 @@ export default function MapComponent({
         }
       }, 10000);
     });
-  };
+  }, [isGoogleLoaded]);
 
   // 加载高德地图
-  const loadAMap = () => {
+  const loadAMap = useCallback(() => {
     return new Promise<void>((resolve, reject) => {
       if (window.AMap) {
         setIsAmapLoaded(true);
@@ -191,7 +201,7 @@ export default function MapComponent({
         }
       }, 10000);
     });
-  };
+  }, [isAmapLoaded]);
 
   useEffect(() => {
     const loadMaps = async () => {
@@ -213,7 +223,7 @@ export default function MapComponent({
     };
 
     loadMaps();
-  }, [latitude, longitude]);
+  }, [latitude, longitude, initGoogleMap, initAMap, loadGoogleMaps, loadAMap]);
 
   // 重新初始化地图（当坐标变化时）
   useEffect(() => {
@@ -222,7 +232,7 @@ export default function MapComponent({
     } else if (mapType === 'amap' && isAmapLoaded) {
       initAMap();
     }
-  }, [latitude, longitude, isGoogleLoaded, isAmapLoaded]);
+  }, [mapType, isGoogleLoaded, isAmapLoaded, initGoogleMap, initAMap]);
 
   return (
     <div className={`relative w-full h-full ${className}`}>

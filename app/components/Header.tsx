@@ -63,12 +63,12 @@ export default function Header() {
     { name: getContent<string>('navigation.contact'), href: '/contact' }
   ], [navigation, getContent]);
 
-  const isCurrentPage = (href: string) => {
+  const isCurrentPage = useCallback((href: string) => {
     return pathname === href;
-  };
+  }, [pathname]);
 
   // 检查是否是主导航的激活状态（包括子页面）
-  const isMainNavActive = (item: NavigationItem) => {
+  const isMainNavActive = useCallback((item: NavigationItem) => {
     if (pathname === item.href) return true;
     if (!item.submenu) return false;
     
@@ -78,7 +78,7 @@ export default function Header() {
     if (item.href === '/solution/command-system' && pathname.startsWith('/solution')) return true;
     
     return item.submenu.some((subItem: SubmenuItem) => pathname === subItem.href);
-  };
+  }, [pathname]);
 
 
   // 获取当前活跃的父菜单
@@ -142,18 +142,18 @@ export default function Header() {
     };
   }, [isMobileMenuOpen]);
 
-  const toggleSubmenu = (itemName: string) => {
-    setExpandedSubmenu(expandedSubmenu === itemName ? null : itemName);
-  };
+  const toggleSubmenu = useCallback((itemName: string) => {
+    setExpandedSubmenu(prev => prev === itemName ? null : itemName);
+  }, []);
 
-  const handleMenuItemClick = (item: NavigationItem) => {
+  const handleMenuItemClick = useCallback((item: NavigationItem) => {
     if (item.submenu) {
       toggleSubmenu(item.name);
     } else {
       setIsMobileMenuOpen(false);
       setExpandedSubmenu(null);
     }
-  };
+  }, [toggleSubmenu]);
 
 
   return (

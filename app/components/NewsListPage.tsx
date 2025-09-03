@@ -26,18 +26,17 @@ export default function NewsListPage({ config }: NewsListPageProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
-  // 获取数据
-  const allData: any[] = getContent(config.contentKey) || [];
-
   // 计算分页数据
   const { paginatedData, totalPages } = useMemo(() => {
+    // 获取数据
+    const allData: unknown[] = getContent(config.contentKey) || [];
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     const paginatedData = allData.slice(startIndex, endIndex);
     const totalPages = Math.ceil(allData.length / itemsPerPage);
 
     return { paginatedData, totalPages };
-  }, [allData, currentPage, itemsPerPage]);
+  }, [getContent, config.contentKey, currentPage, itemsPerPage]);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);

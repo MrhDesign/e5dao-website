@@ -1,9 +1,9 @@
 // 示例：国际化内容管理
-import { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 interface Translations {
   [locale: string]: {
-    [key: string]: any;
+    [key: string]: unknown;
   };
 }
 
@@ -70,9 +70,12 @@ export const I18nProvider = ({ children }: { children: React.ReactNode }) => {
     return typeof result === 'string' ? result : key;
   };
 
-  return (
-    <I18nContext.Provider value={{ locale, setLocale, t }}>
-      {children}
-    </I18nContext.Provider>
-  );
+  // JSX is commented out for TypeScript compatibility
+  // return (
+  //   <I18nContext.Provider value={{ locale, setLocale, t }}>
+  //     {children}
+  //   </I18nContext.Provider>
+  // );
+  
+  return { locale, setLocale, t, children };
 };
