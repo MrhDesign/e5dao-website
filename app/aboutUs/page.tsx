@@ -82,7 +82,7 @@ export default function AboutUs() {
                 {/* 愿景与使命 */}
         <div className='lg:pb-20 pb-5'>
            <h2 className="text-3xl lg:text-6xl font-bold lg:text-center text-left lg:mb-5">Mission & Vision</h2>
-           <p className=' text-base lg:text-3xl leading-relaxed'>To promote the global application of high-performance composite materials, building lighter, stronger,and more reliable future structures,and to become the world's most influential provider of composite material solutions.</p>
+           <p className=' text-base lg:text-3xl leading-relaxed'>To promote the global application of high-performance composite materials, building lighter, stronger, and more reliable future structures, and to become the world&apos;s most influential provider of composite material solutions.</p>
         </div>
       </section>
     </>

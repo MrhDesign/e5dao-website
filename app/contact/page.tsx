@@ -2,19 +2,8 @@
 
 import ContactForm from "../components/ContactForm";
 import ProcessFlow from "../components/ProcessFlow";
-import MapComponent from "../components/MapComponent";
-import useContent from "../../lib/useContent";
 
 export default function Contact() {
-  const { getContent } = useContent();
-
-  // 公司位置坐标 (请根据实际位置修改)
-  const companyLocation = {
-    latitude: 31.2304,    // 上海纬度示例
-    longitude: 121.4737,  // 上海经度示例
-    name: "E5DAO",
-    address: "上海市浦东新区" // 请根据实际地址修改
-  };
 
   return (
     <section className='lg:px-30 lg:pb-20 p-5 bg-fill-two lg:process-section'>

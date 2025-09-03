@@ -4,16 +4,17 @@ import NewCard from '../components/NewCard';
 import useContent from '../../lib/useContent';
 import Button from '../components/Button';
 import Link from 'next/link';
+import type { NewsItem, ApplicationItem } from '../../lib/types';
 
 export default function News() {
   const { getContent } = useContent();
 
   // 获取新闻数据，新闻页面显示8个
-  const allNewsData: any[] = getContent('news.items') || [];
+  const allNewsData = getContent<NewsItem[]>('news.items') || [];
   const newsData = allNewsData.slice(0, 8);
 
   // 获取行业应用案例数据，显示6个
-  const allIndustryData: any[] = getContent('industryApplications.items') || [];
+  const allIndustryData = getContent<ApplicationItem[]>('industryApplications.items') || [];
   const industryData = allIndustryData.slice(0, 6);
 
   return (
@@ -32,8 +33,8 @@ export default function News() {
             key={news.id}
             image={news.image}
             alt={news.alt}
-            year={news.year}
-            date={news.date}
+            year={news.publishedDate.year}
+            date={`${news.publishedDate.month}/${news.publishedDate.day}`}
             title={news.title}
             description={news.description}
             slug={news.slug}
@@ -60,8 +61,8 @@ export default function News() {
             key={application.id}
             image={application.image}
             alt={application.alt}
-            year={application.year}
-            date={application.date}
+            year={application.publishedDate.year}
+            date={`${application.publishedDate.month}/${application.publishedDate.day}`}
             title={application.title}
             description={application.description}
             slug={application.slug}
