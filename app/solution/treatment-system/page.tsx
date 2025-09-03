@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { useContent } from '@/lib/useContent';
+import ProductCard from '../../components/ProductCard';
 
 export default function TreatmentSystemPage() {
   const { getContent } = useContent();
@@ -220,6 +221,31 @@ export default function TreatmentSystemPage() {
               </ul>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Related Products */}
+      <div className="mb-12">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">
+          Related Products
+        </h2>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 lg:gap-5">
+          {(() => {
+            const productsData = getContent('products.items') || [];
+            // 筛选出 treatment-system 分类的自研产品 (categoryId = 2 && productType = 'independent-rd')
+            const treatmentSystemProducts = productsData.filter((product: any) => 
+              product.categoryId === 2 && product.productType === 'independent-rd'
+            );
+            
+            return treatmentSystemProducts.map((product: any, index: number) => (
+              <ProductCard
+                key={`treatment-product-${product.id || index}`}
+                product={product}
+                variant="solution"
+                className="w-full"
+              />
+            ));
+          })()}
         </div>
       </div>
 

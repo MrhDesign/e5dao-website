@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import useContent from '../../lib/useContent';
+import Button from './Button';
 
 // 产品核心数据类型 - 使用条件类型
 interface BaseProduct {
@@ -47,6 +48,7 @@ interface ProductCardProps {
   // 通用属性
   className?: string;
   href?: string;
+  variant?: 'default' | 'solution';
 }
 
 export default function ProductCard(props: ProductCardProps) {
@@ -78,7 +80,7 @@ export default function ProductCard(props: ProductCardProps) {
     description, productType, standardCategory 
   } = productData;
   
-  const { className = "", href } = props;
+  const { className = "", href, variant = 'default' } = props;
   
   const { getContent } = useContent();
   
@@ -100,6 +102,78 @@ export default function ProductCard(props: ProductCardProps) {
   
   const productUrl = getProductUrl();
   
+  // Solution variant - 解决方案专用变体
+  if (variant === 'solution') {
+    const solutionCardContent = (
+      <div className={`group flex lg:flex-row flex-col lg:gap-10 gap-5 cursor-pointer lg:py-5 border-b border-border-one ${className}`}>
+        {/* 产品图片区域 - 解决方案变体 */}
+        <div className='flex-1 aspect-[4/3]'>
+          <Image
+            src={image}
+            alt={alt}
+            width={600}
+            height={450}
+            className="aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
+
+
+
+        {/* 产品信息区域 - 解决方案变体 */}
+        <div className="lg:p-5 py-5 flex-2 flex flex-col gap-2.5">
+          {productType === 'independent-rd' ? (
+            <>
+              {title && (
+                <h3 className="lg:text-3xl text-base font-medium text-text-brand group-hover:text-text-brand-hover transition-colors duration-200 line-clamp-2">
+                  {title}
+                </h3>
+              )}
+              {description && (
+                <p className="lg:text-xl text-sm lg:text-text-display font-normal line-clamp-6 leading-relaxed">
+                  {description}
+                </p>
+              )}
+            </>
+          ) : (
+            <>
+              {model && (
+                <h3 className="lg:text-3xl text-base font-medium text-text-brand group-hover:text-text-brand-hover transition-colors duration-200 line-clamp-2">
+                  {model}
+                </h3>
+              )}
+              {standardCategory && (
+                <p className="lg:text-xl text-sm lg:text-text-display font-normal line-clamp-6 leading-relaxed">
+                  {standardCategory}
+                </p>
+              )}
+            </>
+          )}
+          
+          {/* 查看详情按钮 */}
+          <div className="mt-auto">
+            <Button 
+            >
+              View Details
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+
+    return (
+      <>
+        {(href || id) ? (
+          <Link href={productUrl}>
+            {solutionCardContent}
+          </Link>
+        ) : (
+          solutionCardContent
+        )}
+      </>
+    );
+  }
+  
+  // Default variant - 默认变体（原有样式）
   const cardContent = (
     <div className={`group flex flex-col cursor-pointer rounded-sm overflow-hidden bg-fill-four transition-all duration-300 hover:shadow-xl ${className}`}>
       {/* 产品图片区域 */}

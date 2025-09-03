@@ -258,7 +258,7 @@ export default function Home() {
         </section>
 
         {/* E50dao企业介绍 */}
-        <section className="lg:px-30 px-5 about-section">
+        <section className="lg:px-30 lg:py-10 p-5 about-section">
           <div className="w-full flex lg:flex-row flex-col items-start justify-between lg:py-10 py-5 lg:gap-10 gap-2.5">
             <div className='lg:w-[660px] lg:h-[200px] w-[249px] h-[82px] about-title'>
               <Image
@@ -271,7 +271,12 @@ export default function Home() {
               />
             </div>
 
-            <p className='flex-1 text-display  lg:line-clamp-8 line-clamp-6 about-description'>{getContent('home.about.description')}</p>
+            <div className='flex-1'>
+              <p className='text-display  lg:line-clamp-8 line-clamp-6 about-description'>{getContent('home.about.description')}</p>
+              <div className='mt-10'>
+                <Button className='relative'>{getContent('home.hero.button')}</Button>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -289,8 +294,8 @@ export default function Home() {
               />
             </div>
             <div className='flex-1 flex flex-col gap-5 solution-content'>
-              <h1 className='headline1'>{getContent('solution.cardOne.title')}</h1>
-              <p className='text-display line-clamp-10'>{getContent('solution.cardOne.content')}</p>
+              <h1 className='headline1'>{getContent('solution.mobileCommand.overview.title')}</h1>
+              <p className='text-display line-clamp-10'>{getContent('solution.mobileCommand.overview.content')}</p>
               <div className='mt-auto'>
                 <Button className='relative'>{getContent('home.hero.button')}</Button>
               </div>
@@ -308,8 +313,8 @@ export default function Home() {
                 priority
               />
             </div>
-            <h1 className='headline1'>{getContent('solution.cardOne.title')}</h1>
-            <p className='text-display line-clamp-10'>{getContent('solution.cardOne.content')}</p>
+            <h1 className='headline1'>{getContent('solution.mobileCommand.overview.title')}</h1>
+            <p className='text-display line-clamp-10'>{getContent('solution.mobileCommand.overview.content')}</p>
             <div>
               <Button className='relative'>{getContent('home.hero.button')}</Button>
             </div>
@@ -329,8 +334,8 @@ export default function Home() {
               />
             </div>
             <div className='flex-1 flex flex-col gap-5 solution-content'>
-              <h1 className='headline1'>{getContent('solution.cardOne.title')}</h1>
-              <p className='text-display line-clamp-10'>{getContent('solution.cardOne.content')}</p>
+              <h1 className='headline1'>{getContent('solution.mobileCommand.overview.title')}</h1>
+              <p className='text-display line-clamp-10'>{getContent('solution.mobileCommand.overview.content')}</p>
               <div className='mt-auto'>
                 <Button className='relative'>{getContent('home.hero.button')}</Button>
               </div>
@@ -348,10 +353,10 @@ export default function Home() {
                 priority
               />
             </div>
-            <h1 className='headline1'>{getContent('solution.cardOne.title')}</h1>
+            <h1 className='headline1'>{getContent('solution.mobileCommand.overview.title')}</h1>
             <p className='text-display line-clamp-10'>{getContent('solution.cardOne.content')}</p>
             <div>
-              <Button className='relative'>{getContent('home.hero.button')}</Button>
+              <Button className='relative'>{getContent('solution.mobileCommand.overview.content')}</Button>
             </div>
           </div>
         </section>
