@@ -1,24 +1,23 @@
 import { useMemo } from 'react';
 import contentData from './content.json';
+import type { ContentData, UseContentReturn } from './types';
 
-type ContentPath = string[];
-
-export const useContent = () => {
+export const useContent = (): UseContentReturn => {
   const getContent = useMemo(() => {
-    return (path: string): any => {
+    return <T = unknown>(path: string): T => {
       const keys = path.split('.');
-      let result: any = contentData.pages;
+      let result: unknown = (contentData as ContentData).pages;
       
       for (const key of keys) {
         if (result && typeof result === 'object' && key in result) {
-          result = result[key];
+          result = (result as Record<string, unknown>)[key];
         } else {
           console.warn(`Content path not found: ${path}`);
-          return typeof result === 'string' ? path : null; // 返回null作为fallback
+          return (typeof result === 'string' ? path : null) as T;
         }
       }
       
-      return result;
+      return result as T;
     };
   }, []);
 

@@ -14,12 +14,7 @@
       "contactUs": "Contact Us"
     },
     "home": {
-      "hero": {
-        "button": "Read More"
-      },
-      "about": {
-        "description": "Singapore E50DAO is a technology company that focuses on the research, development, production and sales of high-end composite materials such as carbon fiber and Kevlar. The company has modern factories and a complete industrial chain service system, covering the entire process of product design, molding, manufacturing, assembly and testing. Through the deep integration of digital technology and advanced processes, E5DAO can efficiently respond to customer customization needs and provide lightweight, high-strength, and excellent weather-resistant professional composite material solutions. The products are widely used in military, aerospace, medical, rescue, outdoor equipment, and high-end transportation."
-      }
+
     },
     "solution": {
       "categories": [
@@ -34,7 +29,7 @@
           "slug": "treatment-system"
         }
       ],
-      "mobileCommand": {
+      "commandSystem": {
         "hero": {
           "alt": "Mobile Command Station System",
           "image": "/images/mobile-command-hero.png"
@@ -518,6 +513,9 @@
       }
     },
     "aboutUs": {
+       "about": {
+        "description": "Singapore E50DAO is a technology company that focuses on the research, development, production and sales of high-end composite materials such as carbon fiber and Kevlar. The company has modern factories and a complete industrial chain service system, covering the entire process of product design, molding, manufacturing, assembly and testing. Through the deep integration of digital technology and advanced processes, E5DAO can efficiently respond to customer customization needs and provide lightweight, high-strength, and excellent weather-resistant professional composite material solutions. The products are widely used in military, aerospace, medical, rescue, outdoor equipment, and high-end transportation."
+      },
       "features": [
         {
           "id": 1,

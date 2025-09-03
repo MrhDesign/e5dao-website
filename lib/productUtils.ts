@@ -1,18 +1,5 @@
 // 产品数据处理工具函数
-
-interface Category {
-  id: number;
-  title: string;
-  slug: string;
-}
-
-interface ProductData {
-  id: number;
-  categoryId: number;
-  productType: 'independent-rd' | 'standard';
-  standardCategory?: string; // 标准产品类别
-  [key: string]: any;
-}
+import type { Product, ProductCategory } from './types';
 
 /**
  * 根据产品获取对应的分类信息
@@ -20,7 +7,7 @@ interface ProductData {
  * @param categories 分类数组
  * @returns 分类信息或 undefined
  */
-export const getCategoryByProduct = (product: ProductData, categories: Category[]): Category | undefined => {
+export const getCategoryByProduct = (product: Product, categories: ProductCategory[]): ProductCategory | undefined => {
   return categories.find(cat => cat.id === product.categoryId);
 };
 
@@ -30,7 +17,7 @@ export const getCategoryByProduct = (product: ProductData, categories: Category[
  * @param categories 分类数组
  * @returns 分类信息或 undefined
  */
-export const getCategoryBySlug = (slug: string, categories: Category[]): Category | undefined => {
+export const getCategoryBySlug = (slug: string, categories: ProductCategory[]): ProductCategory | undefined => {
   return categories.find(cat => cat.slug === slug);
 };
 
@@ -40,7 +27,7 @@ export const getCategoryBySlug = (slug: string, categories: Category[]): Categor
  * @param categories 分类数组
  * @returns URL字符串
  */
-export const getProductUrl = (product: ProductData, categories: Category[]): string => {
+export const getProductUrl = (product: Product, categories: ProductCategory[]): string => {
   const category = getCategoryByProduct(product, categories);
   if (!category) {
     console.warn(`Category not found for product ${product.id}`);
@@ -55,7 +42,7 @@ export const getProductUrl = (product: ProductData, categories: Category[]): str
  * @param categoryId 分类ID
  * @returns 筛选后的产品数组
  */
-export const getProductsByCategory = (products: ProductData[], categoryId: number): ProductData[] => {
+export const getProductsByCategory = (products: Product[], categoryId: number): Product[] => {
   return products.filter(product => product.categoryId === categoryId);
 };
 
@@ -66,7 +53,7 @@ export const getProductsByCategory = (products: ProductData[], categoryId: numbe
  * @param limit 限制数量
  * @returns 相关产品数组
  */
-export const getRelatedProducts = (products: ProductData[], currentProduct: ProductData, limit = 4): ProductData[] => {
+export const getRelatedProducts = (products: Product[], currentProduct: Product, limit = 4): Product[] => {
   return products
     .filter(p => p.categoryId === currentProduct.categoryId && p.id !== currentProduct.id)
     .slice(0, limit);
