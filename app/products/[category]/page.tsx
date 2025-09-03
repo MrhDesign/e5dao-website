@@ -5,24 +5,14 @@ import Link from 'next/link';
 import ProductCard from '../../components/ProductCard';
 import Button from '../../components/Button';
 import useContent from '../../../lib/useContent';
+import ErrorBoundary from '../../components/ErrorBoundary';
+import type { Product, ProductCategory } from '../../../lib/types';
 
-interface ProductData {
-  id: number;
-  image: string;
-  alt: string;
-  model: string;
-  title: string;
-  description: string;
-  categoryId: number;
-  productType: 'independent-rd' | 'standard';
-  standardCategory?: string; // 标准产品类别（仅标准产品使用）
-}
-
-interface ProductCategory {
+interface ExtendedProductCategory {
   id?: number;
   title: string;
   slug: string;
-  products: ProductData[];
+  products: Product[];
 }
 
 export default function ProductsPage() {
@@ -30,21 +20,21 @@ export default function ProductsPage() {
   const { getContent } = useContent();
   const categorySlug = params.category as string;
 
-  const productsData: ProductData[] = getContent('products.items') || [];
-  const categoriesData = getContent('products.categories') || [];
+  const productsData = getContent<Product[]>('products.items') || [];
+  const categoriesData = getContent<ProductCategory[]>('products.categories') || [];
 
   // 构建所有分类（包括 All Products）
-  const allCategories: ProductCategory[] = [
+  const allCategories: ExtendedProductCategory[] = [
     {
       title: "All Products",
       slug: "all",
       products: productsData
     },
-    ...categoriesData.map((category: any) => ({
+    ...categoriesData.map((category: ProductCategory) => ({
       id: category.id,
       title: category.title,
       slug: category.slug,
-      products: productsData.filter((product: any) => product.categoryId === category.id)
+      products: productsData.filter((product: Product) => product.categoryId === category.id)
     }))
   ];
 
@@ -123,21 +113,15 @@ export default function ProductsPage() {
 
                       {/* 该分类的产品网格 - 只显示前4个 */}
                       <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 lg:gap-5 pt-5">
-                        {category.products.slice(0, 4).map((product: ProductData, index: number) => (
-                          <ProductCard
-                            key={`${category.slug}-${product.id || index}`}
-                            id={product.id}
-                            categoryId={product.categoryId}
-                            image={product.image}
-                            alt={product.alt}
-                            model={product.model}
-                            title={product.title}
-                            description={product.description}
-                            productType={product.productType}
-                            standardCategory={product.standardCategory}
-                            className="w-full"
-                          />
-                        ))}
+                        <ErrorBoundary>
+                          {category.products.slice(0, 4).map((product: Product, index: number) => (
+                            <ProductCard
+                              key={`${category.slug}-${product.id || index}`}
+                              product={product}
+                              className="w-full"
+                            />
+                          ))}
+                        </ErrorBoundary>
                       </div>
                     </div>
                   )
@@ -156,21 +140,15 @@ export default function ProductsPage() {
                   {/* 该分类的产品网格 */}
                   {currentCategory.products.length > 0 ? (
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 lg:gap-5 pt-5">
-                      {currentCategory.products.map((product: ProductData, index: number) => (
-                        <ProductCard
-                          key={`${currentCategory.slug}-${product.id || index}`}
-                          id={product.id}
-                          categoryId={product.categoryId}
-                          image={product.image}
-                          alt={product.alt}
-                          model={product.model}
-                          title={product.title}
-                          description={product.description}
-                          productType={product.productType}
-                          standardCategory={product.standardCategory}
-                          className="w-full"
-                        />
-                      ))}
+                      <ErrorBoundary>
+                        {currentCategory.products.map((product: Product, index: number) => (
+                          <ProductCard
+                            key={`${currentCategory.slug}-${product.id || index}`}
+                            product={product}
+                            className="w-full"
+                          />
+                        ))}
+                      </ErrorBoundary>
                     </div>
                   ) : (
                     /* 空状态 */

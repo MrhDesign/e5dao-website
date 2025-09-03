@@ -5,41 +5,11 @@ import useContent from '../../../../lib/useContent';
 import Breadcrumb from '../../../components/Breadcrumb';
 import ProductImageGallery from '../../../components/ProductImageGallery';
 import ContentRenderer from '../../../components/ContentRenderer';
+import ErrorBoundary from '../../../components/ErrorBoundary';
 import { getCategoryByProduct, getCategoryBySlug, getProductsByCategory } from '../../../../lib/productUtils';
 import Image from 'next/image';
 import Link from 'next/link';
-
-
-interface ProductData {
-  id: number;
-  image: string;
-  alt: string;
-  model?: string; // 标准产品使用
-  title?: string; // 自研产品使用
-  description?: string; // 自研产品使用
-  categoryId: number; // 只保留关联ID
-  productType: 'independent-rd' | 'standard'; // 内部分类标识
-  standardCategory?: string; // 标准产品类别（仅标准产品使用）
-  gallery?: string[];
-  specifications?: {
-    [key: string]: string;
-  };
-  details?: Array<{
-    type: 'heading' | 'paragraph' | 'image' | 'list';
-    content: string;
-    level?: 1 | 2 | 3 | 4;
-    image?: string;
-    alt?: string;
-    items?: string[];
-  }>;
-  [key: string]: unknown; // 允许额外的字段，提供灵活性
-}
-
-interface StandardProductOverviewItem {
-  title: string;
-  image: string;
-  alt: string;
-}
+import type { Product, ProductCategory, StandardProductOverviewItem, BreadcrumbItem } from '../../../../lib/types';
 
 export default function ProductDetailPage() {
   const params = useParams();
@@ -48,8 +18,8 @@ export default function ProductDetailPage() {
   const productId = parseInt(params.id as string);
   const categorySlug = params.category as string;
 
-  const productsData: ProductData[] = getContent('products.items') || [];
-  const categoriesData = getContent('products.categories') || [];
+  const productsData = getContent<Product[]>('products.items') || [];
+  const categoriesData = getContent<ProductCategory[]>('products.categories') || [];
 
   const product = productsData.find(p => p.id === productId);
 
@@ -67,13 +37,13 @@ export default function ProductDetailPage() {
   }
 
   // 获取当前分类下的所有产品
-  const categoryProducts = getProductsByCategory(productsData as any[], product.categoryId) as ProductData[];
+  const categoryProducts = getProductsByCategory(productsData, product.categoryId);
 
   // 获取当前产品在数组中的索引
   const currentIndex = categoryProducts.findIndex(p => p.id === product.id);
 
   // 构建展示产品数组：前一个产品 + 后面的产品（排除当前产品）
-  const displayProducts: ProductData[] = [];
+  const displayProducts: Product[] = [];
   const maxProducts = 6; // 设置最大推荐产品数量
 
   // 添加前一个产品（如果存在）
@@ -94,17 +64,16 @@ export default function ProductDetailPage() {
   }
 
   // 从 content.json 获取标准产品通用详情数据
-  const standardProductOverview: StandardProductOverviewItem[] = getContent('products.standardProductOverview') || [];
-
+  const standardProductOverview = getContent<StandardProductOverviewItem[]>('products.standardProductOverview') || [];
 
   // 产品图片（主图 + 图库）
   const productImages = [product.image, ...(product.gallery || [])];
 
   // 面包屑数据
-  const breadcrumbItems = [
+  const breadcrumbItems: BreadcrumbItem[] = [
     { label: 'Products', href: '/products/all' },
     { label: category.title, href: `/products/${categorySlug}` },
-    { label: product.title || product.model || 'Product', href: `/products/${categorySlug}/${productId}` }
+    { label: ('title' in product ? product.title : product.model) || 'Product', href: `/products/${categorySlug}/${productId}` }
   ];
 
 
@@ -121,10 +90,12 @@ export default function ProductDetailPage() {
         <div className="lg:grid lg:grid-cols-[600px_1fr] flex flex-col lg:gap-10">
 
           {/* 左侧：产品图片 */}
-          <ProductImageGallery
-            images={productImages}
-            productName={product.title || product.model || 'Product'}
-          />
+          <ErrorBoundary>
+            <ProductImageGallery
+              images={productImages}
+              productName={('title' in product ? product.title : product.model) || 'Product'}
+            />
+          </ErrorBoundary>
 
           {/* 右侧：产品信息 */}
           <div className='lg:p-0 px-5 pt-5 flex flex-col'>
@@ -134,10 +105,10 @@ export default function ProductDetailPage() {
                 {/* 自研产品：显示标题和描述 */}
                 <div>
                   <h1 className="headline1 text-text-brand mb-2">
-                    {product.title || 'Product Title'}
+                    {'title' in product ? product.title : 'Product Title'}
                   </h1>
                   <div className="text-display">
-                    <p>{product.description || 'Product description not available'}</p>
+                    <p>{'description' in product ? product.description : 'Product description not available'}</p>
                   </div>
                 </div>
               </>
@@ -145,10 +116,10 @@ export default function ProductDetailPage() {
               <>
                 {/* 标准产品：显示规格与类别 */}
                 <h1 className="headline1 text-text-brand mb-2">
-                  {product.model || 'Product Model'}
+                  {'model' in product ? product.model : 'Product Model'}
                 </h1>
                 <div className="text-display">
-                  <p>{product.standardCategory}</p>
+                  <p>{'standardCategory' in product ? product.standardCategory : ''}</p>
                 </div>
 
                 {/* 标准产品显示快速规格信息 */}
@@ -157,7 +128,7 @@ export default function ProductDetailPage() {
                     {Object.entries(product.specifications).map(([key, value]) => (
                       <div key={key} className="grid grid-cols-[30%_1fr] items-center py-2 border-b border-border-one lg:text-base text-sm font-medium">
                         <span className="text-text-display">{key}:</span>
-                        <span className="text-text-title">{value}</span>
+                        <span className="text-text-title">{value || ''}</span>
                       </div>
                     ))}
                   </div>
