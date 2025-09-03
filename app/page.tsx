@@ -353,10 +353,10 @@ export default function Home() {
                 priority
               />
             </div>
-            <h1 className='headline1'>{getContent('solution.mobileCommand.overview.title')}</h1>
-            <p className='text-display line-clamp-10'>{getContent('solution.cardOne.content')}</p>
+            <h1 className='headline1'>{getContent('solution.mobileCommand.mobileCommand.overview.title')}</h1>
+            <p className='text-display line-clamp-10'>{getContent('solution.mobileCommand.overview.content')}</p>
             <div>
-              <Button className='relative'>{getContent('solution.mobileCommand.overview.content')}</Button>
+              <Button className='relative'>{getContent('home.hero.button')}</Button>
             </div>
           </div>
         </section>
