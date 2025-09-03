@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useCallback, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from './components/Button';
@@ -20,15 +20,19 @@ export default function Home() {
 
 
   // 获取产品数据，首页显示8个
-  const productsData = getContent<Product[]>('products.items') || [];
-  const homeProductsData = productsData.slice(0, 8);
+  const homeProductsData = useMemo(() => {
+    const productsData = getContent<Product[]>('products.items') || [];
+    return productsData.slice(0, 8);
+  }, [getContent]);
 
   // 获取行业应用数据，首页显示4个
-  const allIndustryData = getContent<ApplicationItem[]>('industryApplications.items') || [];
-  const paginatedData = allIndustryData.slice(0, 4);
+  const paginatedData = useMemo(() => {
+    const allIndustryData = getContent<ApplicationItem[]>('industryApplications.items') || [];
+    return allIndustryData.slice(0, 4);
+  }, [getContent]);
 
   // 配置ScrollReveal动画
-  useScrollRevealMultiple([
+  const scrollRevealConfig = useMemo(() => [
     {
       selector: '.hero-section',
       config: {
@@ -131,7 +135,16 @@ export default function Home() {
         delay: 400
       }
     }
-  ]);
+  ], []);
+
+  useScrollRevealMultiple(scrollRevealConfig);
+
+  // 缓存常用的内容获取
+  const readMoreText = useMemo(() => getContent('common.readMore'), [getContent]);
+  const aboutDescription = useMemo(() => getContent('aboutUs.about.description'), [getContent]);
+  const solutionTitle = useMemo(() => getContent('solution.commandSystem.overview.title'), [getContent]);
+  const solutionContent = useMemo(() => getContent('solution.commandSystem.overview.content'), [getContent]);
+  const mobileSolutionTitle = useMemo(() => getContent('solution.mobileCommand.commandSystem.overview.title'), [getContent]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -186,14 +199,14 @@ export default function Home() {
     };
   }, []);
 
-  const toggleMute = () => {
+  const toggleMute = useCallback(() => {
     if (videoRef.current) {
       videoRef.current.muted = !videoRef.current.muted;
       setIsMuted(videoRef.current.muted);
     }
-  };
+  }, []);
 
-  const playVideo = async () => {
+  const playVideo = useCallback(async () => {
     if (videoRef.current) {
       try {
         await videoRef.current.play();
@@ -202,7 +215,7 @@ export default function Home() {
         console.log('Manual play failed:', error);
       }
     }
-  };
+  }, []);
 
   return (
     <>
@@ -254,7 +267,7 @@ export default function Home() {
           </button>
 
           <div className='absolute lg:bottom-10 bottom-5 left-1/2 -translate-x-1/2'>
-            <Button className='relative'>{getContent('common.readMore')}</Button>
+            <Button className='relative'>{readMoreText}</Button>
           </div>
         </section>
 
@@ -273,10 +286,10 @@ export default function Home() {
             </div>
 
             <div className='flex-1'>
-              <p className='text-display  lg:line-clamp-8 line-clamp-6 about-description'>{getContent('aboutUs.about.description')}</p>
+              <p className='text-display  lg:line-clamp-8 line-clamp-6 about-description'>{aboutDescription}</p>
               <div className='mt-10'>
                 <Link href="/aboutUs">
-                  <Button className='relative'>{getContent('common.readMore')}</Button>
+                  <Button className='relative'>{readMoreText}</Button>
                 </Link>
               </div>
             </div>
@@ -297,11 +310,11 @@ export default function Home() {
               />
             </div>
             <div className='flex-1 flex flex-col gap-5 solution-content'>
-              <h1 className='headline1'>{getContent('solution.commandSystem.overview.title')}</h1>
-              <p className='text-display line-clamp-10'>{getContent('solution.commandSystem.overview.content')}</p>
+              <h1 className='headline1'>{solutionTitle}</h1>
+              <p className='text-display line-clamp-10'>{solutionContent}</p>
               <div className='mt-auto'>
                 <Link href="/solution/command-system">
-                  <Button className='relative'>{getContent('common.readMore')}</Button>
+                  <Button className='relative'>{readMoreText}</Button>
                 </Link>
               </div>
             </div>
@@ -318,11 +331,11 @@ export default function Home() {
                 priority
               />
             </div>
-            <h1 className='headline1'>{getContent('solution.commandSystem.overview.title')}</h1>
-            <p className='text-display line-clamp-10'>{getContent('solution.commandSystem.overview.content')}</p>
+            <h1 className='headline1'>{solutionTitle}</h1>
+            <p className='text-display line-clamp-10'>{solutionContent}</p>
             <div>
               <Link href="/solution/command-system">
-                <Button className='relative'>{getContent('common.readMore')}</Button>
+                <Button className='relative'>{readMoreText}</Button>
               </Link>
             </div>
           </div>
@@ -341,11 +354,11 @@ export default function Home() {
               />
             </div>
             <div className='flex-1 flex flex-col gap-5 solution-content'>
-              <h1 className='headline1'>{getContent('solution.commandSystem.overview.title')}</h1>
-              <p className='text-display line-clamp-10'>{getContent('solution.commandSystem.overview.content')}</p>
+              <h1 className='headline1'>{solutionTitle}</h1>
+              <p className='text-display line-clamp-10'>{solutionContent}</p>
               <div className='mt-auto'>
                 <Link href="/solution/treatment-system">
-                  <Button className='relative'>{getContent('common.readMore')}</Button>
+                  <Button className='relative'>{readMoreText}</Button>
                 </Link>
               </div>
             </div>
@@ -362,11 +375,11 @@ export default function Home() {
                 priority
               />
             </div>
-            <h1 className='headline1'>{getContent('solution.mobileCommand.commandSystem.overview.title')}</h1>
-            <p className='text-display line-clamp-10'>{getContent('solution.commandSystem.overview.content')}</p>
+            <h1 className='headline1'>{mobileSolutionTitle}</h1>
+            <p className='text-display line-clamp-10'>{solutionContent}</p>
             <div>
               <Link href="/solution/treatment-system">
-                <Button className='relative'>{getContent('common.readMore')}</Button>
+                <Button className='relative'>{readMoreText}</Button>
               </Link>
             </div>
           </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import { useMemo } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useContent } from '@/lib/useContent';
@@ -15,13 +15,14 @@ export default function SolutionLayout({
     const pathname = usePathname();
     const { getContent } = useContent();
 
-    const solutionCategories = getContent<{id: number, title: string, slug: string}[]>('solution.categories') || [];
-
-    const navigationItems = solutionCategories.map((category) => ({
-        id: category.slug,
-        title: category.title,
-        href: `/solution/${category.slug}`
-    }));
+    const navigationItems = useMemo(() => {
+        const solutionCategories = getContent<{id: number, title: string, slug: string}[]>('solution.categories') || [];
+        return solutionCategories.map((category) => ({
+            id: category.slug,
+            title: category.title,
+            href: `/solution/${category.slug}`
+        }));
+    }, [getContent]);
 
     return (
         <div className="">
@@ -70,7 +71,7 @@ export default function SolutionLayout({
                 <div className="flex flex-col lg:py-20 py-5">
                     <h1 className="headline1 leading-10 lg:pb-10 pb-2.5">Industry Application</h1>
                     <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-x-5 lg:gap-y-0 gap-y-5">
-                        {(() => {
+                        {useMemo(() => {
                             const applications = getContent<ApplicationItem[]>('industryApplications.items') || [];
                             return applications.slice(0, 4).map((application: ApplicationItem) => (
                                 <NewCard
@@ -86,7 +87,7 @@ export default function SolutionLayout({
                                     className="news-card"
                                 />
                             ));
-                        })()}
+                        }, [getContent])}
                     </div>
                 </div>
             </div>

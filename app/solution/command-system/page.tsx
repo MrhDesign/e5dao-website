@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import { useMemo } from 'react';
 import Image from 'next/image';
 import { useContent } from '@/lib/useContent';
 import ProductCard from '../../components/ProductCard';
@@ -28,7 +28,10 @@ interface CommandSystemData {
 
 export default function CommandSystemPage() {
   const { getContent } = useContent();
-  const commandSystemData = getContent<CommandSystemData>('solution.commandSystem');
+  const commandSystemData = useMemo(() => 
+    getContent<CommandSystemData>('solution.commandSystem'), 
+    [getContent]
+  );
 
   return (
     <div className="space-y-10">
@@ -98,7 +101,7 @@ export default function CommandSystemPage() {
 
         {/* 相关产品展示 */}
         <div className="flex flex-col lg:gap-10 gap-5">
-            {(() => {
+            {useMemo(() => {
               const productsData = getContent<Product[]>('products.items') || [];
               // 筛选出 command-system 分类的自研产品 (categoryId = 1 && productType = 'independent-rd')
               const commandSystemProducts = productsData.filter((product: Product) => 
@@ -113,7 +116,7 @@ export default function CommandSystemPage() {
                   className="w-full"
                 />
               ));
-            })()}
+            }, [getContent])}
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import { useMemo } from 'react';
 import Image from 'next/image';
 import { useContent } from '@/lib/useContent';
 import ProductCard from '../../components/ProductCard';
@@ -8,7 +8,10 @@ import type { Product } from '@/lib/types';
 
 export default function TreatmentSystemPage() {
   const { getContent } = useContent();
-  const treatmentData = getContent('solution.treatmentSystem');
+  const treatmentData = useMemo(() => 
+    getContent('solution.treatmentSystem'), 
+    [getContent]
+  );
 
   return (
     <div className="lg:pt-10 pt-5">
@@ -231,7 +234,7 @@ export default function TreatmentSystemPage() {
           Related Products
         </h2>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 lg:gap-5">
-          {(() => {
+          {useMemo(() => {
             const productsData = getContent<Product[]>('products.items') || [];
             // 筛选出 treatment-system 分类的自研产品 (categoryId = 2 && productType = 'independent-rd')
             const treatmentSystemProducts = productsData.filter((product: Product) => 
@@ -246,7 +249,7 @@ export default function TreatmentSystemPage() {
                 className="w-full"
               />
             ));
-          })()}
+          }, [getContent])}
         </div>
       </div>
 
