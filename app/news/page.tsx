@@ -1,5 +1,6 @@
 'use client';
 
+import { useMemo } from 'react';
 import NewCard from '../components/NewCard';
 import useContent from '../../lib/useContent';
 import Button from '../components/Button';
@@ -10,12 +11,16 @@ export default function News() {
   const { getContent } = useContent();
 
   // 获取新闻数据，新闻页面显示8个
-  const allNewsData = getContent<NewsItem[]>('news.items') || [];
-  const newsData = allNewsData.slice(0, 8);
+  const newsData = useMemo(() => {
+    const allNewsData = getContent<NewsItem[]>('news.items') || [];
+    return allNewsData.slice(0, 8);
+  }, [getContent]);
 
   // 获取行业应用案例数据，显示6个
-  const allIndustryData = getContent<ApplicationItem[]>('industryApplications.items') || [];
-  const industryData = allIndustryData.slice(0, 6);
+  const industryData = useMemo(() => {
+    const allIndustryData = getContent<ApplicationItem[]>('industryApplications.items') || [];
+    return allIndustryData.slice(0, 6);
+  }, [getContent]);
 
   return (
     <section className='lg:px-30  lg:pb-10 p-5 bg-fill-two lg:process-section'>
