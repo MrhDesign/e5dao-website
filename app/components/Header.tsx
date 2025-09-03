@@ -14,17 +14,18 @@ export default function Header() {
   
   // 动态获取产品分类数据
   const productCategories = getContent('products.categories') || [];
+  // 动态获取解决方案分类数据
+  const solutionCategories = getContent('solution.categories') || [];
 
   const navigation = [
     { name: getContent('navigation.home'), href: '/' },
     { 
       name: getContent('navigation.solution'), 
-      href: '/solution',
-      submenu: [
-        { name: 'AI Solutions', href: '/solution/ai' },
-        { name: 'Cloud Services', href: '/solution/cloud' },
-        { name: 'Data Analytics', href: '/solution/analytics' }
-      ]
+      href: '/solution/command-system',
+      submenu: solutionCategories.map((category: any) => ({
+        name: category.title,
+        href: `/solution/${category.slug}`
+      }))
     },
     { 
       name: getContent('navigation.products'), 
@@ -62,7 +63,7 @@ export default function Header() {
     // 检查是否在子页面中
     if (item.href === '/products/all' && pathname.startsWith('/products')) return true;
     if (item.href === '/news' && pathname.startsWith('/news')) return true;
-    if (item.href === '/solution' && pathname.startsWith('/solution')) return true;
+    if (item.href === '/solution/command-system' && pathname.startsWith('/solution')) return true;
     
     return item.submenu.some((subItem: any) => pathname === subItem.href);
   };
@@ -90,7 +91,7 @@ export default function Header() {
       }
       
       // 特殊处理解决方案页面的子路径
-      if (item.href === '/solution' && pathname.startsWith('/solution') && pathname !== '/solution') {
+      if (item.href === '/solution/command-system' && pathname.startsWith('/solution')) {
         return item.name;
       }
     }

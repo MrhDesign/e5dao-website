@@ -106,7 +106,7 @@ export default function ProductsPage() {
           </aside>
 
           {/* 右侧产品展示区域 */}
-          <main className="flex-1">
+          <section className="flex-1">
             {categorySlug === 'all' ? (
               /* All Products 视图 - 按分类分组显示 */
               <div className="lg:pt-10 pt-5">
@@ -183,7 +183,7 @@ export default function ProductsPage() {
                 </div>
               </div>
             )}
-          </main>
+          </section>
         </div>
       </div>
     </div>

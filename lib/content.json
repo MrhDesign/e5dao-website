@@ -22,22 +22,79 @@
       "contactUs": "Contact Us"
     },
     "solution": {
-      "cardOne": {
-        "title": "Carbon Fiber Overall Solution Plan",
-        "content": "Carbon fiber box-type mobile command site system (In modern warfare, with the widespread use of high-altitude reconnaissance equipment and long-range firepower weapons, the survival ability of fixed command posts in frontline positions and rear areas in war is getting lower and lower. In the absence of command, it is difficult for the army to complete effective attack, defense and coordinated operations of various arms. In the Russian-Ukrainian war, due to the lack of modern command posts on the front line, the Russian side had to go to the front line to understand the front-line combat situation in real time. As a result, a large number of senior commanders were killed. Therefore, front-line commanders urgently need a lightweight, highly integrated, highly informationized, quickly deployable and quickly withdrawn mobile command post to convey combat assignments to individual soldiers and pass on the front-line combat situation to the upper-level command agency. Carry the \"command post\" on your shoulders and hold the \"information power\" in your hands"
+      "categories": [
+        {
+          "id": 1,
+          "title": "Carbon Fiber Modular Mobile Command Post System",
+          "slug": "command-system"
+        },
+        {
+          "id": 2,
+          "title": "Modular Containerized Medical Treatment System",
+          "slug": "treatment-system"
+        }
+      ],
+      "mobileCommand": {
+        "hero": {
+          "alt": "Mobile Command Station System",
+          "image": "/images/mobile-command-hero.png"
+        },
+        "overview": {
+          "title": "Mobile Command Station System",
+          "content": "In modern warfare, with the widespread use of high-altitude reconnaissance equipment and long-range precision strike weapons, the survivability of both forward and rear fixed command posts has been significantly reduced. In the absence of effective command, it becomes extremely difficult for armed forces to conduct coordinated offense, defense, and joint operations across different branches.\n\nThe Russia-Ukraine conflict has demonstrated that the lack of modern forward command posts forced senior officers to move closer to the frontline in order to obtain real-time battlefield information, resulting in substantial casualties among high-ranking commanders.\n\nFrontline commanders therefore urgently require a lightweight, highly integrated, information-driven, rapidly deployable and easily retractable mobile command post. Such a system enables the dissemination of operational orders down to individual soldiers while simultaneously relaying frontline battlefield data to higher command levels. It embodies the concept of \"carrying the command post on the shoulder and holding the power of information in hand.\""
+        },
+        "features": {
+          "title": "System Features",
+          "content": "1. Rapid Deployment: Full functionality deployment in under 5 minutes, seizing tactical advantage.\n2. Full Mobility: Aerospace-grade carbon fiber construction, 60% lighter than traditional systems, transportable by a single vehicle or soldier.\n3. Total Resilience: Complies with MIL-STD-810H & IP67 standards, resistant to extreme temperatures, shock, vibration, and harsh weather conditions.\n4. EMI Silence: Fully shielded design, effectively preventing signal leakage and enemy detection.\n5. Integrated Intelligence: Hardware-software integration, seamlessly incorporating C4ISR capabilities to eliminate information silos.\n6. Sustained Operations: Built-in intelligent power management system, supporting multiple power sources including grid electricity, generators, vehicle power, and batteries.",
+          "alt": "Mobile Command Station System",
+          "image": "/images/mobile-command-features.png"
+        },
+        "Components": {
+          "title": "System Components"
+        }
+      },
+      "medicalTreatment": {
+        "hero": {
+          "title": "Medical Treatment System",
+          "subtitle": "Advanced healthcare solutions",
+          "description": "Comprehensive medical treatment systems designed for emergency response, field hospitals, and specialized medical applications using advanced composite materials.",
+          "image": "/images/medical-treatment-hero.png"
+        },
+        "overview": {
+          "title": "Medical Innovation",
+          "content": "Our Medical Treatment System represents a breakthrough in emergency medical care and field hospital operations. Utilizing advanced carbon fiber and composite materials, these systems provide lightweight, durable, and highly functional solutions for medical professionals in challenging environments. From portable surgical units to climate-controlled pharmaceutical storage, our medical solutions ensure optimal patient care under any conditions."
+        },
+        "features": [
+          {
+            "title": "Portable Medical Units",
+            "description": "Lightweight and durable medical equipment containers"
+          },
+          {
+            "title": "Climate Control",
+            "description": "Precise temperature and humidity control for sensitive equipment"
+          },
+          {
+            "title": "Sterile Environment",
+            "description": "Advanced filtration and sterilization capabilities"
+          },
+          {
+            "title": "Emergency Ready",
+            "description": "Rapid deployment for emergency medical situations"
+          }
+        ]
       }
     },
     "products": {
       "categories": [
-        {
+         {
           "id": 1,
-          "title": "Integrated Carbon Fiber Solution",
-          "slug": "integrated-solution"
+          "title": "Carbon Fiber Modular Mobile Command Post System",
+          "slug": "command-system"
         },
         {
           "id": 2,
-          "title": "Medical Treatment System",
-          "slug": "medical-system"
+          "title": "Modular Containerized Medical Treatment System",
+          "slug": "treatment-system"
         },
         {
           "id": 3,
@@ -231,27 +288,24 @@
         },
         {
           "title": "Scratch & Abrasion Resistance Test",
-          "image": "/images/PDetailsOverview/PDO-2.png", 
+          "image": "/images/PDetailsOverview/PDO-2.png",
           "alt": "Quality control and testing procedures"
         },
         {
           "title": "Immersion Test",
           "image": "/images/PDetailsOverview/PDO-3.png",
           "alt": "State-of-the-art manufacturing facility"
-        }
-        ,
+        },
         {
           "title": "High-Altitude Adaptability Test",
           "image": "/images/PDetailsOverview/PDO-4.png",
           "alt": "State-of-the-art manufacturing facility"
-        }
-        ,
+        },
         {
           "title": "Shock & Vibration Test",
           "image": "/images/PDetailsOverview/PDO-5.png",
           "alt": "State-of-the-art manufacturing facility"
-        }
-        ,
+        },
         {
           "title": "Fire Retardant Test",
           "image": "/images/PDetailsOverview/PDO-6.png",
