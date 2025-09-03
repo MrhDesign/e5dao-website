@@ -1,13 +1,5 @@
 {
   "pages": {
-    "home": {
-      "hero": {
-        "button": "Read More"
-      },
-      "about": {
-        "description": "Singapore E50DAO is a technology company that focuses on the research, development, production and sales of high-end composite materials such as carbon fiber and Kevlar. The company has modern factories and a complete industrial chain service system, covering the entire process of product design, molding, manufacturing, assembly and testing. Through the deep integration of digital technology and advanced processes, E5DAO can efficiently respond to customer customization needs and provide lightweight, high-strength, and excellent weather-resistant professional composite material solutions. The products are widely used in military, aerospace, medical, rescue, outdoor equipment, and high-end transportation."
-      }
-    },
     "navigation": {
       "home": "Home",
       "solution": "Solution",
@@ -20,6 +12,14 @@
       "readMore": "Read More",
       "learnMore": "Learn More",
       "contactUs": "Contact Us"
+    },
+    "home": {
+      "hero": {
+        "button": "Read More"
+      },
+      "about": {
+        "description": "Singapore E50DAO is a technology company that focuses on the research, development, production and sales of high-end composite materials such as carbon fiber and Kevlar. The company has modern factories and a complete industrial chain service system, covering the entire process of product design, molding, manufacturing, assembly and testing. Through the deep integration of digital technology and advanced processes, E5DAO can efficiently respond to customer customization needs and provide lightweight, high-strength, and excellent weather-resistant professional composite material solutions. The products are widely used in military, aerospace, medical, rescue, outdoor equipment, and high-end transportation."
+      }
     },
     "solution": {
       "categories": [
@@ -86,7 +86,7 @@
     },
     "products": {
       "categories": [
-         {
+        {
           "id": 1,
           "title": "Carbon Fiber Modular Mobile Command Post System",
           "slug": "command-system"
@@ -107,83 +107,286 @@
           "id": 1,
           "categoryId": 1,
           "productType": "independent-rd",
-          "image": "/images/products.png",
+          "image": "/images/COB-Display/COB-Display01.png",
           "alt": "Carbon Fiber Mobile COB Display Screen",
           "title": "Carbon Fiber Mobile COB Display Screen",
-          "description": "Features an advanced COB display screen with an ultra-compact sized form and a submersible cage. The tracker is rated for submersion to 100 meters depth.",
+          "description": "Applicable to high-end command and control environments, typically deployed in government agencies, security departments, traffic regulation authorities, command and dispatch centers, and military information command centers.",
           "gallery": [
-            "/images/fields-1.png",
-            "/images/fields-2.png",
-            "/images/fields-3.png",
-            "/images/fields-4.png",
-            "/images/products.png"
+            "/images/COB-Display/COB-Display02.png",
+            "/images/COB-Display/COB-Display03.png"
           ],
           "specifications": {
-            "External Dimensions": "Case Mounted Rugged LCD Command Display Terminal",
-            "Internal Dimensions": "Brightness Screen max can withstand for LED Screens",
-            "Lid Internal Dimensions": "High Definition to meet Military Grade Standard Specification with",
-            "Rollers": "Case - High strength carbon dioxide black IP67 waterproof Aluminum alloy",
-            "Net Weight": "Case - High strength carbon dioxide black IP67 waterproof Aluminum alloy",
-            "Material": "Case - High strength carbon dioxide black IP67 waterproof Aluminum alloy",
-            "Customizable": "Case - High strength carbon dioxide black IP67 waterproof Aluminum alloy"
+            "ScreenSize": "2400 x 1350 mm (108\")",
+            "ModuleSize": "150 x 168.75 mm",
+            "OverallResolution": "1920 x 1680",
+            "ModuleResolution": "480 x 320",
+            "Brightness": "450-1200 cd/m²",
+            "ContrastRatio": "20,000:1",
+            "ViewingAngle": "Horizontal: 0°-175° / Vertical: 0°-170°",
+            "RefreshRate": "3840 Hz",
+            "FrameRate": "60 Hz",
+            "WorkingHeight": "Adjustable, screen bottom 950-1100 mm above ground",
+            "PowerInput": "100-240 VAC, 50/60 Hz",
+            "PowerConsumption": "Rated: 700 W / Peak: 1200 W",
+            "OperatingTemperature": "-20°C to +50°C",
+            "StorageTemperature": "-40°C to +70°C",
+            "OperatingHumidity": "10-80% RH, non-condensing",
+            "IPRating": "IP65",
+            "InputInterfaces": "100-240 VAC, 50/60 Hz",
+            "CastingMethods": "Wireless projection / Windows projection / Android projection",
+            "Weight": "MainCase: 75 kg x 1 / ScreenCase: 85 kg x 2",
+            "CaseDimensions": "MainCase: 1800 x 600 x 500 mm x 1 / ScreenCase: 1600 x 730 x 400 mm x 2"
           },
           "details": [
             {
               "type": "heading",
-              "content": "Product Overview",
+              "content": "Product Features",
               "level": 3
             },
             {
               "type": "paragraph",
-              "content": "Our Carbon Fiber Mobile COB Display Screen represents the pinnacle of military-grade display technology. Engineered for extreme conditions, this rugged display terminal delivers crystal-clear visual performance in the most demanding operational environments.\n\nDesigned specifically for tactical command and control applications, it combines cutting-edge COB technology with aerospace-grade carbon fiber construction to provide unmatched durability and performance."
-            },
-            {
-              "type": "image",
-              "image": "/images/production-line-1.png",
-              "alt": "COB Display Technology",
-              "content": "Advanced COB display technology ensures perfect visibility in all conditions"
-            },
-            {
-              "type": "heading",
-              "content": "Key Features",
-              "level": 3
+              "content": "Composed of modular LED display units, an adjustable support structure, and a mobile base: the stand utilizes lightweight carbon fiber materials, while the base case adopts a rotationally molded housing (optional carbon fiber case)."
             },
             {
               "type": "paragraph",
-              "content": "This display system incorporates multiple advanced technologies to deliver superior performance in mission-critical applications."
-            },
-            {
-              "type": "list",
-              "content": "Core capabilities include:",
-              "items": [
-                "Ultra-high brightness COB display (up to 2000 nits)",
-                "IP67 waterproof and shock-resistant construction",
-                "Carbon fiber housing for maximum durability",
-                "Multi-device connectivity (Bluetooth, Ethernet, WiFi)",
-                "Operating temperature range: -20°C to +70°C",
-                "Built-in stereo audio system",
-                "Encrypted communication protocols"
-              ]
-            },
-            {
-              "type": "heading",
-              "content": "Manufacturing Quality",
-              "level": 3
+              "content": "Featuring a quick-release, tool-free design, the system can be assembled or dismantled by two operators within ten minutes."
             },
             {
               "type": "paragraph",
-              "content": "Every unit undergoes rigorous quality control testing in our state-of-the-art facility. Our advanced manufacturing processes ensure consistent quality and reliability.\n\nEach display is individually tested for temperature resistance, vibration tolerance, and electrical performance before shipment."
+              "content": "Supports both standalone single-screen operation and seamless multi-screen splicing, equipped with a multi-screen synchronization control system to ensure consistent image output."
             },
             {
-              "type": "image",
-              "image": "/images/production-line-4.png",
-              "alt": "Manufacturing process",
-              "content": "Precision engineering and quality control ensure reliable performance"
+              "type": "paragraph",
+              "content": "The display size is no less than 108 inches, with a resolution of no less than 1920 x 1080 dpi. It adopts a front-mounted, flip-chip, common-cathode COB LED panel, offering multiple pixel pitch options including 1.25mm, 0.9mm, and 0.7mm."
             }
           ]
         },
         {
           "id": 2,
+          "categoryId": 1,
+          "productType": "independent-rd",
+          "image": "/images/operationdesk/operationdesk01.png",
+          "alt": "Operation Desk",
+          "title": "Operation Desk",
+          "description": "Applicable to mobile command posts and emergency command sites. Utilizing a rapid-deployment enclosure as the carrier, the system can be swiftly transported to incident locations during emergencies, enabling fast and flexible on-site command network setup. It provides a robust communication assurance foundation for disaster relief, emergency rescue, field training, and mobile command operations.",
+          "gallery": [
+            "/images/operationdesk/operationdesk02.png",
+            "/images/operationdesk/operationdesk03.png",
+            "/images/operationdesk/operationdesk04.png",
+            "/images/operationdesk/operationdesk05.png"
+          ],
+          "specifications": {
+            "Material": "Desktop: Carbon Fiber / Other Parts: Aluminum Alloy",
+            "Dimensions": "Unfolded: 720 (H) x 800 (W) x 500 (D) mm / Folded: 220 (H) x 600 (W) x 500 (D) mm",
+            "Net Weight": "<=15 kg",
+            "Video Input": "1x Type-A HDMI Input (19-pin Female)",
+            "Network Interface": "2x RJ45 Ports",
+            "USB Interface": "2x Type-A Ports",
+            "Power Input": "IEC 60320 C5 connector and socket",
+            "Power Output": "5-hole AC Outlet",
+            "Buttons": "Microphone On/Off Switch, System Power On/Off Switch",
+            "Video Input Support": "Type: HDMI / Resolution: Up to 3840x2160@30Hz",
+            "Network": "10/100/1000Mbps Auto-Adaptation",
+            "Screen Size": "13.3 inches",
+            "Screen Features": "Capacitive Touch Screen / With Keyboard",
+            "Temperature": "Operating: -20°C to 50°C / Storage: -40°C to 70°C",
+            "Humidity": "10% to 80% (Non-Condensing)",
+            "IP Rating": "IP65",
+            "Power Supply": "100-240V AC, 50/60Hz",
+            "Power Consumption": "<=50W"
+          },
+          "details": [
+            {
+              "type": "heading",
+              "content": "Product Features",
+              "level": 3
+            },
+            {
+              "type": "list",
+              "content": "Seat Structure: Constructed with carbon fiber and aluminum alloy (including seat), featuring a foldable design for easy storage:",
+              "items": [
+                "Deployed dimensions: >=710mm (H) x 780mm (L) x 500mm (W)",
+                "Folded dimensions: <=200mm (H) x 600mm (L) x 500mm (W)",
+                "Total weight: <=14.5kg",
+                "Secure storage compartments",
+                "Load capacity: >=20kg"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": "Audio-Visual Capabilities: Supports audio and video encoding, bidirectional A/V transmission, full-frame signal acquisition, and 4:4:4 chroma sampling. Provides seamless signal switching with no black screen or flicker. Enables remote KVM operation across multiple front-end operating systems via seat-mounted keyboard and mouse, with smooth cross-screen mouse movement. Supports one-click screen sharing and connection with digital microphones."
+            },
+            {
+              "type": "paragraph",
+              "content": "Business Terminal: Equipped with a domestic CPU, running a domestic operating system. Features a 13-inch capacitive touchscreen display (10-point multi-touch) and an 86-key touchpad keyboard with mouse."
+            },
+            {
+              "type": "paragraph",
+              "content": "Physical Interfaces: At least 2 x USB 3.0 ports, at least 3 x RJ45 network ports, 1 x power input, 1 x power output. Optional support for high-definition interfaces (HDMI, HDBase-T, etc.)."
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "categoryId": 1,
+          "productType": "independent-rd",
+          "image": "/images/AV-SPModule/AV-SPModule01.png",
+          "alt": "Audio-Video Signal Processing Module",
+          "title": "Audio-Video Signal Processing Module",
+          "description": "Information systems for cross-regional command and collaboration in field, emergency, and mobile scenarios, such as command, meetings, monitoring, medical, rescue, and surveillance operations.",
+          "gallery": [
+            "/images/AV-SPModule/AV-SPModule02.png",
+            "/images/AV-SPModule/AV-SPModule03.png"
+          ],
+          "specifications": {
+            "System Architecture": "Adopts integrated design based on Browser-Server (B/S) architecture, integrating intelligent control unit, digital audio processing unit, communication switching unit, multi-channel full-HD encoding/decoding distributed unit, recording/broadcasting unit, power environment management unit, and intelligent operation & maintenance module.",
+            "Image Characteristics": "Supports 4:4:4 sampling.",
+            "Video Resolution": "Supports up to 4K60 video encoding/decoding, with 4-channel 1080P60 encoding and 4-channel 1080P60 decoding capabilities, along with agent and splicing functions.",
+            "Video Interface": "Distributed Input: HDMI/DVI or SDI; Distributed Output: HDMI/DVI or SDI; Cabling System: Input 3 HDMI; Output 2 HDMI or SDI",
+            "Audio Characteristics": "Sampling Rate: 96kHz±100ppm, 24bit, Frequency Response: 20-20kHz±0.15dB",
+            "Audio Interface": "8-channel analog input Phoenix terminal; 8-channel analog output Phoenix terminal; 8-channel Dante input RJ45; 8-channel Dante output RJ45; Cabling System: 2-channel 3.5mm stereo",
+            "Recording/Broadcasting": "Structure: Integrated embedded, using hardware-based video capture; Interface: Video Input 2 HDMI (supports 4K), Video Output 1 HDMI (supports 4KP60+4KP30); Audio Input supports 48kHz sampling, AAC encoding; Resolution: HDMI input up to 4K@60, encoding resolution up to 3840*2160 (downward compatible); Compression Standard: H.265 BP / H.264 HP5.1; Recording Format: MP4; Functions: Synchronous recording, synchronous live streaming, online on-demand, remote directing, interactive recording; built-in 4T hard disk, supports USB external storage for synchronous recording",
+            "Intelligent Control": "Visualized centralized control, audio-video scheduling, system power management",
+            "Digital Audio Processing": "Input: 12-band PEQ, 5 types of filters: feedback suppressor; Output: 12-band PEQ, 31-band GEQ, crossover, delay, limiter",
+            "Communication Switching": "1. Switching Capacity: 336Gbps; Packet Forwarding Rate: 126Mpps; 2. Fixed Ports: 24 10/100/1000BASE-T Ethernet ports (PoE+), 4 Gigabit SFP; 3. Built-in 380W power supply for PoE, supporting 802.3af, 802.3at protocols",
+            "Power Environment Management": "1. Environmental Monitoring: Real-time temperature and humidity monitoring, smoke alarm, water leakage alarm; 2. Power Supply Monitoring: Real-time monitoring of voltage, current, power, and energy consumption; 3. Cooling Control: Intelligent cooling system management (coordinated with temperature monitoring)",
+            "Intelligent Operation & Maintenance": "1. Network Status: Switch operation status, CPU/memory resource usage, port uplink/downlink traffic and status, real-time operating temperature monitoring; 2. Audio Status: Channel information, operation status, real-time channel level monitoring; 3. Recording Status: Hard disk data, storage space usage, operation status (recording/pause/stop); 4. Device Status: Real-time monitoring of system device online/offline status",
+            "Power Input": "AC 100~240Vac 50/60Hz",
+            "Power Consumption": "Rated: 260W, Instantaneous Maximum: 350W",
+            "Temperature": "Operating Temperature: -20~50℃ / Storage Temperature: -40~70℃",
+            "Humidity": "10%~80% non-condensing",
+            "IP Protection Rating": "IP65",
+            "Weight": "Chassis: 26kg; Overall: 75kg",
+            "Enclosure Dimensions": "External: 864*590*610mm; Internal: 804*510*510mm"
+          },
+          "details": [
+            {
+              "type": "heading",
+              "content": "Product Features",
+              "level": 3
+            },
+            {
+              "type": "paragraph",
+              "content": "Directly connect display modules, agent units, conferencing units, and audio systems, enabling efficient full-chain encoding/decoding and transmission collaboration, achieving millisecond-level ultra-low latency for audio-video streaming."
+            },
+            {
+              "type": "paragraph",
+              "content": "Multi-format, high-definition video resource pool flexibly presented on large screens, with millisecond-level fast switching and intelligent preloading technology, ensuring seamless command vision and comprehensive situational awareness."
+            },
+            {
+              "type": "paragraph",
+              "content": "One-click precise configuration of video resource parameters and second-level response for multi-screen combinations, with lossless audio quality, adaptive environmental noise reduction, and full-chain adherence to broadcast-grade audio processing standards."
+            },
+            {
+              "type": "paragraph",
+              "content": "Preconfigured audio-video strategies for all scenarios, supporting one-click parameter retrieval and loading, ensuring real-time efficient command communication and rapid decision-making response."
+            },
+            {
+              "type": "paragraph",
+              "content": "Drive efficient full-chain encoding/decoding and transmission, achieving millisecond-level ultra-low latency video streaming, ensuring lossless-quality critical visuals are delivered with precision."
+            },
+            {
+              "type": "paragraph",
+              "content": "Support flexible presentation of massive video sources on multi-screen matrices, with millisecond-level fast switching and intelligent preloading, ensuring seamless command vision and comprehensive situational control."
+            },
+            {
+              "type": "paragraph",
+              "content": "Leveraging a powerful scheduling engine, achieve one-click precise allocation of video resources and second-level multi-screen combination rendering, significantly enhancing response efficiency and decision-making accuracy."
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "categoryId": 1,
+          "productType": "independent-rd",
+          "image": "/images/AC-PDModule/AC-PDModule01.png",
+          "alt": "AC Power Distribution Module",
+          "title": "AC Power Distribution Module",
+          "description": "Suitable for small-scale power resource allocation scenarios, such as small fixed base stations, mobile command posts, emergency command sites, temporary command centers at disaster sites, field rescue operations, and emergency support for large-scale events.",
+          "gallery": [
+            "/images/AC-PDModule/AC-PDModule02.png",
+            "/images/AC-PDModule/AC-PDModule03.png"
+          ],
+          "specifications": {
+            "Input": "Three-phase five-wire 380V, 125A; Single-phase 220V (three groups), 32A",
+            "Output": "L1: 5 x 16A sockets; 1 x 32A socket; L2: 5 x 16A sockets; 1 x 32A socket; L3: 5 x 10A sockets; 1 x 32A socket",
+            "Interface Type": "Customizable for Chinese, European, or American standards",
+            "Control": "1. Main input switch and indicator light; 2. Emergency stop button; 3. L1, L2, L3 output switches and indicator lights",
+            "Monitoring (L1, L2, L3)": "Capable of monitoring voltage, power, current, power factor, runtime timer, frequency, cumulative energy consumption, and temperature",
+            "Temperature": "Operating Temperature: -20~55℃ / Storage Temperature: -40~70℃",
+            "Humidity": "10%~80% non-condensing",
+            "IP Protection Rating": "IP65",
+            "Weight": "Chassis: 26kg; Overall: 45kg",
+            "Enclosure Dimensions": "External: 864*590*610mm; Internal: 804*510*510mm"
+          },
+          "details": [
+            {
+              "type": "heading",
+              "content": "Product Features",
+              "level": 3
+            },
+            {
+              "type": "paragraph",
+              "content": "Centralized power management for efficient unified control. Leveraging an integrated platform, operators can monitor and allocate power in real-time to devices such as mobile display systems, audio-video control systems, and mobile agent modules from a single terminal. Through power management strategies and grouped linkage control, distributed device power is brought under unified management, enabling rational allocation of power resources, timely handling of power faults, and enhancing the operational efficiency and reliability of the command post."
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "categoryId": 1,
+          "productType": "independent-rd",
+          "image": "/images/AI-CPModule/AI-CPModule01.png",
+          "alt": "AI Computing Power Module",
+          "title": "AI Computing Power Module",
+          "description": "NO",
+          "gallery": [
+            "/images/AI-CPModule/AI-CPModule02.png",
+            "/images/AI-CPModule/AI-CPModule03.png"
+          ],
+          "specifications": {
+            "data": "NO"
+          },
+          "details": [
+            {
+              "type": "heading",
+              "content": "Product Features",
+              "level": 3
+            },
+            {
+              "type": "paragraph",
+              "content": "NO"
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "categoryId": 1,
+          "productType": "independent-rd",
+          "image": "/images/NCModule/NCModule01.png",
+          "alt": "Network Communication Module",
+          "title": "Network Communication Module",
+          "description": "NO",
+          "gallery": [
+            "/images/NCModule/NCModule02.png",
+            "/images/NCModule/NCModule03.png"
+          ],
+          "specifications": {
+            "data": "NO"
+          },
+          "details": [
+            {
+              "type": "heading",
+              "content": "Product Features",
+              "level": 3
+            },
+            {
+              "type": "paragraph",
+              "content": "NO"
+            }
+          ]
+        },
+        {
+          "id": 14,
           "categoryId": 1,
           "productType": "standard",
           "image": "/images/fields-1.png",
@@ -231,53 +434,6 @@
               ]
             }
           ]
-        },
-        {
-          "id": 3,
-          "categoryId": 1,
-          "productType": "standard",
-          "image": "/images/fields-2.png",
-          "alt": "MC-2580DEF-03 Defense System",
-          "model": "MC-2580DEF-03",
-          "title": "Defense System Unit",
-          "standardCategory": "Defense Systems",
-          "specifications": {
-            "External Dimensions": "800x600x400mm",
-            "Net Weight": "18kg",
-            "Material": "Carbon Fiber reinforced",
-            "Operating Temperature": "-10°C to +60°C"
-          }
-        },
-        {
-          "id": 4,
-          "categoryId": 1,
-          "productType": "independent-rd",
-          "image": "/images/fields-3.png",
-          "alt": "Advanced Communication Hub",
-          "title": "Advanced Communication Hub",
-          "description": "Revolutionary communication system with AI-powered signal processing.",
-          "specifications": {
-            "External Dimensions": "700x500x300mm",
-            "Net Weight": "15kg",
-            "Material": "Ultra-lightweight Carbon Fiber",
-            "Operating Temperature": "-25°C to +75°C"
-          }
-        },
-        {
-          "id": 5,
-          "categoryId": 1,
-          "productType": "standard",
-          "image": "/images/fields-4.png",
-          "alt": "MC-2580SUR-05 Surveillance Unit",
-          "model": "MC-2580SUR-05",
-          "title": "Surveillance Unit",
-          "standardCategory": "Surveillance Systems",
-          "specifications": {
-            "External Dimensions": "900x800x500mm",
-            "Net Weight": "25kg",
-            "Material": "Kevlar reinforced Carbon Fiber",
-            "Operating Temperature": "-20°C to +70°C"
-          }
         }
       ],
       "standardProductOverview": [

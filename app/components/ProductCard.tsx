@@ -105,7 +105,7 @@ export default function ProductCard(props: ProductCardProps) {
   // Solution variant - 解决方案专用变体
   if (variant === 'solution') {
     const solutionCardContent = (
-      <div className={`group flex lg:flex-row flex-col lg:gap-10 gap-5 cursor-pointer lg:py-5 border-b border-border-one ${className}`}>
+      <div className={`group flex lg:flex-row flex-col lg:gap-10 gap-5 cursor-pointer lg:py-5 hover:bg-fill-three border-b border-border-one ${className}`}>
         {/* 产品图片区域 - 解决方案变体 */}
         <div className='flex-1 aspect-[4/3]'>
           <Image
@@ -178,7 +178,7 @@ export default function ProductCard(props: ProductCardProps) {
     <div className={`group flex flex-col cursor-pointer rounded-sm overflow-hidden bg-fill-four transition-all duration-300 hover:shadow-xl ${className}`}>
       {/* 产品图片区域 */}
       <div className="w-full h-full overflow-hidden relative z-0">
-        <div className='w-full relative aspect-square overflow-hidden'>
+        <div className='w-full relative aspect-square bg-fill-one overflow-hidden'>
           <Image
             src={image}
             alt={alt}

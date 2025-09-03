@@ -55,7 +55,7 @@ export default function CommandSystemPage() {
           {mobileCommandData?.features?.content?.split('\n').map((feature: string, index: number) => {
             const [title, description] = feature.split(': ');
             return (
-              <div key={index} className="bg-fill-two rounded-lg lg:p-2.5 hover:bg-fill-three transition-colors duration-200">
+              <div key={index} className="rounded-sm lg:p-2.5 hover:bg-fill-three transition-colors duration-200">
                 <h3 className="lg:text-2xl text-base font-medium text-text-brand">
                   {title}
                 </h3>

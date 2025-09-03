@@ -22,16 +22,16 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold text-text-black lg:mb-5 mb-2.5">Solutions</h3>
             <div className="space-y-3">
               <Link
-                href="/solutions/carbon-fiber"
+                href="/solution/command-system"
                 className="block text-text-display hover:text-text-black transition-colors"
               >
-                Carbon Fiber Overall Solution Plan
+                Carbon Fiber Modular Mobile Command Post System
               </Link>
               <Link
-                href="/solutions/carbon-fiber-2"
+                href="/solution/treatment-system"
                 className="block text-text-display hover:text-text-black transition-colors"
               >
-                Carbon Fiber Overall Solution Plan
+                Modular Containerized Medical Treatment System
               </Link>
             </div>
           </div>
@@ -41,16 +41,22 @@ const Footer: React.FC = () => {
               <h3 className="text-lg font-semibold text-text-black lg:mb-5 mb-2.5">Products</h3>
             <div className="space-y-3">
               <Link
-                href="/products/medical-box"
+                href="/products/command-system"
                 className="block text-text-display hover:text-text-black transition-colors"
               >
-                Medical box body combination
+                Command System Products
               </Link>
               <Link
-                href="/products/communication-box"
+                href="/products/treatment-system"
                 className="block text-text-display hover:text-text-black transition-colors"
               >
-                Communication box body
+                Medical Treatment Products
+              </Link>
+              <Link
+                href="/products/universal-gear"
+                className="block text-text-display hover:text-text-black transition-colors"
+              >
+                Universal Gear Series
               </Link>
             </div>
           </div>
@@ -60,16 +66,22 @@ const Footer: React.FC = () => {
              <h3 className="text-lg font-semibold text-text-black lg:mb-5 mb-2.5">About US</h3>
             <div className="space-y-3">
               <Link
-                href="/about/culture"
+                href="/aboutUs"
                 className="block text-text-display hover:text-text-black transition-colors"
               >
-                Business Culture
+                About Us
               </Link>
               <Link
-                href="/about/qualification"
+                href="/news"
                 className="block text-text-display hover:text-text-black transition-colors"
               >
-                Certificate of Qualification
+                News & Media
+              </Link>
+              <Link
+                href="/news/applications"
+                className="block text-text-display hover:text-text-black transition-colors"
+              >
+                Industry Applications
               </Link>
             </div>
           </div>
@@ -77,17 +89,23 @@ const Footer: React.FC = () => {
           <div>
              <h3 className="text-lg font-semibold text-text-black lg:mb-5 mb-2.5">Contact</h3>
             <div className="space-y-3">
+              <Link
+                href="/contact"
+                className="block text-text-display hover:text-text-black transition-colors mb-3"
+              >
+                Contact Us
+              </Link>
               <div className="flex items-center gap-3">
                 <Icon name="phone-line" className="text-text-display flex-shrink-0" />
-                <span className="text-text-display">Tel: 20-23124324</span>
+                <span className="text-text-display">Tel: +65-6xxx-xxxx</span>
               </div>
               <div className="flex items-center gap-3">
                 <Icon name="mail-line" className="text-text-display flex-shrink-0" />
                 <a
-                  href="mailto:info@e50dao.com"
+                  href="mailto:info@e5dao.com"
                   className="text-text-display hover:text-text-black transition-colors"
                 >
-                  Email: info@e50dao.com
+                  Email: info@e5dao.com
                 </a>
               </div>
               <div className="flex items-center gap-3">
@@ -101,7 +119,7 @@ const Footer: React.FC = () => {
         {/* Bottom Section */}
         <div className="lg:py-10 py-5 border-t border-border-one text-center">
             <span className="text-text-display  lg:text-left">
-              Copyright © {currentYear} Vazyme International LLC. All Rights Reserved
+              Copyright © {currentYear} E5DAO Singapore. All Rights Reserved
             </span>
         </div>
       </div>
