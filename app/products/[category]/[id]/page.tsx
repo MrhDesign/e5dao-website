@@ -119,7 +119,7 @@ export default function ProductDetailPage() {
                   {'model' in product ? product.model : 'Product Model'}
                 </h1>
                 <div className="text-display">
-                  <p>{'standardCategory' in product ? product.standardCategory : ''}</p>
+                  <p>{'description' in product ? product.description : ''}</p>
                 </div>
 
                 {/* 标准产品显示快速规格信息 */}

@@ -53,7 +53,7 @@ function ProductCard(props: ProductCardProps) {
 
   const { 
     id, categoryId, image, alt, model, title, 
-    description, productType, standardCategory 
+    description, productType 
   } = productData;
   
   const { className = "", href, variant = 'default' } = props;
@@ -115,9 +115,9 @@ function ProductCard(props: ProductCardProps) {
                   {model}
                 </h3>
               )}
-              {standardCategory && (
+              {description && (
                 <p className="lg:text-xl text-sm lg:text-text-display font-normal line-clamp-6 leading-relaxed">
-                  {standardCategory}
+                  {description}
                 </p>
               )}
             </>
@@ -184,7 +184,7 @@ function ProductCard(props: ProductCardProps) {
           </>
         ) : (
           <>
-            {/* 标准产品：显示 model + standardCategory */}
+            {/* 标准产品：显示 model + description */}
             {model && (
               <div className="lg:text-xl text-base text-text-brand">
                 <span className="line-clamp-1">
@@ -192,9 +192,9 @@ function ProductCard(props: ProductCardProps) {
                 </span>
               </div>
             )}
-            {standardCategory && (
+            {description && (
               <p className="text-display line-clamp-1">
-                {standardCategory}
+                {description}
               </p>
             )}
           </>
