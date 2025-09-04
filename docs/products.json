@@ -1,819 +1,817 @@
 {
   "products": [
     {
-      "model": "RM-234TYX-01",
-      "specifications": {
-        "External Dimensions": "L405xW315xH207mm",
-        "Internal Dimensions": "L355xW255xH125mm",
-        "Lid Internal Dimensions": "L355xW255xH55mm",
-        "Net Weight": "2.2kg(含把手及锁扣等配件)",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "通用箱 RM-234TYX-01",
-      "standardCategory": "通用箱系列",
       "id": 20,
       "categoryId": 3,
       "productType": "standard",
       "image": "/images/RM-234TYX-01.png",
-      "alt": "RM-234TYX-01 通用箱 RM-234TYX-01",
+      "alt": "Universal Case RM-234TYX-01",
+      "model": "RM-234TYX-01",
+      "description": "Universal Case",
+      "standardCategory": "Universal Case Series",
       "gallery": [
         "/images/RM-234TYX-01.png",
         "/images/RM-234TYX-01.png",
         "/images/RM-234TYX-01.png"
-      ]
+      ],
+      "specifications": {
+        "External Dimensions": "L405xW315xH207mm",
+        "Internal Dimensions": "L355xW255xH125mm",
+        "Lid Internal Dimensions": "L355xW255xH55mm",
+        "Net Weight": "2.2kg (including handles, latches and accessories)",
+        "Material": "Carbon Fiber Composite"
+      }
     },
     {
-      "model": "RM-543TYX-01",
-      "specifications": {
-        "External Dimensions": "L500xW400xH300mm",
-        "Internal Dimensions": "L428xW328xH216mm",
-        "Lid Internal Dimensions": "L428xW328xH56mm",
-        "Net Weight": "4.5kg(含把手及锁扣等配件)",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "通用箱 RM-543TYX-01",
-      "standardCategory": "通用箱系列",
       "id": 21,
       "categoryId": 3,
       "productType": "standard",
       "image": "/images/RM-543TYX-01.png",
-      "alt": "RM-543TYX-01 通用箱 RM-543TYX-01",
+      "alt": "RM-543TYX-01 Universal Case",
+      "model": "RM-543TYX-01",
+      "description": "Universal Case",
+      "standardCategory": "Universal Case Series",
       "gallery": [
         "/images/RM-543TYX-01.png",
         "/images/RM-543TYX-01.png",
         "/images/RM-543TYX-01.png"
-      ]
+      ],
+      "specifications": {
+        "External Dimensions": "L500xW400xH300mm",
+        "Internal Dimensions": "L428xW328xH216mm",
+        "Lid Internal Dimensions": "L428xW328xH56mm",
+        "Net Weight": "4.5kg (including handles, latches and accessories)",
+        "Material": "Carbon Fiber Composite"
+      }
     },
     {
-      "model": "RM-645TYX-01",
-      "specifications": {
-        "External Dimensions": "L600xW400xH500mm",
-        "Internal Dimensions": "L550xW380xH370mm",
-        "Lid Internal Dimensions": "L550xW380xH80mm",
-        "Net Weight": "6kg(含把手及锁扣等配件)",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "通用箱 RM-645TYX-01",
-      "standardCategory": "通用箱系列",
       "id": 22,
       "categoryId": 3,
       "productType": "standard",
       "image": "/images/RM-645TYX-01.png",
-      "alt": "RM-645TYX-01 通用箱 RM-645TYX-01",
+      "alt": "RM-645TYX-01 Universal Case",
+      "model": "RM-645TYX-01",
+      "description": "Universal Case",
+      "standardCategory": "Universal Case Series",
       "gallery": [
         "/images/RM-645TYX-01.png",
         "/images/RM-645TYX-01.png",
         "/images/RM-645TYX-01.png"
-      ]
+      ],
+      "specifications": {
+        "External Dimensions": "L600xW400xH500mm",
+        "Internal Dimensions": "L550xW380xH370mm",
+        "Lid Internal Dimensions": "L550xW380xH80mm",
+        "Net Weight": "6kg (including handles, latches and accessories)",
+        "Material": "Carbon Fiber Composite"
+      }
     },
     {
-      "model": "RM-644TYX-01",
-      "specifications": {
-        "External Dimensions": "L600xW400xH400mm",
-        "Internal Dimensions": "L530xW330xH275mm",
-        "Lid Internal Dimensions": "L530xW330xH95mm",
-        "Net Weight": "9kg(含把手及锁扣等配件)",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "通用箱 RM-644TYX-01",
-      "standardCategory": "通用箱系列",
       "id": 23,
       "categoryId": 3,
       "productType": "standard",
       "image": "/images/RM-644TYX-01.png",
-      "alt": "RM-644TYX-01 通用箱 RM-644TYX-01",
+      "alt": "RM-644TYX-01 Universal Case",
+      "model": "RM-644TYX-01",
+      "description": "Universal Case",
+      "standardCategory": "Universal Case Series",
       "gallery": [
         "/images/RM-644TYX-01.png",
         "/images/RM-644TYX-01.png",
         "/images/RM-644TYX-01.png"
-      ]
-    },
-    {
-      "model": "RM-865TYX-01",
-      "specifications": {
-        "External Dimensions": "L800xW600xH500mm",
-        "Internal Dimensions": "L750xW550xH400mm",
-        "Lid Internal Dimensions": "L750xW540xH50mm",
-        "Net Weight": "9.8kg(含把手及锁扣等配件)",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "通用箱 RM-865TYX-01",
-      "standardCategory": "通用箱系列",
-      "id": 24,
-      "categoryId": 3,
-      "productType": "standard",
-      "image": "/images/RM-865TYX-01.png",
-      "alt": "RM-865TYX-01 通用箱 RM-865TYX-01",
-      "gallery": [
-        "/images/RM-865TYX-01.png",
-        "/images/RM-865TYX-01.png",
-        "/images/RM-865TYX-01.png"
-      ]
-    },
-    {
-      "model": "RM-866TYX-01",
-      "specifications": {
-        "External Dimensions": "L800xW600xH600mm",
-        "Internal Dimensions": "L730xW530xH480mm",
-        "Lid Internal Dimensions": "L730xW530xH100mm",
-        "Net Weight": "11.5kg(含手把及锁扣等配件)",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "通用箱 RM-866TYX-01",
-      "standardCategory": "通用箱系列",
-      "id": 25,
-      "categoryId": 3,
-      "productType": "standard",
-      "image": "/images/RM-866TYX-01.png",
-      "alt": "RM-866TYX-01 通用箱 RM-866TYX-01",
-      "gallery": [
-        "/images/RM-866TYX-01.png",
-        "/images/RM-866TYX-01.png",
-        "/images/RM-866TYX-01.png"
-      ]
-    },
-    {
-      "model": "RM-1287TYX-01",
-      "specifications": {
-        "External Dimensions": "L1200xW800xH700mm",
-        "Internal Dimensions": "L1125xW725xH435mm",
-        "Lid Internal Dimensions": "L1125xW725xH235mm",
-        "Net Weight": "22kg(含手把及锁扣等配件)",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "通用箱 RM-1287TYX-01",
-      "standardCategory": "通用箱系列",
-      "id": 26,
-      "categoryId": 3,
-      "productType": "standard",
-      "image": "/images/RM-1287TYX-01.png",
-      "alt": "RM-1287TYX-01 通用箱 RM-1287TYX-01",
-      "gallery": [
-        "/images/RM-1287TYX-01.png",
-        "/images/RM-1287TYX-01.png",
-        "/images/RM-1287TYX-01.png"
-      ]
-    },
-    {
-      "model": "RM-1780TYX-01",
-      "specifications": {
-        "External Dimensions": "L1780xW750xH620mm",
-        "Internal Dimensions": "L1750xW700xH500mm",
-        "Lid Internal Dimensions": "L1750xW700xH120mm",
-        "Rollers": "轮高120mm(可定制)",
-        "Net Weight": "26.8kg(含手把及锁扣等配件)",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "通用箱 RM-1780TYX-01",
-      "standardCategory": "通用箱系列",
-      "id": 27,
-      "categoryId": 3,
-      "productType": "standard",
-      "image": "/images/RM-1780TYX-01.png",
-      "alt": "RM-1780TYX-01 通用箱 RM-1780TYX-01",
-      "gallery": [
-        "/images/RM-1780TYX-01.png",
-        "/images/RM-1780TYX-01.png",
-        "/images/RM-1780TYX-01.png"
-      ]
-    },
-    {
-      "model": "RM-866JJCZX-01",
-      "specifications": {
-        "External Dimensions": "L800xW600xH600mm",
-        "Internal Dimensions": "L680xW448xH128mm",
-        "Lid Internal Dimensions": "L685xW530xH430mm",
-        "Net Weight": "20kg(含手把及锁扣等配件、不含中框)",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "急救处置箱",
-      "standardCategory": "功能箱系列",
-      "id": 28,
-      "categoryId": 3,
-      "productType": "standard",
-      "image": "/images/RM-866JJCZX-01.png",
-      "alt": "RM-866JJCZX-01 急救处置箱",
-      "gallery": [
-        "/images/RM-866JJCZX-01.png",
-        "/images/RM-866JJCZX-01.png",
-        "/images/RM-866JJCZX-01.png"
-      ]
-    },
-    {
-      "model": "RM-866JJX-01",
-      "specifications": {
-        "External Dimensions": "L800xW600xH600mm",
-        "Internal Dimensions": "L730xW530xH480mm",
-        "Lid Internal Dimensions": "L730xW530xH100mm",
-        "Net Weight": "16.5kg(含手把及锁扣、支撑腿、碳板等配件)",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "急救箱",
-      "standardCategory": "功能箱系列",
-      "id": 29,
-      "categoryId": 3,
-      "productType": "standard",
-      "image": "/images/RM-866JJX-01.png",
-      "alt": "RM-866JJX-01 急救箱",
-      "gallery": [
-        "/images/RM-866JJX-01.png",
-        "/images/RM-866JJX-01.png",
-        "/images/RM-866JJX-01.png"
-      ]
-    },
-    {
-      "model": "RM-866TXX-01",
-      "specifications": {
-        "External Dimensions": "L800xW600xH600mm",
-        "Internal Dimensions": "L520xW520xH645mm",
-        "Lid Internal Dimensions": "L525xW520xH55mm",
-        "Net Weight": "26kg(含减震机架、把手及锁扣等配件)",
-        "Customizable": "内部机架可定制",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "通讯箱",
-      "standardCategory": "功能箱系列",
-      "id": 30,
-      "categoryId": 3,
-      "productType": "standard",
-      "image": "/images/RM-866TXX-01.png",
-      "alt": "RM-866TXX-01 通讯箱",
-      "gallery": [
-        "/images/RM-866TXX-01.png",
-        "/images/RM-866TXX-01.png",
-        "/images/RM-866TXX-01.png"
-      ]
-    },
-    {
-      "model": "RM-866SBX-01",
-      "specifications": {
-        "External Dimensions": "L800xW600xH600mm",
-        "Internal Dimensions": "L680xW520xH175mm",
-        "Lid Internal Dimensions": "L685xW530xH380mm",
-        "Net Weight": "12kg(含手把及锁扣等配件、不含中框)",
-        "Customizable": "EVA内衬、减震机架、中框等",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "设备箱",
-      "standardCategory": "功能箱系列",
-      "id": 31,
-      "categoryId": 3,
-      "productType": "standard",
-      "image": "/images/RM-866SBX-01.png",
-      "alt": "RM-866SBX-01 设备箱",
-      "gallery": [
-        "/images/RM-866SBX-01.png",
-        "/images/RM-866SBX-01.png",
-        "/images/RM-866SBX-01.png"
-      ]
-    },
-    {
-      "model": "RM-866JJFSXX-01",
-      "specifications": {
-        "External Dimensions": "L800xW600xH600mm",
-        "Internal Dimensions": "L685xW530xH128mm",
-        "Lid Internal Dimensions": "L685xW530xH430mm",
-        "Net Weight": "15.7kg(含手把及锁扣等配件、不含中框)",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "急救复苏箱",
-      "standardCategory": "功能箱系列",
-      "id": 32,
-      "categoryId": 3,
-      "productType": "standard",
-      "image": "/images/RM-866JJFSXX-01.png",
-      "alt": "RM-866JJFSXX-01 急救复苏箱",
-      "gallery": [
-        "/images/RM-866JJFSXX-01.png",
-        "/images/RM-866JJFSXX-01.png",
-        "/images/RM-866JJFSXX-01.png"
-      ]
-    },
-    {
-      "model": "RM-866FWX-01",
-      "specifications": {
-        "External Dimensions": "L800xW600xH600mm",
-        "Internal Dimensions": "L700xW500xH480mm",
-        "Lid Internal Dimensions": "L700xW500xH100mm",
-        "Net Weight": "13.5kg(含手把及锁扣等配件)",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "复温箱",
-      "standardCategory": "功能箱系列",
-      "id": 33,
-      "categoryId": 3,
-      "productType": "standard",
-      "image": "/images/RM-866FWX-01.png",
-      "alt": "RM-866FWX-01 复温箱",
-      "gallery": [
-        "/images/RM-866FWX-01.png",
-        "/images/RM-866FWX-01.png",
-        "/images/RM-866FWX-01.png"
-      ]
-    },
-    {
-      "model": "RM-866JJDGNX-01",
-      "specifications": {
-        "External Dimensions": "L800xW600xH600mm",
-        "Internal Dimensions": "L520xW520xH645mm",
-        "Lid Internal Dimensions": "L525xW520xH55mm",
-        "Net Weight": "22kg(含抽屉、支撑腿及锁扣等配件)",
-        "Customizable": "内部机架可定制",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "急救多功能箱",
-      "standardCategory": "功能箱系列",
-      "id": 34,
-      "categoryId": 3,
-      "productType": "standard",
-      "image": "/images/RM-866JJDGNX-01.png",
-      "alt": "RM-866JJDGNX-01 急救多功能箱",
-      "gallery": [
-        "/images/RM-866JJDGNX-01.png",
-        "/images/RM-866JJDGNX-01.png",
-        "/images/RM-866JJDGNX-01.png"
-      ]
-    },
-    {
-      "model": "RM-866SSCX-01",
-      "specifications": {
-        "External Dimensions": "L800xW600xH600mm",
-        "Internal Dimensions": "L520xW520xH645mm",
-        "Lid Internal Dimensions": "L525xW520xH55mm",
-        "Net Weight": "38kg(含支撑腿、抽屉及锁扣等配件)",
-        "Customizable": "抽屉、支撑腿、平板",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "手术床箱",
-      "standardCategory": "功能箱系列",
-      "id": 35,
-      "categoryId": 3,
-      "productType": "standard",
-      "image": "/images/RM-866SSCX-01.png",
-      "alt": "RM-866SSCX-01 手术床箱",
-      "gallery": [
-        "/images/RM-866SSCX-01.png",
-        "/images/RM-866SSCX-01.png",
-        "/images/RM-866SSCX-01.png"
-      ]
-    },
-    {
-      "model": "RM-866YCX-01",
-      "specifications": {
-        "External Dimensions": "L800xW600xH600mm",
-        "Internal Dimensions": "L675xW470xH565mm",
-        "Lid Internal Dimensions": "L640xW430xH55mm",
-        "Net Weight": "18.5kg(含抽屉、把手及锁扣等配件)",
-        "Customizable": "抽屉可定制",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "三屉药材箱",
-      "standardCategory": "功能箱系列",
-      "id": 36,
-      "categoryId": 3,
-      "productType": "standard",
-      "image": "/images/RM-866YCX-01.png",
-      "alt": "RM-866YCX-01 三屉药材箱",
-      "gallery": [
-        "/images/RM-866YCX-01.png",
-        "/images/RM-866YCX-01.png",
-        "/images/RM-866YCX-01.png"
-      ]
-    },
-    {
-      "model": "RM-ZYX-01",
-      "specifications": {
-        "External Dimensions": "L2600xW1000xH825mm",
-        "Internal Dimensions": "L2520xW920xH370mm",
-        "Lid Internal Dimensions": "L2520xW920xH395mm",
-        "Net Weight": "73.5kg(含抽屉、把手及锁扣等配件)",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "转运箱",
-      "standardCategory": "功能箱系列",
-      "id": 37,
-      "categoryId": 3,
-      "productType": "standard",
-      "image": "/images/RM-ZYX-01.png",
-      "alt": "RM-ZYX-01 转运箱",
-      "gallery": [
-        "/images/RM-ZYX-01.png",
-        "/images/RM-ZYX-01.png",
-        "/images/RM-ZYX-01.png"
-      ]
-    },
-    {
-      "model": "RM-866BWX-01",
-      "specifications": {
-        "External Dimensions": "L800xW600xH600mm",
-        "Internal Dimensions": "L730xW530xH480mm",
-        "Lid Internal Dimensions": "L730xW530xH100mm",
-        "Net Weight": "12kg(含把手及锁扣等配件)",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "保温箱",
-      "standardCategory": "功能箱系列",
-      "id": 38,
-      "categoryId": 3,
-      "productType": "standard",
-      "image": "/images/RM-866BWX-01.png",
-      "alt": "RM-866BWX-01 保温箱",
-      "gallery": [
-        "/images/RM-866BWX-01.png",
-        "/images/RM-866BWX-01.png",
-        "/images/RM-866BWX-01.png"
-      ]
-    },
-    {
-      "model": "RM-844PZX-02",
-      "specifications": {
-        "External Dimensions": "L1050xW640xH680mm",
-        "Internal Dimensions": "L1000xW600xH520mm",
-        "Lid Internal Dimensions": "L1000xW600xH120mm",
-        "Net Weight": "11.1kg(含锁扣等配件)",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "拼装箱",
-      "standardCategory": "功能箱系列",
-      "id": 39,
-      "categoryId": 3,
-      "productType": "standard",
-      "image": "/images/RM-844PZX-02.png",
-      "alt": "RM-844PZX-02 拼装箱",
-      "gallery": [
-        "/images/RM-844PZX-02.png",
-        "/images/RM-844PZX-02.png",
-        "/images/RM-844PZX-02.png"
-      ]
-    },
-    {
-      "model": "RM-644BWX-01",
+      ],
       "specifications": {
         "External Dimensions": "L600xW400xH400mm",
         "Internal Dimensions": "L530xW330xH275mm",
         "Lid Internal Dimensions": "L530xW330xH95mm",
-        "Net Weight": "11kg(含把手及锁扣等配件)",
-        "Customizable": "内衬可定制(内胆、血框等)",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "644保温箱",
-      "standardCategory": "功能箱系列",
-      "id": 40,
+        "Net Weight": "9kg (including handles, latches and accessories)",
+        "Material": "Carbon Fiber Composite"
+      }
+    },
+    {
+      "id": 24,
       "categoryId": 3,
       "productType": "standard",
+      "image": "/images/RM-865TYX-01.png",
+      "alt": "RM-865TYX-01 Universal Case",
+      "model": "RM-865TYX-01",
+      "description": "Universal Case",
+      "standardCategory": "Universal Case Series",
+      "gallery": [
+        "/images/RM-865TYX-01.png",
+        "/images/RM-865TYX-01.png",
+        "/images/RM-865TYX-01.png"
+      ],
+      "specifications": {
+        "External Dimensions": "L800xW600xH500mm",
+        "Internal Dimensions": "L750xW550xH400mm",
+        "Lid Internal Dimensions": "L750xW540xH50mm",
+        "Net Weight": "9.8kg (including handles, latches and accessories)",
+        "Material": "Carbon Fiber Composite"
+      }
+    },
+    {
+      "id": 25,
+      "categoryId": 3,
+      "productType": "standard",
+      "image": "/images/RM-866TYX-01.png",
+      "alt": "RM-866TYX-01 Universal Case",
+      "model": "RM-866TYX-01",
+      "description": "Universal Case",
+      "standardCategory": "Universal Case Series",
+      "gallery": [
+        "/images/RM-866TYX-01.png",
+        "/images/RM-866TYX-01.png",
+        "/images/RM-866TYX-01.png"
+      ],
+      "specifications": {
+        "External Dimensions": "L800xW600xH600mm",
+        "Internal Dimensions": "L730xW530xH480mm",
+        "Lid Internal Dimensions": "L730xW530xH100mm",
+        "Net Weight": "11.5kg (including handles, latches and accessories)",
+        "Material": "Carbon Fiber Composite"
+      }
+    },
+    {
+      "id": 26,
+      "categoryId": 3,
+      "productType": "standard",
+      "image": "/images/RM-1287TYX-01.png",
+      "alt": "RM-1287TYX-01 Universal Case",
+      "model": "RM-1287TYX-01",
+      "description": "Universal Case",
+      "standardCategory": "Universal Case Series",
+      "gallery": [
+        "/images/RM-1287TYX-01.png",
+        "/images/RM-1287TYX-01.png",
+        "/images/RM-1287TYX-01.png"
+      ],
+      "specifications": {
+        "External Dimensions": "L1200xW800xH700mm",
+        "Internal Dimensions": "L1125xW725xH435mm",
+        "Lid Internal Dimensions": "L1125xW725xH235mm",
+        "Net Weight": "22kg (including handles, latches and accessories)",
+        "Material": "Carbon Fiber Composite"
+      }
+    },
+    {
+      "id": 27,
+      "categoryId": 3,
+      "productType": "standard",
+      "image": "/images/RM-1780TYX-01.png",
+      "alt": "RM-1780TYX-01 Universal Case",
+      "model": "RM-1780TYX-01",
+      "description": "Universal Case",
+      "standardCategory": "Universal Case Series",
+      "gallery": [
+        "/images/RM-1780TYX-01.png",
+        "/images/RM-1780TYX-01.png",
+        "/images/RM-1780TYX-01.png"
+      ],
+      "specifications": {
+        "External Dimensions": "L1780xW750xH620mm",
+        "Internal Dimensions": "L1750xW700xH500mm",
+        "Lid Internal Dimensions": "L1750xW700xH120mm",
+        "Rollers": "Wheel height 120mm (customizable)",
+        "Net Weight": "26.8kg (including handles, latches and accessories)",
+        "Material": "Carbon Fiber Composite"
+      }
+    },
+    {
+      "id": 28,
+      "categoryId": 2,
+      "productType": "standard",
+      "image": "/images/RM-866JJCZX-01.png",
+      "alt": "RM-866JJCZX-01 Emergency Treatment Case",
+      "model": "RM-866JJCZX-01",
+      "description": "Emergency Treatment Case",
+      "standardCategory": "Functional Case Series",
+      "gallery": [
+        "/images/RM-866JJCZX-01.png",
+        "/images/RM-866JJCZX-01.png",
+        "/images/RM-866JJCZX-01.png"
+      ],
+      "specifications": {
+        "External Dimensions": "L800xW600xH600mm",
+        "Internal Dimensions": "L680xW448xH128mm",
+        "Lid Internal Dimensions": "L685xW530xH430mm",
+        "Net Weight": "20kg (including handles, latches and accessories, excluding center frame)",
+        "Material": "Carbon Fiber Composite"
+      }
+    },
+    {
+      "id": 29,
+      "categoryId": 2,
+      "productType": "standard",
+      "image": "/images/RM-866JJX-01.png",
+      "alt": "RM-866JJX-01 First Aid Case",
+      "model": "RM-866JJX-01",
+      "description": "First Aid Case",
+      "standardCategory": "Functional Case Series",
+      "gallery": [
+        "/images/RM-866JJX-01.png",
+        "/images/RM-866JJX-01.png",
+        "/images/RM-866JJX-01.png"
+      ],
+      "specifications": {
+        "External Dimensions": "L800xW600xH600mm",
+        "Internal Dimensions": "L730xW530xH480mm",
+        "Lid Internal Dimensions": "L730xW530xH100mm",
+        "Net Weight": "16.5kg (including handles, latches, support legs, carbon plates and accessories)",
+        "Material": "Carbon Fiber Composite"
+      }
+    },
+    {
+      "id": 30,
+      "categoryId": 2,
+      "productType": "standard",
+      "image": "/images/RM-866TXX-01.png",
+      "alt": "RM-866TXX-01 Communication Case",
+      "model": "RM-866TXX-01",
+      "description": "Communication Case",
+      "standardCategory": "Functional Case Series",
+      "gallery": [
+        "/images/RM-866TXX-01.png",
+        "/images/RM-866TXX-01.png",
+        "/images/RM-866TXX-01.png"
+      ],
+      "specifications": {
+        "External Dimensions": "L800xW600xH600mm",
+        "Internal Dimensions": "L520xW520xH645mm",
+        "Lid Internal Dimensions": "L525xW520xH55mm",
+        "Net Weight": "26kg (including shock-absorbing rack, handles, latches and accessories)",
+        "Customizable": "Internal rack customizable",
+        "Material": "Carbon Fiber Composite"
+      }
+    },
+    {
+      "id": 31,
+      "categoryId": 2,
+      "productType": "standard",
+      "image": "/images/RM-866SBX-01.png",
+      "alt": "RM-866SBX-01 Equipment Case",
+      "model": "RM-866SBX-01",
+      "description": "Equipment Case",
+      "standardCategory": "Functional Case Series",
+      "gallery": [
+        "/images/RM-866SBX-01.png",
+        "/images/RM-866SBX-01.png",
+        "/images/RM-866SBX-01.png"
+      ],
+      "specifications": {
+        "External Dimensions": "L800xW600xH600mm",
+        "Internal Dimensions": "L680xW520xH175mm",
+        "Lid Internal Dimensions": "L685xW530xH380mm",
+        "Net Weight": "12kg (including handles, latches and accessories, excluding center frame)",
+        "Customizable": "EVA lining, shock-absorbing rack, center frame, etc.",
+        "Material": "Carbon Fiber Composite"
+      }
+    },
+    {
+      "id": 32,
+      "categoryId": 2,
+      "productType": "standard",
+      "image": "/images/RM-866JJFSXX-01.png",
+      "alt": "RM-866JJFSXX-01 Emergency Resuscitation Case",
+      "model": "RM-866JJFSXX-01",
+      "description": "Emergency Resuscitation Case",
+      "standardCategory": "Functional Case Series",
+      "gallery": [
+        "/images/RM-866JJFSXX-01.png",
+        "/images/RM-866JJFSXX-01.png",
+        "/images/RM-866JJFSXX-01.png"
+      ],
+      "specifications": {
+        "External Dimensions": "L800xW600xH600mm",
+        "Internal Dimensions": "L685xW530xH128mm",
+        "Lid Internal Dimensions": "L685xW530xH430mm",
+        "Net Weight": "15.7kg (including handles, latches and accessories, excluding center frame)",
+        "Material": "Carbon Fiber Composite"
+      }
+    },
+    {
+      "id": 33,
+      "categoryId": 2,
+      "productType": "standard",
+      "image": "/images/RM-866FWX-01.png",
+      "alt": "RM-866FWX-01 Rewarming Case",
+      "model": "RM-866FWX-01",
+      "description": "Rewarming Case",
+      "standardCategory": "Functional Case Series",
+      "gallery": [
+        "/images/RM-866FWX-01.png",
+        "/images/RM-866FWX-01.png",
+        "/images/RM-866FWX-01.png"
+      ],
+      "specifications": {
+        "External Dimensions": "L800xW600xH600mm",
+        "Internal Dimensions": "L700xW500xH480mm",
+        "Lid Internal Dimensions": "L700xW500xH100mm",
+        "Net Weight": "13.5kg (including handles, latches and accessories)",
+        "Material": "Carbon Fiber Composite"
+      }
+    },
+    {
+      "id": 34,
+      "categoryId": 2,
+      "productType": "standard",
+      "image": "/images/RM-866JJDGNX-01.png",
+      "alt": "RM-866JJDGNX-01 Emergency Multi-Function Case",
+      "model": "RM-866JJDGNX-01",
+      "description": "Emergency Multi-Function Case",
+      "standardCategory": "Functional Case Series",
+      "gallery": [
+        "/images/RM-866JJDGNX-01.png",
+        "/images/RM-866JJDGNX-01.png",
+        "/images/RM-866JJDGNX-01.png"
+      ],
+      "specifications": {
+        "External Dimensions": "L800xW600xH600mm",
+        "Internal Dimensions": "L520xW520xH645mm",
+        "Lid Internal Dimensions": "L525xW520xH55mm",
+        "Net Weight": "22kg (including drawers, support legs, latches and accessories)",
+        "Customizable": "Internal rack customizable",
+        "Material": "Carbon Fiber Composite"
+      }
+    },
+    {
+      "id": 35,
+      "categoryId": 2,
+      "productType": "standard",
+      "image": "/images/RM-866SSCX-01.png",
+      "alt": "RM-866SSCX-01 Surgical Bed Case",
+      "model": "RM-866SSCX-01",
+      "description": "Surgical Bed Case",
+      "standardCategory": "Functional Case Series",
+      "gallery": [
+        "/images/RM-866SSCX-01.png",
+        "/images/RM-866SSCX-01.png",
+        "/images/RM-866SSCX-01.png"
+      ],
+      "specifications": {
+        "External Dimensions": "L800xW600xH600mm",
+        "Internal Dimensions": "L520xW520xH645mm",
+        "Lid Internal Dimensions": "L525xW520xH55mm",
+        "Net Weight": "38kg (including support legs, drawers, latches and accessories)",
+        "Customizable": "Drawers, support legs, flat panels",
+        "Material": "Carbon Fiber Composite"
+      }
+    },
+    {
+      "id": 36,
+      "categoryId": 2,
+      "productType": "standard",
+      "image": "/images/RM-866YCX-01.png",
+      "alt": "RM-866YCX-01 Three-Drawer Medical Supply Case",
+      "model": "RM-866YCX-01",
+      "description": "Three-Drawer Medical Supply Case",
+      "standardCategory": "Functional Case Series",
+      "gallery": [
+        "/images/RM-866YCX-01.png",
+        "/images/RM-866YCX-01.png",
+        "/images/RM-866YCX-01.png"
+      ],
+      "specifications": {
+        "External Dimensions": "L800xW600xH600mm",
+        "Internal Dimensions": "L675xW470xH565mm",
+        "Lid Internal Dimensions": "L640xW430xH55mm",
+        "Net Weight": "18.5kg (including drawers, handles, latches and accessories)",
+        "Customizable": "Drawers customizable",
+        "Material": "Carbon Fiber Composite"
+      }
+    },
+    {
+      "id": 37,
+      "categoryId": 2,
+      "productType": "standard",
+      "image": "/images/RM-ZYX-01.png",
+      "alt": "RM-ZYX-01 Transport Case",
+      "model": "RM-ZYX-01",
+      "description": "Transport Case",
+      "standardCategory": "Functional Case Series",
+      "gallery": [
+        "/images/RM-ZYX-01.png",
+        "/images/RM-ZYX-01.png",
+        "/images/RM-ZYX-01.png"
+      ],
+      "specifications": {
+        "External Dimensions": "L2600xW1000xH825mm",
+        "Internal Dimensions": "L2520xW920xH370mm",
+        "Lid Internal Dimensions": "L2520xW920xH395mm",
+        "Net Weight": "73.5kg (including drawers, handles, latches and accessories)",
+        "Material": "Carbon Fiber Composite"
+      }
+    },
+    {
+      "id": 38,
+      "categoryId": 2,
+      "productType": "standard",
+      "image": "/images/RM-866BWX-01.png",
+      "alt": "RM-866BWX-01 Thermal Insulation Case",
+      "model": "RM-866BWX-01",
+      "description": "Thermal Insulation Case",
+      "standardCategory": "Functional Case Series",
+      "gallery": [
+        "/images/RM-866BWX-01.png",
+        "/images/RM-866BWX-01.png",
+        "/images/RM-866BWX-01.png"
+      ],
+      "specifications": {
+        "External Dimensions": "L800xW600xH600mm",
+        "Internal Dimensions": "L730xW530xH480mm",
+        "Lid Internal Dimensions": "L730xW530xH100mm",
+        "Net Weight": "12kg (including handles, latches and accessories)",
+        "Material": "Carbon Fiber Composite"
+      }
+    },
+    {
+      "id": 39,
+      "categoryId": 2,
+      "productType": "standard",
+      "image": "/images/RM-844PZX-02.png",
+      "alt": "RM-844PZX-02 Modular Case",
+      "model": "RM-844PZX-02",
+      "description": "Modular Case",
+      "standardCategory": "Functional Case Series",
+      "gallery": [
+        "/images/RM-844PZX-02.png",
+        "/images/RM-844PZX-02.png",
+        "/images/RM-844PZX-02.png"
+      ],
+      "specifications": {
+        "External Dimensions": "L1050xW640xH680mm",
+        "Internal Dimensions": "L1000xW600xH520mm",
+        "Lid Internal Dimensions": "L1000xW600xH120mm",
+        "Net Weight": "11.1kg (including latches and accessories)",
+        "Material": "Carbon Fiber Composite"
+      }
+    },
+    {
+      "id": 40,
+      "categoryId": 2,
+      "productType": "standard",
       "image": "/images/RM-644BWX-01.png",
-      "alt": "RM-644BWX-01 644保温箱",
+      "alt": "RM-644BWX-01 644 Thermal Insulation Case",
+      "model": "RM-644BWX-01",
+      "description": "644 Thermal Insulation Case",
+      "standardCategory": "Functional Case Series",
       "gallery": [
         "/images/RM-644BWX-01.png",
         "/images/RM-644BWX-01.png",
         "/images/RM-644BWX-01.png"
-      ]
+      ],
+      "specifications": {
+        "External Dimensions": "L600xW400xH400mm",
+        "Internal Dimensions": "L530xW330xH275mm",
+        "Lid Internal Dimensions": "L530xW330xH95mm",
+        "Net Weight": "11kg (including handles, latches and accessories)",
+        "Customizable": "Lining customizable (inner liner, blood frame, etc.)",
+        "Material": "Carbon Fiber Composite"
+      }
     },
     {
-      "model": "RM-FZX-01",
-      "specifications": {
-        "External Dimensions": "L866xW600xH275mm",
-        "Internal Dimensions": "L720xW520xH190mm",
-        "Lid Internal Dimensions": "L730xW530xH60mm",
-        "Net Weight": "7.5kg(含拉杆、把手锁扣等配件)",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "封装箱",
-      "standardCategory": "功能箱系列",
       "id": 41,
-      "categoryId": 3,
+      "categoryId": 2,
       "productType": "standard",
       "image": "/images/RM-FZX-01.png",
-      "alt": "RM-FZX-01 封装箱",
+      "alt": "RM-FZX-01 Sealing Case",
+      "model": "RM-FZX-01",
+      "description": "Sealing Case",
+      "standardCategory": "Functional Case Series",
       "gallery": [
         "/images/RM-FZX-01.png",
         "/images/RM-FZX-01.png",
         "/images/RM-FZX-01.png"
-      ]
+      ],
+      "specifications": {
+        "External Dimensions": "L866xW600xH275mm",
+        "Internal Dimensions": "L720xW520xH190mm",
+        "Lid Internal Dimensions": "L730xW530xH60mm",
+        "Net Weight": "7.5kg (including trolley handle, handle latches and accessories)",
+        "Material": "Carbon Fiber Composite"
+      }
     },
     {
-      "model": "RM-442智能工具箱-01",
-      "specifications": {
-        "External Dimensions": "L495xW400xH240mm",
-        "Internal Dimensions": "L474xW337xH170mm",
-        "Lid Internal Dimensions": "L450xW327xH42mm",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "智能工具箱",
-      "standardCategory": "功能箱系列",
       "id": 42,
-      "categoryId": 3,
+      "categoryId": 2,
       "productType": "standard",
       "image": "/images/RM-442智能工具箱-01.png",
-      "alt": "RM-442智能工具箱-01 智能工具箱",
+      "alt": "RM-442Smart Tool Case-01 Smart Tool Case",
+      "model": "RM-442Smart Tool Case-01",
+      "description": "Smart Tool Case",
+      "standardCategory": "Functional Case Series",
       "gallery": [
         "/images/RM-442智能工具箱-01.png",
         "/images/RM-442智能工具箱-01.png",
         "/images/RM-442智能工具箱-01.png"
-      ]
+      ],
+      "specifications": {
+        "External Dimensions": "L495xW400xH240mm",
+        "Internal Dimensions": "L474xW337xH170mm",
+        "Lid Internal Dimensions": "L450xW327xH42mm",
+        "Material": "Carbon Fiber Composite"
+      }
     },
     {
+      "id": 43,
+      "categoryId": 2,
+      "productType": "standard",
+      "image": "/images/RM-432STX-01.png",
+      "alt": "RM-432STX-01 Briefcase",
       "model": "RM-432STX-01",
+      "description": "Briefcase",
+      "standardCategory": "Functional Case Series",
+      "gallery": [
+        "/images/RM-432STX-01.png",
+        "/images/RM-432STX-01.png",
+        "/images/RM-432STX-01.png"
+      ],
       "specifications": {
         "External Dimensions": "L500xW410xH280mm",
         "Internal Dimensions": "L445xW345xH188mm",
         "Lid Internal Dimensions": "L445xW345xH80mm",
         "Net Weight": "2.8kg",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "手提箱",
-      "standardCategory": "功能箱系列",
-      "id": 43,
-      "categoryId": 3,
-      "productType": "standard",
-      "image": "/images/RM-432STX-01.png",
-      "alt": "RM-432STX-01 手提箱",
-      "gallery": [
-        "/images/RM-432STX-01.png",
-        "/images/RM-432STX-01.png",
-        "/images/RM-432STX-01.png"
-      ]
+        "Material": "Carbon Fiber Composite"
+      }
     },
     {
-      "model": "RM-5453-01",
-      "specifications": {
-        "External Dimensions": "L495xW400xH240mm",
-        "Internal Dimensions": "L474xW337xH170mm",
-        "Lid Internal Dimensions": "L450xW327xH42mm",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "功能箱 RM-5453-01",
-      "standardCategory": "功能箱系列",
       "id": 44,
-      "categoryId": 3,
+      "categoryId": 2,
       "productType": "standard",
       "image": "/images/RM-5453-01.png",
-      "alt": "RM-5453-01 功能箱 RM-5453-01",
+      "alt": "RM-5453-01 Functional Case",
+      "model": "RM-5453-01",
+      "description": "Functional Case",
+      "standardCategory": "Functional Case Series",
       "gallery": [
         "/images/RM-5453-01.png",
         "/images/RM-5453-01.png",
         "/images/RM-5453-01.png"
-      ]
+      ],
+      "specifications": {
+        "External Dimensions": "L495xW400xH240mm",
+        "Internal Dimensions": "L474xW337xH170mm",
+        "Lid Internal Dimensions": "L450xW327xH42mm",
+        "Material": "Carbon Fiber Composite"
+      }
     },
     {
-      "model": "RM-544BZX-01",
-      "specifications": {
-        "External Dimensions": "L510xW415xH367mm",
-        "Internal Dimensions": "L450xW350xH250mm",
-        "Lid Internal Dimensions": "L450xW355xH50mm",
-        "Net Weight": "5kg(含把手及锁扣等配件)",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "航空包装箱",
-      "standardCategory": "功能箱系列",
       "id": 45,
-      "categoryId": 3,
+      "categoryId": 2,
       "productType": "standard",
       "image": "/images/RM-544BZX-01.png",
-      "alt": "RM-544BZX-01 航空包装箱",
+      "alt": "RM-544BZX-01 Aviation Packaging Case",
+      "model": "RM-544BZX-01",
+      "description": "Aviation Packaging Case",
+      "standardCategory": "Functional Case Series",
       "gallery": [
         "/images/RM-544BZX-01.png",
         "/images/RM-544BZX-01.png",
         "/images/RM-544BZX-01.png"
-      ]
-    },
-    {
-      "model": "RM-444CXX-01",
-      "specifications": {
-        "External Dimensions": "L400xW400xH400mm",
-        "Net Weight": "7.5kg(含把手及锁扣等配件)",
-        "Color": "可定制(GY06军绿/海灰普通色漆、防刮漆)",
-        "Customizable": "EVA内衬、抽屉、支撑架等",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "采血箱",
-      "standardCategory": "功能箱系列",
-      "id": 46,
-      "categoryId": 3,
-      "productType": "standard",
-      "image": "/images/RM-444CXX-01.png",
-      "alt": "RM-444CXX-01 采血箱",
-      "gallery": [
-        "/images/RM-444CXX-01.png",
-        "/images/RM-444CXX-01.png",
-        "/images/RM-444CXX-01.png"
-      ]
-    },
-    {
-      "model": "RM-8UJJX-01",
-      "rack_size": "8U",
-      "specifications": {
-        "External Dimensions": "L690xW573xH485mm",
-        "Internal Dimensions": "L576xW499xH392mm",
-        "Net Weight": "17.35kg",
-        "Other": "内涵机架",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "8U机架箱",
-      "standardCategory": "机架箱系列",
-      "id": 47,
-      "categoryId": 3,
-      "productType": "standard",
-      "image": "/images/RM-8UJJX-01.png",
-      "alt": "RM-8UJJX-01 8U机架箱",
-      "gallery": [
-        "/images/RM-8UJJX-01.png",
-        "/images/RM-8UJJX-01.png",
-        "/images/RM-8UJJX-01.png"
-      ]
-    },
-    {
-      "model": "RM-4UJJX-01",
-      "rack_size": "4U",
-      "specifications": {
-        "External Dimensions": "L690xW573xH307mm",
-        "Internal Dimensions": "L576xW499xH215mm",
-        "Net Weight": "15.3kg",
-        "Other": "内含机架",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "4U机架箱",
-      "standardCategory": "机架箱系列",
-      "id": 48,
-      "categoryId": 3,
-      "productType": "standard",
-      "image": "/images/RM-4UJJX-01.png",
-      "alt": "RM-4UJJX-01 4U机架箱",
-      "gallery": [
-        "/images/RM-4UJJX-01.png",
-        "/images/RM-4UJJX-01.png",
-        "/images/RM-4UJJX-01.png"
-      ]
-    },
-    {
-      "model": "RM-644LGX-01",
-      "specifications": {
-        "External Dimensions": "L600xW400xH400mm",
-        "Internal Dimensions": "L535xW335xH300mm",
-        "Lid Internal Dimensions": "L535xW330xH35mm",
-        "Net Weight": "9kg(含把手及锁扣等配件)",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "644拉杆箱",
-      "standardCategory": "拉杆箱系列",
-      "id": 49,
-      "categoryId": 3,
-      "productType": "standard",
-      "image": "/images/RM-644LGX-01.png",
-      "alt": "RM-644LGX-01 644拉杆箱",
-      "gallery": [
-        "/images/RM-644LGX-01.png",
-        "/images/RM-644LGX-01.png",
-        "/images/RM-644LGX-01.png"
-      ]
-    },
-    {
-      "model": "RM-663LGX-01",
-      "specifications": {
-        "External Dimensions": "L600xW600xH300mm",
-        "Internal Dimensions": "L570xW570xH240mm",
-        "Lid Internal Dimensions": "L570xW570xH40mm",
-        "Net Weight": "7.5kg(含把手及锁扣等配件)",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "663拉杆箱",
-      "standardCategory": "拉杆箱系列",
-      "id": 50,
-      "categoryId": 3,
-      "productType": "standard",
-      "image": "/images/RM-663LGX-01.png",
-      "alt": "RM-663LGX-01 663拉杆箱",
-      "gallery": [
-        "/images/RM-663LGX-01.png",
-        "/images/RM-663LGX-01.png",
-        "/images/RM-663LGX-01.png"
-      ]
-    },
-    {
-      "model": "RM-753LGX-01",
-      "specifications": {
-        "External Dimensions": "L700xW480xH320mm",
-        "Internal Dimensions": "L638xW413xH200mm",
-        "Lid Internal Dimensions": "L638xW416xH50mm",
-        "Net Weight": "5kg(含把手及锁扣等配件)",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "753拉杆箱",
-      "standardCategory": "拉杆箱系列",
-      "id": 51,
-      "categoryId": 3,
-      "productType": "standard",
-      "image": "/images/RM-753LGX-01.png",
-      "alt": "RM-753LGX-01 753拉杆箱",
-      "gallery": [
-        "/images/RM-753LGX-01.png",
-        "/images/RM-753LGX-01.png",
-        "/images/RM-753LGX-01.png"
-      ]
-    },
-    {
-      "model": "RM-544LGX-01",
+      ],
       "specifications": {
         "External Dimensions": "L510xW415xH367mm",
         "Internal Dimensions": "L450xW350xH250mm",
         "Lid Internal Dimensions": "L450xW355xH50mm",
-        "Net Weight": "5kg(含把手及锁扣等配件)",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "544拉杆箱",
-      "standardCategory": "拉杆箱系列",
+        "Net Weight": "5kg (including handles, latches and accessories)",
+        "Material": "Carbon Fiber Composite"
+      }
+    },
+    {
+      "id": 46,
+      "categoryId": 2,
+      "productType": "standard",
+      "image": "/images/RM-444CXX-01.png",
+      "alt": "RM-444CXX-01 Blood Collection Case",
+      "model": "RM-444CXX-01",
+      "description": "Blood Collection Case",
+      "standardCategory": "Functional Case Series",
+      "gallery": [
+        "/images/RM-444CXX-01.png",
+        "/images/RM-444CXX-01.png",
+        "/images/RM-444CXX-01.png"
+      ],
+      "specifications": {
+        "External Dimensions": "L400xW400xH400mm",
+        "Net Weight": "7.5kg (including handles, latches and accessories)",
+        "Color": "Customizable (GY06 military green/sea gray standard paint, anti-scratch paint)",
+        "Customizable": "EVA lining, drawers, support brackets, etc.",
+        "Material": "Carbon Fiber Composite"
+      }
+    },
+    {
+      "id": 47,
+      "categoryId": 3,
+      "productType": "standard",
+      "image": "/images/RM-8UJJX-01.png",
+      "alt": "RM-8UJJX-01 8U Rack Case",
+      "model": "RM-8UJJX-01",
+      "description": "8U Rack Case",
+      "standardCategory": "Rack Case Series",
+      "gallery": [
+        "/images/RM-8UJJX-01.png",
+        "/images/RM-8UJJX-01.png",
+        "/images/RM-8UJJX-01.png"
+      ],
+      "specifications": {
+        "External Dimensions": "L690xW573xH485mm",
+        "Internal Dimensions": "L576xW499xH392mm",
+        "Net Weight": "17.35kg",
+        "Other": "Internal rack included",
+        "Material": "Carbon Fiber Composite"
+      }
+    },
+    {
+      "id": 48,
+      "categoryId": 3,
+      "productType": "standard",
+      "image": "/images/RM-4UJJX-01.png",
+      "alt": "RM-4UJJX-01 4U Rack Case",
+      "model": "RM-4UJJX-01",
+      "description": "4U Rack Case",
+      "standardCategory": "Rack Case Series",
+      "gallery": [
+        "/images/RM-4UJJX-01.png",
+        "/images/RM-4UJJX-01.png",
+        "/images/RM-4UJJX-01.png"
+      ],
+      "specifications": {
+        "External Dimensions": "L690xW573xH307mm",
+        "Internal Dimensions": "L576xW499xH215mm",
+        "Net Weight": "15.3kg",
+        "Other": "Internal rack included",
+        "Material": "Carbon Fiber Composite"
+      }
+    },
+    {
+      "id": 49,
+      "categoryId": 3,
+      "productType": "standard",
+      "image": "/images/RM-644LGX-01.png",
+      "alt": "RM-644LGX-01 644 Trolley Case",
+      "model": "RM-644LGX-01",
+      "description": "644 Trolley Case",
+      "standardCategory": "Trolley Case Series",
+      "gallery": [
+        "/images/RM-644LGX-01.png",
+        "/images/RM-644LGX-01.png",
+        "/images/RM-644LGX-01.png"
+      ],
+      "specifications": {
+        "External Dimensions": "L600xW400xH400mm",
+        "Internal Dimensions": "L535xW335xH300mm",
+        "Lid Internal Dimensions": "L535xW330xH35mm",
+        "Net Weight": "9kg (including handles, latches and accessories)",
+        "Material": "Carbon Fiber Composite"
+      }
+    },
+    {
+      "id": 50,
+      "categoryId": 3,
+      "productType": "standard",
+      "image": "/images/RM-663LGX-01.png",
+      "alt": "RM-663LGX-01 663 Trolley Case",
+      "model": "RM-663LGX-01",
+      "description": "663 Trolley Case",
+      "standardCategory": "Trolley Case Series",
+      "gallery": [
+        "/images/RM-663LGX-01.png",
+        "/images/RM-663LGX-01.png",
+        "/images/RM-663LGX-01.png"
+      ],
+      "specifications": {
+        "External Dimensions": "L600xW600xH300mm",
+        "Internal Dimensions": "L570xW570xH240mm",
+        "Lid Internal Dimensions": "L570xW570xH40mm",
+        "Net Weight": "7.5kg (including handles, latches and accessories)",
+        "Material": "Carbon Fiber Composite"
+      }
+    },
+    {
+      "id": 51,
+      "categoryId": 3,
+      "productType": "standard",
+      "image": "/images/RM-753LGX-01.png",
+      "alt": "RM-753LGX-01 753 Trolley Case",
+      "model": "RM-753LGX-01",
+      "description": "753 Trolley Case",
+      "standardCategory": "Trolley Case Series",
+      "gallery": [
+        "/images/RM-753LGX-01.png",
+        "/images/RM-753LGX-01.png",
+        "/images/RM-753LGX-01.png"
+      ],
+      "specifications": {
+        "External Dimensions": "L700xW480xH320mm",
+        "Internal Dimensions": "L638xW413xH200mm",
+        "Lid Internal Dimensions": "L638xW416xH50mm",
+        "Net Weight": "5kg (including handles, latches and accessories)",
+        "Material": "Carbon Fiber Composite"
+      }
+    },
+    {
       "id": 52,
       "categoryId": 3,
       "productType": "standard",
       "image": "/images/RM-544LGX-01.png",
-      "alt": "RM-544LGX-01 544拉杆箱",
+      "alt": "RM-544LGX-01 544 Trolley Case",
+      "model": "RM-544LGX-01",
+      "description": "544 Trolley Case",
+      "standardCategory": "Trolley Case Series",
       "gallery": [
         "/images/RM-544LGX-01.png",
         "/images/RM-544LGX-01.png",
         "/images/RM-544LGX-01.png"
-      ]
+      ],
+      "specifications": {
+        "External Dimensions": "L510xW415xH367mm",
+        "Internal Dimensions": "L450xW350xH250mm",
+        "Lid Internal Dimensions": "L450xW355xH50mm",
+        "Net Weight": "5kg (including handles, latches and accessories)",
+        "Material": "Carbon Fiber Composite"
+      }
     },
     {
-      "model": "RM-18'LGX-01",
-      "specifications": {
-        "External Dimensions": "L430xW370xH231mm",
-        "Internal Dimensions": "L392xW332xH163mm",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "18寸拉杆箱",
-      "standardCategory": "拉杆箱系列",
       "id": 53,
       "categoryId": 3,
       "productType": "standard",
       "image": "/images/RM-18'LGX-01.png",
-      "alt": "RM-18'LGX-01 18寸拉杆箱",
+      "alt": "RM-18'LGX-01 18-inch Trolley Case",
+      "model": "RM-18'LGX-01",
+      "description": "18-inch Trolley Case",
+      "standardCategory": "Trolley Case Series",
       "gallery": [
         "/images/RM-18'LGX-01.png",
         "/images/RM-18'LGX-01.png",
         "/images/RM-18'LGX-01.png"
-      ]
+      ],
+      "specifications": {
+        "External Dimensions": "L430xW370xH231mm",
+        "Internal Dimensions": "L392xW332xH163mm",
+        "Material": "Carbon Fiber Composite"
+      }
     },
     {
-      "model": "RM-JHJX-01",
-      "specifications": {
-        "External Dimensions": "L520xW605xH295mm",
-        "Internal Dimensions": "L450xW180xH410mm",
-        "Lid Internal Dimensions": "L450xW190xH50mm",
-        "Net Weight": "8kg(含拉杆、把手及锁扣等配件)",
-        "Material": "碳纤维复合材料"
-      },
-      "description": "交换机拉杆箱",
-      "standardCategory": "拉杆箱系列",
       "id": 54,
       "categoryId": 3,
       "productType": "standard",
       "image": "/images/RM-JHJX-01.png",
-      "alt": "RM-JHJX-01 交换机拉杆箱",
+      "alt": "RM-JHJX-01 Switch Trolley Case",
+      "model": "RM-JHJX-01",
+      "description": "Switch Trolley Case",
+      "standardCategory": "Trolley Case Series",
       "gallery": [
         "/images/RM-JHJX-01.png",
         "/images/RM-JHJX-01.png",
         "/images/RM-JHJX-01.png"
-      ]
+      ],
+      "specifications": {
+        "External Dimensions": "L520xW605xH295mm",
+        "Internal Dimensions": "L450xW180xH410mm",
+        "Lid Internal Dimensions": "L450xW190xH50mm",
+        "Net Weight": "8kg (including trolley handle, handles, latches and accessories)",
+        "Material": "Carbon Fiber Composite"
+      }
     },
     {
-      "model": "配电包装箱",
-      "specifications": {
-        "External Dimensions": "L660xW500xH500mm",
-        "Net Weight": "15kg(含把手及锁扣等配件)",
-        "Material": "碳杆+碳纤维复合材料"
-      },
-      "description": "配电包装箱",
-      "standardCategory": "碳杆箱系列",
       "id": 55,
       "categoryId": 3,
       "productType": "standard",
       "image": "/images/配电包装箱.png",
-      "alt": "配电包装箱 配电包装箱",
+      "alt": "Power Distribution Packaging Case",
+      "model": "Power Distribution Packaging Case",
+      "description": "Power Distribution Packaging Case",
+      "standardCategory": "Carbon Rod Case Series",
       "gallery": [
         "/images/配电包装箱.png",
         "/images/配电包装箱.png",
         "/images/配电包装箱.png"
-      ]
+      ],
+      "specifications": {
+        "External Dimensions": "L660xW500xH500mm",
+        "Net Weight": "15kg (including handles, latches and accessories)",
+        "Material": "Carbon Rod + Carbon Fiber Composite"
+      }
     },
     {
-      "model": "无人机包装箱",
-      "specifications": {
-        "External Dimensions": "L1070xW720xH600mm",
-        "Net Weight": "16kg(含锁扣等配件)",
-        "Material": "碳杆+碳纤维复合材料"
-      },
-      "description": "无人机包装箱",
-      "standardCategory": "碳杆箱系列",
       "id": 56,
       "categoryId": 3,
       "productType": "standard",
       "image": "/images/无人机包装箱.png",
-      "alt": "无人机包装箱 无人机包装箱",
+      "alt": "Drone Packaging Case",
+      "model": "Drone Packaging Case",
+      "description": "Drone Packaging Case",
+      "standardCategory": "Carbon Rod Case Series",
       "gallery": [
         "/images/无人机包装箱.png",
         "/images/无人机包装箱.png",
         "/images/无人机包装箱.png"
-      ]
+      ],
+      "specifications": {
+        "External Dimensions": "L1070xW720xH600mm",
+        "Net Weight": "16kg (including latches and accessories)",
+        "Material": "Carbon Rod + Carbon Fiber Composite"
+      }
     }
   ],
   "metadata": {
