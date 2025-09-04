@@ -75,7 +75,7 @@
   --color-text-black: var(--color-neutral-950);
   --color-text-white: var(--color-neutral-50);
   --color-text-title: var(--color-neutral-950);
-  --color-text-display: var(--color-neutral-600);
+  --color-text-display: var(--color-neutral-700);
 
   /* border颜色 */
   --color-border-one: var(--color-neutral-300);
@@ -96,7 +96,7 @@
 }
 
 .text-display {
-  @apply lg:text-text-display lg:text-xl text-sm lg:leading-10 leading-6 font-normal;
+  @apply lg:text-text-display lg:text-lg text-sm lg:leading-relaxed leading-6 font-normal;
 }
 
 

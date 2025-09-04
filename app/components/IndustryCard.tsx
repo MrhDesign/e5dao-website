@@ -46,7 +46,7 @@ export default function IndustryCard({
       {/* 遮罩层 - 只覆盖底部1/3高度 */}
       <div 
         className={`
-          absolute bottom-0 left-0 right-0 h-1/3 transition-all duration-500 ease-out
+          absolute bottom-0 left-0 right-0 h-1/3 transition-all duration-500 ease-out rounded-sm
           ${showSelectedEffect 
             ? 'bg-gradient-to-t from-lime-900/70 via-lime-900/0 to-transparent' 
             : 'bg-gradient-to-t from-black/60 via-black/0 to-transparent'
@@ -65,7 +65,7 @@ export default function IndustryCard({
           transition-all duration-500 ease-out overflow-hidden
           ${showSelectedEffect ? 'max-h-20 opacity-100' : 'max-h-0 opacity-0'}
         `}>
-          <p className="text-xs lg:text-sm opacity-90 leading-relaxed line-clamp-3 transform transition-transform duration-500 ease-out">
+          <p className="text-xs lg:text-lg opacity-90 leading-relaxed line-clamp-3 transform transition-transform duration-500 ease-out">
             {subtitle}
           </p>
         </div>

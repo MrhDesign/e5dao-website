@@ -105,7 +105,7 @@ export default function ProductsPage() {
                     <div key={category.slug}>
                       {/* 分类标题 */}
                       <div className="flex items-center justify-between py-5 sticky lg:top-20 top-10 z-30 bg-fill-two border-b border-border-one">
-                        <h2 className="headline2 text-text-black">{category.title}</h2>
+                        <h2 className="headline2 text-text-black w-[70%]">{category.title}</h2>
                         <Link href={`/products/${category.slug}`}>
                           <Button>View All</Button>
                         </Link>

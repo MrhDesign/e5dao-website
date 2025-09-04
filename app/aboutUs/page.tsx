@@ -41,8 +41,8 @@ export default function AboutUs() {
         </div>
 
         {/* 公司介绍 */}
-        <div className='flex lg:flex-row flex-col lg:gap-10 gap-2.5'>
-          <div className='flex-1'>
+        <div className='flex lg:flex-row flex-col lg:gap-10 gap-2.5 lg:max-h-[548px] overflow-hidden'>
+          <div className='flex-2 lg:max-w-[800px]'>
             <Image
               src="/images/House.png"
               alt="About Title"
@@ -52,8 +52,8 @@ export default function AboutUs() {
               priority
             />
           </div>
-          <div className='flex-1'>
-            <div className='lg:mb-10 mb-2.5'>
+          <div className='flex-1 '>
+            <div className='mb-2.5'>
               <Image
                 src="/images/about-title-2.png"
                 alt="About Title"
@@ -63,7 +63,7 @@ export default function AboutUs() {
                 priority
               />
             </div>
-            <p className='text-display'>Singapore E50DAO is a technology company that focuses on the research, development, production and sales of high-end composite materials such as carbon fiber and Kevlar. The company has modern factories and a complete industrial chain service system, covering the entire process of product design, molding, manufacturing, assembly and testing. Through the deep integration of digital technology and advanced processes, E5DAO can efficiently respond to customer customization needs and provide lightweight, high-strength, and excellent weather-resistant professional composite material solutions. The products are widely used in military, aerospace, medical, rescue, outdoor equipment, and high-end transportation.</p>
+            <p className='text-display' style={{ whiteSpace: 'pre-line' }}>{content.pages.aboutUs.about.description}</p>
           </div>
         </div>
 
@@ -73,16 +73,16 @@ export default function AboutUs() {
           <IndustrySection industries={content.pages.aboutUs.industries} />
         </div>
 
-          {/* 生产线介绍 */}
-         <div className="">
+        {/* 生产线介绍 */}
+        <div className="">
           <h2 className="text-3xl lg:text-4xl font-bold lg:mb-10 mb-2.5">Production Line Showcase</h2>
           <ProductionLineSection productionLines={content.pages.aboutUs.productionLines} />
         </div>
 
-                {/* 愿景与使命 */}
+        {/* 愿景与使命 */}
         <div className='lg:pb-20 pb-5'>
-           <h2 className="text-3xl lg:text-6xl font-bold lg:text-center text-left lg:mb-5">Mission & Vision</h2>
-           <p className=' text-base lg:text-3xl leading-relaxed'>To promote the global application of high-performance composite materials, building lighter, stronger, and more reliable future structures, and to become the world&apos;s most influential provider of composite material solutions.</p>
+          <h2 className="text-3xl lg:text-4xl font-bold lg:mb-10 mb-2.5">Mission & Vision</h2>
+          <p className='text-base lg:text-3xl leading-relaxed'>To promote the global application of high-performance composite materials, building lighter, stronger, and more reliable future structures, and to become the world&apos;s most influential provider of composite material solutions.</p>
         </div>
       </section>
     </>

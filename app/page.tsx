@@ -19,10 +19,20 @@ export default function Home() {
   const { getContent } = useContent();
 
 
-  // 获取产品数据，首页显示8个
+  // 获取产品数据，按3个分类各显示4个产品
   const homeProductsData = useMemo(() => {
     const productsData = getContent<Product[]>('products.items') || [];
-    return productsData.slice(0, 8);
+    const categories = getContent<Array<{id: number, title: string, slug: string}>>('products.categories') || [];
+    
+    const allSelectedProducts: Product[] = [];
+    categories.slice(0, 3).forEach((category) => {
+      const categoryProducts = productsData
+        .filter((product: Product) => product.categoryId === category.id)
+        .slice(0, 4);
+      allSelectedProducts.push(...categoryProducts);
+    });
+    
+    return allSelectedProducts;
   }, [getContent]);
 
   // 获取行业应用数据，首页显示4个
@@ -144,7 +154,6 @@ export default function Home() {
   const aboutDescription = useMemo(() => getContent('aboutUs.about.description') as string, [getContent]);
   const solutionTitle = useMemo(() => getContent('solution.commandSystem.overview.title') as string, [getContent]);
   const solutionContent = useMemo(() => getContent('solution.commandSystem.overview.content') as string, [getContent]);
-  const mobileSolutionTitle = useMemo(() => getContent('solution.mobileCommand.commandSystem.overview.title') as string, [getContent]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -286,7 +295,7 @@ export default function Home() {
             </div>
 
             <div className='flex-1'>
-              <p className='text-display  lg:line-clamp-8 line-clamp-6 about-description'>{aboutDescription}</p>
+              <p className='text-display  lg:line-clamp-8 line-clamp-6' style={{ whiteSpace: 'pre-line' }}>{aboutDescription}</p>
               <div className='mt-10'>
                 <Link href="/aboutUs">
                   <Button className='relative'>{readMoreText}</Button>
@@ -311,7 +320,7 @@ export default function Home() {
             </div>
             <div className='flex-1 flex flex-col gap-5 solution-content'>
               <h1 className='headline1'>{solutionTitle}</h1>
-              <p className='text-display line-clamp-10'>{solutionContent}</p>
+              <p className='text-display line-clamp-10' style={{ whiteSpace: 'pre-line' }}>{solutionContent}</p>
               <div className='mt-auto'>
                 <Link href="/solution/command-system">
                   <Button className='relative'>{readMoreText}</Button>
@@ -375,7 +384,7 @@ export default function Home() {
                 priority
               />
             </div>
-            <h1 className='headline1'>{mobileSolutionTitle}</h1>
+            <h1 className='headline1'>{solutionTitle}</h1>
             <p className='text-display line-clamp-10'>{solutionContent}</p>
             <div>
               <Link href="/solution/treatment-system">
