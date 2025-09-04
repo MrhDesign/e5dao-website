@@ -379,56 +379,6 @@
           ]
         },
         {
-          "id": 14,
-          "categoryId": 1,
-          "productType": "standard",
-          "image": "/images/fields-1.png",
-          "alt": "MC-2580CMD-02 Tactical Command Unit",
-          "model": "MC-2580CMD-02",
-          "standardCategory": "Command & Control Systems",
-          "gallery": [
-            "/images/fields-1.png",
-            "/images/fields-2.png",
-            "/images/fields-3.png"
-          ],
-          "specifications": {
-            "External Dimensions": "Case Mounted Rugged LCD Command Display Terminal",
-            "Internal Dimensions": "Brightness Screen max can withstand for LED Screens",
-            "Lid Internal Dimensions": "High Definition to meet Military Grade Standard Specification with",
-            "Rollers": "Case - High strength carbon dioxide black IP67 waterproof Aluminum alloy",
-            "Net Weight": "Case - High strength carbon dioxide black IP67 waterproof Aluminum alloy",
-            "Material": "Case - High strength carbon dioxide black IP67 waterproof Aluminum alloy",
-            "Customizable": "Case - High strength carbon dioxide black IP67 waterproof Aluminum alloy"
-          },
-          "details": [
-            {
-              "type": "heading",
-              "content": "Standard Solution Overview",
-              "level": 3
-            },
-            {
-              "type": "paragraph",
-              "content": "The Tactical Command Unit represents our proven standard solution for military and emergency response operations. This reliable system has been tested and deployed in various field conditions."
-            },
-            {
-              "type": "heading",
-              "content": "Standard Features",
-              "level": 3
-            },
-            {
-              "type": "list",
-              "content": "Standard configuration includes:",
-              "items": [
-                "Modular design for easy deployment",
-                "Enhanced protection against environmental factors",
-                "Multi-device support for various equipment",
-                "Secure storage compartments",
-                "Quick-release mounting system"
-              ]
-            }
-          ]
-        },
-        {
           "id": 20,
           "categoryId": 3,
           "productType": "standard",

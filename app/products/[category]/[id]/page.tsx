@@ -42,24 +42,27 @@ export default function ProductDetailPage() {
   // 获取当前产品在数组中的索引
   const currentIndex = categoryProducts.findIndex(p => p.id === product.id);
 
-  // 构建展示产品数组：前一个产品 + 后面的产品（排除当前产品）
+  // 构建展示产品数组：循环推荐逻辑 (前一个 + 后续产品 + 从头开始的产品)
   const displayProducts: Product[] = [];
   const maxProducts = 6; // 设置最大推荐产品数量
 
-  // 添加前一个产品（如果存在）
+  // 1. 添加前一个产品（如果存在）
   if (currentIndex > 0) {
     displayProducts.push(categoryProducts[currentIndex - 1]);
   }
 
-  // 添加后面的产品，但不超过最大数量
+  // 2. 添加后面的产品
   for (let i = currentIndex + 1; i < categoryProducts.length && displayProducts.length < maxProducts; i++) {
     displayProducts.push(categoryProducts[i]);
   }
 
-  // 如果还有剩余空间，从前面补充更多产品
+  // 3. 如果还有剩余空间，从数组开头循环添加产品（排除当前产品和已添加的前一个产品）
   if (displayProducts.length < maxProducts) {
-    for (let i = currentIndex - 2; i >= 0 && displayProducts.length < maxProducts; i--) {
-      displayProducts.unshift(categoryProducts[i]); // 添加到数组开头，保持顺序
+    for (let i = 0; i < currentIndex && displayProducts.length < maxProducts; i++) {
+      // 跳过前一个产品（已经添加过了）
+      if (i !== currentIndex - 1) {
+        displayProducts.push(categoryProducts[i]);
+      }
     }
   }
 
@@ -140,13 +143,13 @@ export default function ProductDetailPage() {
               <div className='mt-auto w-full'>
                 <h2 className='py-5 lg:pt-0 text-lg font-medium'>Product Showcase</h2>
                 {/* 产品推荐区域 */}
-                <div className='w-full lg:h-[150px] grid lg:grid-cols-[repeat(auto-fit,200px)] lg:gap-y-0 grid-cols-[repeat(3,1fr)] gap-x-2.5 gap-y-2.5 grid-rows-1 overflow-hidden'>
+                <div className='w-full lg:h-[150px] lg:flex lg:flex-wrap lg:gap-2.5 grid grid-cols-[repeat(3,1fr)] gap-x-2.5 gap-y-2.5 overflow-hidden'>
                   {/* 动态产品图片 */}
                   {displayProducts.map((relatedProduct) => {
                     const productUrl = `/products/${categorySlug}/${relatedProduct.id}`;
                     return (
                       <Link key={relatedProduct.id} href={productUrl}>
-                        <div className='aspect-[4/3] bg-fill-white border border-border-one overflow-hidden hover:shadow-md transition-all duration-300 group cursor-pointer'>
+                        <div className='aspect-[4/3] bg-fill-white border border-border-one overflow-hidden hover:shadow-md transition-all duration-300 group cursor-pointer lg:w-[200px] lg:flex-shrink-0'>
                           <Image
                             src={relatedProduct.image}
                             alt={relatedProduct.alt}
