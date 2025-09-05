@@ -111,14 +111,14 @@ export default function CommandSystemPage() {
         )}
 
         {/* Emergency Medical Systems Information Table */}
-        <div className="overflow-x-auto">
-          <div className="  bg-fill-brand rounded-sm">
+        <div className="flex justify-center">
+          <div className="bg-fill-brand rounded-sm">
             <h3 className="text-xl lg:text-2xl font-semibold text-text-white py-5 text-center">
               Key Information Table of Emergency Medical Systems
             </h3>
 
             <div className="overflow-hidden border border-border-one">
-              <table className="min-w-full hidden lg:block">
+              <table className="w-full hidden lg:block">
                 <thead>
                   <tr className="bg-slate-300">
                     <th className="px-4 py-3 text-left text-sm lg:text-base font-semibold text-text-black border-r border-border-one">

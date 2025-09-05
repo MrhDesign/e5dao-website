@@ -64,6 +64,9 @@ export default function Header() {
   ], [navigation, getContent]);
 
   const isCurrentPage = useCallback((href: string) => {
+    // 确保 pathname 存在，避免水合错误
+    if (!pathname) return false;
+    
     // 精确匹配
     if (pathname === href) return true;
     
@@ -83,6 +86,9 @@ export default function Header() {
 
   // 检查是否是主导航的激活状态（包括子页面）
   const isMainNavActive = useCallback((item: NavigationItem) => {
+    // 确保 pathname 存在，避免水合错误
+    if (!pathname) return false;
+    
     if (pathname === item.href) return true;
     if (!item.submenu) return false;
     
@@ -118,6 +124,9 @@ export default function Header() {
 
   // 获取当前活跃的父菜单
   const getActiveParentMenu = useCallback((): string | null => {
+    // 确保 pathname 存在，避免水合错误
+    if (!pathname) return null;
+    
     for (const item of navigation) {
       if (!item.submenu) continue;
       
