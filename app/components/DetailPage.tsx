@@ -301,7 +301,7 @@ export default function DetailPage({ slug, type }: DetailPageProps) {
         {/* 内容主体 */}
         <main className="lg:px-30 px-5 py-10">
             <div
-              className="text-text-black leading-relaxed [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:mt-8 [&>h2]:mb-4 [&>h3]:text-xl [&>h3]:font-semibold [&>h3]:mt-6 [&>h3]:mb-3"
+              className="text-display leading-relaxed [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:mt-8 [&>h2]:mb-4 [&>h3]:text-xl [&>h3]:font-semibold [&>h3]:mt-6 [&>h3]:mb-3"
               dangerouslySetInnerHTML={{ __html: content.content }}
             />
         </main>

@@ -104,19 +104,6 @@ export default function NewsListPage({ config }: NewsListPageProps) {
           />
         </div>
       )}
-
-      {/* 返回链接 */}
-      <div className="text-center mt-16">
-        <Link
-          href="/news"
-          className="inline-flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full transition-colors"
-        >
-          <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          Back to All News
-        </Link>
-      </div>
     </section>
   );
 }
