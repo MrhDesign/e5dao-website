@@ -64,7 +64,21 @@ export default function Header() {
   ], [navigation, getContent]);
 
   const isCurrentPage = useCallback((href: string) => {
-    return pathname === href;
+    // 精确匹配
+    if (pathname === href) return true;
+    
+    // 处理动态路由匹配
+    if (href.startsWith('/products/') && pathname.startsWith(href)) {
+      return true;
+    }
+    if (href.startsWith('/news/') && pathname.startsWith(href)) {
+      return true;
+    }
+    if (href.startsWith('/solution/') && pathname.startsWith(href)) {
+      return true;
+    }
+    
+    return false;
   }, [pathname]);
 
   // 检查是否是主导航的激活状态（包括子页面）
@@ -77,7 +91,28 @@ export default function Header() {
     if (item.href === '/news' && pathname.startsWith('/news')) return true;
     if (item.href === '/solution/command-system' && pathname.startsWith('/solution')) return true;
     
-    return item.submenu.some((subItem: SubmenuItem) => pathname === subItem.href);
+    // 检查子菜单项的匹配，包括动态路由
+    return item.submenu.some((subItem: SubmenuItem) => {
+      // 精确匹配
+      if (pathname === subItem.href) return true;
+      
+      // 处理产品分类的动态路由 /products/[category] 和 /products/[category]/[id]
+      if (subItem.href.startsWith('/products/') && pathname.startsWith(subItem.href)) {
+        return true;
+      }
+      
+      // 处理新闻的动态路由 /news/articles/[slug] 和 /news/applications/[slug]
+      if (subItem.href.startsWith('/news/') && pathname.startsWith(subItem.href)) {
+        return true;
+      }
+      
+      // 处理解决方案的动态路由
+      if (subItem.href.startsWith('/solution/') && pathname.startsWith(subItem.href)) {
+        return true;
+      }
+      
+      return false;
+    });
   }, [pathname]);
 
 
@@ -86,8 +121,25 @@ export default function Header() {
     for (const item of navigation) {
       if (!item.submenu) continue;
       
-      // 检查是否在子菜单项中
-      const hasActiveSubmenu = item.submenu.some((subItem: SubmenuItem) => pathname === subItem.href);
+      // 检查是否在子菜单项中（包括动态路由）
+      const hasActiveSubmenu = item.submenu.some((subItem: SubmenuItem) => {
+        // 精确匹配
+        if (pathname === subItem.href) return true;
+        
+        // 处理动态路由匹配
+        if (subItem.href.startsWith('/products/') && pathname.startsWith(subItem.href)) {
+          return true;
+        }
+        if (subItem.href.startsWith('/news/') && pathname.startsWith(subItem.href)) {
+          return true;
+        }
+        if (subItem.href.startsWith('/solution/') && pathname.startsWith(subItem.href)) {
+          return true;
+        }
+        
+        return false;
+      });
+      
       if (hasActiveSubmenu) {
         return item.name;
       }
@@ -365,7 +417,7 @@ export default function Header() {
                           setIsMobileMenuOpen(false);
                           setExpandedSubmenu(null);
                         }}
-                        className={`navbtn relative flex justify-between items-center py-3 pl-9 pr-5 h-12 border-b border-border-one transition-all duration-600 group transform ${
+                        className={`navbtn relative flex justify-between items-center py-3 pl-9 pr-5 min-h-12 border-b border-border-one transition-all duration-600 group transform ${
                           isCurrentPage(subItem.href)
                             ? 'text-text-brand bg-fill-three font-medium'
                             : 'text-text-black hover:text-text-brand'
