@@ -11,12 +11,14 @@ export default function MobileIndustryCard({
   backgroundImage
 }: MobileIndustryCardProps) {
   return (
-    <div className="bg-fill-white p-2.5 rounded-sm shadow-sm min-h-[116px] bg-contain bg-no-repeat bg-right"
+    <div className=" rounded-sm shadow-sm min-h-[116px] bg-cover bg-center bg-no-repeat text-text-white"
       style={{
         backgroundImage: `url(${backgroundImage})`
       }}>
-      <h3 className="text-lg font-semibold mb-2 text-text-black">{title}</h3>
-      <p className="text-display">{subtitle}</p>
+      <div className="p-2.5 bg-gradient-to-b from-black/80 to-black/10 w-full h-full rounded-sm">
+        <h3 className="text-lg font-semibold mb-2 ">{title}</h3>
+        <p className="text-display font-medium">{subtitle}</p>
+      </div>
     </div>
   );
 }

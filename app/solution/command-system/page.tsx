@@ -37,7 +37,7 @@ export default function CommandSystemPage() {
     <div className="space-y-10">
       {/* Hero Section */}
       {commandSystemData?.hero?.image && (
-        <div className="relative h-64 md:h-80 mb-8 overflow-hidden">
+        <div className="relative h-50 md:h-100 mb-8 overflow-hidden">
           <Image
             src={commandSystemData.hero.image}
             alt={commandSystemData.hero.alt || 'Mobile Command Station System'}

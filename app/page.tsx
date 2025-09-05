@@ -22,8 +22,8 @@ export default function Home() {
   // 获取产品数据，按3个分类各显示4个产品
   const homeProductsData = useMemo(() => {
     const productsData = getContent<Product[]>('products.items') || [];
-    const categories = getContent<Array<{id: number, title: string, slug: string}>>('products.categories') || [];
-    
+    const categories = getContent<Array<{ id: number, title: string, slug: string }>>('products.categories') || [];
+
     const allSelectedProducts: Product[] = [];
     categories.slice(0, 3).forEach((category) => {
       const categoryProducts = productsData
@@ -31,7 +31,7 @@ export default function Home() {
         .slice(0, 4);
       allSelectedProducts.push(...categoryProducts);
     });
-    
+
     return allSelectedProducts;
   }, [getContent]);
 
@@ -152,8 +152,17 @@ export default function Home() {
   // 缓存常用的内容获取
   const readMoreText = useMemo(() => getContent('common.readMore') as string, [getContent]);
   const aboutDescription = useMemo(() => getContent('aboutUs.about.description') as string, [getContent]);
-  const solutionTitle = useMemo(() => getContent('solution.commandSystem.overview.title') as string, [getContent]);
-  const solutionContent = useMemo(() => getContent('solution.commandSystem.overview.content') as string, [getContent]);
+  // 获取指挥系统数据
+  const commandSystemTitle = useMemo(() => getContent('solution.commandSystem.overview.title') as string, [getContent]);
+  const commandSystemContent = useMemo(() => getContent('solution.commandSystem.overview.content') as string, [getContent]);
+  const commandSystemHeroImage = useMemo(() => getContent('solution.commandSystem.hero.image') as string, [getContent]);
+  const commandSystemHeroAlt = useMemo(() => getContent('solution.commandSystem.hero.alt') as string, [getContent]);
+
+  // 获取医疗系统数据
+  const medicalTreatmentTitle = useMemo(() => getContent('solution.medicalTreatment.overview.title') as string, [getContent]);
+  const medicalTreatmentContent = useMemo(() => getContent('solution.medicalTreatment.overview.content') as string, [getContent]);
+  const medicalTreatmentHeroImage = useMemo(() => getContent('solution.medicalTreatment.hero.image') as string, [getContent]);
+  const medicalTreatmentHeroAlt = useMemo(() => getContent('solution.medicalTreatment.hero.alt') as string, [getContent]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -305,22 +314,21 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 解决方案模块 */}
+        {/* 指挥系统解决方案模块 */}
         <section className='bg-fill-three solution-card'>
           <div className='px-30 py-20 lg:flex hidden gap-10 justify-between'>
             <div className='w-[660px] h-[660px] image-hover-zoom solution-image'>
               <Image
-                src="/images/solution-1.png"
-                alt="About Title"
-                width={512}
-                height={512}
+                src={commandSystemHeroImage}
+                alt={commandSystemHeroAlt}
+                fill
                 className="w-full h-auto object-cover  lg:pr-0 pr-20 rounded-sm"
                 priority
               />
             </div>
             <div className='flex-1 flex flex-col gap-5 solution-content'>
-              <h1 className='headline1'>{solutionTitle}</h1>
-              <p className='text-display line-clamp-10' style={{ whiteSpace: 'pre-line' }}>{solutionContent}</p>
+              <h1 className='headline1'>{commandSystemTitle}</h1>
+              <p className='text-display line-clamp-10' style={{ whiteSpace: 'pre-line' }}>{commandSystemContent}</p>
               <div className='mt-auto'>
                 <Link href="/solution/command-system">
                   <Button className='relative'>{readMoreText}</Button>
@@ -330,18 +338,18 @@ export default function Home() {
           </div>
 
           <div className='lg:hidden p-5 flex flex-col gap-2.5'>
-            <div className='w-full'>
+            <div className='w-full aspect-[4/3]'>
               <Image
-                src="/images/solution-1.png"
-                alt="About Title"
+                src={commandSystemHeroImage}
+                alt={commandSystemHeroAlt}
                 width={512}
                 height={512}
-                className="w-full object-contain  lg:pr-0 rounded-sm"
+                className="w-full object-cover aspect-[4/3]  lg:pr-0 rounded-sm"
                 priority
               />
             </div>
-            <h1 className='headline1'>{solutionTitle}</h1>
-            <p className='text-display line-clamp-10'>{solutionContent}</p>
+            <h1 className='headline1'>{commandSystemTitle}</h1>
+            <p className='text-display line-clamp-10'>{commandSystemContent}</p>
             <div>
               <Link href="/solution/command-system">
                 <Button className='relative'>{readMoreText}</Button>
@@ -350,21 +358,21 @@ export default function Home() {
           </div>
         </section>
 
+        {/* 医疗系统解决方案模块 */}
         <section className='bg-fill-two'>
           <div className='px-30 py-20 lg:flex hidden gap-10 justify-between'>
             <div className='lg:order-1 w-[660px] h-[660px] image-hover-zoom solution-image'>
               <Image
-                src="/images/solution-1.png"
-                alt="About Title"
-                width={512}
-                height={512}
+                src={medicalTreatmentHeroImage}
+                alt={medicalTreatmentHeroAlt}
+                fill
                 className="w-full h-auto object-cover  lg:pr-0 pr-20 rounded-sm"
                 priority
               />
             </div>
             <div className='flex-1 flex flex-col gap-5 solution-content'>
-              <h1 className='headline1'>{solutionTitle}</h1>
-              <p className='text-display line-clamp-10'>{solutionContent}</p>
+              <h1 className='headline1'>{medicalTreatmentTitle}</h1>
+              <p className='text-display line-clamp-10' style={{ whiteSpace: 'pre-line' }}>{medicalTreatmentContent}</p>
               <div className='mt-auto'>
                 <Link href="/solution/treatment-system">
                   <Button className='relative'>{readMoreText}</Button>
@@ -374,18 +382,18 @@ export default function Home() {
           </div>
 
           <div className='lg:hidden p-5 flex flex-col gap-2.5'>
-            <div className='w-full'>
+            <div className='w-full aspect-[4/3]'>
               <Image
-                src="/images/solution-1.png"
-                alt="About Title"
+                src={medicalTreatmentHeroImage}
+                alt={medicalTreatmentHeroAlt}
                 width={512}
                 height={512}
-                className="w-full object-contain  lg:pr-0 rounded-sm"
+                className="w-full object-cover aspect-[4/3]  lg:pr-0 rounded-sm"
                 priority
               />
             </div>
-            <h1 className='headline1'>{solutionTitle}</h1>
-            <p className='text-display line-clamp-10'>{solutionContent}</p>
+            <h1 className='headline1'>{medicalTreatmentTitle}</h1>
+            <p className='text-display line-clamp-10'>{medicalTreatmentContent}</p>
             <div>
               <Link href="/solution/treatment-system">
                 <Button className='relative'>{readMoreText}</Button>

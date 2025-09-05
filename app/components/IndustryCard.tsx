@@ -48,7 +48,7 @@ export default function IndustryCard({
         className={`
           absolute bottom-0 left-0 right-0 h-1/3 transition-all duration-500 ease-out rounded-sm
           ${showSelectedEffect 
-            ? 'bg-gradient-to-t from-lime-900/70 via-lime-900/0 to-transparent' 
+            ? 'bg-gradient-to-t from-lime-900/80 via-lime-900/30 to-transparent' 
             : 'bg-gradient-to-t from-black/60 via-black/0 to-transparent'
           }
         `}

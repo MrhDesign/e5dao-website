@@ -50,14 +50,14 @@ export default function ContentRenderer({ sections, className = "" }: ContentRen
         
       case 'image':
         return (
-          <div className="my-6">
-            <div className="aspect-video rounded-lg overflow-hidden bg-fill-two lg:w-[80%] mx-auto">
+          <div className="my-6 w-full">
+            <div className="aspect-auto overflow-hidden bg-fill-two lg:w-[80%] mx-auto">
               <Image
                 src={section.image!}
                 alt={section.alt || 'Content image'}
-                width={800}
-                height={450}
-                className="w-full h-full object-cover"
+                width={1920}
+                height={1080}
+                className="object-contain"
               />
             </div>
             {section.content && (

@@ -23,13 +23,13 @@
         },
         {
           "id": 2,
-          "title": "Modular Containerized Medical Treatment System",
+          "title": "Carbon Fiber Modular Medical Emergency System",
           "slug": "treatment-system"
         }
       ],
       "commandSystem": {
         "hero": {
-          "alt": "Mobile Command Station System",
+          "alt": "Carbon Fiber Modular Mobile Command Post System",
           "image": "/images/mobile-command-hero.png"
         },
         "overview": {
@@ -48,33 +48,54 @@
       },
       "medicalTreatment": {
         "hero": {
-          "title": "Medical Treatment System",
-          "subtitle": "Advanced healthcare solutions",
-          "description": "Comprehensive medical treatment systems designed for emergency response, field hospitals, and specialized medical applications using advanced composite materials.",
-          "image": "/images/medical-treatment-hero.png"
+          "alt": "Carbon Fiber Modular Medical Emergency System",
+          "image": "/images/mobile-medicalTreatment-hero.png"
         },
         "overview": {
-          "title": "Medical Innovation",
-          "content": "Our Medical Treatment System represents a breakthrough in emergency medical care and field hospital operations. Utilizing advanced carbon fiber and composite materials, these systems provide lightweight, durable, and highly functional solutions for medical professionals in challenging environments. From portable surgical units to climate-controlled pharmaceutical storage, our medical solutions ensure optimal patient care under any conditions."
+          "title": "Carbon Fiber Modular Medical Emergency System",
+          "content": "The modular medical emergency system is a highly integrated, modular mobile medical platform, specifically developed for battlefield military medicine, disaster relief, maritime emergency rescue, and other urgent scenarios. By integrating medical equipment and functional units through standardized modular containers, the system enables rapid deployment, flexible configuration, and efficient medical care, serving as a core asset for modern emergency medical response."
         },
-        "features": [
-          {
-            "title": "Portable Medical Units",
-            "description": "Lightweight and durable medical equipment containers"
+        "features": {
+          "title": "System Features",
+          "A": {
+            "Title": "A:High Integration and Modular Design",
+            "Points": [
+              {
+                "SubTitle": "Functional Integration",
+                "Description": "Each container consolidates multiple medical devices. For instance, the 'All-in-One Emergency Module' includes ECG monitors, infusion pumps, defibrillators, portable ventilators, and CPR devices, forming a complete emergency treatment unit."
+              },
+              {
+                "SubTitle": "Modular Configuration",
+                "Description": "The system comprises multiple functional containers that can be flexibly combined. Up to 31 containers can be assembled to form a secondary hospital-scale facility, accommodating diverse emergency scenarios."
+              }
+            ]
           },
-          {
-            "title": "Climate Control",
-            "description": "Precise temperature and humidity control for sensitive equipment"
+          "B": {
+            "Title": "B:Lightweight, Rapid Deployment, and Environmental Adaptability",
+            "Points": [
+              {
+                "Description": "Constructed from carbon fiber and other composite materials, reducing weight by over 40% compared to conventional systems. A temporary hospital with surgical, laboratory, and imaging capabilities can be deployed within 10 minutes."
+              },
+              {
+                "Description": "Containers are designed for waterproofing, shock resistance, and corrosion resistance, suitable for extreme temperatures from -20°C to 40°C, and compatible with high-mobility delivery methods such as airdrop and maritime transport."
+              }
+            ]
           },
-          {
-            "title": "Sterile Environment",
-            "description": "Advanced filtration and sterilization capabilities"
-          },
-          {
-            "title": "Emergency Ready",
-            "description": "Rapid deployment for emergency medical situations"
+          "C": {
+            "Title": "C:Intelligent Operation and Remote Collaboration",
+            "Points": [
+              {
+                "Description": "The central control console integrates an expert system that provides intelligent battlefield trauma treatment recommendations and synchronizes medical data over wireless networks."
+              },
+              {
+                "Description": "Equipped with 4G/5G communication systems to enable remote consultation, real-time patient monitoring, and seamless data interoperability between on-site and off-site medical facilities, optimizing the 'golden rescue time' for critical care."
+              }
+            ]
           }
-        ]
+        },
+        "Components": {
+          "title": "System Components"
+        }
       }
     },
     "products": {
@@ -86,7 +107,7 @@
         },
         {
           "id": 2,
-          "title": "Modular Containerized Medical Treatment System",
+          "title": "Carbon Fiber Modular Medical Emergency System",
           "slug": "treatment-system"
         },
         {
@@ -133,9 +154,10 @@
           "details": [
             {
               "type": "heading",
-              "content": "Product Features",
+              "content": "Features",
               "level": 3
             },
+           
             {
               "type": "paragraph",
               "content": "Composed of modular LED display units, an adjustable support structure, and a mobile base: the stand utilizes lightweight carbon fiber materials, while the base case adopts a rotationally molded housing (optional carbon fiber case)."
@@ -143,6 +165,11 @@
             {
               "type": "paragraph",
               "content": "Featuring a quick-release, tool-free design, the system can be assembled or dismantled by two operators within ten minutes."
+            },
+             {
+              "type": "image",
+              "image": "/images/COB-Display/COB-Details.png",
+              "alt": "COB-Display"
             },
             {
               "type": "paragraph",

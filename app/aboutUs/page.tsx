@@ -69,19 +69,19 @@ export default function AboutUs() {
 
         {/* 应用行业介绍 */}
         <div className="">
-          <h2 className="text-3xl lg:text-4xl font-bold lg:mb-10 mb-2.5">Application Industries</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold lg:mb-10 mb-5">Application Industries</h2>
           <IndustrySection industries={content.pages.aboutUs.industries} />
         </div>
 
         {/* 生产线介绍 */}
         <div className="">
-          <h2 className="text-3xl lg:text-4xl font-bold lg:mb-10 mb-2.5">Production Line Showcase</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold lg:mb-10 mb-5">Production Line Showcase</h2>
           <ProductionLineSection productionLines={content.pages.aboutUs.productionLines} />
         </div>
 
         {/* 愿景与使命 */}
         <div className='lg:pb-20 pb-5'>
-          <h2 className="text-3xl lg:text-4xl font-bold lg:mb-10 mb-2.5">Mission & Vision</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold lg:mb-10 mb-5">Mission & Vision</h2>
           <p className='text-base lg:text-3xl leading-relaxed'>To promote the global application of high-performance composite materials, building lighter, stronger, and more reliable future structures, and to become the world&apos;s most influential provider of composite material solutions.</p>
         </div>
       </section>

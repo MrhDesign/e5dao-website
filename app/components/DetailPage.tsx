@@ -28,7 +28,7 @@ export function getContentData(slug: string, type: 'news' | 'application') {
     return {
       ...content,
       content: generateDetailedContent(content),
-      author: isNews ? "E5DAO Research Team" : "E5DAO Application Engineering Team",
+      author: "E5DAO Research Team",
       category: (content as { category?: string }).category || (isNews ? "Technology" : "Industrial Applications")
     };
   }
@@ -225,7 +225,7 @@ export default function DetailPage({ slug, type }: DetailPageProps) {
         <header className="relative lg:h-86 h-64 overflow-hidden">
           <Image
             src={content.image}
-            alt={`${content.alt} - ${content.title} | E5DAO Carbon Fiber Technology`}
+            alt={`${content.alt} - ${content.title} | E5DAO Carbon Fiber`}
             fill
             className="object-cover"
             priority
@@ -240,12 +240,12 @@ export default function DetailPage({ slug, type }: DetailPageProps) {
             <div className="text-white">
 
               {/* 主标题 */}
-              <h1 className="headline2 text-text-white mb-2.5 leading-tight">
+              <h1 className="headline1 text-text-white mb-2.5 leading-tight">
                 {content.title}
               </h1>
 
               {/* 时间和分类信息 */}
-              <div className="flex  items-center gap-4 mb-6">
+              <div className="flex items-center gap-4 lg:mb-5 mb-2.5">
                 <time
                   className="lg:text-xl text-sm"
                   dateTime={`${content.publishedDate?.year || '2025'}-${content.publishedDate?.month || '06'}-${content.publishedDate?.day || '01'}`}
@@ -256,7 +256,7 @@ export default function DetailPage({ slug, type }: DetailPageProps) {
                 </time>
 
                 {content.category && (
-                  <span className="bg-fill-brand text-white px-4 py-2 rounded-full text-sm font-medium">
+                  <span className="bg-fill-brand text-white px-2 py-1 rounded-full lg:text-base text-sm font-medium">
                     {content.category}
                   </span>
                 )}
