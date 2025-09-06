@@ -24,13 +24,9 @@ export function getContentData(slug: string, type: 'news' | 'application') {
   const content = dataSource.find((item: { slug: string }) => item.slug === slug);
 
   if (content) {
-    // 获取默认图片
-    const defaultImage = contentData.pages.news.defaultImage || "/images/House.png";
-    
     // 为content.json中的内容生成详细内容
     return {
       ...content,
-      image: (content as { image?: string }).image || defaultImage,
       content: generateDetailedContent(content),
       author: "E5DAO Research Team",
       category: (content as { category?: string }).category || (isNews ? "Technology" : "Industrial Applications")
@@ -89,9 +85,7 @@ export function generateDetailMetadata(
     ? ['carbon fiber', 'materials science', 'innovation', 'technology']
     : ['carbon fiber applications', 'industry solutions', 'composite materials'];
 
-  const fullImageUrl = content.image.startsWith('http')
-    ? content.image
-    : `${siteUrl}${content.image}`;
+  const fullImageUrl = `${siteUrl}${contentData.pages.news.defaultImage}`;
 
   return {
     title: `${content.title} - ${titleSuffix}`,
@@ -172,7 +166,7 @@ export default function DetailPage({ slug, type }: DetailPageProps) {
     "headline": content.title,
     "description": content.description,
     "image": [
-      `${process.env.NEXT_PUBLIC_SITE_URL || 'https://e5dao.com'}${content.image}`
+      `${process.env.NEXT_PUBLIC_SITE_URL || 'https://e5dao.com'}${contentData.pages.news.defaultImage}`
     ],
     "datePublished": isNews
       ? `${content.publishedDate?.year || '2025'}-${content.publishedDate?.month || '06'}-${content.publishedDate?.day || '01'}T09:00:00Z`
@@ -228,7 +222,7 @@ export default function DetailPage({ slug, type }: DetailPageProps) {
         {/* Hero Header */}
         <header className="relative lg:h-86 h-64 overflow-hidden">
           <Image
-            src={content.image}
+            src={contentData.pages.news.defaultImage}
             alt={`${content.alt} - ${content.title} | E5DAO Carbon Fiber`}
             fill
             className="object-cover"
