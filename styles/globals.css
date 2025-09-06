@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./rich-content.css";
 
 /* 自定义字体定义 */
 @font-face {

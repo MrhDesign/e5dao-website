@@ -1620,6 +1620,58 @@
           },
           "title": "Strategic Partnerships Drive Innovation",
           "description": "Strategic collaborations with research institutions, industry partners, and technology companies are accelerating innovation and bringing cutting-edge solutions to market."
+        },
+        {
+          "id": 21,
+          "slug": "comprehensive-style-guide",
+          "image": "/images/House.png",
+          "alt": "Comprehensive Style Guide",
+          "publishedDate": {
+            "year": "2025",
+            "month": "09",
+            "day": "06"
+          },
+          "title": "Comprehensive Style Guide: Testing All Elements",
+          "description": "<h1>Complete HTML Elements Showcase</h1><p>This comprehensive guide demonstrates various HTML elements and their styling within our rich content renderer. It serves as a visual test for all supported formatting options.</p><h2>Typography and Headings</h2><p>Our system supports <strong>six levels of headings</strong>, each with distinct styling optimized for readability and hierarchy.</p><h3>Advanced Text Formatting</h3><p>Text can be formatted in various ways: <strong>bold text</strong>, <em>italic text</em>, <u>underlined text</u>, and <del>strikethrough text</del>. These formatting options help emphasize different parts of your content.</p><h4>Paragraph Structure</h4><p>Paragraphs are the building blocks of content. They provide proper spacing and typography for optimal reading experience. Our system automatically handles line heights, margins, and text justification.</p><h5>Sub-section Details</h5><p>Smaller headings like this one are perfect for detailed sections within larger topics. They maintain the hierarchy while providing clear organization.</p><h6>Minor Notes</h6><p>The smallest heading level is ideal for captions, footnotes, or minor subsections that need to be distinguished but not emphasized.</p><hr><h2>Interactive Elements</h2><p>Content can include various interactive elements that enhance user engagement and provide better functionality.</p>"
+        },
+        {
+          "id": 22,
+          "slug": "lists-and-organization",
+          "image": "/images/House.png",
+          "alt": "Lists and Organization",
+          "publishedDate": {
+            "year": "2025",
+            "month": "09",
+            "day": "05"
+          },
+          "title": "Lists, Quotes, and Content Organization",
+          "description": "<h1>Content Organization Best Practices</h1><p>Effective content organization uses various structural elements to present information clearly and engagingly.</p><h2>Unordered Lists</h2><p>Bullet points are excellent for presenting related items without specific order:</p><ul><li>Carbon fiber composite materials offer superior strength-to-weight ratios</li><li>Advanced manufacturing processes ensure consistent quality</li><li>Modular design allows for flexible configuration options</li><li>Environmental resistance meets military and industrial standards</li><li>Cost-effective solutions for high-performance applications</li></ul><h2>Ordered Lists</h2><p>Numbered lists work well for processes, instructions, or ranked items:</p><ol><li>Initial client consultation and requirement analysis</li><li>Technical specification development and review</li><li>Prototype creation and testing phase</li><li>Final design approval and production planning</li><li>Manufacturing and quality control processes</li><li>Delivery and installation support</li></ol><h2>Nested Lists</h2><p>Complex information can be organized using nested list structures:</p><ul><li>Product Categories<ul><li>Standard Cases<ul><li>Universal Case Series</li><li>Functional Case Series</li></ul></li><li>Custom Solutions<ul><li>Military Applications</li><li>Medical Equipment Cases</li></ul></li></ul></li><li>Services Offered<ol><li>Design Consultation</li><li>Custom Manufacturing</li><li>Quality Testing</li></ol></li></ul><h2>Blockquotes</h2><p>Important statements and testimonials deserve special emphasis:</p><blockquote><p>The lightweight yet robust construction of these carbon fiber cases has revolutionized our field operations. We've seen a 40% improvement in deployment speed while maintaining complete equipment protection.</p></blockquote><p>Multiple quote blocks can provide different perspectives:</p><blockquote><p>Innovation in materials science isn't just about creating stronger products—it's about enabling new possibilities that were previously impossible.</p></blockquote>"
+        },
+        {
+          "id": 23,
+          "slug": "code-and-technical-content",
+          "image": "/images/House.png",
+          "alt": "Code and Technical Content",
+          "publishedDate": {
+            "year": "2025",
+            "month": "09",
+            "day": "04"
+          },
+          "title": "Code Blocks, Tables, and Technical Documentation",
+          "description": "<h1>Technical Content and Data Presentation</h1><p>Technical documentation often requires specialized formatting for code, data tables, and structured information.</p><h2>Inline Code Elements</h2><p>When referencing technical specifications, inline code like <code>MIL-STD-810H</code> or <code>IP67</code> standards help distinguish technical terms from regular text. Configuration parameters such as <code>weight: 12kg</code> or <code>dimensions: 800x600x600mm</code> become clearly identifiable.</p><h2>Code Blocks</h2><p>For more complex technical information, code blocks provide proper formatting:</p><pre><code class=\"language-javascript\">// Carbon Fiber Properties Configuration\nconst carbonFiberSpec = {\n  tensileStrength: '3500-6000 MPa',\n  density: '1.6 g/cm³',\n  thermalExpansion: '-0.7 to 1.3 μm/m°C',\n  operatingTemperature: {\n    min: '-40°C',\n    max: '120°C'\n  },\n  standards: ['MIL-STD-810H', 'IP67', 'STANAG-4569']\n};</code></pre><h3>Manufacturing Process Code</h3><pre><code class=\"language-python\"># Automated Quality Control System\nimport sensor_data as sd\nimport quality_metrics as qm\n\ndef run_quality_check(batch_id):\n    \"\"\"Execute comprehensive quality control testing\"\"\"\n    results = {\n        'impact_resistance': sd.test_impact(batch_id),\n        'weight_variance': sd.measure_weight(batch_id),\n        'dimensional_accuracy': sd.check_dimensions(batch_id)\n    }\n    \n    if qm.meets_standards(results):\n        print(f\"Batch {batch_id}: PASS\")\n        return True\n    else:\n        print(f\"Batch {batch_id}: FAIL - Review required\")\n        return False</code></pre><h2>Data Tables</h2><p>Technical specifications are best presented in structured table format:</p><table><thead><tr><th>Product Model</th><th>Dimensions (LxWxH)</th><th>Weight</th><th>Material</th><th>Standards</th></tr></thead><tbody><tr><td>RM-866BWX-02</td><td>800x600x600mm</td><td>12kg</td><td>Carbon Fiber Composite</td><td>MIL-STD-810H, IP67</td></tr><tr><td>RM-844PZX-02</td><td>1050x640x680mm</td><td>11.1kg</td><td>Carbon Fiber Composite</td><td>MIL-STD-810H, IP65</td></tr><tr><td>RM-644BWX-01</td><td>600x400x400mm</td><td>11kg</td><td>Carbon Fiber Composite</td><td>MIL-STD-810H, IP67</td></tr></tbody></table><h2>Performance Comparison</h2><table><thead><tr><th>Test Type</th><th>Standard Requirement</th><th>Our Product Result</th><th>Performance Grade</th></tr></thead><tbody><tr><td>Impact Resistance</td><td>≥50J</td><td>75J</td><td>Excellent</td></tr><tr><td>Weight Reduction</td><td>≤15kg</td><td>12kg</td><td>Superior</td></tr><tr><td>Temperature Range</td><td>-20°C to +60°C</td><td>-40°C to +85°C</td><td>Extended</td></tr><tr><td>Waterproof Rating</td><td>IP65</td><td>IP67</td><td>Enhanced</td></tr></tbody></table>"
+        },
+        {
+          "id": 24,
+          "slug": "media-and-links",
+          "image": "/images/House.png",
+          "alt": "Media and Links",
+          "publishedDate": {
+            "year": "2025",
+            "month": "09",
+            "day": "03"
+          },
+          "title": "Images, Links, and Media Integration",
+          "description": "<h1>Rich Media and Interactive Elements</h1><p>Modern content requires diverse media types and interactive elements to engage readers effectively.</p><h2>Image Integration</h2><p>High-quality images enhance content understanding and visual appeal. Our system supports various image types with automatic optimization:</p><img src=\"/images/House.png\" alt=\"Carbon Fiber Manufacturing Facility\" /><p>Images can include descriptive captions that provide context and additional information about the visual content.</p><h2>External and Internal Links</h2><p>Content linking improves navigation and provides additional resources:</p><ul><li>External links: Visit our <a href=\"https://www.example.com\" target=\"_blank\" rel=\"noopener noreferrer\">official website</a> for more information</li><li>Technical documentation: Review the <a href=\"https://standards.mil.gov/MIL-STD-810H\" target=\"_blank\" rel=\"noopener noreferrer\">MIL-STD-810H standard</a></li><li>Internal navigation: Learn about our <a href=\"/products/universal-cases\">Universal Case Series</a></li><li>Company information: Read more <a href=\"/aboutUs\">About Us</a></li></ul><h2>Multiple Media Types</h2><p>Different types of content require different presentation approaches:</p><img src=\"/images/fields-1.png\" alt=\"Field Testing Operations\" /><p>Field testing demonstrates real-world performance under challenging conditions.</p><h3>Process Documentation</h3><p>Step-by-step processes benefit from visual documentation:</p><img src=\"/images/products.png\" alt=\"Product Assembly Process\" /><p>Assembly processes follow strict quality control protocols to ensure consistent results.</p><h2>Link Categories</h2><p>Links serve different purposes in technical documentation:</p><ol><li><strong>Reference Links:</strong> <a href=\"https://www.astm.org\" target=\"_blank\" rel=\"noopener noreferrer\">ASTM International Standards</a></li><li><strong>Product Links:</strong> <a href=\"/products/functional-cases\">Functional Case Series</a></li><li><strong>Contact Links:</strong> <a href=\"/contact\">Get in Touch</a> with our technical team</li><li><strong>Download Links:</strong> <a href=\"#\" target=\"_blank\">Download Technical Specifications</a> (PDF)</li></ol><h2>Content Accessibility</h2><p>All media elements include proper accessibility features:</p><ul><li>Alternative text for images</li><li>Descriptive link text</li><li>Proper heading hierarchy</li><li>Color-blind friendly design</li></ul><blockquote><p>Accessibility isn't just compliance—it's about creating inclusive experiences that work for everyone, regardless of their abilities or the technology they use.</p></blockquote>"
         }
       ],
       "applications": [

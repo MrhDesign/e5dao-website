@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
-import DetailPage, { generateDetailMetadata } from '../../../components/DetailPage';
+import DetailPage from '../../../components/DetailPage';
+import { generateDetailMetadata } from '../../../../lib/metadata-generator';
 
 interface PageProps {
   params: Promise<{
