@@ -156,10 +156,8 @@ export interface ContentData {
       }>;
     };
     news: {
-      items: NewsItem[];
-    };
-    industryApplications: {
-      items: ApplicationItem[];
+      articles: NewsItem[];
+      applications: ApplicationItem[];
     };
     customization: {
       process: {

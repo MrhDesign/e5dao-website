@@ -17,8 +17,8 @@ interface DetailPageProps {
 export function getContentData(slug: string, type: 'news' | 'application') {
   const isNews = type === 'news';
   const dataSource = isNews
-    ? contentData.pages.news?.items || []
-    : contentData.pages.industryApplications?.items || [];
+    ? contentData.pages.news?.articles || []
+    : contentData.pages.news.applications || [];
 
   // 查找当前内容
   const content = dataSource.find((item: { slug: string }) => item.slug === slug);
@@ -147,8 +147,8 @@ export default function DetailPage({ slug, type }: DetailPageProps) {
   // 获取相关内容
   const isNews = type === 'news';
   const allData = isNews
-    ? contentData.pages.news?.items || []
-    : contentData.pages.industryApplications?.items || [];
+    ? contentData.pages.news?.articles || []
+    : contentData.pages.news?.applications || [];
 
   const relatedContent = allData
     .filter((item: { slug: string }) => item.slug !== slug)

@@ -37,7 +37,7 @@ export default function Home() {
 
   // 获取行业应用数据，首页显示4个
   const paginatedData = useMemo(() => {
-    const allIndustryData = getContent<ApplicationItem[]>('industryApplications.items') || [];
+    const allIndustryData = getContent<ApplicationItem[]>('news.applications') || [];
     return allIndustryData.slice(0, 4);
   }, [getContent]);
 

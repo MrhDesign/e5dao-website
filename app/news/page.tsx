@@ -12,13 +12,13 @@ export default function News() {
 
   // 获取新闻数据，新闻页面显示8个
   const newsData = useMemo(() => {
-    const allNewsData = getContent<NewsItem[]>('news.items') || [];
+    const allNewsData = getContent<NewsItem[]>('news.articles') || [];
     return allNewsData.slice(0, 8);
   }, [getContent]);
 
   // 获取行业应用案例数据，显示6个
   const industryData = useMemo(() => {
-    const allIndustryData = getContent<ApplicationItem[]>('industryApplications.items') || [];
+    const allIndustryData = getContent<ApplicationItem[]>('news.applications') || [];
     return allIndustryData.slice(0, 6);
   }, [getContent]);
 

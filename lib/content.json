@@ -157,7 +157,6 @@
               "content": "Features",
               "level": 3
             },
-           
             {
               "type": "paragraph",
               "content": "Composed of modular LED display units, an adjustable support structure, and a mobile base: the stand utilizes lightweight carbon fiber materials, while the base case adopts a rotationally molded housing (optional carbon fiber case)."
@@ -166,7 +165,7 @@
               "type": "paragraph",
               "content": "Featuring a quick-release, tool-free design, the system can be assembled or dismantled by two operators within ten minutes."
             },
-             {
+            {
               "type": "image",
               "image": "/images/COB-Display/COB-Details.png",
               "alt": "COB-Display"
@@ -1360,7 +1359,7 @@
       ]
     },
     "news": {
-      "items": [
+      "articles": [
         {
           "id": 1,
           "slug": "carbon-fiber-advantages",
@@ -1621,269 +1620,267 @@
           "title": "Strategic Partnerships Drive Innovation",
           "description": "Strategic collaborations with research institutions, industry partners, and technology companies are accelerating innovation and bringing cutting-edge solutions to market."
         }
-      ]
-    },
-    "industryApplications": {
-      "items": [
+      ],
+      "applications": [
         {
           "id": 1,
-          "slug": "military-command-systems",
+          "slug": "carbon-fiber-advantages",
           "image": "/images/House.png",
-          "alt": "Military Command Systems",
+          "alt": "Carbon Fiber Building",
           "publishedDate": {
             "year": "2025",
             "month": "06",
-            "day": "15"
+            "day": "11"
           },
-          "title": "Mobile Command Posts for Defense Forces",
-          "description": "Lightweight carbon fiber command posts providing tactical advantages in military operations. These systems offer enhanced mobility, durability, and protection while maintaining full communication capabilities in challenging environments."
+          "title": "Earthquake Relief Operations",
+          "description": "Following a magnitude 6.7 earthquake in a mountainous area, multiple rescue forces gathered but lacked a unified command center. Our mobile command post was operational in 15 minutes, creating a joint coordination hub. The system enabled:\n\n1. Dispatch of 42 truckloads of food and medical supplies within 24 hours.\n2. Efficient task-sharing among military, fire, and medical units.\n3. Continuous power and shelter for five days of rescue operations."
         },
         {
           "id": 2,
-          "slug": "aerospace-components",
+          "slug": "modern-construction-materials",
           "image": "/images/House.png",
-          "alt": "Aerospace Applications",
+          "alt": "Advanced Materials",
           "publishedDate": {
             "year": "2025",
             "month": "06",
-            "day": "15"
+            "day": "10"
           },
-          "title": "Aircraft Structural Components",
-          "description": "High-performance carbon fiber components for commercial and military aircraft. Our solutions provide significant weight reduction while maintaining structural integrity and meeting stringent aerospace safety standards."
+          "title": "Revolutionary Materials in Modern Construction",
+          "description": "Modern construction industry is witnessing a revolution with advanced materials offering superior performance, sustainability, and cost-effectiveness. These innovative solutions are transforming how we build and design structures for the future."
         },
         {
           "id": 3,
-          "slug": "medical-equipment-cases",
+          "slug": "sustainable-technology-solutions",
           "image": "/images/House.png",
-          "alt": "Medical Equipment",
+          "alt": "Sustainable Technology",
           "publishedDate": {
             "year": "2025",
             "month": "06",
-            "day": "15"
+            "day": "09"
           },
-          "title": "Emergency Medical Response Systems",
-          "description": "Specialized medical equipment storage and transport solutions for emergency responders. Features include climate control, shock resistance, and rapid deployment capabilities for critical medical situations."
+          "title": "Sustainable Technology Solutions for Tomorrow",
+          "description": "Sustainability is at the forefront of technological advancement. From renewable energy integration to eco-friendly manufacturing processes, these solutions are paving the way for a greener and more sustainable future."
         },
         {
           "id": 4,
-          "slug": "rescue-equipment",
+          "slug": "innovation-hub-technologies",
           "image": "/images/House.png",
-          "alt": "Rescue Operations",
+          "alt": "Innovation Hub",
           "publishedDate": {
             "year": "2025",
             "month": "06",
-            "day": "15"
+            "day": "08"
           },
-          "title": "Search and Rescue Equipment",
-          "description": "Durable and lightweight rescue equipment designed for extreme conditions. Our carbon fiber solutions enable faster response times and improved safety for rescue personnel in challenging environments."
+          "title": "Innovation Hub: Driving Future Technologies",
+          "description": "Our innovation hub serves as the catalyst for breakthrough technologies, bringing together researchers, engineers, and visionaries to develop solutions that will shape the future of various industries."
         },
         {
           "id": 5,
-          "slug": "transportation-containers",
+          "slug": "future-aerospace-materials",
           "image": "/images/House.png",
-          "alt": "Transportation Solutions",
+          "alt": "Aerospace Innovation",
           "publishedDate": {
             "year": "2025",
             "month": "06",
-            "day": "15"
+            "day": "07"
           },
-          "title": "High-End Transportation Containers",
-          "description": "Premium carbon fiber containers for luxury transportation applications. Combining elegance with functionality, these solutions offer superior protection and style for high-value cargo transport."
+          "title": "Future of Aerospace Materials",
+          "description": "The aerospace industry continues to push boundaries with next-generation materials that offer unprecedented performance characteristics, enabling safer and more efficient aircraft designs."
         },
         {
           "id": 6,
-          "slug": "communication-systems",
+          "slug": "advanced-composites-research",
           "image": "/images/House.png",
-          "alt": "Communication Equipment",
+          "alt": "Advanced Composites",
           "publishedDate": {
             "year": "2025",
             "month": "06",
-            "day": "15"
+            "day": "06"
           },
-          "title": "Portable Communication Cases",
-          "description": "Advanced communication equipment housing designed for field operations. Features electromagnetic shielding, weather resistance, and rapid deployment for critical communication infrastructure."
+          "title": "Breakthrough in Advanced Composites Research",
+          "description": "Recent breakthroughs in composite materials research are opening new possibilities for lightweight, high-strength applications across multiple industries, from automotive to marine engineering."
         },
         {
           "id": 7,
-          "slug": "automotive-lightweight-parts",
+          "slug": "smart-manufacturing-processes",
           "image": "/images/House.png",
-          "alt": "Automotive Components",
+          "alt": "Smart Manufacturing",
           "publishedDate": {
             "year": "2025",
             "month": "06",
-            "day": "15"
+            "day": "05"
           },
-          "title": "Automotive Lightweight Components",
-          "description": "Carbon fiber body panels and structural components for electric and high-performance vehicles. Reducing vehicle weight while maintaining crash safety standards and durability."
+          "title": "Smart Manufacturing: The Future is Now",
+          "description": "Smart manufacturing technologies are revolutionizing production processes, enabling greater efficiency, quality control, and customization while reducing waste and environmental impact."
         },
         {
           "id": 8,
-          "slug": "wind-energy-turbines",
+          "slug": "next-gen-material-science",
           "image": "/images/House.png",
-          "alt": "Wind Turbine Blades",
+          "alt": "Material Science",
           "publishedDate": {
             "year": "2025",
             "month": "06",
-            "day": "15"
+            "day": "04"
           },
-          "title": "Wind Turbine Blade Manufacturing",
-          "description": "Large-scale carbon fiber turbine blades for renewable energy generation. Optimized for maximum energy capture while withstanding extreme weather conditions and operational stresses."
+          "title": "Next-Generation Material Science Innovations",
+          "description": "Cutting-edge research in material science is unlocking new possibilities for stronger, lighter, and more versatile materials that will define the next era of technological advancement."
         },
         {
           "id": 9,
-          "slug": "marine-hull-structures",
+          "slug": "sustainable-production-methods",
           "image": "/images/House.png",
-          "alt": "Marine Vessels",
+          "alt": "Sustainable Production",
           "publishedDate": {
             "year": "2025",
             "month": "06",
-            "day": "15"
+            "day": "03"
           },
-          "title": "Marine Hull and Structural Components",
-          "description": "Corrosion-resistant carbon fiber hulls and superstructures for naval vessels and luxury yachts. Providing superior strength-to-weight ratio and reduced maintenance requirements."
+          "title": "Sustainable Production Methods for Industry 4.0",
+          "description": "Industry 4.0 is driving the adoption of sustainable production methods that minimize environmental impact while maximizing efficiency and product quality through advanced automation and AI."
         },
         {
           "id": 10,
-          "slug": "sports-equipment-innovation",
+          "slug": "global-market-expansion",
           "image": "/images/House.png",
-          "alt": "Sports Equipment",
+          "alt": "Global Market",
           "publishedDate": {
             "year": "2025",
             "month": "06",
-            "day": "15"
+            "day": "02"
           },
-          "title": "High-Performance Sports Equipment",
-          "description": "Professional-grade carbon fiber equipment for competitive sports including cycling, golf, tennis, and motorsports. Engineered for optimal performance and athlete safety."
+          "title": "Global Market Expansion Strategies",
+          "description": "Strategic approaches to global market expansion are essential for companies looking to scale their operations and bring innovative solutions to international markets."
         },
         {
           "id": 11,
-          "slug": "infrastructure-reinforcement",
+          "slug": "carbon-fiber-recycling",
           "image": "/images/House.png",
-          "alt": "Infrastructure Support",
+          "alt": "Recycling Technology",
           "publishedDate": {
             "year": "2025",
             "month": "06",
-            "day": "15"
+            "day": "01"
           },
-          "title": "Infrastructure Reinforcement Systems",
-          "description": "Carbon fiber reinforcement solutions for bridges, buildings, and civil infrastructure. Extending structural lifespan while minimizing weight addition and installation complexity."
+          "title": "Carbon Fiber Recycling: A Sustainable Future",
+          "description": "Innovative recycling technologies are making carbon fiber more sustainable by enabling efficient recovery and reuse of materials, reducing waste and environmental impact."
         },
         {
           "id": 12,
-          "slug": "robotics-frameworks",
+          "slug": "automotive-applications",
           "image": "/images/House.png",
-          "alt": "Robotic Systems",
+          "alt": "Automotive Industry",
           "publishedDate": {
             "year": "2025",
-            "month": "06",
-            "day": "15"
+            "month": "05",
+            "day": "31"
           },
-          "title": "Robotic System Frameworks",
-          "description": "Lightweight carbon fiber frames and enclosures for industrial robots and drones. Enabling higher payload capacity and improved precision in automated manufacturing processes."
+          "title": "Carbon Fiber in Automotive Engineering",
+          "description": "The automotive industry is embracing carbon fiber technology to create lighter, stronger, and more fuel-efficient vehicles while maintaining safety and performance standards."
         },
         {
           "id": 13,
-          "slug": "satellite-structures",
+          "slug": "marine-industry-solutions",
           "image": "/images/House.png",
-          "alt": "Satellite Components",
+          "alt": "Marine Applications",
           "publishedDate": {
             "year": "2025",
-            "month": "06",
-            "day": "15"
+            "month": "05",
+            "day": "30"
           },
-          "title": "Satellite Structural Components",
-          "description": "Space-qualified carbon fiber components for satellites and space vehicles. Meeting strict outgassing requirements while providing thermal stability and radiation resistance."
+          "title": "Marine Industry Applications of Advanced Composites",
+          "description": "Advanced composite materials are revolutionizing marine engineering with corrosion-resistant, lightweight solutions for boats, ships, and offshore structures."
         },
         {
           "id": 14,
-          "slug": "oil-gas-equipment",
+          "slug": "quality-control-systems",
           "image": "/images/House.png",
-          "alt": "Oil Gas Industry",
+          "alt": "Quality Control",
           "publishedDate": {
             "year": "2025",
-            "month": "06",
-            "day": "15"
+            "month": "05",
+            "day": "29"
           },
-          "title": "Oil & Gas Industry Equipment",
-          "description": "Corrosion-resistant carbon fiber components for offshore platforms and drilling equipment. Withstanding harsh chemical environments while reducing maintenance costs."
+          "title": "Advanced Quality Control in Manufacturing",
+          "description": "Implementing cutting-edge quality control systems ensures consistent product excellence and reliability across all manufacturing processes and applications."
         },
         {
           "id": 15,
-          "slug": "textile-machinery-parts",
+          "slug": "research-development-trends",
           "image": "/images/House.png",
-          "alt": "Textile Manufacturing",
+          "alt": "R&D Innovation",
           "publishedDate": {
             "year": "2025",
-            "month": "06",
-            "day": "15"
+            "month": "05",
+            "day": "28"
           },
-          "title": "Textile Manufacturing Components",
-          "description": "High-precision carbon fiber rollers and guides for textile production machinery. Providing superior surface finish and dimensional stability for high-quality fabric production."
+          "title": "Latest Trends in Materials Research and Development",
+          "description": "Current research trends are focusing on bio-based composites, smart materials, and self-healing technologies that will shape the future of material science."
         },
         {
           "id": 16,
-          "slug": "food-processing-equipment",
+          "slug": "digital-manufacturing",
           "image": "/images/House.png",
-          "alt": "Food Processing",
+          "alt": "Digital Technology",
           "publishedDate": {
             "year": "2025",
-            "month": "06",
-            "day": "15"
+            "month": "05",
+            "day": "27"
           },
-          "title": "Food Grade Processing Equipment",
-          "description": "FDA-approved carbon fiber components for food processing machinery. Combining chemical resistance with easy cleaning and maintenance for food safety compliance."
+          "title": "Digital Transformation in Manufacturing",
+          "description": "Digital technologies are transforming manufacturing processes through automation, AI-driven optimization, and real-time monitoring systems."
         },
         {
           "id": 17,
-          "slug": "mining-exploration-tools",
+          "slug": "energy-sector-applications",
           "image": "/images/House.png",
-          "alt": "Mining Equipment",
+          "alt": "Energy Solutions",
           "publishedDate": {
             "year": "2025",
-            "month": "06",
-            "day": "15"
+            "month": "05",
+            "day": "26"
           },
-          "title": "Mining and Exploration Tools",
-          "description": "Durable carbon fiber drilling components and exploration equipment for mining operations. Designed to withstand extreme pressures and abrasive conditions underground."
+          "title": "Carbon Fiber Applications in Energy Sector",
+          "description": "The energy sector is leveraging carbon fiber technology for wind turbine blades, solar panel frames, and energy storage systems to improve efficiency and durability."
         },
         {
           "id": 18,
-          "slug": "railway-transportation",
+          "slug": "safety-standards-compliance",
           "image": "/images/House.png",
-          "alt": "Railway Systems",
+          "alt": "Safety Standards",
           "publishedDate": {
             "year": "2025",
-            "month": "06",
-            "day": "15"
+            "month": "05",
+            "day": "25"
           },
-          "title": "Railway Transportation Solutions",
-          "description": "Lightweight carbon fiber components for high-speed rail and metro systems. Reducing energy consumption while maintaining passenger safety and comfort standards."
+          "title": "Meeting International Safety Standards",
+          "description": "Comprehensive safety standards compliance ensures that all products meet rigorous international requirements for quality, performance, and user safety."
         },
         {
           "id": 19,
-          "slug": "electronic-enclosures",
+          "slug": "future-material-technologies",
           "image": "/images/House.png",
-          "alt": "Electronics Housing",
+          "alt": "Future Tech",
           "publishedDate": {
             "year": "2025",
-            "month": "06",
-            "day": "15"
+            "month": "05",
+            "day": "24"
           },
-          "title": "Electronic Equipment Enclosures",
-          "description": "EMI-shielded carbon fiber enclosures for sensitive electronic equipment. Providing thermal management and electromagnetic protection for critical electronic systems."
+          "title": "Future Technologies in Material Science",
+          "description": "Emerging technologies such as nanotechnology, biomimetics, and smart materials are opening new frontiers in material science and engineering applications."
         },
         {
           "id": 20,
-          "slug": "pharmaceutical-storage",
+          "slug": "partnership-collaborations",
           "image": "/images/House.png",
-          "alt": "Pharmaceutical Solutions",
+          "alt": "Partnerships",
           "publishedDate": {
             "year": "2025",
-            "month": "06",
-            "day": "15"
+            "month": "05",
+            "day": "23"
           },
-          "title": "Pharmaceutical Storage Systems",
-          "description": "Climate-controlled carbon fiber storage solutions for pharmaceutical products. Maintaining precise temperature and humidity control while ensuring product integrity and safety."
+          "title": "Strategic Partnerships Drive Innovation",
+          "description": "Strategic collaborations with research institutions, industry partners, and technology companies are accelerating innovation and bringing cutting-edge solutions to market."
         }
       ]
     }

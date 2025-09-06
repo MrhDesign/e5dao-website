@@ -72,7 +72,7 @@ export default function SolutionLayout({
                     <h1 className="headline1 leading-10 lg:pb-10 pb-2.5">Industry Application</h1>
                     <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-x-5 lg:gap-y-0 gap-y-5">
                         {useMemo(() => {
-                            const applications = getContent<ApplicationItem[]>('industryApplications.items') || [];
+                            const applications = getContent<ApplicationItem[]>('news.applications') || [];
                             return applications.slice(0, 4).map((application: ApplicationItem) => (
                                 <NewCard
                                     key={application.id}

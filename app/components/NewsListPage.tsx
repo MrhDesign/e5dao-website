@@ -5,7 +5,6 @@ import NewCard from './NewCard';
 import Pagination from './Pagination';
 import Breadcrumb from './Breadcrumb';
 import useContent from '../../lib/useContent';
-import Link from 'next/link';
 
 export interface NewsListConfig {
   type: 'articles' | 'applications';
