@@ -1359,6 +1359,7 @@
       ]
     },
     "news": {
+      "defaultImage": "/images/House.png",
       "articles": [
         {
           "id": 1,
@@ -1654,9 +1655,9 @@
           "image": "/images/news/applications/application-3.png",
           "alt": "Battlefield Trauma Treatment",
           "publishedDate": {
-            "year": "2025",
+            "year": "2023",
             "month": "06",
-            "day": "09"
+            "day": "19"
           },
           "title": "Battlefield Trauma Treatment",
           "description": "The All-in-One Emergency Module is deployed by a medical team via airdrop. Its carbon fiber construction allows a single medic to carry and set up the module in 10 minutes. The module’s integrated ECG monitors, ventilators, and defibrillators provide comprehensive life support. The central control console’s expert system offers AI-driven trauma treatment recommendations, while 5G connectivity enables real-time consultation with a remote surgical team. Data interoperability ensures patient records are updated instantly for follow-on care.\nThe system stabilizes 90% of critical patients within the golden hour, significantly improving survival rates and enabling safe evacuation."
@@ -1667,9 +1668,9 @@
           "image": "/images/news/applications/application-4.png",
           "alt": "Maritime Emergency Rescue",
           "publishedDate": {
-            "year": "2025",
-            "month": "06",
-            "day": "08"
+            "year": "2022",
+            "month": "02",
+            "day": "18"
           },
           "title": "Maritime Emergency Rescue",
           "description": "The Maritime Mobile ICU Kit, compact enough to fit in a handbag-sized container, is deployed via helicopter to the vessel. Its shockproof, corrosion-resistant carbon fiber design ensures reliability in harsh maritime conditions. The kit’s ultrasound, respiration, and defibrillation capabilities allow medics to diagnose and treat injuries on-site. Real-time patient data is transmitted via 4G to a coastal hospital, enabling remote specialists to guide treatment and prepare for patient arrival.\nThe kit enables life-saving interventions at sea, reducing mortality risk by 50% and ensuring patients are stable for transport to a hospital."

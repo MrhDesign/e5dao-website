@@ -156,6 +156,7 @@ export interface ContentData {
       }>;
     };
     news: {
+      defaultImage: string;
       articles: NewsItem[];
       applications: ApplicationItem[];
     };

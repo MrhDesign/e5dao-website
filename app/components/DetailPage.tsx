@@ -24,9 +24,13 @@ export function getContentData(slug: string, type: 'news' | 'application') {
   const content = dataSource.find((item: { slug: string }) => item.slug === slug);
 
   if (content) {
+    // 获取默认图片
+    const defaultImage = contentData.pages.news.defaultImage || "/images/House.png";
+    
     // 为content.json中的内容生成详细内容
     return {
       ...content,
+      image: (content as { image?: string }).image || defaultImage,
       content: generateDetailedContent(content),
       author: "E5DAO Research Team",
       category: (content as { category?: string }).category || (isNews ? "Technology" : "Industrial Applications")
@@ -251,7 +255,7 @@ export default function DetailPage({ slug, type }: DetailPageProps) {
                   dateTime={`${content.publishedDate?.year || '2025'}-${content.publishedDate?.month || '06'}-${content.publishedDate?.day || '01'}`}
                 >
                   {content.publishedDate?.month && content.publishedDate?.day 
-                    ? `${new Date(`${content.publishedDate.year}-${content.publishedDate.month}-${content.publishedDate.day}`).toLocaleDateString('en-US', { month: 'long', day: 'numeric' })} ${content.publishedDate.year}`
+                    ? `${content.publishedDate.year}/${content.publishedDate.month}/${content.publishedDate.day}`
                     : `${content.publishedDate?.year || '2025'}`}
                 </time>
 
@@ -348,7 +352,7 @@ export default function DetailPage({ slug, type }: DetailPageProps) {
                   alt={related.alt}
                   year={related.publishedDate?.year || '2025'}
                   date={related.publishedDate?.month && related.publishedDate?.day 
-                    ? new Date(`${related.publishedDate.year}-${related.publishedDate.month}-${related.publishedDate.day}`).toLocaleDateString('en-US', { month: 'long', day: 'numeric' })
+                    ? `${related.publishedDate.month}/${related.publishedDate.day}`
                     : ''}
                   title={related.title}
                   description={related.description}

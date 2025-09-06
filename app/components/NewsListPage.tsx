@@ -76,7 +76,7 @@ export default function NewsListPage({ config }: NewsListPageProps) {
       </div>
 
       {/* 内容网格 */}
-      <div className={`grid ${config.gridCols || 'lg:grid-cols-2 grid-cols-1'} lg:gap-x-5 gap-y-2.5 min-h-[600px]`}>
+      <div className={`grid ${config.gridCols || 'lg:grid-cols-2 grid-cols-1'} lg:gap-x-5 gap-y-2.5`}>
         {paginatedData.map((item) => (
           <NewCard
             key={item.id}
