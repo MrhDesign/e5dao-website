@@ -1624,263 +1624,55 @@
       "applications": [
         {
           "id": 1,
-          "slug": "carbon-fiber-advantages",
-          "image": "/images/House.png",
-          "alt": "Carbon Fiber Building",
+          "slug": "rapid-tactical-deployment-in-conflict-zones",
+          "image": "/images/news/applications/application-1.png",
+          "alt": "Rapid Tactical Deployment in Conflict Zones",
           "publishedDate": {
-            "year": "2025",
+            "year": "2023",
             "month": "06",
             "day": "11"
           },
-          "title": "Earthquake Relief Operations",
-          "description": "Following a magnitude 6.7 earthquake in a mountainous area, multiple rescue forces gathered but lacked a unified command center. Our mobile command post was operational in 15 minutes, creating a joint coordination hub. The system enabled:\n\n1. Dispatch of 42 truckloads of food and medical supplies within 24 hours.\n2. Efficient task-sharing among military, fire, and medical units.\n3. Continuous power and shelter for five days of rescue operations."
+          "title": "Rapid Tactical Deployment in Conflict Zones",
+          "description": "The Carbon Fiber Modular Mobile Command Post is air-dropped into a secure location near the frontline. A single soldier deploys the system in under 5 minutes, leveraging its lightweight carbon fiber construction. The post’s EMI-shielded design prevents detection by enemy signals intelligence, while its C4ISR integration allows real-time battlefield data (e.g., drone feeds, troop movements) to be relayed to both frontline units and rear command. The intelligent power management system ensures continuous operation using vehicle power and backup batteries, enabling sustained coordination of a counteroffensive.\n The command post enables rapid decision-making, reducing response time to enemy movements by 40%. Senior officers remain at a safe distance, minimizing casualties while maintaining operational control."
         },
         {
           "id": 2,
-          "slug": "modern-construction-materials",
-          "image": "/images/House.png",
-          "alt": "Advanced Materials",
+          "slug": "disaster-response-coordination",
+          "image": "/images/news/applications/application-2.png",
+          "alt": "Disaster Response Coordination",
           "publishedDate": {
-            "year": "2025",
-            "month": "06",
-            "day": "10"
+            "year": "2023",
+            "month": "09",
+            "day": "21"
           },
-          "title": "Revolutionary Materials in Modern Construction",
-          "description": "Modern construction industry is witnessing a revolution with advanced materials offering superior performance, sustainability, and cost-effectiveness. These innovative solutions are transforming how we build and design structures for the future."
+          "title": "Disaster Response Coordination",
+          "description": "The Carbon Fiber Modular Mobile Command Post is deployed via a single off-road vehicle to a central location in the disaster zone. Its MIL-STD-810H and IP67 compliance ensures functionality despite dust, rain, and extreme temperatures. The system’s integrated intelligence consolidates data from rescue teams, satellite imagery, and local sensors, providing a unified operational picture. Orders are disseminated to individual responders via secure channels, while real-time updates are sent to national disaster management authorities.\nThe command post enables seamless coordination, reducing response time by 30% and improving resource allocation for search-and-rescue missions."
         },
         {
           "id": 3,
-          "slug": "sustainable-technology-solutions",
-          "image": "/images/House.png",
-          "alt": "Sustainable Technology",
+          "slug": "battlefield-trauma-treatment",
+          "image": "/images/news/applications/application-3.png",
+          "alt": "Battlefield Trauma Treatment",
           "publishedDate": {
             "year": "2025",
             "month": "06",
             "day": "09"
           },
-          "title": "Sustainable Technology Solutions for Tomorrow",
-          "description": "Sustainability is at the forefront of technological advancement. From renewable energy integration to eco-friendly manufacturing processes, these solutions are paving the way for a greener and more sustainable future."
+          "title": "Battlefield Trauma Treatment",
+          "description": "The All-in-One Emergency Module is deployed by a medical team via airdrop. Its carbon fiber construction allows a single medic to carry and set up the module in 10 minutes. The module’s integrated ECG monitors, ventilators, and defibrillators provide comprehensive life support. The central control console’s expert system offers AI-driven trauma treatment recommendations, while 5G connectivity enables real-time consultation with a remote surgical team. Data interoperability ensures patient records are updated instantly for follow-on care.\nThe system stabilizes 90% of critical patients within the golden hour, significantly improving survival rates and enabling safe evacuation."
         },
         {
           "id": 4,
-          "slug": "innovation-hub-technologies",
-          "image": "/images/House.png",
-          "alt": "Innovation Hub",
+          "slug": "maritime-emergency-rescue",
+          "image": "/images/news/applications/application-4.png",
+          "alt": "Maritime Emergency Rescue",
           "publishedDate": {
             "year": "2025",
             "month": "06",
             "day": "08"
           },
-          "title": "Innovation Hub: Driving Future Technologies",
-          "description": "Our innovation hub serves as the catalyst for breakthrough technologies, bringing together researchers, engineers, and visionaries to develop solutions that will shape the future of various industries."
-        },
-        {
-          "id": 5,
-          "slug": "future-aerospace-materials",
-          "image": "/images/House.png",
-          "alt": "Aerospace Innovation",
-          "publishedDate": {
-            "year": "2025",
-            "month": "06",
-            "day": "07"
-          },
-          "title": "Future of Aerospace Materials",
-          "description": "The aerospace industry continues to push boundaries with next-generation materials that offer unprecedented performance characteristics, enabling safer and more efficient aircraft designs."
-        },
-        {
-          "id": 6,
-          "slug": "advanced-composites-research",
-          "image": "/images/House.png",
-          "alt": "Advanced Composites",
-          "publishedDate": {
-            "year": "2025",
-            "month": "06",
-            "day": "06"
-          },
-          "title": "Breakthrough in Advanced Composites Research",
-          "description": "Recent breakthroughs in composite materials research are opening new possibilities for lightweight, high-strength applications across multiple industries, from automotive to marine engineering."
-        },
-        {
-          "id": 7,
-          "slug": "smart-manufacturing-processes",
-          "image": "/images/House.png",
-          "alt": "Smart Manufacturing",
-          "publishedDate": {
-            "year": "2025",
-            "month": "06",
-            "day": "05"
-          },
-          "title": "Smart Manufacturing: The Future is Now",
-          "description": "Smart manufacturing technologies are revolutionizing production processes, enabling greater efficiency, quality control, and customization while reducing waste and environmental impact."
-        },
-        {
-          "id": 8,
-          "slug": "next-gen-material-science",
-          "image": "/images/House.png",
-          "alt": "Material Science",
-          "publishedDate": {
-            "year": "2025",
-            "month": "06",
-            "day": "04"
-          },
-          "title": "Next-Generation Material Science Innovations",
-          "description": "Cutting-edge research in material science is unlocking new possibilities for stronger, lighter, and more versatile materials that will define the next era of technological advancement."
-        },
-        {
-          "id": 9,
-          "slug": "sustainable-production-methods",
-          "image": "/images/House.png",
-          "alt": "Sustainable Production",
-          "publishedDate": {
-            "year": "2025",
-            "month": "06",
-            "day": "03"
-          },
-          "title": "Sustainable Production Methods for Industry 4.0",
-          "description": "Industry 4.0 is driving the adoption of sustainable production methods that minimize environmental impact while maximizing efficiency and product quality through advanced automation and AI."
-        },
-        {
-          "id": 10,
-          "slug": "global-market-expansion",
-          "image": "/images/House.png",
-          "alt": "Global Market",
-          "publishedDate": {
-            "year": "2025",
-            "month": "06",
-            "day": "02"
-          },
-          "title": "Global Market Expansion Strategies",
-          "description": "Strategic approaches to global market expansion are essential for companies looking to scale their operations and bring innovative solutions to international markets."
-        },
-        {
-          "id": 11,
-          "slug": "carbon-fiber-recycling",
-          "image": "/images/House.png",
-          "alt": "Recycling Technology",
-          "publishedDate": {
-            "year": "2025",
-            "month": "06",
-            "day": "01"
-          },
-          "title": "Carbon Fiber Recycling: A Sustainable Future",
-          "description": "Innovative recycling technologies are making carbon fiber more sustainable by enabling efficient recovery and reuse of materials, reducing waste and environmental impact."
-        },
-        {
-          "id": 12,
-          "slug": "automotive-applications",
-          "image": "/images/House.png",
-          "alt": "Automotive Industry",
-          "publishedDate": {
-            "year": "2025",
-            "month": "05",
-            "day": "31"
-          },
-          "title": "Carbon Fiber in Automotive Engineering",
-          "description": "The automotive industry is embracing carbon fiber technology to create lighter, stronger, and more fuel-efficient vehicles while maintaining safety and performance standards."
-        },
-        {
-          "id": 13,
-          "slug": "marine-industry-solutions",
-          "image": "/images/House.png",
-          "alt": "Marine Applications",
-          "publishedDate": {
-            "year": "2025",
-            "month": "05",
-            "day": "30"
-          },
-          "title": "Marine Industry Applications of Advanced Composites",
-          "description": "Advanced composite materials are revolutionizing marine engineering with corrosion-resistant, lightweight solutions for boats, ships, and offshore structures."
-        },
-        {
-          "id": 14,
-          "slug": "quality-control-systems",
-          "image": "/images/House.png",
-          "alt": "Quality Control",
-          "publishedDate": {
-            "year": "2025",
-            "month": "05",
-            "day": "29"
-          },
-          "title": "Advanced Quality Control in Manufacturing",
-          "description": "Implementing cutting-edge quality control systems ensures consistent product excellence and reliability across all manufacturing processes and applications."
-        },
-        {
-          "id": 15,
-          "slug": "research-development-trends",
-          "image": "/images/House.png",
-          "alt": "R&D Innovation",
-          "publishedDate": {
-            "year": "2025",
-            "month": "05",
-            "day": "28"
-          },
-          "title": "Latest Trends in Materials Research and Development",
-          "description": "Current research trends are focusing on bio-based composites, smart materials, and self-healing technologies that will shape the future of material science."
-        },
-        {
-          "id": 16,
-          "slug": "digital-manufacturing",
-          "image": "/images/House.png",
-          "alt": "Digital Technology",
-          "publishedDate": {
-            "year": "2025",
-            "month": "05",
-            "day": "27"
-          },
-          "title": "Digital Transformation in Manufacturing",
-          "description": "Digital technologies are transforming manufacturing processes through automation, AI-driven optimization, and real-time monitoring systems."
-        },
-        {
-          "id": 17,
-          "slug": "energy-sector-applications",
-          "image": "/images/House.png",
-          "alt": "Energy Solutions",
-          "publishedDate": {
-            "year": "2025",
-            "month": "05",
-            "day": "26"
-          },
-          "title": "Carbon Fiber Applications in Energy Sector",
-          "description": "The energy sector is leveraging carbon fiber technology for wind turbine blades, solar panel frames, and energy storage systems to improve efficiency and durability."
-        },
-        {
-          "id": 18,
-          "slug": "safety-standards-compliance",
-          "image": "/images/House.png",
-          "alt": "Safety Standards",
-          "publishedDate": {
-            "year": "2025",
-            "month": "05",
-            "day": "25"
-          },
-          "title": "Meeting International Safety Standards",
-          "description": "Comprehensive safety standards compliance ensures that all products meet rigorous international requirements for quality, performance, and user safety."
-        },
-        {
-          "id": 19,
-          "slug": "future-material-technologies",
-          "image": "/images/House.png",
-          "alt": "Future Tech",
-          "publishedDate": {
-            "year": "2025",
-            "month": "05",
-            "day": "24"
-          },
-          "title": "Future Technologies in Material Science",
-          "description": "Emerging technologies such as nanotechnology, biomimetics, and smart materials are opening new frontiers in material science and engineering applications."
-        },
-        {
-          "id": 20,
-          "slug": "partnership-collaborations",
-          "image": "/images/House.png",
-          "alt": "Partnerships",
-          "publishedDate": {
-            "year": "2025",
-            "month": "05",
-            "day": "23"
-          },
-          "title": "Strategic Partnerships Drive Innovation",
-          "description": "Strategic collaborations with research institutions, industry partners, and technology companies are accelerating innovation and bringing cutting-edge solutions to market."
+          "title": "Maritime Emergency Rescue",
+          "description": "The Maritime Mobile ICU Kit, compact enough to fit in a handbag-sized container, is deployed via helicopter to the vessel. Its shockproof, corrosion-resistant carbon fiber design ensures reliability in harsh maritime conditions. The kit’s ultrasound, respiration, and defibrillation capabilities allow medics to diagnose and treat injuries on-site. Real-time patient data is transmitted via 4G to a coastal hospital, enabling remote specialists to guide treatment and prepare for patient arrival.\nThe kit enables life-saving interventions at sea, reducing mortality risk by 50% and ensuring patients are stable for transport to a hospital."
         }
       ]
     }
