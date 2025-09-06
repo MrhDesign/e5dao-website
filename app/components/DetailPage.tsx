@@ -8,8 +8,8 @@ import NewCard from './NewCard';
 import Breadcrumb, { BreadcrumbItem } from './Breadcrumb';
 import Button from './Button';
 import RichContentRenderer, { TOCItem } from './RichContentRenderer';
-import TableOfContents from './TableOfContents';
 import ShareButtons from './ShareButtons';
+import ViewCounter from './ViewCounter';
 import { SEOContentOptimizer } from '../../lib/seo-optimizer';
 import { getContentData } from '../../lib/metadata-generator';
 import contentData from '../../lib/content.json';
@@ -50,8 +50,15 @@ export default function DetailPage({ slug, type }: DetailPageProps) {
     ? contentData.pages.news?.articles || []
     : contentData.pages.news?.applications || [];
 
+  // 按发布日期排序并获取相关内容
   const relatedContent = allData
     .filter((item: { slug: string }) => item.slug !== slug)
+    .sort((a: { publishedDate: { year: string; month: string; day: string }}, 
+           b: { publishedDate: { year: string; month: string; day: string }}) => {
+      const dateA = new Date(`${a.publishedDate.year}-${a.publishedDate.month}-${a.publishedDate.day}`);
+      const dateB = new Date(`${b.publishedDate.year}-${b.publishedDate.month}-${b.publishedDate.day}`);
+      return dateB.getTime() - dateA.getTime(); // 降序排列 (最新在前)
+    })
     .slice(0, 4);
 
   if (!content) {
@@ -96,12 +103,12 @@ export default function DetailPage({ slug, type }: DetailPageProps) {
             className="object-cover"
             priority
             sizes="100vw"
-            quality={85}
+            quality={75}
           />
 
           {/* 背景图遮罩 */}
           <div className="absolute inset-0 bg-black/65" />
-          
+
           <div className="absolute inset-0 flex items-center lg:px-30 px-5">
             <div className="text-white">
               {/* 主标题 */}
@@ -116,7 +123,7 @@ export default function DetailPage({ slug, type }: DetailPageProps) {
                   dateTime={`${content.publishedDate?.year || '2025'}-${content.publishedDate?.month || '06'}-${content.publishedDate?.day || '01'}`}
                   itemProp="datePublished"
                 >
-                  {content.publishedDate?.month && content.publishedDate?.day 
+                  {content.publishedDate?.month && content.publishedDate?.day
                     ? `${content.publishedDate.year}/${content.publishedDate.month}/${content.publishedDate.day}`
                     : `${content.publishedDate?.year || '2025'}`}
                 </time>
@@ -134,21 +141,29 @@ export default function DetailPage({ slug, type }: DetailPageProps) {
               </p>
 
               {/* 作者信息和阅读时间 */}
-              <div className="flex items-center gap-6">
+              <div className="flex lg:flex-row flex-col lg:items-center lg:gap-6 gap-2.5">
                 {content.author && (
                   <div className="flex items-center text-base">
                     <span>By :</span>
                     <span itemProp="author">{content.author}</span>
                   </div>
                 )}
-                <div className="flex items-center">
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                  </svg>
-                  <span className="text-sm">
-                    {Math.ceil(content.content.replace(/<[^>]*>/g, '').split(' ').length / 200)} min read
-                  </span>
+                <div className='flex items-center gap-6'>
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-sm">
+                      {Math.ceil(content.content.replace(/<[^>]*>/g, '').split(' ').length / 200)} min read
+                    </span>
+                  </div>
+                  <ViewCounter
+                    slug={content.slug}
+                    className="text-white"
+                    autoIncrement={true}
+                  />
                 </div>
+
               </div>
             </div>
           </div>
@@ -169,17 +184,17 @@ export default function DetailPage({ slug, type }: DetailPageProps) {
           <div className="flex justify-center lg:gap-10 gap-5">
             {/* 主内容区域 */}
             <div className="flex-1 lg:max-w-[1240px] w-full overflow-hidden" itemProp="articleBody">
-              <RichContentRenderer 
+              <RichContentRenderer
                 content={content.content}
                 className="mb-8"
                 enhanceContent={true}
                 generateTOC={true}
                 onTOCGenerated={setTocItems}
               />
-              
+
               {/* 分享按钮 - 简化版本 */}
               <div className="pt-8 border-t border-gray-200">
-                <ShareButtons 
+                <ShareButtons
                   url={currentUrl}
                   title={content.title}
                   description={content.description}
@@ -192,7 +207,7 @@ export default function DetailPage({ slug, type }: DetailPageProps) {
 
         {/* 应用案例特有的CTA - 恢复原来的样式 */}
         {!isNews && (
-          <div className="lg:mx-30 mx-5 my-16 text-center bg-fill-four p-12 rounded-lg">
+          <div className="lg:mx-30 mx-5 mb-10 text-center bg-fill-four p-12 rounded-lg">
             <h2 className="text-3xl font-semibold mb-4">Interested in This Solution?</h2>
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
               Our team can develop similar solutions tailored to your specific requirements.
@@ -213,13 +228,13 @@ export default function DetailPage({ slug, type }: DetailPageProps) {
               {isNews ? 'Related Articles' : 'Related Applications'}
             </h2>
             <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
-              {relatedContent.map((related: { 
-                id: number; 
-                image: string; 
-                alt: string; 
-                publishedDate: { year: string; month: string; day: string }; 
-                title: string; 
-                description: string; 
+              {relatedContent.map((related: {
+                id: number;
+                image: string;
+                alt: string;
+                publishedDate: { year: string; month: string; day: string };
+                title: string;
+                description: string;
                 slug: string;
               }) => (
                 <NewCard
@@ -227,7 +242,7 @@ export default function DetailPage({ slug, type }: DetailPageProps) {
                   image={related.image}
                   alt={related.alt}
                   year={related.publishedDate?.year || '2025'}
-                  date={related.publishedDate?.month && related.publishedDate?.day 
+                  date={related.publishedDate?.month && related.publishedDate?.day
                     ? `${related.publishedDate.month}/${related.publishedDate.day}`
                     : ''}
                   title={related.title}

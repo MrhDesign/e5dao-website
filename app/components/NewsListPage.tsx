@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import NewCard from './NewCard';
 import Pagination from './Pagination';
 import Breadcrumb from './Breadcrumb';
@@ -22,11 +23,27 @@ interface NewsListPageProps {
 
 export default function NewsListPage({ config }: NewsListPageProps) {
   const { getContent } = useContent();
-  const [currentPage, setCurrentPage] = useState(1);
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const itemsPerPage = 10;
+  
+  // 从URL参数获取当前页面，默认为第1页
+  const [currentPage, setCurrentPage] = useState(() => {
+    const pageParam = searchParams.get('page');
+    return pageParam ? Math.max(1, parseInt(pageParam, 10)) : 1;
+  });
+
+  // 监听URL参数变化
+  useEffect(() => {
+    const pageParam = searchParams.get('page');
+    const urlPage = pageParam ? Math.max(1, parseInt(pageParam, 10)) : 1;
+    if (urlPage !== currentPage) {
+      setCurrentPage(urlPage);
+    }
+  }, [searchParams, currentPage]);
 
   // 计算分页数据
-  const { paginatedData, totalPages } = useMemo(() => {
+  const { paginatedData, totalPages, validCurrentPage } = useMemo(() => {
     // 获取数据
     const allData: Array<{
       id: number;
@@ -37,16 +54,64 @@ export default function NewsListPage({ config }: NewsListPageProps) {
       description: string;
       slug: string;
     }> = getContent(config.contentKey) || [];
-    const startIndex = (currentPage - 1) * itemsPerPage;
+    
+    // 按发布日期排序 (最新的在前)
+    const sortedData = [...allData].sort((a, b) => {
+      const dateA = new Date(`${a.publishedDate.year}-${a.publishedDate.month}-${a.publishedDate.day}`);
+      const dateB = new Date(`${b.publishedDate.year}-${b.publishedDate.month}-${b.publishedDate.day}`);
+      return dateB.getTime() - dateA.getTime(); // 降序排列 (最新在前)
+    });
+    
+    const totalPages = Math.ceil(sortedData.length / itemsPerPage);
+    
+    // 确保当前页面在有效范围内
+    const validCurrentPage = Math.min(Math.max(1, currentPage), Math.max(1, totalPages));
+    
+    const startIndex = (validCurrentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    const paginatedData = allData.slice(startIndex, endIndex);
-    const totalPages = Math.ceil(allData.length / itemsPerPage);
+    const paginatedData = sortedData.slice(startIndex, endIndex);
 
-    return { paginatedData, totalPages };
+    return { paginatedData, totalPages, validCurrentPage };
   }, [getContent, config.contentKey, currentPage, itemsPerPage]);
+
+  // 如果当前页面超出范围，自动修正
+  useEffect(() => {
+    if (validCurrentPage !== currentPage && totalPages > 0) {
+      const currentParams = new URLSearchParams(searchParams.toString());
+      if (validCurrentPage === 1) {
+        currentParams.delete('page');
+      } else {
+        currentParams.set('page', validCurrentPage.toString());
+      }
+      
+      const newUrl = currentParams.toString() 
+        ? `${window.location.pathname}?${currentParams.toString()}`
+        : window.location.pathname;
+      
+      router.replace(newUrl);
+      setCurrentPage(validCurrentPage);
+    }
+  }, [validCurrentPage, currentPage, totalPages, searchParams, router]);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
+    
+    // 更新URL参数
+    const currentParams = new URLSearchParams(searchParams.toString());
+    if (page === 1) {
+      // 如果是第一页，移除page参数保持URL简洁
+      currentParams.delete('page');
+    } else {
+      currentParams.set('page', page.toString());
+    }
+    
+    const newUrl = currentParams.toString() 
+      ? `${window.location.pathname}?${currentParams.toString()}`
+      : window.location.pathname;
+    
+    // 使用replace而不是push，避免在浏览器历史中创建过多条目
+    router.replace(newUrl);
+    
     // 滚动到页面顶部
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -97,7 +162,7 @@ export default function NewsListPage({ config }: NewsListPageProps) {
       {totalPages > 1 && (
         <div className="mt-16 flex justify-center">
           <Pagination
-            currentPage={currentPage}
+            currentPage={validCurrentPage}
             totalPages={totalPages}
             onPageChange={handlePageChange}
           />

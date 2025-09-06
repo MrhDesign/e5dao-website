@@ -2,6 +2,40 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import ViewCounter from './ViewCounter';
+
+// 工具函数：去除HTML标签并限制文本长度
+function stripHtmlTags(html: string, maxLength: number = 150): string {
+  if (!html) return '';
+  
+  // 移除HTML标签
+  const textContent = html.replace(/<[^>]*>/g, '');
+  
+  // 解码HTML实体
+  const decodedText = textContent
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&nbsp;/g, ' ');
+  
+  // 移除多余的空白字符
+  const cleanText = decodedText.replace(/\s+/g, ' ').trim();
+  
+  // 限制长度并添加省略号
+  if (cleanText.length > maxLength) {
+    // 避免在单词中间截断
+    const truncated = cleanText.substring(0, maxLength);
+    const lastSpace = truncated.lastIndexOf(' ');
+    if (lastSpace > maxLength * 0.8) { // 如果最后一个空格距离不太远，就在那里截断
+      return truncated.substring(0, lastSpace) + '...';
+    }
+    return truncated + '...';
+  }
+  
+  return cleanText;
+}
 
 interface NewCardProps {
   image: string;
@@ -26,6 +60,8 @@ const NewCard: React.FC<NewCardProps> = ({
   slug,
   linkType = 'news' // 默认为新闻类型
 }) => {
+  // 处理描述文本，去除HTML标签
+  const cleanDescription = stripHtmlTags(description, 120);
   const cardContent = (
     <>
       {/* web组件 */}
@@ -62,8 +98,18 @@ const NewCard: React.FC<NewCardProps> = ({
           </h2>
           {/* 描述文本 */}
           <p className="text-display line-clamp-2">
-            {description}
+            {cleanDescription}
           </p>
+          {/* 浏览量 */}
+          {slug && (
+            <div className="mt-auto pt-2">
+              <ViewCounter 
+                slug={slug}
+                className="text-gray-500 text-xs"
+                autoIncrement={false}
+              />
+            </div>
+          )}
         </div>
       </div>
 
@@ -95,8 +141,19 @@ const NewCard: React.FC<NewCardProps> = ({
           </div>
 
           <p className="text-display line-clamp-2">
-            {description}
+            {cleanDescription}
           </p>
+          
+          {/* 移动端浏览量 */}
+          {slug && (
+            <div className="mt-2">
+              <ViewCounter 
+                slug={slug}
+                className="text-gray-500 text-xs"
+                autoIncrement={false}
+              />
+            </div>
+          )}
         </div>
       </div>
     </>

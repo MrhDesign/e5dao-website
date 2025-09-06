@@ -75,7 +75,7 @@
    段落和文本样式
 ==================== */
 .rich-content p {
-  @apply mb-6 text-justify leading-relaxed;
+  @apply mb-6 leading-relaxed;
 }
 
 .rich-content p:last-child {

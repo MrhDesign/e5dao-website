@@ -171,7 +171,12 @@ async function enhanceCodeBlocks(container: HTMLElement): Promise<void> {
 async function enhanceImages(container: HTMLElement): Promise<void> {
   const images = container.querySelectorAll('img');
   
-  images.forEach((img) => {
+  images.forEach((img, index) => {
+    // 检查图片是否已经被增强过
+    if (img.parentNode && (img.parentNode as HTMLElement).classList?.contains('enhanced-image-wrapper')) {
+      return;
+    }
+    
     // 创建图片容器
     const imageWrapper = document.createElement('div');
     imageWrapper.className = 'enhanced-image-wrapper';
@@ -179,23 +184,27 @@ async function enhanceImages(container: HTMLElement): Promise<void> {
     // 图片懒加载
     img.loading = 'lazy';
     
-    // 添加图片标题（如果alt存在）
-    if (img.alt) {
-      const caption = document.createElement('p');
-      caption.className = 'image-caption';
-      caption.textContent = img.alt;
-      imageWrapper.appendChild(caption);
-    }
-    
     // 添加点击放大功能
     img.style.cursor = 'pointer';
-    img.addEventListener('click', () => {
+    img.addEventListener('click', (e) => {
+      e.preventDefault();
       openImageModal(img.src, img.alt || '');
     });
     
     // 包装原始图片
-    img.parentNode?.insertBefore(imageWrapper, img);
-    imageWrapper.appendChild(img);
+    const parentNode = img.parentNode;
+    if (parentNode) {
+      parentNode.insertBefore(imageWrapper, img);
+      imageWrapper.appendChild(img);
+      
+      // 添加图片标题（如果alt存在）- 在图片后面添加
+      if (img.alt && img.alt.trim()) {
+        const caption = document.createElement('p');
+        caption.className = 'image-caption';
+        caption.textContent = img.alt;
+        imageWrapper.appendChild(caption);
+      }
+    }
   });
 }
 
