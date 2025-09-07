@@ -1219,6 +1219,38 @@
           "image": "/images/PDetailsOverview/PDO-6.png",
           "alt": "State-of-the-art manufacturing facility"
         }
+      ],
+      "STPFeatures": [
+        {
+          "title": "Outstanding Weather Resistance",
+          "Description": "Corrosion-resistant to salt spray, acids, and alkalis; stable from -50°C to +120°C, reliable in all climates.",
+          "image": "/images/PDetailsOverview/STPFeatures01.png"
+        },
+        {
+          "title": "Integrated Structure",
+          "Description": "Seamless compression molding with reinforced ribs; eliminates stress points, increasing strength by 40%+.",
+          "image": "/images/PDetailsOverview/STPFeatures02.png"
+        },
+        {
+          "title": "Modular Versatility",
+          "Description": "Supports quick-release fittings, embedded rails, smart locks, and customizable coatings for diverse missions.",
+          "image": "/images/PDetailsOverview/STPFeatures03.png"
+        },
+        {
+          "title": "Superior Impact Protection",
+          "Description": "Multi-layer carbon fiber with military-grade damping; withstands extreme drops and collisions.",
+          "image": "/images/PDetailsOverview/STPFeatures04.png"
+        },
+        {
+          "title": "Extreme Lightweight",
+          "Description": "High-strength carbon fiber composite; only 1/3–1/2 the weight of metal cases, reducing load and boosting mobility.",
+          "image": "/images/PDetailsOverview/STPFeatures05.png"
+        },
+        {
+          "title": "Eco-Friendly Durability",
+          "Description": "Rust-free, aging-resistant, lifespan over 10 years, and 100% recyclable.",
+          "image": "/images/PDetailsOverview/STPFeatures06.png"
+        }
       ]
     },
     "customization": {

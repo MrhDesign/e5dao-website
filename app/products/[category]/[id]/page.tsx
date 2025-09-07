@@ -207,15 +207,35 @@ export default function ProductDetailPage() {
                     {/* 标准产品通用详情 */}
                     <div className="space-y-5">
 
-                      <div>
-                        <Image
-                          src={`/images/PDetailsOverview/STPFeatures01.png`}
-                          alt={`Standard Product Features Overview`}
-                          width={787}
-                          height={612}
-                          className="w-full h-full object-cover"
-                        />
+                      <p className="text-text-black leading-relaxed">
+                        Constructed with high-strength carbon fiber composites, the system features extreme lightweight, outstanding weather resistance, and integrated structural design. Its modular, multifunctional architecture supports rapid customization and expansion. Coupled with superior impact protection and eco-friendly long service life, it delivers reliable and efficient medical solutions for extreme environments in battlefield, disaster relief, and maritime emergency scenarios.
+                      </p>
+
+
+                      <div className='grid lg:grid-cols-3 grid-cols-2 lg:gap-5 gap-2.5 lg:px-30'>
+
+                        {/* 动态渲染STPFeatures数据 */}
+                        {(() => {
+                          const stpFeatures = getContent<any[]>('products.STPFeatures') || [];
+                          return stpFeatures.map((feature: any, index: number) => (
+                            <div key={index} className='relative aspect-[4/3] rounded-sm overflow-hidden'>
+                              <Image
+                                src={feature.image}
+                                alt={feature.title}
+                                width={787}
+                                height={612}
+                                className="w-full h-full object-cover"
+                              />
+                              <div className="absolute left-0 bottom-0 w-full bg-gradient-to-b from-fill-black/30 to-from-fill-black lg:p-5 p-2.5">
+                                <h2 className="lg:text-2xl text-xl font-semibold bg-gradient-to-r from-white to-[#76B91F] bg-clip-text text-transparent">{feature.title}</h2>
+                                <p className=" text-sm font-medium text-text-white">{feature.Description}</p>
+                              </div>
+                            </div>
+                          ));
+                        })()}
                       </div>
+
+
 
 
                       <p className="text-text-black leading-relaxed">
