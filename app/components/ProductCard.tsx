@@ -69,7 +69,7 @@ function ProductCard(props: ProductCardProps) {
     const category = categoriesData.find((cat: ProductCategory) => cat.id === categoryId);
     
     if (!category) {
-      console.warn(`Category not found for categoryId ${categoryId}`);
+      // 未找到分类时返回默认路径
       return '#';
     }
     
@@ -88,6 +88,9 @@ function ProductCard(props: ProductCardProps) {
             width={600}
             height={450}
             className="aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105"
+            priority={false}
+            loading="eager"
+            quality={75}
           />
         </div>
 
@@ -159,6 +162,9 @@ function ProductCard(props: ProductCardProps) {
             fill
             sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
             className="object-cover transition-transform duration-600 group-hover:scale-110"
+            priority={false}
+            loading="eager"
+            quality={75}
           />
         </div>
       </div>

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import ProductCard from '../../components/ProductCard';
 import StructuredData from '../../components/StructuredData';
 import { generatePageMetadata, PageType, generateStructuredData } from '../../../lib/global-metadata-generator';
+import { Product } from '../../../lib/types';
 import contentData from '../../../lib/content.json';
 
 // 生成元数据
@@ -163,16 +164,18 @@ export default function CommandSystemPage() {
         {/* 相关产品展示 */}
         <div className="flex flex-col lg:gap-10 gap-5">
             {(() => {
-              const productsData = ((contentData as Record<string, unknown>).products as {items: Array<{id: number; categoryId: number; productType: string}>})?.items || [];
+              const productsData = ((contentData as Record<string, unknown>).pages as Record<string, unknown>)?.products as {items: Array<Product>} | undefined;
+              const items = productsData?.items || [];
+              
               // 筛选出 command-system 分类的自研产品 (categoryId = 1 && productType = 'independent-rd')
-              const commandSystemProducts = productsData.filter((product: {id: number; categoryId: number; productType: string}) => 
+              const commandSystemProducts = items.filter((product: Product) => 
                 product.categoryId === 1 && product.productType === 'independent-rd'
               );
               
               return commandSystemProducts.map((product, index: number) => (
                 <ProductCard
                   key={`command-product-${product.id || index}`}
-                  product={product as unknown as import('@/lib/types').Product}
+                  product={product}
                   variant="solution"
                   className="w-full"
                 />

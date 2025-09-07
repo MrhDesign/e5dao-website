@@ -44,9 +44,8 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
       // 模拟API调用
       await new Promise(resolve => setTimeout(resolve, 2000));
       
-      // 这里应该调用实际的API
-      console.log('Form submitted:', formData);
-      
+      // TODO: 集成实际的表单提交API
+      // 模拟成功提交
       setSubmitStatus('success');
       // 重置表单
       setFormData({
@@ -56,13 +55,13 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
         company: '',
         message: ''
       });
-    } catch (error) {
-      console.error('Error submitting form:', error);
+    } catch {
+      // 错误处理
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
     }
-  }, [formData]);
+  }, []);
 
   return (
     <div className={`w-full max-w-lg ${className}`}>

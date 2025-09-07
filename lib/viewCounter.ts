@@ -17,8 +17,24 @@ export function getAllViewData(): Record<string, ViewData> {
   
   try {
     const data = localStorage.getItem(STORAGE_KEY);
-    return data ? JSON.parse(data) : {};
-  } catch {
+    if (!data) return {};
+    
+    // 验证JSON格式
+    const parsed = JSON.parse(data);
+    if (typeof parsed === 'object' && parsed !== null) {
+      return parsed;
+    }
+    
+    // 如果数据格式不正确，清除并返回空对象
+    console.warn('清理无效的浏览量数据');
+    localStorage.removeItem(STORAGE_KEY);
+    return {};
+  } catch (error) {
+    console.warn('解析浏览量数据出错，清理本地存储:', error);
+    // 清理损坏的数据
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch {}
     return {};
   }
 }
@@ -46,9 +62,21 @@ function hasViewedInCurrentSession(slug: string): boolean {
   
   try {
     const sessionData = sessionStorage.getItem(VIEW_SESSION_KEY);
-    const viewedSlugs = sessionData ? JSON.parse(sessionData) : [];
-    return viewedSlugs.includes(slug);
-  } catch {
+    if (!sessionData) return false;
+    
+    const viewedSlugs = JSON.parse(sessionData);
+    if (Array.isArray(viewedSlugs)) {
+      return viewedSlugs.includes(slug);
+    }
+    
+    // 如果数据格式不正确，清除并返回false
+    sessionStorage.removeItem(VIEW_SESSION_KEY);
+    return false;
+  } catch (error) {
+    console.warn('解析会话数据出错，清理会话存储:', error);
+    try {
+      sessionStorage.removeItem(VIEW_SESSION_KEY);
+    } catch {}
     return false;
   }
 }
@@ -59,14 +87,26 @@ function markViewedInCurrentSession(slug: string): void {
   
   try {
     const sessionData = sessionStorage.getItem(VIEW_SESSION_KEY);
-    const viewedSlugs = sessionData ? JSON.parse(sessionData) : [];
+    let viewedSlugs: string[] = [];
+    
+    if (sessionData) {
+      try {
+        const parsed = JSON.parse(sessionData);
+        if (Array.isArray(parsed)) {
+          viewedSlugs = parsed;
+        }
+      } catch {
+        // 如果解析失败，使用空数组
+        viewedSlugs = [];
+      }
+    }
     
     if (!viewedSlugs.includes(slug)) {
       viewedSlugs.push(slug);
       sessionStorage.setItem(VIEW_SESSION_KEY, JSON.stringify(viewedSlugs));
     }
-  } catch {
-    // 忽略存储错误
+  } catch (error) {
+    console.warn('标记会话浏览状态出错:', error);
   }
 }
 

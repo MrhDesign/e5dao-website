@@ -170,8 +170,8 @@ export default function Home() {
     const attemptAutoplay = async () => {
       try {
         await video.play();
-      } catch (error) {
-        console.log('Autoplay failed:', error);
+      } catch {
+        // 自动播放失败是正常情况，静默处理
       }
     };
 

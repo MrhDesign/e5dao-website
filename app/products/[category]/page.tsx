@@ -114,9 +114,9 @@ export default function ProductsPage() {
                       {/* 该分类的产品网格 - 只显示前4个 */}
                       <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 lg:gap-5 pt-5">
                         <ErrorBoundary>
-                          {category.products.slice(0, 4).map((product: Product, index: number) => (
+                          {category.products.slice(0, 4).map((product: Product) => (
                             <ProductCard
-                              key={`${category.slug}-${product.id || index}`}
+                              key={`product-${product.id}`}
                               product={product}
                               className="w-full"
                             />
@@ -141,9 +141,9 @@ export default function ProductsPage() {
                   {currentCategory.products.length > 0 ? (
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 lg:gap-5 pt-5">
                       <ErrorBoundary>
-                        {currentCategory.products.map((product: Product, index: number) => (
+                        {currentCategory.products.map((product: Product) => (
                           <ProductCard
-                            key={`${currentCategory.slug}-${product.id || index}`}
+                            key={`product-${product.id}`}
                             product={product}
                             className="w-full"
                           />
