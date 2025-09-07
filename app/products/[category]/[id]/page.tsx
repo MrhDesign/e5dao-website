@@ -206,6 +206,18 @@ export default function ProductDetailPage() {
 
                     {/* 标准产品通用详情 */}
                     <div className="space-y-5">
+
+                      <div>
+                        <Image
+                          src={`/images/PDetailsOverview/STPFeatures01.png`}
+                          alt={`Standard Product Features Overview`}
+                          width={787}
+                          height={612}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+
+
                       <p className="text-text-black leading-relaxed">
                         To guarantee outstanding reliability in extreme environments, each carbon fiber case undergoes rigorous quality and performance testing. All evaluations are conducted in accordance with international standards, covering impact resistance, scratch and abrasion resistance, immersion, high-altitude adaptability, vibration resistance, and flammability. These tests ensure superior protection and durability during transportation, storage, and field operations.
                       </p>
