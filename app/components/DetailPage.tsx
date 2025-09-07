@@ -7,7 +7,7 @@ import Image from 'next/image';
 import NewCard from './NewCard';
 import Breadcrumb, { BreadcrumbItem } from './Breadcrumb';
 import Button from './Button';
-import RichContentRenderer, { TOCItem } from './RichContentRenderer';
+import RichContentRenderer from './RichContentRenderer';
 import ShareButtons from './ShareButtons';
 import ViewCounter from './ViewCounter';
 import { SEOContentOptimizer } from '../../lib/seo-optimizer';
@@ -42,7 +42,6 @@ function generateBreadcrumbs(type: 'news' | 'application', title: string): Bread
 // 通用详情页组件
 export default function DetailPage({ slug, type }: DetailPageProps) {
   const content = getContentData(slug, type);
-  const [tocItems, setTocItems] = React.useState<TOCItem[]>([]);
 
   // 获取相关内容
   const isNews = type === 'news';
@@ -189,7 +188,6 @@ export default function DetailPage({ slug, type }: DetailPageProps) {
                 className="mb-8"
                 enhanceContent={true}
                 generateTOC={true}
-                onTOCGenerated={setTocItems}
               />
 
               {/* 分享按钮 - 简化版本 */}

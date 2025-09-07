@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import NewsListPage, { NewsListConfig } from '../../components/NewsListPage';
 
 const applicationsConfig: NewsListConfig = {
@@ -11,5 +12,9 @@ const applicationsConfig: NewsListConfig = {
 };
 
 export default function IndustryApplications() {
-  return <NewsListPage config={applicationsConfig} />;
+  return (
+    <Suspense fallback={<div className="flex justify-center items-center py-20">Loading...</div>}>
+      <NewsListPage config={applicationsConfig} />
+    </Suspense>
+  );
 }

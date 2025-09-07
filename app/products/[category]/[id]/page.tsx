@@ -216,8 +216,8 @@ export default function ProductDetailPage() {
 
                         {/* 动态渲染STPFeatures数据 */}
                         {(() => {
-                          const stpFeatures = getContent<any[]>('products.STPFeatures') || [];
-                          return stpFeatures.map((feature: any, index: number) => (
+                          const stpFeatures = getContent<Array<{title: string; Description: string; image: string}>>('products.STPFeatures') || [];
+                          return stpFeatures.map((feature, index: number) => (
                             <div key={index} className='relative aspect-[4/3] rounded-sm overflow-hidden'>
                               <Image
                                 src={feature.image}

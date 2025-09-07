@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import NewsListPage, { NewsListConfig } from '../../components/NewsListPage';
 
 const articlesConfig: NewsListConfig = {
@@ -11,5 +12,9 @@ const articlesConfig: NewsListConfig = {
 };
 
 export default function ArticlesList() {
-  return <NewsListPage config={articlesConfig} />;
+  return (
+    <Suspense fallback={<div className="flex justify-center items-center py-20">Loading...</div>}>
+      <NewsListPage config={articlesConfig} />
+    </Suspense>
+  );
 }

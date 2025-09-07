@@ -107,14 +107,16 @@ export function generateRegionalMetadata(
       ...baseMetadata.openGraph,
       locale: `${locale.code}_${regionConfig.country.substring(0, 2).toUpperCase()}`,
     },
-    other: {
-      ...baseMetadata.other,
-      'geo.region': regionConfig.country.substring(0, 2).toUpperCase(),
-      'geo.placename': regionConfig.country,
-      'currency': regionConfig.currency,
-      'business:contact_data:phone_number': regionConfig.phoneFormat,
-      'business:contact_data:hours': regionConfig.businessHours
-    }
+    other: Object.fromEntries(
+      Object.entries({
+        ...(baseMetadata.other || {}),
+        'geo.region': regionConfig.country.substring(0, 2).toUpperCase(),
+        'geo.placename': regionConfig.country,
+        'currency': regionConfig.currency,
+        'business:contact_data:phone_number': regionConfig.phoneFormat,
+        'business:contact_data:hours': regionConfig.businessHours
+      }).filter(([, value]) => value !== undefined)
+    )
   };
 }
 

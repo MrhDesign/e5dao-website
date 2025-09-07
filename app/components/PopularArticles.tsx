@@ -18,7 +18,7 @@ const PopularArticles: React.FC<PopularArticlesProps> = ({
   title = 'Popular Articles',
   showViewCount = true
 }) => {
-  const [popularArticles, setPopularArticles] = useState<Array<ViewData & { title: string; publishedDate?: any }>>([]);
+  const [popularArticles, setPopularArticles] = useState<Array<ViewData & { title: string; publishedDate?: { year: string; month: string; day: string } }>>([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {

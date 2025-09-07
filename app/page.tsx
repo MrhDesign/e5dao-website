@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, useEffect, useCallback, useMemo } from 'react';
+import { useRef, useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from './components/Button';
@@ -14,8 +14,6 @@ import type { Product, ApplicationItem } from '../lib/types';
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isMuted, setIsMuted] = useState(true);
-  const [canAutoplay, setCanAutoplay] = useState(true);
   const { getContent } = useContent();
 
 
@@ -168,14 +166,12 @@ export default function Home() {
     const video = videoRef.current;
     if (!video) return;
 
-    // 尝试自动播放，如果失败则显示播放按钮
+    // 尝试自动播放
     const attemptAutoplay = async () => {
       try {
         await video.play();
-        setCanAutoplay(true);
       } catch (error) {
         console.log('Autoplay failed:', error);
-        setCanAutoplay(false);
       }
     };
 
@@ -217,23 +213,7 @@ export default function Home() {
     };
   }, []);
 
-  const toggleMute = useCallback(() => {
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(videoRef.current.muted);
-    }
-  }, []);
 
-  const playVideo = useCallback(async () => {
-    if (videoRef.current) {
-      try {
-        await videoRef.current.play();
-        setCanAutoplay(true);
-      } catch (error) {
-        console.log('Manual play failed:', error);
-      }
-    }
-  }, []);
 
   return (
     <>

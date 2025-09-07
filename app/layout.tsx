@@ -5,7 +5,6 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import StructuredData from "./components/StructuredData";
 import { generatePageMetadata, PageType, generateStructuredData } from "../lib/global-metadata-generator";
-import { generateHreflangTags } from "../lib/i18n-seo";
 
 export const metadata: Metadata = {
   ...generatePageMetadata({

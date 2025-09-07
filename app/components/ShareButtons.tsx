@@ -15,11 +15,9 @@ export default function ShareButtons({
   description = '', 
   className = '' 
 }: ShareButtonsProps) {
-  const [isClient, setIsClient] = useState(false);
   const [canShare, setCanShare] = useState(false);
   
   useEffect(() => {
-    setIsClient(true);
     setCanShare(typeof navigator !== 'undefined' && 'share' in navigator);
   }, []);
   
@@ -49,17 +47,6 @@ export default function ShareButtons({
     }
   };
 
-  const copyToClipboard = async () => {
-    try {
-      if (navigator.clipboard) {
-        await navigator.clipboard.writeText(url);
-        // 简单的反馈，可以后续改为toast组件
-        alert('链接已复制到剪贴板');
-      }
-    } catch (error) {
-      console.error('Failed to copy link:', error);
-    }
-  };
 
   return (
     <div className={`share-buttons ${className}`}>

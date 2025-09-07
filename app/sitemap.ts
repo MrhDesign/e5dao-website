@@ -51,28 +51,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]
   
   // 解决方案页面
-  const solutionPages: MetadataRoute.Sitemap = (contentData.pages.solution?.categories || []).map((category: any) => ({
+  const solutionPages: MetadataRoute.Sitemap = (contentData.pages.solution?.categories || []).map((category: {id: number; title: string; slug: string}) => ({
     url: `${baseUrl}/solution/${category.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.9,
   }))
   
-  // 产品分类页面
-  const productCategoryPages: MetadataRoute.Sitemap = (contentData.products?.categories || []).map((category: any) => ({
+  // 产品分类页面  
+  const productCategoryPages: MetadataRoute.Sitemap = ((contentData as Record<string, unknown>).products as {categories: Array<{id: number; title: string; slug: string}>})?.categories?.map((category: {id: number; title: string; slug: string}) => ({
     url: `${baseUrl}/products/${category.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.8,
-  }))
+  })) || []
   
   // 产品详情页面
   const productPages: MetadataRoute.Sitemap = []
-  const products = contentData.products?.items || []
-  const categories = contentData.products?.categories || []
+  const products = ((contentData as Record<string, unknown>).products as {items: Array<{id: number; categoryId: number}>})?.items || []
+  const categories = ((contentData as Record<string, unknown>).products as {categories: Array<{id: number; title: string; slug: string}>})?.categories || []
   
-  products.forEach((product: any) => {
-    const category = categories.find((cat: any) => cat.id === product.categoryId)
+  products.forEach((product: {id: number; categoryId: number}) => {
+    const category = categories.find((cat: {id: number; title: string; slug: string}) => cat.id === product.categoryId)
     if (category) {
       productPages.push({
         url: `${baseUrl}/products/${category.slug}/${product.id}`,
@@ -84,7 +84,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   })
   
   // 新闻文章页面
-  const newsPages: MetadataRoute.Sitemap = (contentData.pages.news?.articles || []).map((article: any) => ({
+  const newsPages: MetadataRoute.Sitemap = (contentData.pages.news?.articles || []).map((article: {slug: string; publishedDate?: {year: string; month: string; day: string}}) => ({
     url: `${baseUrl}/news/articles/${article.slug}`,
     lastModified: article.publishedDate ? 
       new Date(`${article.publishedDate.year}-${article.publishedDate.month}-${article.publishedDate.day}`) :
@@ -94,7 +94,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
   
   // 行业应用页面
-  const applicationPages: MetadataRoute.Sitemap = (contentData.pages.news?.applications || []).map((app: any) => ({
+  const applicationPages: MetadataRoute.Sitemap = (contentData.pages.news?.applications || []).map((app: {slug: string; publishedDate?: {year: string; month: string; day: string}}) => ({
     url: `${baseUrl}/news/applications/${app.slug}`,
     lastModified: app.publishedDate ? 
       new Date(`${app.publishedDate.year}-${app.publishedDate.month}-${app.publishedDate.day}`) :

@@ -171,7 +171,7 @@ async function enhanceCodeBlocks(container: HTMLElement): Promise<void> {
 async function enhanceImages(container: HTMLElement): Promise<void> {
   const images = container.querySelectorAll('img');
   
-  images.forEach((img, index) => {
+  images.forEach((img) => {
     // 检查图片是否已经被增强过
     if (img.parentNode && (img.parentNode as HTMLElement).classList?.contains('enhanced-image-wrapper')) {
       return;
