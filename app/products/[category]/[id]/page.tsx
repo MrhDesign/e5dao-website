@@ -212,7 +212,7 @@ export default function ProductDetailPage() {
                       </p>
 
 
-                      <div className='grid lg:grid-cols-3 grid-cols-2 lg:gap-5 gap-2.5 lg:px-30'>
+                      <div className='grid lg:grid-cols-3 grid-cols-1 lg:gap-5 gap-2.5 lg:px-30'>
 
                         {/* 动态渲染STPFeatures数据 */}
                         {(() => {
