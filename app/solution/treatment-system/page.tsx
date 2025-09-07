@@ -47,12 +47,13 @@ export default function CommandSystemPage() {
     <div className="space-y-10">
       {/* Hero Section */}
       {MedicalTreatment?.hero?.image && (
-        <div className="relative h-50 md:h-100 mb-8 overflow-hidden">
+        <div className="relative mb-8 overflow-hidden">
           <Image
             src={MedicalTreatment.hero.image}
             alt={MedicalTreatment.hero.alt || 'Mobile Command Station System'}
-            fill
-            className="object-cover"
+            width={1920}
+            height={544}
+            className="object-cover h-50 md:h-100"
             priority
           />
         </div>

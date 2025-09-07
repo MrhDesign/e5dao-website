@@ -1,31 +1,30 @@
-import { Metadata } from 'next';
 import Image from 'next/image';
 import ProductCard from '../../components/ProductCard';
-import StructuredData from '../../components/StructuredData';
-import { generatePageMetadata, PageType, generateStructuredData } from '../../../lib/global-metadata-generator';
+import { SEO } from '../../../lib/seo';
 import { Product } from '../../../lib/types';
 import contentData from '../../../lib/content.json';
 
-// 生成元数据
-export const metadata: Metadata = generatePageMetadata({
-  title: "Carbon Fiber Mobile Command Post System - Advanced Tactical Solutions",
-  description: "Military-grade mobile command post system with carbon fiber construction. Rapid 5-minute deployment, EMI shielding, MIL-STD-810H certified. Professional tactical command solutions for defense and emergency response.",
-  keywords: [
-    "mobile command post",
-    "tactical command center", 
-    "military command system",
-    "carbon fiber command station",
-    "portable headquarters",
-    "field command unit",
-    "MIL-STD-810H certified",
-    "EMI shielding system",
-    "rapid deployment command"
-  ],
-  type: PageType.SOLUTION,
-  url: "/solution/command-system",
-  image: "/images/mobile-command-hero.png",
-  category: "Defense Solutions"
-});
+// 生成元数据 - 使用新的统一SEO系统
+export const metadata = SEO.metadata.solution(
+  "Carbon Fiber Mobile Command Post System",
+  "Military-grade mobile command post system with carbon fiber construction. Rapid 5-minute deployment, EMI shielding, MIL-STD-810H certified.",
+  {
+    url: "/solution/command-system",
+    image: "/images/mobile-command-hero.png",
+    category: "Defense Solutions",
+    keywords: [
+      "mobile command post",
+      "tactical command center", 
+      "military command system",
+      "carbon fiber command station",
+      "portable headquarters",
+      "field command unit",
+      "MIL-STD-810H certified",
+      "EMI shielding system",
+      "rapid deployment command"
+    ]
+  }
+);
 
 interface CommandSystemData {
   hero?: {
@@ -51,60 +50,17 @@ export default function CommandSystemPage() {
   // 直接从 contentData 获取数据
   const commandSystemData = contentData.pages.solution?.commandSystem as CommandSystemData;
 
-  // 生成结构化数据
-  const productStructuredData = generateStructuredData({
-    type: 'Product',
-    data: {
-      name: commandSystemData?.overview?.title || 'Carbon Fiber Mobile Command Post System',
-      description: commandSystemData?.overview?.content || 'Military-grade mobile command post system with rapid deployment capabilities',
-      category: 'Defense Equipment',
-      material: 'Carbon Fiber Composite',
-      offers: {
-        '@type': 'Offer',
-        availability: 'https://schema.org/InStock',
-        seller: {
-          '@type': 'Organization',
-          name: 'E5DAO'
-        }
-      },
-      additionalProperty: [
-        {
-          '@type': 'PropertyValue',
-          name: 'Deployment Time',
-          value: 'Under 5 minutes'
-        },
-        {
-          '@type': 'PropertyValue', 
-          name: 'Standard Compliance',
-          value: 'MIL-STD-810H & IP67'
-        },
-        {
-          '@type': 'PropertyValue',
-          name: 'EMI Shielding',
-          value: 'Fully shielded design'
-        }
-      ],
-      applicationCategory: [
-        'Military Operations',
-        'Emergency Response', 
-        'Disaster Management',
-        'Tactical Communications'
-      ]
-    }
-  });
-
   return (
-    <>
-      <StructuredData data={productStructuredData} />
-      <div className="space-y-10">
+    <div className="space-y-10">
       {/* Hero Section */}
       {commandSystemData?.hero?.image && (
-        <div className="relative h-50 md:h-100 mb-8 overflow-hidden">
+        <div className="relative mb-8 overflow-hidden">
           <Image
             src={commandSystemData.hero.image}
             alt={commandSystemData.hero.alt || 'Mobile Command Station System'}
-            fill
-            className="object-cover"
+            className="object-cover h-50 md:h-100"
+            width={1568}
+            height={672}
             priority
           />
         </div>
@@ -184,6 +140,5 @@ export default function CommandSystemPage() {
         </div>
       </div>
       </div>
-    </>
   );
 }
