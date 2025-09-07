@@ -153,11 +153,6 @@
           },
           "details": [
             {
-              "type": "heading",
-              "content": "Features",
-              "level": 3
-            },
-            {
               "type": "paragraph",
               "content": "Composed of modular LED display units, an adjustable support structure, and a mobile base: the stand utilizes lightweight carbon fiber materials, while the base case adopts a rotationally molded housing (optional carbon fiber case)."
             },
@@ -215,11 +210,6 @@
             "Power Consumption": "<=50W"
           },
           "details": [
-            {
-              "type": "heading",
-              "content": "Product Features",
-              "level": 3
-            },
             {
               "type": "list",
               "content": "Seat Structure: Constructed with carbon fiber and aluminum alloy (including seat), featuring a foldable design for easy storage:",
@@ -280,11 +270,6 @@
           },
           "details": [
             {
-              "type": "heading",
-              "content": "Product Features",
-              "level": 3
-            },
-            {
               "type": "paragraph",
               "content": "Directly connect display modules, agent units, conferencing units, and audio systems, enabling efficient full-chain encoding/decoding and transmission collaboration, achieving millisecond-level ultra-low latency for audio-video streaming."
             },
@@ -340,11 +325,6 @@
           },
           "details": [
             {
-              "type": "heading",
-              "content": "Product Features",
-              "level": 3
-            },
-            {
               "type": "paragraph",
               "content": "Centralized power management for efficient unified control. Leveraging an integrated platform, operators can monitor and allocate power in real-time to devices such as mobile display systems, audio-video control systems, and mobile agent modules from a single terminal. Through power management strategies and grouped linkage control, distributed device power is brought under unified management, enabling rational allocation of power resources, timely handling of power faults, and enhancing the operational efficiency and reliability of the command post."
             }
@@ -367,11 +347,6 @@
           },
           "details": [
             {
-              "type": "heading",
-              "content": "Product Features",
-              "level": 3
-            },
-            {
               "type": "paragraph",
               "content": "NO"
             }
@@ -393,11 +368,6 @@
             "data": "NO"
           },
           "details": [
-            {
-              "type": "heading",
-              "content": "Product Features",
-              "level": 3
-            },
             {
               "type": "paragraph",
               "content": "NO"

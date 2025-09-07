@@ -117,12 +117,12 @@ export default function ProductDetailPage() {
               </>
             ) : (
               <>
-                {/* 标准产品：显示规格与类别 */}
+                {/* 标准产品：显示规格与描述 */}
                 <h1 className="headline1 text-text-brand mb-2">
                   {'model' in product ? product.model : 'Product Model'}
                 </h1>
-                <div className="text-display">
-                  <p>{'description' in product ? product.description : ''}</p>
+                <div className="lg:text-lg text-base text-text-white font-semibold">
+                  <span className='py-1.5 px-2.5 bg-fill-brand rounded-sm'>{'description' in product ? product.description : ''}</span>
                 </div>
 
                 {/* 标准产品显示快速规格信息 */}
