@@ -272,8 +272,8 @@ export default function Home() {
             className='w-full md:aspect-[16/5] aspect-[440/280] bg-contain bg-no-repeat md:bg-[url(/images/Homehero-wb.png)] bg-[url(/images/Homehero-mb.png)] lg:pt-15 lg:pl-15 md:pt-10 md:pl-10 p-5'
           >
             <div className='lg:w-10/12 w-full md:px-10 md:py-5 p-2.5 bg-fill-black/40  text-text-white md:space-y-5 space-x-2.5'>
-              <h1 className='2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-black italic uppercase'>Bringing High-Performance Composites to the World</h1>
-              <p className='2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-base'>Professional solutions serving aerospace, defense, medical, emergency rescue, and advanced transportation industries</p>
+              <h1 className='2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-black italic uppercase'>Advancing the World with High-Performance Composites</h1>
+              <p className='2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-base'>Customized Solutions for Aerospace, Defense, Medical, Emergency Response, and Advanced Transportation</p>
             </div>
           </div>
 
