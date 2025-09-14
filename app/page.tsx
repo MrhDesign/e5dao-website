@@ -17,20 +17,23 @@ export default function Home() {
   const { getContent } = useContent();
 
 
-  // 获取产品数据，按3个分类各显示4个产品
+  // 获取产品数据，按3个分类各显示4个产品，保留分类信息
   const homeProductsData = useMemo(() => {
     const productsData = getContent<Product[]>('products.items') || [];
     const categories = getContent<Array<{ id: number, title: string, slug: string }>>('products.categories') || [];
 
-    const allSelectedProducts: Product[] = [];
-    categories.slice(0, 3).forEach((category) => {
+    // 返回分类及其产品的结构
+    const categorizedProducts = categories.slice(0, 3).map((category) => {
       const categoryProducts = productsData
         .filter((product: Product) => product.categoryId === category.id)
         .slice(0, 4);
-      allSelectedProducts.push(...categoryProducts);
+      return {
+        category,
+        products: categoryProducts
+      };
     });
 
-    return allSelectedProducts;
+    return categorizedProducts;
   }, [getContent]);
 
   // 获取行业应用数据，首页显示4个
@@ -393,8 +396,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 行业案例展示 */}
-        <section className="lg:px-30 lg:pb-10 lg:pt-0 bg-fill-two p-5">
+        {/* 行业案例展示，暂时取消 */}
+        {/* <section className="lg:px-30 lg:pb-10 lg:pt-0 bg-fill-two p-5">
           <div className="flex flex-col">
             <h1 className="block lg:hidden headline1 leading-10 pb-2.5">Industry Application</h1>
             <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-x-5 lg:gap-y-0 gap-y-5">
@@ -414,17 +417,28 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section className='lg:px-30 lg:py-20 px-5 py-10 bg-fill-three'>
           <h1 className="headline1 leading-10 lg:mb-8 mb-2.5 lg:text-left">Products</h1>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 lg:gap-10">
-            {homeProductsData.map((product, index) => (
-              <ProductCard
-                key={product.id || index}
-                product={product}
-                className="product-card w-full"
-              />
+          <div className="space-y-10">
+            {homeProductsData.map((categoryData) => (
+              <div key={categoryData.category.id}>
+                {/* 分类标题 */}
+                <h2 className="lg:text-3xl text-lg font-semibold mb-5 text-text-primary">
+                  {categoryData.category.title}
+                </h2>
+                {/* 该分类下的产品网格 */}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 lg:gap-10">
+                  {categoryData.products.map((product, index) => (
+                    <ProductCard
+                      key={product.id || index}
+                      product={product}
+                      className="product-card w-full"
+                    />
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
           {/* 查看更多按钮 */}
