@@ -32,7 +32,7 @@ function generateBreadcrumbs(type: 'news' | 'application', title: string): Bread
   } else {
     return [
       { label: 'News', href: '/news' },
-      { label: 'Articles', href: '/news/articles' },
+      // { label: 'Articles', href: '/news/articles' },
       { label: title, isCurrentPage: true }
     ];
   }

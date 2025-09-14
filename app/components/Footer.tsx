@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div>
+          {/* <div>
             <Link
               href="/news"
               className="block  hover:text-text-black transition-colors"
@@ -75,14 +75,16 @@ const Footer: React.FC = () => {
               >
                 articles
               </Link>
+              隐藏 applications 链接但保留备用
               <Link
                 href="/news/applications"
                 className="block  hover:text-text-black transition-colors"
               >
                 Industry Applications
               </Link>
+             
             </div>
-          </div>
+          </div> */}
 
           <div>
             <Link

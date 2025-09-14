@@ -4,7 +4,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import NewCard from './NewCard';
 import Pagination from './Pagination';
-import Breadcrumb from './Breadcrumb';
+// import Breadcrumb from './Breadcrumb';
 import useContent from '../../lib/useContent';
 
 export interface NewsListConfig {
@@ -117,22 +117,22 @@ export default function NewsListPage({ config }: NewsListPageProps) {
   };
 
   // 面包屑导航数据
-  const breadcrumbItems = [
-    { label: 'News', href: '/news', position: 1 },
-    { label: config.breadcrumbLabel, position: 2, isCurrentPage: true }
-  ];
+  // const breadcrumbItems = [
+  //   { label: 'News', href: '/news', position: 1 },
+  //   { label: config.breadcrumbLabel, position: 2, isCurrentPage: true }
+  // ];
 
   return (
     <section className='lg:px-30 lg:pb-20 p-5 bg-fill-two lg:process-section'>
       {/* 导航面包屑 */}
-      <div className="hidden lg:block py-5">
+      {/* <div className="hidden lg:block py-5">
         <Breadcrumb
           items={breadcrumbItems}
           separator="slash"
           enableStructuredData={true}
           className="text-gray-600"
         />
-      </div>
+      </div> */}
 
       {/* 页面标题和统计 */}
 

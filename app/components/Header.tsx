@@ -50,10 +50,10 @@ export default function Header() {
     { 
       name: getContent<string>('navigation.news'), 
       href: '/news',
-      submenu: [
-        { name: 'Articles', href: '/news/articles' },
-        { name: 'Industry Applications', href: '/news/applications' }
-      ]
+      // submenu: [
+      //   { name: 'Articles', href: '/news/articles' }
+      //   { name: 'Industry Applications', href: '/news/applications' } // 隐藏但保留备用
+      // ]
     },
     { name: getContent<string>('navigation.aboutUs'), href: '/aboutUs' }
   ], [getContent, solutionCategories, productCategories]);
@@ -90,12 +90,14 @@ export default function Header() {
     if (!pathname) return false;
     
     if (pathname === item.href) return true;
-    if (!item.submenu) return false;
     
     // 检查是否在子页面中
     if (item.href === '/products/all' && pathname.startsWith('/products')) return true;
     if (item.href === '/news' && pathname.startsWith('/news')) return true;
     if (item.href === '/solution/command-system' && pathname.startsWith('/solution')) return true;
+    
+    // 如果没有子菜单，上面的检查已经足够
+    if (!item.submenu) return false;
     
     // 检查子菜单项的匹配，包括动态路由
     return item.submenu.some((subItem: SubmenuItem) => {
