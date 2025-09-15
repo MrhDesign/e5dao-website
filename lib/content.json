@@ -599,13 +599,13 @@
           "id": 29,
           "categoryId": 2,
           "productType": "standard",
-          "image": "/images/E5D/E5D-866RC-01.png",
-          "alt": "E5D-866RC-01 First Aid Case",
-          "model": "E5D-866RC-01",
+          "image": "/images/E5D/E5D-866FAC-01.png",
+          "alt": "E5D-866FAC-01 First Aid Case",
+          "model": "E5D-866FAC-01",
           "description": "First Aid Case",
           "standardCategory": "Functional Case Series",
           "gallery": [
-            "/images/E5D/E5D-866RC-02.png"
+            "/images/E5D/E5D-866FAC-02.png"
           ],
           "specifications": {
             "External Dimensions": "L800xW600xH600mm",
@@ -1272,7 +1272,7 @@
           "image": "/images/Sports-Equipment/E5D-SSH-01.png",
           "alt": "E5D-Standard Safety Helmet",
           "model": "E5D-SSH",
-          "description": "Ballistic Riot Shield",
+          "description": "Standard Safety Helmet",
           "standardCategory": "Sports Equipment",
           "gallery": [
             "/images/Sports-Equipment/E5D-SSH-02.png",
