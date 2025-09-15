@@ -22,8 +22,8 @@ export default function Home() {
     const productsData = getContent<Product[]>('products.items') || [];
     const categories = getContent<Array<{ id: number, title: string, slug: string }>>('products.categories') || [];
 
-    // 返回分类及其产品的结构
-    const categorizedProducts = categories.slice(0, 3).map((category) => {
+    // 返回分类及其产品的结构 - 显示所有4个分类
+    const categorizedProducts = categories.map((category) => {
       const categoryProducts = productsData
         .filter((product: Product) => product.categoryId === category.id)
         .slice(0, 4);

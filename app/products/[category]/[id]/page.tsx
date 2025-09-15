@@ -206,11 +206,10 @@ export default function ProductDetailPage() {
 
                     {/* 标准产品通用详情 */}
                     <div className="space-y-5">
-
+                      <h2 className='lg:text-2xl text-lg font-medium'>Product Features</h2>
                       <p className="text-text-black leading-relaxed">
-                        Constructed with high-strength carbon fiber composites, the system features extreme lightweight, outstanding weather resistance, and integrated structural design. Its modular, multifunctional architecture supports rapid customization and expansion. Coupled with superior impact protection and eco-friendly long service life, it delivers reliable and efficient medical solutions for extreme environments in battlefield, disaster relief, and maritime emergency scenarios.
+                        Constructed with high-strength carbon fiber composites, the system offers extreme lightweight, exceptional weather resistance, and superior impact protection. It remains stable and reliable under all climate conditions from -50°C to +120°C, with resistance to salt spray, acids, and alkalis. The integrated circular structure, reinforced with rib beams, enhances strength by over 40%. Its modular organizer supports quick-release kits, smart locks, and customizable coatings to meet diverse mission needs. The multilayer military-grade shock-absorbing carbon fiber shell delivers outstanding impact protection while weighing only one-third to one-half of a metal enclosure, significantly reducing load. With a lifespan of up to 10 years, it is rust-free, anti-aging, and 100% recyclable, ensuring both efficiency and environmental sustainability.
                       </p>
-
 
                       <div className='grid lg:grid-cols-3 grid-cols-1 lg:gap-5 gap-2.5 lg:px-30'>
 

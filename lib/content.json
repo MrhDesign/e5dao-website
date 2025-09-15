@@ -1186,6 +1186,142 @@
             "Net Weight": "16kg (including latches and accessories)",
             "Material": "Carbon Rod + Carbon Fiber Composite"
           }
+        },
+        {
+          "id": 57,
+          "categoryId": 4,
+          "productType": "standard",
+          "image": "/images/Sports-Equipment/E5D-Surfboard-01.png",
+          "alt": "E5D-Surfboard",
+          "model": "E5D-Surfboard",
+          "description": "Surfboard",
+          "standardCategory": "Sports Equipment",
+          "gallery": [
+            "/images/Sports-Equipment/E5D-Surfboard-02.png",
+            "/images/Sports-Equipment/E5D-Surfboard-03.png",
+            "/images/Sports-Equipment/E5D-Surfboard-04.png"
+          ],
+          "specifications": {
+            "Material": "Carbon Fiber Reinforced Polymer (CFRP) + High-Density EPS Foam Core",
+            "Dimensions": "Length: 6'0\" - 6'6\"; Width: 18\" - 20\" ; Thickness: 2.25\" - 2.75\"",
+            "Weight": "2.5 - 3.5 kg (approx. 20-30% lighter than traditional fiberglass boards)",
+            "Buoyancy": "Suitable for surfers weighing 50-90 kg",
+            "Fin System": "FCS II / Future Detachable Tri-Fin System",
+            "Strength": "Tensile Strength >=3500 MPa",
+            "Customizable Options": "Dimensions ; Surface Patterns/Colors; Fin System Configuration"
+          },
+          "details": [
+            {
+              "type": "paragraph",
+              "content": "Ultra-Light and High-Strength:30%~50% lighter than traditional PU/PE boards, significantly reducing drag resistance, enabling faster acceleration, and meeting high-performance surfing demands. Carbon fiber + epoxy resin composite structure increases bending strength by over 2 times, eliminating the risk of breakage."
+            },
+            {
+              "type": "paragraph",
+              "content": "Fluid Dynamics Optimization:Low-friction carbon fiber surface reduces viscous drag, boosting speed by 15%~20% compared to traditional boards. Precise buoyancy distribution controlled by carbon fiber layup density, adapting to various body types and wave conditions."
+            },
+            {
+              "type": "paragraph",
+              "content": "Exceptional Dynamic Response:High-modulus carbon fiber layup provides instantaneous rebound force, delivering highly responsive board feedback, ideal for aggressive turns and aerial maneuvers. Adjustable stiffness design via different carbon fiber weave directions (unidirectional/twill) to match wave types and riding styles."
+            },
+            {
+              "type": "paragraph",
+              "content": "Superior Weather Resistance:UV-resistant and salt-corrosion resistant, unaffected by seawater immersion or prolonged sun exposure, ensuring no deformation or cracking over time. Temperature stability: Consistent performance from -10℃ to 60℃, suitable for diverse global marine environments."
+            },
+            {
+              "type": "paragraph",
+              "content": "Integrated Molding Process:Vacuum bag and autoclave molding eliminates bubbles and weak points, creating a seamless shell to minimize water flow turbulence. Customized reinforcement ribs at critical areas (e.g., foot positions, fin boxes) for balanced strength and weight."
+            },
+            {
+              "type": "paragraph",
+              "content": "Long Lifespan and Eco-Friendly:Excellent fatigue resistance: Withstands repeated flexing without deformation, offering a lifespan over 3 times that of standard surfboards. Recyclable materials: Degradable epoxy resin system aligns with sustainable environmental principles."
+            }
+          ]
+        },
+        {
+          "id": 58,
+          "categoryId": 4,
+          "productType": "standard",
+          "image": "/images/Sports-Equipment/E5D-BRS-01.png",
+          "alt": "E5D-ballistic riot shield",
+          "model": "E5D-BRS",
+          "description": "Ballistic Riot Shield",
+          "standardCategory": "Sports Equipment",
+          "gallery": [
+            "/images/Sports-Equipment/E5D-BRS-02.png",
+            "/images/Sports-Equipment/E5D-BRS-03.png"
+          ],
+          "specifications": {
+            "Material": "High-Strength Carbon Fiber Composite",
+            "Dimensions": "Standard: 900 x 500 mm; Large: 1200 x 600 mm; Thickness: 10 - 18 mm",
+            "Weight": "2.5 - 5.5 kg (approx. 40-60% lighter than traditional metal shields)",
+            "Handle System": "Ergonomic design, optional dual-hand/single-hand grip; High-strength nylon straps, non-slip rubber grip",
+            "Surface Finish": "Matte/Glossy coating, wear-resistant and scratch-resistant",
+            "Customizable Options": "size/thickness; Protection Level (IIIA / III / IV); Surface coating and camouflage patterns; "
+          },
+          "details": [
+            {
+              "type": "paragraph",
+              "content": "The carbon fiber shield is made of high-strength carbon fiber composite materials, offering advantages such as lightweight design, impact resistance, and superior protection. Compared with traditional metal protective shields, its weight is reduced by 40–60%, significantly enhancing mobility and durability while ensuring reliable protection. The product is ergonomically designed to support multiple tactical applications and can be widely used in security, law enforcement, counter-terrorism, and military operations."
+            }
+          ]
+        },
+        {
+          "id": 59,
+          "categoryId": 4,
+          "productType": "standard",
+          "image": "/images/Sports-Equipment/E5D-SSH-01.png",
+          "alt": "E5D-Standard Safety Helmet",
+          "model": "E5D-SSH",
+          "description": "Ballistic Riot Shield",
+          "standardCategory": "Sports Equipment",
+          "gallery": [
+            "/images/Sports-Equipment/E5D-SSH-02.png",
+            "/images/Sports-Equipment/E5D-SSH-03.png",
+            "/images/Sports-Equipment/E5D-SSH-04.png"
+          ],
+          "specifications": {
+            "Material": "High-Strength Polycarbonate (PC) or Engineering Plastic Composite",
+            "Weight": "350 - 450 g, lightweight for comfortable long-term wear",
+            "Size": "Fits head circumference 52 - 62 cm, adjustable inner liner",
+            "Impact Absorption": "Inner cushioning layer effectively absorbs impact energy",
+            "Ventilation": "Multiple ventilation holes enhance airflow, reducing stuffiness",
+            "Customizable Options": "Colors and surface markings (company logo, reflective strips); Additional accessories; Adjustable size and inner liner range"
+          },
+          "details": [
+            {
+              "type": "paragraph",
+              "content": "The standard safety helmet is made of high-strength composite materials, offering advantages such as lightweight design, impact resistance, and penetration protection, while meeting international safety standards. Ergonomically designed for comfortable wear, it effectively reduces the risk of head injuries. It is suitable for construction sites, industrial production, transportation, warehousing, logistics, and other high-risk work environments."
+            }
+          ]
+        },
+        {
+          "id": 60,
+          "categoryId": 4,
+          "productType": "standard",
+          "image": "/images/Sports-Equipment/E5D-SC-01.png",
+          "alt": "E5D-Structural Component",
+          "model": "E5D-SC",
+          "description": "Structural Component",
+          "standardCategory": "Sports Equipment",
+          "gallery": [
+            "/images/Sports-Equipment/E5D-SC-02.png",
+            "/images/Sports-Equipment/E5D-SC-03.png",
+            "/images/Sports-Equipment/E5D-SC-04.png"
+          ],
+          "specifications": {
+            "Material": "High-Strength Carbon Fiber Reinforced Polymer (CFRP)",
+            "Manufacturing Process": "Molding; Vacuum Bagging; Automated Fiber Placement (AFP) optional",
+            "Dimensions": "Customizable based on design, typical panel thickness 1 - 20 mm, capable of supporting complex geometries",
+            "Mechanical Properties": "Tensile Strength: >=800 MPa; Compressive Strength: >=600 MPa; Flexural Strength: >=700 MPa; Modulus of Elasticity: >=60 GPa",
+            "Weight": "50-70% lighter than equivalent volume aluminum",
+            "Customizable Options": "Dimensions, thickness, and geometry; Layup method, fiber orientation, and reinforcement material type; Surface color, coating, and markings"
+          },
+          "details": [
+            {
+              "type": "paragraph",
+              "content": "High-Strength Carbon Fiber Reinforced Polymer (CFRP) products are engineered using advanced manufacturing processes (molding, vacuum bagging, and optional Automated Fiber Placement) for high-performance applications. With exceptional mechanical properties—Tensile Strength >=800 MPa, Compressive Strength >=600 MPa, Flexural Strength >=700 MPa—and a weight 50-70% lighter than equivalent aluminum, these products are ideal for aerospace, sports equipment, and industrial components. Featuring a panel thickness of 1-20 mm, customizable complex geometries, fiber orientations, and surface coatings, they meet diverse requirements. Offering superior corrosion resistance and durability, these products provide a lightweight, robust, and eco-friendly solution."
+            }
+          ]
         }
       ],
       "standardProductOverview": [
