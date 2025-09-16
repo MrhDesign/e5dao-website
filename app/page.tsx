@@ -311,11 +311,12 @@ export default function Home() {
         {/* 指挥系统解决方案模块 */}
         <section className='bg-fill-three solution-card'>
           <div className='px-30 py-20 lg:flex hidden gap-10 justify-between'>
-            <div className='w-[660px] h-[660px] image-hover-zoom solution-image'>
+            <div className='w-[660px] h-[660px] relative image-hover-zoom solution-image'>
               <Image
                 src={commandSystemHeroImage}
                 alt={commandSystemHeroAlt}
                 fill
+                sizes="100vw, 50vw"
                 className="w-full h-auto object-cover  lg:pr-0 pr-20 rounded-sm"
                 priority
               />
@@ -355,11 +356,12 @@ export default function Home() {
         {/* 医疗系统解决方案模块 */}
         <section className='bg-fill-two'>
           <div className='px-30 py-20 lg:flex hidden gap-10 justify-between'>
-            <div className='lg:order-1 w-[660px] h-[660px] image-hover-zoom solution-image'>
+            <div className='lg:order-1 w-[660px] relative h-[660px] image-hover-zoom solution-image'>
               <Image
                 src={medicalTreatmentHeroImage}
                 alt={medicalTreatmentHeroAlt}
                 fill
+                sizes="100vw, 50vw"
                 className="w-full h-auto object-cover  lg:pr-0 pr-20 rounded-sm"
                 priority
               />

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Icon from './Icon';
+import SocialMedia from './SocialMedia';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -43,19 +44,25 @@ const Footer: React.FC = () => {
                 href="/products/command-system"
                 className="block  hover:text-text-black transition-colors"
               >
-                Command System Products
+                Carbon Fiber Modular Mobile Command Post System
               </Link>
               <Link
                 href="/products/treatment-system"
                 className="block  hover:text-text-black transition-colors"
               >
-                Medical Treatment Products
+                Modular Containerized Medical Treatment System
               </Link>
               <Link
                 href="/products/universal-gear"
                 className="block  hover:text-text-black transition-colors"
               >
                 Universal Gear Series
+              </Link>
+              <Link
+                href="/products/Sports-Equipment"
+                className="block  hover:text-text-black transition-colors"
+              >
+                Sports-Equipment
               </Link>
             </div>
           </div>
@@ -97,7 +104,7 @@ const Footer: React.FC = () => {
 
               <div className="flex items-center gap-3">
                 <Icon name="phone-line" className=" flex-shrink-0" />
-                <span className="">Tel: +65-6xxx-xxxx</span>
+                <span className="">Tel: +65 62436371</span>
               </div>
               <div className="flex items-center gap-3">
                 <Icon name="mail-line" className=" flex-shrink-0" />
@@ -108,13 +115,22 @@ const Footer: React.FC = () => {
                   Email: info@e5dao.com
                 </a>
               </div>
-              <div className="flex items-center gap-3">
-                <Icon name="building-2-line" className=" flex-shrink-0" />
-                <span className="">Address: Singapore</span>
+              <div className="">
+                <Icon name="building-2-line" className=" flex-shrink-0 mr-3" />
+                <span className="">Address: 2 Bukit Batok Street 24 #05-10 Skytech Singapore S659480</span>
+
               </div>
             </div>
           </div>
+
+          {/* Social Media Section */}
+          <div>
+            <h3 className="text-lg font-semibold text-text-black lg:mb-5 mb-2.5">Follow us</h3>
+            <SocialMedia showLabel={true} iconSize="medium" className='hidden lg:grid grid-cols-4 grid-row-2 gap-5 justify-items-center' />
+            <SocialMedia showLabel={true} iconSize="small" className='grid lg:hidden grid-cols-4 grid-row-2 gap-5 justify-items-center' />
+          </div>
         </div>
+
 
         {/* Bottom Section */}
         <div className="lg:py-10 py-5 border-t border-border-one text-center">

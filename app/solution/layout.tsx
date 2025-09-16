@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useContent } from '@/lib/useContent';
 import NewCard from '../components/NewCard';
-import type { ApplicationItem } from '@/lib/types';
+import type { NewsItem } from '@/lib/types';
 
 export default function SolutionLayout({
     children,
@@ -66,24 +66,24 @@ export default function SolutionLayout({
                 </div>
             </div>
 
-            {/* Industry Application Section */}
+            {/* Related News Section */}
             <div className="lg:px-30 px-5">
                 <div className="flex flex-col lg:py-20 py-5">
-                    <h1 className="headline1 leading-10 lg:pb-10 pb-2.5">Industry Application</h1>
+                    <h1 className="headline1 leading-10 lg:pb-10 pb-2.5">Related News</h1>
                     <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-x-5 lg:gap-y-0 gap-y-5">
                         {useMemo(() => {
-                            const applications = getContent<ApplicationItem[]>('news.applications') || [];
-                            return applications.slice(0, 4).map((application: ApplicationItem) => (
+                            const articles = getContent<NewsItem[]>('news.articles') || [];
+                            return articles.slice(0, 4).map((article: NewsItem) => (
                                 <NewCard
-                                    key={application.id}
-                                    image={application.image}
-                                    alt={application.alt}
-                                    year={application.publishedDate?.year}
-                                    date={`${application.publishedDate?.month}/${application.publishedDate?.day}`}
-                                    title={application.title}
-                                    description={application.description}
-                                    slug={application.slug}
-                                    linkType="application"
+                                    key={article.id}
+                                    image={article.image}
+                                    alt={article.alt}
+                                    year={article.publishedDate?.year}
+                                    date={`${article.publishedDate?.month}/${article.publishedDate?.day}`}
+                                    title={article.title}
+                                    description={article.description}
+                                    slug={article.slug}
+                                    linkType="news"
                                     className="news-card"
                                 />
                             ));

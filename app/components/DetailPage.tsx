@@ -8,7 +8,7 @@ import NewCard from './NewCard';
 import Breadcrumb, { BreadcrumbItem } from './Breadcrumb';
 import Button from './Button';
 import RichContentRenderer from './RichContentRenderer';
-import ShareButtons from './ShareButtons';
+// import ShareButtons from './ShareButtons';
 import ViewCounter from './ViewCounter';
 import { SEOContentOptimizer } from '../../lib/seo-optimizer';
 import { getContentData } from '../../lib/metadata-generator';
@@ -191,14 +191,14 @@ export default function DetailPage({ slug, type }: DetailPageProps) {
               />
 
               {/* 分享按钮 - 简化版本 */}
-              <div className="pt-8 border-t border-gray-200">
+              {/* <div className="pt-8 border-t border-gray-200">
                 <ShareButtons
                   url={currentUrl}
                   title={content.title}
                   description={content.description}
                   className=""
                 />
-              </div>
+              </div> */}
             </div>
           </div>
         </main>
