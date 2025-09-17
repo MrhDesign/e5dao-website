@@ -31,13 +31,13 @@ const socialLinks: SocialLink[] = [
   },
     {
     name: 'WhatsApp',
-    href: 'https://wa.me/6562436371',
+    href: 'https://wa.me/qr/CL6FJ2HS4OONI1',
     icon: '/images/Social-icon/Whats App.png',
     ariaLabel: 'Contact us on WhatsApp'
   },
     {
     name: 'X',
-    href: 'https://www.x.com/e5dao',
+    href: 'https://x.com/ruijiang418505?s=21',
     icon: '/images/Social-icon/X.png',
     ariaLabel: 'Follow us on X'
   },
