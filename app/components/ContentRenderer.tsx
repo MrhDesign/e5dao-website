@@ -25,7 +25,7 @@ export default function ContentRenderer({ sections, className = "" }: ContentRen
         const headingStyles = {
           1: 'text-3xl font-bold text-text-brand',
           2: 'text-2xl font-semibold text-text-brand',
-          3: 'text-xl font-semibold text-text-brand',
+          3: 'text-xl font-semibold ',
           4: 'text-lg font-medium text-text-black'
         };
         

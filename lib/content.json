@@ -1199,7 +1199,9 @@
           "gallery": [
             "/images/Sports-Equipment/E5D-Surfboard-02.png",
             "/images/Sports-Equipment/E5D-Surfboard-03.png",
-            "/images/Sports-Equipment/E5D-Surfboard-04.png"
+            "/images/Sports-Equipment/E5D-Surfboard-04.png",
+            "/images/Sports-Equipment/E5D-Surfboard-05.png",
+            "/images/Sports-Equipment/E5D-Surfboard-06.png"
           ],
           "specifications": {
             "Material": "Carbon Fiber Reinforced Polymer (CFRP) + High-Density EPS Foam Core",
@@ -1212,33 +1214,78 @@
           },
           "details": [
             {
-              "type": "paragraph",
-              "content": "Ultra-Light and High-Strength:30%~50% lighter than traditional PU/PE boards, significantly reducing drag resistance, enabling faster acceleration, and meeting high-performance surfing demands. Carbon fiber + epoxy resin composite structure increases bending strength by over 2 times, eliminating the risk of breakage."
+              "type": "heading",
+              "level":4,
+              "content": "Application Analysis"
             },
             {
               "type": "paragraph",
-              "content": "Fluid Dynamics Optimization:Low-friction carbon fiber surface reduces viscous drag, boosting speed by 15%~20% compared to traditional boards. Precise buoyancy distribution controlled by carbon fiber layup density, adapting to various body types and wave conditions."
+              "content": "Designed for professional surfing sports and premium water leisure activities, this board delivers ultimate performance for competitive surfers seeking speed and maneuverability, while also providing lightweight durability for recreational users."
+            },
+              {
+              "type": "heading",
+              "level":4,
+              "content": "Advantages"
             },
             {
               "type": "paragraph",
-              "content": "Exceptional Dynamic Response:High-modulus carbon fiber layup provides instantaneous rebound force, delivering highly responsive board feedback, ideal for aggressive turns and aerial maneuvers. Adjustable stiffness design via different carbon fiber weave directions (unidirectional/twill) to match wave types and riding styles."
+              "content": "(1) Ultra-lightweight & High Strength:The composite structure of carbon fiber reinforced epoxy resin offers a 30—50% weight reduction compared to traditional PU/PE surfboards, significantly minimizing hydrodynamic drag and enabling faster acceleration — ideal for high-performance surfing.The bending strength is increased by over twofold, effectively preventing board breakage."
             },
             {
               "type": "paragraph",
-              "content": "Superior Weather Resistance:UV-resistant and salt-corrosion resistant, unaffected by seawater immersion or prolonged sun exposure, ensuring no deformation or cracking over time. Temperature stability: Consistent performance from -10℃ to 60℃, suitable for diverse global marine environments."
+              "content": "(2) Hydrodynamic Optimization:The low-friction carbon fiber surface minimizes viscous drag, achieving 15-20% higher speed compared to conventional boards.A precisely engineered buoyancy distribution is achieved through controlled carbon fiber layup density,accommodating varying body types and wave conditions."
             },
             {
               "type": "paragraph",
-              "content": "Integrated Molding Process:Vacuum bag and autoclave molding eliminates bubbles and weak points, creating a seamless shell to minimize water flow turbulence. Customized reinforcement ribs at critical areas (e.g., foot positions, fin boxes) for balanced strength and weight."
+              "content": "(3) Dynamic Responsiveness:High-modulus carbon fiber laminates deliver instant rebound response, enhancing board sensitivity for aggressive turns and aerial maneuvers.The tunable flex design allows adjustment of stiffness through different fiber orientations (unidirectional/twill weave) to match wave profiles and surfing styles."
             },
             {
               "type": "paragraph",
-              "content": "Long Lifespan and Eco-Friendly:Excellent fatigue resistance: Withstands repeated flexing without deformation, offering a lifespan over 3 times that of standard surfboards. Recyclable materials: Degradable epoxy resin system aligns with sustainable environmental principles."
+              "content": "(4) Superior Weather Resistance:Engineered for UV stability, saltwater corrosion resistance, and thermal consistency, ensuring the board remains deformation-free and crack-resistant under long-term exposure.Performance remains stable from -10°C to 60°C, suitable for global surf environments across varying climates."
+            },
+            {
+              "type": "paragraph",
+              "content": "(5) Integrated Molding Process:Manufactured using vacuum bagging and autoclave molding, ensuring void-free consolidation and seamless shell construction that reduces hydrodynamic interference.Custom reinforcement ribs are strategically added in high-stress zones (e.g., foot placement, fin box) to optimize the strength-to-weight ratio."
+            },
+            {
+              "type": "paragraph",
+              "content": "(6) Longevity & Sustainability:Exhibits exceptional fatigue resistance, maintaining structural integrity under repeated flexing — achieving a service life over three times that of standard surfboards.Built from recyclable materials with a biodegradable epoxy system, embodying a sustainable and eco-conscious design philosophy."
             }
           ]
         },
         {
           "id": 58,
+          "categoryId": 4,
+          "productType": "standard",
+          "image": "/images/Sports-Equipment/E5D-FCS-01.png",
+          "alt": "E5D-Structural Component",
+          "model": "E5D-FCS",
+          "description": "Four-Fold Collapsible Stretcher",
+          "standardCategory": "Sports Equipment",
+          "gallery": [
+            "/images/Sports-Equipment/E5D-FCS-02.png",
+            "/images/Sports-Equipment/E5D-FCS-03.png",
+            "/images/Sports-Equipment/E5D-FCS-04.jpg",
+            "/images/Sports-Equipment/E5D-FCS-05.jpg"
+          ],
+          "specifications": {
+            "Material": "Carbon fiber + aluminum components",
+            "Manufacturing Process": "Supporting parts are made by aluminum casting process and formed through CNC machining",
+            "Mesh Fabric": "PVC + polyester yarn + plastic buckle",
+            "Unfolded Size": "Length 2200 mm, Width 550 mm, Height 150 mm",
+            "Folded Size": "Length 2200 mm, Maximum width 230 mm, Maximum height 220 mm",
+            "Weight": "6.85 kg"
+          },
+          "details": [
+            {
+              "type": "image",
+              "image": "/images/Stretcher Details.png",
+              "alt": "Stretcher Details"
+            }
+          ]
+        },
+        {
+          "id": 59,
           "categoryId": 4,
           "productType": "standard",
           "image": "/images/Sports-Equipment/E5D-BRS-01.png",
@@ -1266,7 +1313,7 @@
           ]
         },
         {
-          "id": 59,
+          "id": 60,
           "categoryId": 4,
           "productType": "standard",
           "image": "/images/Sports-Equipment/E5D-SSH-01.png",
@@ -1295,7 +1342,7 @@
           ]
         },
         {
-          "id": 60,
+          "id": 61,
           "categoryId": 4,
           "productType": "standard",
           "image": "/images/Sports-Equipment/E5D-SC-01.png",
